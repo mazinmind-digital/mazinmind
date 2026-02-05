@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | MazinMind Digital</title>
+  <meta name="description" content="Contact MazinMind Digital for AI implementation, automation, DevOps modernization, and growth systems." />
+  <link rel="canonical" href="https://mazinmind.digital/contact.html" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><div class="brand-badge"></div><div>MazinMind Digital<br /><span>AI • Automation • DevOps • Growth</span></div></a>
+      <nav class="nav-links">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="services.html">Services</a>
+        <a data-nav href="about.html">About</a>
+        <a data-nav href="contact.html" class="btn primary">Book a Call</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card hero-card">
+        <div class="kicker">contact</div>
+        <h1>Let’s fix the bottleneck.</h1>
+        <p>Send details and we’ll reply within 1 business day.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card form">
+        <h2>Contact form</h2>
+        <p class="small">
+          GitHub Pages can’t run backend code, so the form posts to a secure form provider.
+          Option A: Formspree. Option B: mailto link.
+        </p>
+
+        <!-- OPTION A: FORMSPREE -->
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <label for="name">Name</label>
+          <input id="name" name="name" autocomplete="name" required />
+
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" autocomplete="email" required />
+
+          <label for="topic">What do you need?</label>
+          <input id="topic" name="topic" placeholder="AI, automation, DevOps, marketing ops…" required />
+
+          <label for="message">Details</label>
+          <textarea id="message" name="message" placeholder="Current pain, tools you use, timeline, budget range…" required></textarea>
+
+          <button class="btn primary" type="submit">Send</button>
+          <p class="small">Prefer email? <a href="mailto:hello@mazinmind.digital">hello@mazinmind.digital</a></p>
+        </form>
+
+        <!-- OPTION B: MAILTO (uncomment if you hate forms)
+        <hr class="sep" />
+        <a class="btn primary" href="mailto:hello@mazinmind.digital?subject=MazinMind%20Consult&body=Name:%0D%0ACompany:%0D%0AWhat%20you%20need:%0D%0ADetails:%0D%0A">
+          Email MazinMind
+        </a>
+        -->
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="cols">
+        <div class="card tile">
+          <h3>MazinMind Digital</h3>
+          <p>AI implementation, automation, DevOps, and growth systems built for real-world constraints.</p>
+          <div class="small">© <span id="year"></span> MazinMind Digital</div>
+        </div>
+        <div class="card tile">
+          <h3>Quick links</h3>
+          <p><a href="index.html">Home</a><br />
+             <a href="services.html">Services</a><br />
+             <a href="about.html">About</a></p>
+          <p class="small">Email: <a href="mailto:hello@mazinmind.digital">hello@mazinmind.digital</a></p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
