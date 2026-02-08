@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Sparkles, Zap, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ScheduleButton from "@/components/ui/ScheduleButton";
 import neonCity from "@/assets/neon-city.png";
 import brainCircuit from "@/assets/brain-circuit.png";
 
@@ -60,16 +61,10 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20 animate-spray" style={{ animationDelay: '0.3s' }}>
-            <Button 
-              asChild 
-              size="lg" 
-              className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-10 h-16 text-lg glow-primary group tracking-wide"
-            >
-              <Link to="/contact" className="flex items-center gap-3">
-                GET STARTED
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-              </Link>
-            </Button>
+            <ScheduleButton className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-10 h-16 text-lg glow-primary group tracking-wide inline-flex items-center justify-center gap-3">
+              GET STARTED
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+            </ScheduleButton>
             <a 
               href="tel:+16173831220"
               className="flex items-center gap-3 px-8 h-16 rounded-xl glass-vibrant text-foreground hover:glow-accent transition-all font-semibold tracking-wide"

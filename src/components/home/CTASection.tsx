@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Rocket, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ScheduleButton from "@/components/ui/ScheduleButton";
 import bostonColorful from "@/assets/boston-colorful.png";
 
 export function CTASection() {
@@ -50,16 +51,10 @@ export function CTASection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button 
-              asChild 
-              size="lg" 
-              className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-10 h-16 text-lg glow-primary group tracking-wider"
-            >
-              <Link to="/contact" className="flex items-center gap-3">
-                SCHEDULE FREE CONSULTATION
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-              </Link>
-            </Button>
+            <ScheduleButton className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-10 h-16 text-lg glow-primary group tracking-wider inline-flex items-center justify-center gap-3">
+              SCHEDULE FREE CONSULTATION
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+            </ScheduleButton>
             <Button 
               asChild 
               variant="outline" 

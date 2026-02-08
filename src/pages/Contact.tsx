@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import ScheduleButton from "@/components/ui/ScheduleButton";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -201,12 +202,9 @@ export default function Contact() {
                   Book a free 30-minute consultation to discuss your needs and explore 
                   how we can help transform your business.
                 </p>
-                <Button 
-                  className="w-full bg-gradient-accent hover:opacity-90 text-accent-foreground font-bold h-14 tracking-wider glow-accent"
-                  onClick={() => toast.info("Scheduling feature coming soon!")}
-                >
+                <ScheduleButton className="w-full bg-gradient-accent hover:opacity-90 text-accent-foreground font-bold h-14 tracking-wider glow-accent">
                   BOOK A CONSULTATION
-                </Button>
+                </ScheduleButton>
               </div>
             </div>
 
@@ -310,20 +308,26 @@ export default function Contact() {
                       )}
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      disabled={isLoading}
-                      className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold h-14 tracking-wider glow-primary"
-                    >
-                      {isLoading ? (
-                        <Loader2 className="w-5 h-5 animate-spin" />
-                      ) : (
-                        <>
-                          <Send className="w-5 h-5 mr-2" />
-                          SEND MESSAGE
-                        </>
-                      )}
-                    </Button>
+                    <div className="space-y-3">
+                      <Button 
+                        type="submit" 
+                        disabled={isLoading}
+                        className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold h-14 tracking-wider glow-primary"
+                      >
+                        {isLoading ? (
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                        ) : (
+                          <>
+                            <Send className="w-5 h-5 mr-2" />
+                            SEND MESSAGE
+                          </>
+                        )}
+                      </Button>
+
+                      <ScheduleButton className="w-full bg-gradient-accent hover:opacity-90 text-accent-foreground font-bold h-14 tracking-wider glow-accent">
+                        SCHEDULE A CALL
+                      </ScheduleButton>
+                    </div>
                   </form>
                 </>
               )}
