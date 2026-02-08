@@ -17,15 +17,15 @@ export function NewsletterSection() {
       return;
     }
 
-    setIsLoading(true);
-    
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
+    // Open user's mail client to send subscription to inbox
+    const to = "info@mazinmind.digital.com";
+    const subject = encodeURIComponent("Newsletter subscription");
+    const body = encodeURIComponent(`Please subscribe ${email} to the newsletter.`);
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
     setIsLoading(false);
     setIsSubscribed(true);
     setEmail("");
-    toast.success("🎉 Welcome to MazinMind! Get ready for AI insights!");
+    toast.success("Opened mail client to send subscription request.");
   };
 
   return (

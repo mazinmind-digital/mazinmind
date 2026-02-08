@@ -61,7 +61,7 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20 animate-spray" style={{ animationDelay: '0.3s' }}>
-            <ScheduleButton className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-10 h-16 text-lg glow-primary group tracking-wide inline-flex items-center justify-center gap-3">
+            <ScheduleButton provider="hubspot" className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-10 h-16 text-lg glow-primary group tracking-wide inline-flex items-center justify-center gap-3">
               GET STARTED
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </ScheduleButton>

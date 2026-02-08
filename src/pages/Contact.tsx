@@ -41,8 +41,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "EMAIL",
-    value: "info@mazinmind.digital",
-    href: "mailto:info@mazinmind.digital",
+    value: "info@mazinmind.digital.com",
+    href: "mailto:info@mazinmind.digital.com",
     color: "accent",
   },
   {
@@ -105,11 +105,23 @@ export default function Contact() {
       return;
     }
 
-    setIsLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsLoading(false);
+    // Open user's mail client with prefilled message to site inbox
+    const to = "info@mazinmind.digital.com";
+    const subject = encodeURIComponent(`Contact form submission from ${formData.name || "Website"}`);
+    const bodyLines = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Company: ${formData.company || ""}`,
+      `Phone: ${formData.phone || ""}`,
+      "",
+      "Message:",
+      formData.message,
+    ];
+    const body = encodeURIComponent(bodyLines.join("\n"));
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
     setIsSubmitted(true);
-    toast.success("🎉 Message sent! We'll get back to you soon.");
+    setIsLoading(false);
+    toast.success("Opened mail client to send your message.");
   };
 
   return (
@@ -202,7 +214,7 @@ export default function Contact() {
                   Book a free 30-minute consultation to discuss your needs and explore 
                   how we can help transform your business.
                 </p>
-                <ScheduleButton className="w-full bg-gradient-accent hover:opacity-90 text-accent-foreground font-bold h-14 tracking-wider glow-accent">
+                <ScheduleButton provider="hubspot" className="w-full bg-gradient-accent hover:opacity-90 text-accent-foreground font-bold h-14 tracking-wider glow-accent">
                   BOOK A CONSULTATION
                 </ScheduleButton>
               </div>
@@ -324,7 +336,7 @@ export default function Contact() {
                         )}
                       </Button>
 
-                      <ScheduleButton className="w-full bg-gradient-accent hover:opacity-90 text-accent-foreground font-bold h-14 tracking-wider glow-accent">
+                      <ScheduleButton provider="hubspot" className="w-full bg-gradient-accent hover:opacity-90 text-accent-foreground font-bold h-14 tracking-wider glow-accent">
                         SCHEDULE A CALL
                       </ScheduleButton>
                     </div>

@@ -39,10 +39,11 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-6">
             <Link to="/" className="inline-block group">
-              <img 
-                src={mazinmindLogo} 
-                alt="MazinMind Digital" 
-                className="h-20 w-auto group-hover:scale-105 transition-transform"
+              <img
+                src={mazinmindLogo}
+                alt="MazinMind Digital"
+                className="h-28 w-auto group-hover:scale-105 transition-transform relative z-20"
+                style={{ maxHeight: 112 }}
               />
             </Link>
             <p className="text-muted-foreground leading-relaxed">
@@ -114,11 +115,11 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@mazinmind.digital"
+                  href="mailto:info@mazinmind.digital.com"
                   className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors font-medium"
                 >
-                  <Mail className="w-5 h-5 text-accent" />
-                  <span>info@mazinmind.digital</span>
+                    <Mail className="w-5 h-5 text-accent" />
+                    <span>info@mazinmind.digital.com</span>
                 </a>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground font-medium">

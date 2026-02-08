@@ -51,7 +51,7 @@ export function CTASection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <ScheduleButton className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-10 h-16 text-lg glow-primary group tracking-wider inline-flex items-center justify-center gap-3">
+            <ScheduleButton provider="hubspot" className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-10 h-16 text-lg glow-primary group tracking-wider inline-flex items-center justify-center gap-3">
               SCHEDULE FREE CONSULTATION
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </ScheduleButton>
