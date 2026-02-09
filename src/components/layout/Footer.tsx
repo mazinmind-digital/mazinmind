@@ -42,8 +42,8 @@ export function Footer() {
               <img
                 src={mazinmindLogo}
                 alt="MazinMind Digital"
-                className="h-28 w-auto group-hover:scale-105 transition-transform relative z-20"
-                style={{ maxHeight: 112 }}
+                className="h-[140px] w-auto group-hover:scale-105 transition-transform relative z-20"
+                style={{ maxHeight: 140 }}
               />
             </Link>
             <p className="text-muted-foreground leading-relaxed">

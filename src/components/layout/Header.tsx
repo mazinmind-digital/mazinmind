@@ -25,8 +25,8 @@ export function Header() {
             <img
               src={mazinmindLogo}
               alt="MazinMind Digital"
-              className="h-20 w-auto group-hover:scale-105 transition-transform relative z-50"
-              style={{ maxHeight: 80 }}
+              className="h-[100px] w-auto group-hover:scale-105 transition-transform relative z-50"
+              style={{ maxHeight: 100 }}
             />
           </Link>
 
