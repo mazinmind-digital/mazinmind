@@ -41,8 +41,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "EMAIL",
-    value: "info@mazinmind.digital.com",
-    href: "mailto:info@mazinmind.digital.com",
+    value: "info@mazinmind.digital",
+    href: "mailto:info@mazinmind.digital",
     color: "accent",
   },
   {
@@ -106,7 +106,7 @@ export default function Contact() {
     }
 
     // Open user's mail client with prefilled message to site inbox
-    const to = "info@mazinmind.digital.com";
+    const to = "info@mazinmind.digital";
     const subject = encodeURIComponent(`Contact form submission from ${formData.name || "Website"}`);
     const bodyLines = [
       `Name: ${formData.name}`,
