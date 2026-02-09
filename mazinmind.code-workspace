@@ -1,13 +1,8 @@
 {
-    "folders": [
-        {
-            "path": "."
-        }
-    ],
-    "extensions": {
-        "recommendations": [
-            "sourcery.sourcery",
-            "trunk.io"
-        ]
-    }
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
 }
