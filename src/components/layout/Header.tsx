@@ -32,11 +32,11 @@ export function Header() {
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="relative flex h-24 items-center justify-end">
           {/* Left logo that overhangs below the header */}
-          <Link to="/" className="group absolute left-0 top-1/2 z-[70] -translate-y-[20%]">
+          <Link to="/" className="group absolute left-0 top-1/2 z-[70] -translate-y-[20%] pt-[10px]">
             <img
               src={mazinmindLogo}
               alt="MazinMind Digital"
-              className="h-[190px] w-auto max-w-none transition-transform group-hover:scale-105 drop-shadow-xl"
+              className="h-[143px] w-auto max-w-none transition-transform group-hover:scale-105 drop-shadow-xl"
             />
           </Link>
 
@@ -45,7 +45,7 @@ export function Header() {
             <img
               src={mazinmindWordmark}
               alt="MazinMind"
-              className="h-11 w-auto max-w-[64vw] lg:h-14"
+              className="h-14 w-auto max-w-[76vw] lg:h-20"
             />
           </div>
 

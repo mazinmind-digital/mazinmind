@@ -1,16 +1,13 @@
 // HeroBanner.tsx
 import React from "react";
-import graffitiBg from "../../assets/hero-graffiti.jpg";
 import { useSiteOverlay } from "@/components/layout/site-overlays";
 
 export default function HeroBanner() {
   const { openScheduleModal } = useSiteOverlay();
 
   return (
-    <section
-      className="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden bg-black"
-      style={{ background: `url(${graffitiBg}) center/cover no-repeat` }}
-    >
+    <section className="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden bg-black">
+      <div className="absolute inset-0 bg-gradient-hero" />
       {/* Overlay for graffiti effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-transparent to-black/80 z-10" />
 
