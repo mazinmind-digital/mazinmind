@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet-async";
 import ScheduleButton from "@/components/ui/ScheduleButton";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -84,6 +85,7 @@ export default function Contact() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name as keyof ContactFormData]) {
+        {/* Helmet is now at the top of the return tree */}
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
   };
@@ -126,6 +128,18 @@ export default function Contact() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Contact MazinMind Digital | AI Consulting & Support</title>
+        <meta name="description" content="Contact MazinMind Digital for expert AI consulting, digital transformation, and support. Get in touch for a free consultation or to learn more about our services." />
+        <meta name="keywords" content="Contact MazinMind Digital, AI consulting, support, digital transformation, free consultation" />
+        <meta property="og:title" content="Contact MazinMind Digital | AI Consulting & Support" />
+        <meta property="og:description" content="Contact MazinMind Digital for expert AI consulting, digital transformation, and support." />
+        <meta property="og:url" content="https://mazinmind.digital/contact" />
+        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta name="twitter:title" content="Contact MazinMind Digital | AI Consulting & Support" />
+        <meta name="twitter:description" content="Contact MazinMind Digital for expert AI consulting, digital transformation, and support." />
+        <link rel="canonical" href="https://mazinmind.digital/contact" />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />

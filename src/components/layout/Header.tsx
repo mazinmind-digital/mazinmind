@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import mazinmindLogo from "@/assets/mazinmind-logo.png";
+import mazinmindWordmark from "@/assets/mazinmind-wordmark.png";
 
 const navigation = [
   { name: "HOME", href: "/" },
@@ -19,19 +20,27 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass">
       <nav className="container mx-auto px-4 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+        <div className="relative flex h-20 items-center justify-end">
+          {/* Left logo that overhangs below the header */}
+          <Link to="/" className="group absolute left-0 top-1/2 z-[70] -translate-y-[24%]">
             <img
               src={mazinmindLogo}
               alt="MazinMind Digital"
-              className="h-[100px] w-auto group-hover:scale-105 transition-transform relative z-50"
-              style={{ maxHeight: 100 }}
+              className="h-[185px] w-auto max-w-none transition-transform group-hover:scale-105 drop-shadow-xl"
             />
           </Link>
 
+          {/* Centered wordmark */}
+          <div className="pointer-events-none absolute inset-x-0 top-1/2 z-[60] flex -translate-y-1/2 justify-center px-16">
+            <img
+              src={mazinmindWordmark}
+              alt="MazinMind"
+              className="h-8 w-auto max-w-[55vw] lg:h-10"
+            />
+          </div>
+
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8 mr-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}

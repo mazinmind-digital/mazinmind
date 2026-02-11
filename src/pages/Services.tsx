@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet-async";
 import { 
   Brain, 
   TrendingUp, 
@@ -134,6 +135,18 @@ const processSteps = [
 export default function Services() {
   return (
     <Layout>
+      <Helmet>
+        <title>AI Services | MazinMind Digital</title>
+        <meta name="description" content="Explore MazinMind Digital's full suite of AI services: consulting, marketing, automation, content creation, and custom software. Drive growth and efficiency with expert solutions." />
+        <meta name="keywords" content="AI services, consulting, digital marketing, automation, content creation, custom software, MazinMind Digital" />
+        <meta property="og:title" content="AI Services | MazinMind Digital" />
+        <meta property="og:description" content="Explore MazinMind Digital's full suite of AI services: consulting, marketing, automation, content creation, and custom software." />
+        <meta property="og:url" content="https://mazinmind.digital/services" />
+        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta name="twitter:title" content="AI Services | MazinMind Digital" />
+        <meta name="twitter:description" content="Explore MazinMind Digital's full suite of AI services: consulting, marketing, automation, content creation, and custom software." />
+        <link rel="canonical" href="https://mazinmind.digital/services" />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
@@ -299,3 +312,4 @@ export default function Services() {
     </Layout>
   );
 }
+// End of file

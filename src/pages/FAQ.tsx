@@ -92,9 +92,23 @@ const colorMap = {
   warning: { text: "text-warning", border: "border-warning/30" },
 };
 
+import { Helmet } from "react-helmet-async";
+
 export default function FAQ() {
   return (
     <Layout>
+      <Helmet>
+        <title>FAQ | MazinMind Digital</title>
+        <meta name="description" content="Find answers to common questions about MazinMind Digital's AI consulting, digital transformation, and technology services. Learn more about our process, pricing, and support." />
+        <meta name="keywords" content="FAQ, MazinMind Digital, AI consulting, digital transformation, technology services, support, pricing" />
+        <meta property="og:title" content="FAQ | MazinMind Digital" />
+        <meta property="og:description" content="Find answers to common questions about MazinMind Digital's AI consulting, digital transformation, and technology services." />
+        <meta property="og:url" content="https://mazinmind.digital/faq" />
+        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta name="twitter:title" content="FAQ | MazinMind Digital" />
+        <meta name="twitter:description" content="Find answers to common questions about MazinMind Digital's AI consulting, digital transformation, and technology services." />
+        <link rel="canonical" href="https://mazinmind.digital/faq" />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
