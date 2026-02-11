@@ -5,7 +5,6 @@ import { Slot } from "@radix-ui/react-slot";
 import { VariantProps, cva } from "class-variance-authority";
 import { PanelLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { SidebarProvider } from "@/components/ui/sidebar-context";
 import { useSidebar } from "@/components/ui/use-sidebar";
 import { Sheet } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
