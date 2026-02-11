@@ -44,4 +44,16 @@
     <changefreq>weekly</changefreq>
   </url>
 
+  <url>
+    <loc>https://mazinmind.digital/privacy</loc>
+    <priority>0.40</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://mazinmind.digital/terms</loc>
+    <priority>0.40</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
 </urlset>
