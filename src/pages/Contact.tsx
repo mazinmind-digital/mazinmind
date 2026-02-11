@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet-async";
@@ -70,6 +71,7 @@ const colorMap = {
 };
 
 export default function Contact() {
+  const location = useLocation();
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -81,11 +83,32 @@ export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
 
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const interest = params.get("interest");
+
+    if (!interest) {
+      return;
+    }
+
+    const normalizedInterest = interest.replace(/[-_]+/g, " ").trim();
+
+    setFormData((prev) => {
+      if (prev.message.trim().length > 0) {
+        return prev;
+      }
+
+      return {
+        ...prev,
+        message: `Hi MazinMind team,\n\nI am interested in ${normalizedInterest}. Please share pricing and next steps.\n`,
+      };
+    });
+  }, [location.search]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name as keyof ContactFormData]) {
-        {/* Helmet is now at the top of the return tree */}
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
   };

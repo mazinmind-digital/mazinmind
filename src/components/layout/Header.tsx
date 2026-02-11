@@ -8,6 +8,8 @@ import mazinmindWordmark from "@/assets/mazinmind-wordmark.png";
 const navigation = [
   { name: "HOME", href: "/" },
   { name: "SERVICES", href: "/services" },
+  { name: "BLOG", href: "/blog" },
+  { name: "ART GALLERY", href: "/art-gallery" },
   { name: "ABOUT", href: "/about" },
   { name: "CONTACT", href: "/contact" },
   { name: "FAQ", href: "/faq" },
