@@ -4,5 +4,7 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"bugzi.autocomplete.provider": "Local (Ollama)"
+	}
 }

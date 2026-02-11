@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import worldPeace from "@/assets/world-peace.png";
 import bostonCorridor from "@/assets/boston-corridor.png";
+import { Helmet } from "react-helmet-async";
 
 const values = [
   {
@@ -154,6 +155,18 @@ export default function About() {
           </div>
         </div>
       </section>
+                  <Helmet>
+                    <title>About MazinMind Digital | AI Experts & Innovators</title>
+                    <meta name="description" content="Learn about MazinMind Digital, a leader in AI consulting, digital transformation, and innovative technology solutions. Discover our values, mission, and expert team." />
+                    <meta name="keywords" content="About MazinMind Digital, AI experts, digital transformation, technology consulting, company values, innovation" />
+                    <meta property="og:title" content="About MazinMind Digital | AI Experts & Innovators" />
+                    <meta property="og:description" content="Learn about MazinMind Digital, a leader in AI consulting, digital transformation, and innovative technology solutions." />
+                    <meta property="og:url" content="https://mazinmind.digital/about" />
+                    <meta property="og:site_name" content="MazinMind Digital" />
+                    <meta name="twitter:title" content="About MazinMind Digital | AI Experts & Innovators" />
+                    <meta name="twitter:description" content="Learn about MazinMind Digital, a leader in AI consulting, digital transformation, and innovative technology solutions." />
+                    <link rel="canonical" href="https://mazinmind.digital/about" />
+                  </Helmet>
 
       {/* Hybrid Approach Section */}
       <section className="py-24">

@@ -64,6 +64,15 @@ export function CTASection() {
               <Link to="/services">EXPLORE SERVICES</Link>
             </Button>
           </div>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm font-semibold tracking-wide">
+            <Link to="/blog" className="text-primary hover:text-primary/80 transition-colors">
+              READ THE BLOG
+            </Link>
+            <Link to="/art-gallery" className="text-accent hover:text-accent/80 transition-colors">
+              VIEW ART GALLERY
+            </Link>
+          </div>
         </div>
       </div>
     </section>
