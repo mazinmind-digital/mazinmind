@@ -5,6 +5,9 @@
 		}
 	],
 	"settings": {
-		"bugzi.autocomplete.provider": "Local (Ollama)"
+		"bugzi.autocomplete.provider": "Local (Ollama)",
+		"projectManager.git.baseFolders": [
+			"mazinmind"
+		]
 	}
 }
