@@ -13,16 +13,13 @@ describe("Header", () => {
     expect(logo).toBeInTheDocument();
   });
 
-  it("renders navigation links", () => {
+  it("renders the menu trigger and get started CTA", () => {
     render(
       <BrowserRouter>
         <Header />
       </BrowserRouter>
     );
-    expect(screen.getByText(/HOME/i)).toBeInTheDocument();
-    expect(screen.getByText(/SERVICES/i)).toBeInTheDocument();
-    expect(screen.getByText(/ABOUT/i)).toBeInTheDocument();
-    expect(screen.getByText(/CONTACT/i)).toBeInTheDocument();
-    expect(screen.getByText(/FAQ/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /menu/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /get started/i })).toBeInTheDocument();
   });
 });

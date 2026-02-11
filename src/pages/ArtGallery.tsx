@@ -1,34 +1,85 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Input } from "@/components/ui/input";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, ImageIcon, Search } from "lucide-react";
-import neonCity from "@/assets/neon-city.png";
-import worldPeace from "@/assets/world-peace.png";
-import bostonColorful from "@/assets/boston-colorful.png";
-import bostonRain from "@/assets/boston-rain.png";
-import bostonCorridor from "@/assets/boston-corridor.png";
-import brainCircuit from "@/assets/brain-circuit.png";
-import brainGreen from "@/assets/brain-green.png";
-import aiFace from "@/assets/ai-face.png";
-import aiMask from "@/assets/ai-mask.png";
+
+type ArtworkOrientation = "Portrait" | "Landscape" | "Square";
 
 type Artwork = {
   id: string;
   title: string;
   description: string;
   collection: string;
-  orientation: "Portrait" | "Landscape" | "Square";
+  orientation: ArtworkOrientation;
   size: string;
   finish: string;
   price: number;
   image: string;
   addedAt: string;
+  filename: string;
 };
 
-const artworks: Artwork[] = [
-  {
+type SortMode = "newest" | "price-low" | "price-high" | "title";
+
+type ArtworkSeed = Omit<Artwork, "image" | "filename">;
+
+const PAGE_SIZE = 25;
+
+const currency = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0,
+});
+
+const titleFromFilename = (filename: string) =>
+  filename
+    .replace(/\.[^.]+$/, "")
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+
+const slugFromFilename = (filename: string) =>
+  filename
+    .replace(/\.[^.]+$/, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+const inferCollection = (filename: string) => {
+  if (/(city|boston|corridor|rain|neon)/i.test(filename)) {
+    return "City Futures";
+  }
+  if (/(face|mask|portrait)/i.test(filename)) {
+    return "AI Portraits";
+  }
+  return "AI Dreams";
+};
+
+const inferOrientation = (filename: string): ArtworkOrientation => {
+  if (/(portrait|face|mask)/i.test(filename)) {
+    return "Portrait";
+  }
+  if (/(square|brain)/i.test(filename)) {
+    return "Square";
+  }
+  return "Landscape";
+};
+
+const inferSize = (orientation: ArtworkOrientation) => {
+  if (orientation === "Portrait") {
+    return "18 x 24 in";
+  }
+  if (orientation === "Square") {
+    return "20 x 20 in";
+  }
+  return "30 x 20 in";
+};
+
+const inferPrice = (index: number) => 140 + index * 15;
+
+const seedsByFilename: Record<string, ArtworkSeed> = {
+  "boston-colorful.png": {
     id: "signal-over-boston",
     title: "Signal Over Boston",
     description: "Neon skyline interpretation designed for modern office and studio walls.",
@@ -37,10 +88,9 @@ const artworks: Artwork[] = [
     size: "24 x 16 in",
     finish: "Gallery-wrapped canvas",
     price: 165,
-    image: bostonColorful,
     addedAt: "2026-02-04",
   },
-  {
+  "boston-rain.png": {
     id: "rainline-memory",
     title: "Rainline Memory",
     description: "Atmospheric city composition with deep contrast and reflective tones.",
@@ -49,10 +99,9 @@ const artworks: Artwork[] = [
     size: "16 x 24 in",
     finish: "Matte canvas",
     price: 155,
-    image: bostonRain,
     addedAt: "2026-01-31",
   },
-  {
+  "boston-corridor.png": {
     id: "corridor-of-light",
     title: "Corridor of Light",
     description: "Architectural depth piece with layered gradients and cinematic texture.",
@@ -61,10 +110,9 @@ const artworks: Artwork[] = [
     size: "30 x 20 in",
     finish: "Gallery-wrapped canvas",
     price: 210,
-    image: bostonCorridor,
     addedAt: "2026-01-26",
   },
-  {
+  "brain-circuit.png": {
     id: "electric-neural-grid",
     title: "Electric Neural Grid",
     description: "High-energy abstract inspired by machine learning neural pathways.",
@@ -73,10 +121,9 @@ const artworks: Artwork[] = [
     size: "20 x 20 in",
     finish: "Satin canvas",
     price: 180,
-    image: brainCircuit,
     addedAt: "2026-01-19",
   },
-  {
+  "brain-green.png": {
     id: "green-pulse",
     title: "Green Pulse",
     description: "Organic digital gradient artwork blending natural and synthetic motifs.",
@@ -85,10 +132,9 @@ const artworks: Artwork[] = [
     size: "16 x 16 in",
     finish: "Matte canvas",
     price: 135,
-    image: brainGreen,
     addedAt: "2026-01-13",
   },
-  {
+  "ai-mask.png": {
     id: "mask-of-intelligence",
     title: "Mask of Intelligence",
     description: "Conceptual portrait balancing mystery, identity, and machine aesthetics.",
@@ -97,10 +143,9 @@ const artworks: Artwork[] = [
     size: "18 x 24 in",
     finish: "Gallery-wrapped canvas",
     price: 195,
-    image: aiMask,
     addedAt: "2026-01-08",
   },
-  {
+  "ai-face.png": {
     id: "echo-face",
     title: "Echo Face",
     description: "Cyber-inspired portrait composition suited for creative and tech interiors.",
@@ -109,10 +154,9 @@ const artworks: Artwork[] = [
     size: "24 x 36 in",
     finish: "Premium canvas",
     price: 240,
-    image: aiFace,
     addedAt: "2025-12-29",
   },
-  {
+  "neon-city.png": {
     id: "nightline-velocity",
     title: "Nightline Velocity",
     description: "Vibrant city-motion scene with an electric palette and layered depth.",
@@ -121,10 +165,9 @@ const artworks: Artwork[] = [
     size: "36 x 24 in",
     finish: "Premium canvas",
     price: 260,
-    image: neonCity,
     addedAt: "2025-12-20",
   },
-  {
+  "world-peace.png": {
     id: "peace-in-circuits",
     title: "Peace in Circuits",
     description: "Symbolic statement piece blending digital futurism with social themes.",
@@ -133,24 +176,65 @@ const artworks: Artwork[] = [
     size: "30 x 30 in",
     finish: "Gallery-wrapped canvas",
     price: 275,
-    image: worldPeace,
     addedAt: "2025-12-14",
   },
-];
+};
 
-type SortMode = "newest" | "price-low" | "price-high" | "title";
+const importedImages = import.meta.glob("../assets/art_gallery/*.{png,jpg,jpeg,webp,avif}", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
 
-const currency = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  maximumFractionDigits: 0,
-});
+const artworks: Artwork[] = Object.entries(importedImages)
+  .sort(([leftPath], [rightPath]) => leftPath.localeCompare(rightPath))
+  .map(([path, image], index) => {
+    const filename = path.split("/").at(-1) ?? `artwork-${index + 1}.png`;
+    const seeded = seedsByFilename[filename];
+
+    if (seeded) {
+      return {
+        ...seeded,
+        image,
+        filename,
+      };
+    }
+
+    const orientation = inferOrientation(filename);
+
+    return {
+      id: slugFromFilename(filename),
+      title: titleFromFilename(filename),
+      description:
+        "Midjourney canvas artwork available in limited print runs. Contact us to request purchasing details and delivery timeline.",
+      collection: inferCollection(filename),
+      orientation,
+      size: inferSize(orientation),
+      finish: "Gallery-wrapped canvas",
+      price: inferPrice(index),
+      image,
+      addedAt: new Date(Date.UTC(2026, 0, Math.max(1, 31 - index))).toISOString().slice(0, 10),
+      filename,
+    };
+  });
+
+const getVisiblePageNumbers = (totalPages: number, currentPage: number) => {
+  const pages: number[] = [];
+  const start = Math.max(1, currentPage - 2);
+  const end = Math.min(totalPages, currentPage + 2);
+
+  for (let page = start; page <= end; page += 1) {
+    pages.push(page);
+  }
+
+  return pages;
+};
 
 export default function ArtGallery() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCollection, setSelectedCollection] = useState("ALL");
   const [selectedOrientation, setSelectedOrientation] = useState("ALL");
   const [sortMode, setSortMode] = useState<SortMode>("newest");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const collections = useMemo(
     () => ["ALL", ...Array.from(new Set(artworks.map((artwork) => artwork.collection)))],
@@ -167,7 +251,8 @@ export default function ArtGallery() {
         normalizedQuery.length === 0 ||
         artwork.title.toLowerCase().includes(normalizedQuery) ||
         artwork.description.toLowerCase().includes(normalizedQuery) ||
-        artwork.collection.toLowerCase().includes(normalizedQuery);
+        artwork.collection.toLowerCase().includes(normalizedQuery) ||
+        artwork.filename.toLowerCase().includes(normalizedQuery);
 
       const matchesCollection =
         selectedCollection === "ALL" || artwork.collection === selectedCollection;
@@ -196,6 +281,21 @@ export default function ArtGallery() {
 
     return visible;
   }, [searchQuery, selectedCollection, selectedOrientation, sortMode]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedCollection, selectedOrientation, sortMode]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredArtworks.length / PAGE_SIZE));
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+
+  const paginatedArtworks = useMemo(() => {
+    const start = (safeCurrentPage - 1) * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+    return filteredArtworks.slice(start, end);
+  }, [filteredArtworks, safeCurrentPage]);
+
+  const pageNumbers = getVisiblePageNumbers(totalPages, safeCurrentPage);
 
   const gallerySchema = {
     "@context": "https://schema.org",
@@ -273,7 +373,7 @@ export default function ArtGallery() {
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Curated Midjourney artwork available as premium canvas prints.
-              Browse the latest additions and request a purchase directly.
+              Browse current and future uploads from our gallery folder.
             </p>
           </div>
         </div>
@@ -287,7 +387,7 @@ export default function ArtGallery() {
               <Input
                 value={searchQuery}
                 onChange={(event) => setSearchQuery(event.target.value)}
-                placeholder="Search by title, collection, or style"
+                placeholder="Search by title, collection, filename, or style"
                 className="h-12 pl-12 bg-secondary/60 border-border"
                 aria-label="Search artwork"
               />
@@ -326,20 +426,26 @@ export default function ArtGallery() {
             </label>
           </div>
 
-          <label className="flex items-center gap-3 px-4 rounded-xl border border-border bg-secondary/40 text-sm text-muted-foreground w-fit">
-            <span>Sort</span>
-            <select
-              value={sortMode}
-              onChange={(event) => setSortMode(event.target.value as SortMode)}
-              className="h-12 bg-transparent text-foreground focus:outline-none"
-              aria-label="Sort artwork"
-            >
-              <option value="newest">Newest first</option>
-              <option value="price-low">Price low to high</option>
-              <option value="price-high">Price high to low</option>
-              <option value="title">Title A-Z</option>
-            </select>
-          </label>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <label className="flex items-center gap-3 px-4 rounded-xl border border-border bg-secondary/40 text-sm text-muted-foreground w-fit">
+              <span>Sort</span>
+              <select
+                value={sortMode}
+                onChange={(event) => setSortMode(event.target.value as SortMode)}
+                className="h-12 bg-transparent text-foreground focus:outline-none"
+                aria-label="Sort artwork"
+              >
+                <option value="newest">Newest first</option>
+                <option value="price-low">Price low to high</option>
+                <option value="price-high">Price high to low</option>
+                <option value="title">Title A-Z</option>
+              </select>
+            </label>
+
+            <p className="text-sm text-muted-foreground">
+              Showing {paginatedArtworks.length} of {filteredArtworks.length} artwork items
+            </p>
+          </div>
         </div>
       </section>
 
@@ -358,6 +464,7 @@ export default function ArtGallery() {
                   setSelectedCollection("ALL");
                   setSelectedOrientation("ALL");
                   setSortMode("newest");
+                  setCurrentPage(1);
                 }}
                 className="px-5 py-2.5 rounded-lg border border-primary text-primary hover:bg-primary/10 transition-colors"
               >
@@ -365,62 +472,129 @@ export default function ArtGallery() {
               </button>
             </div>
           ) : (
-            <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
-              {filteredArtworks.map((artwork) => (
-                <article
-                  key={artwork.id}
-                  id={artwork.id}
-                  className="glass-vibrant rounded-2xl overflow-hidden border border-border hover:border-primary/40 transition-colors"
-                >
-                  <div className="h-72">
-                    <img
-                      src={artwork.image}
-                      alt={artwork.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  <div className="p-6">
-                    <div className="flex items-center justify-between gap-4 mb-3">
-                      <p className="text-xs font-semibold tracking-[0.18em] text-accent uppercase">
-                        {artwork.collection}
-                      </p>
-                      <p className="text-sm font-semibold text-primary">
-                        {currency.format(artwork.price)}
-                      </p>
+            <>
+              <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                {paginatedArtworks.map((artwork) => (
+                  <article
+                    key={artwork.id}
+                    id={artwork.id}
+                    className="glass-vibrant rounded-2xl overflow-hidden border border-border hover:border-primary/40 transition-colors"
+                  >
+                    <div className="h-72">
+                      <img
+                        src={artwork.image}
+                        alt={artwork.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
 
-                    <h2 className="text-2xl font-display font-bold tracking-wide mb-3">
-                      {artwork.title}
-                    </h2>
-                    <p className="text-muted-foreground mb-5">{artwork.description}</p>
+                    <div className="p-6">
+                      <div className="flex items-center justify-between gap-4 mb-3">
+                        <p className="text-xs font-semibold tracking-[0.18em] text-accent uppercase">
+                          {artwork.collection}
+                        </p>
+                        <p className="text-sm font-semibold text-primary">
+                          {currency.format(artwork.price)}
+                        </p>
+                      </div>
 
-                    <div className="grid grid-cols-2 gap-3 text-sm mb-6">
-                      <div className="rounded-lg border border-border p-3 bg-secondary/40">
-                        <p className="text-muted-foreground mb-1">Size</p>
-                        <p className="font-medium text-foreground">{artwork.size}</p>
+                      <h2 className="text-2xl font-display font-bold tracking-wide mb-3">
+                        {artwork.title}
+                      </h2>
+                      <p className="text-muted-foreground mb-5">{artwork.description}</p>
+
+                      <div className="grid grid-cols-2 gap-3 text-sm mb-6">
+                        <div className="rounded-lg border border-border p-3 bg-secondary/40">
+                          <p className="text-muted-foreground mb-1">Size</p>
+                          <p className="font-medium text-foreground">{artwork.size}</p>
+                        </div>
+                        <div className="rounded-lg border border-border p-3 bg-secondary/40">
+                          <p className="text-muted-foreground mb-1">Orientation</p>
+                          <p className="font-medium text-foreground">{artwork.orientation}</p>
+                        </div>
+                        <div className="rounded-lg border border-border p-3 bg-secondary/40 col-span-2">
+                          <p className="text-muted-foreground mb-1">Canvas Finish</p>
+                          <p className="font-medium text-foreground">{artwork.finish}</p>
+                        </div>
                       </div>
-                      <div className="rounded-lg border border-border p-3 bg-secondary/40">
-                        <p className="text-muted-foreground mb-1">Orientation</p>
-                        <p className="font-medium text-foreground">{artwork.orientation}</p>
-                      </div>
-                      <div className="rounded-lg border border-border p-3 bg-secondary/40 col-span-2">
-                        <p className="text-muted-foreground mb-1">Canvas Finish</p>
-                        <p className="font-medium text-foreground">{artwork.finish}</p>
-                      </div>
+
+                      <Link
+                        to={`/contact?interest=${artwork.id}`}
+                        className="inline-flex items-center gap-2 font-semibold text-primary hover:text-primary/80 transition-colors"
+                      >
+                        Request purchase
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
+                  </article>
+                ))}
+              </div>
 
-                    <Link
-                      to={`/contact?interest=${artwork.id}`}
-                      className="inline-flex items-center gap-2 font-semibold text-primary hover:text-primary/80 transition-colors"
+              {totalPages > 1 && (
+                <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+                    disabled={safeCurrentPage === 1}
+                    className="rounded-lg border border-border px-4 py-2 text-sm disabled:opacity-50"
+                  >
+                    Previous
+                  </button>
+
+                  {pageNumbers[0] > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => setCurrentPage(1)}
+                        className="rounded-lg border border-border px-3 py-2 text-sm"
+                      >
+                        1
+                      </button>
+                      {pageNumbers[0] > 2 && <span className="px-1 text-muted-foreground">...</span>}
+                    </>
+                  )}
+
+                  {pageNumbers.map((pageNumber) => (
+                    <button
+                      key={pageNumber}
+                      type="button"
+                      onClick={() => setCurrentPage(pageNumber)}
+                      className={`rounded-lg border px-3 py-2 text-sm ${
+                        pageNumber === safeCurrentPage
+                          ? "border-primary bg-primary/20 text-primary"
+                          : "border-border"
+                      }`}
                     >
-                      Request purchase
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
+                      {pageNumber}
+                    </button>
+                  ))}
+
+                  {pageNumbers[pageNumbers.length - 1] < totalPages && (
+                    <>
+                      {pageNumbers[pageNumbers.length - 1] < totalPages - 1 && (
+                        <span className="px-1 text-muted-foreground">...</span>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => setCurrentPage(totalPages)}
+                        className="rounded-lg border border-border px-3 py-2 text-sm"
+                      >
+                        {totalPages}
+                      </button>
+                    </>
+                  )}
+
+                  <button
+                    type="button"
+                    onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
+                    disabled={safeCurrentPage === totalPages}
+                    className="rounded-lg border border-border px-4 py-2 text-sm disabled:opacity-50"
+                  >
+                    Next
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </div>
       </section>
