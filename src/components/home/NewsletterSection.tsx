@@ -18,7 +18,7 @@ export function NewsletterSection() {
     }
 
     // Open user's mail client to send subscription to inbox
-    const to = "info@mazinmind.digital.com";
+    const to = "info@mazinmind.digital";
     const subject = encodeURIComponent("Newsletter subscription");
     const body = encodeURIComponent(
       `Please subscribe ${email} to the newsletter.`,

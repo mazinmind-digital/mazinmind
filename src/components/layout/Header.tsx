@@ -44,11 +44,11 @@ export function Header() {
 
           <div className="relative z-[90] flex items-center gap-3">
             <a
-              href="tel:+16173831220"
+              href="tel:+16174538776"
               className="hidden xl:flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors font-medium"
             >
               <Phone className="w-4 h-4 text-accent" />
-              <span>+1 (617) 383-1220</span>
+              <span>+1 (617) 453-8776</span>
             </a>
 
             <DropdownMenu>

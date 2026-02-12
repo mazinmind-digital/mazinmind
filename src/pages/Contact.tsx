@@ -56,8 +56,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "PHONE",
-    value: "+1 (617) 383-1220",
-    href: "tel:+16173831220",
+    value: "+1 (617) 453-8776",
+    href: "tel:+16174538776",
     color: "primary",
   },
   {
