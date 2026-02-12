@@ -6,7 +6,6 @@ import {
   useMemo,
   useState,
 } from "react";
-import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -15,7 +14,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import brainCircuit from "@/assets/brain-circuit.png";
 
 export type LegalDocumentType = "privacy" | "terms";
 
@@ -43,29 +41,7 @@ type PolicySection = {
 const PRIVACY_UPDATED = "February 11, 2026";
 const TERMS_UPDATED = "February 11, 2026";
 const HUBSPOT_MEETINGS_URL = "https://meetings-na2.hubspot.com/randy-mazin";
-const GOOGLE_VOICE_E164 = "+16174538776";
-const GOOGLE_VOICE_DISPLAY = "+1 (617) 453-8776";
-const GOOGLE_VOICE_SMS_URL = `sms:${GOOGLE_VOICE_E164}`;
-const GOOGLE_VOICE_CALL_URL = `tel:${GOOGLE_VOICE_E164}`;
-const HUBSPOT_SALES_ACTOR = "sales_ai";
-const HUBSPOT_MOBILE_CHATFLOW = "mmmobile";
-const HUBSPOT_CHAT_ACTOR_PARAM = "chat_actor";
-const HUBSPOT_CHATFLOW_PARAM = "chatflow";
 const COOKIE_STORAGE_KEY = "mazinmind_cookie_preferences_v1";
-
-type HubSpotWidget = {
-  open?: () => void;
-  load?: (options?: { widgetOpen?: boolean }) => void;
-  refresh?: (options?: { openToNewThread?: boolean }) => void;
-  status?: () => { loaded: boolean; pending: boolean };
-};
-
-type WindowWithHubSpot = Window & {
-  hsConversationsOnReady?: Array<() => void>;
-  HubSpotConversations?: {
-    widget?: HubSpotWidget;
-  };
-};
 
 const privacySections: PolicySection[] = [
   {
@@ -304,90 +280,6 @@ function ScheduleConsultationModal({
   );
 }
 
-function ChatNowModal({
-  isOpen,
-  onOpenChange,
-  onOpenHubSpotChat,
-}: {
-  isOpen: boolean;
-  onOpenChange: (open: boolean) => void;
-  onOpenHubSpotChat: (actor?: string) => boolean;
-}) {
-  const smsBody = encodeURIComponent(
-    "Hi MazinMind, I would like to chat about AI services.",
-  );
-
-  return (
-    <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[95vw] max-w-md border-primary/30 p-0 sm:rounded-2xl">
-        <DialogHeader className="border-b border-border px-6 py-5 text-left">
-          <DialogTitle className="text-2xl font-display tracking-wide">
-            Chat Now
-          </DialogTitle>
-          <DialogDescription className="text-sm text-muted-foreground">
-            Text us at {GOOGLE_VOICE_DISPLAY} or continue in HubSpot.
-          </DialogDescription>
-        </DialogHeader>
-
-        <div className="space-y-3 px-6 py-5">
-          <Button
-            asChild
-            className="w-full bg-gradient-primary text-primary-foreground font-semibold"
-          >
-            <a href={`${GOOGLE_VOICE_SMS_URL}?body=${smsBody}`}>
-              Chat Now via Google Voice
-            </a>
-          </Button>
-
-          <Button
-            type="button"
-            variant="outline"
-            className="w-full border-primary/40"
-            onClick={() => {
-              onOpenChange(false);
-              onOpenHubSpotChat(HUBSPOT_SALES_ACTOR);
-            }}
-          >
-            <MessageCircle className="mr-2 h-4 w-4" />
-            Open HubSpot AI Sales Chat
-          </Button>
-
-          <p className="text-sm text-muted-foreground">
-            Prefer a call?{" "}
-            <a
-              href={GOOGLE_VOICE_CALL_URL}
-              className="font-medium text-primary hover:underline"
-            >
-              {GOOGLE_VOICE_DISPLAY}
-            </a>
-          </p>
-        </div>
-      </DialogContent>
-    </Dialog>
-  );
-}
-
-function FloatingChatBubble({ onOpen }: { onOpen: () => void }) {
-  return (
-    <button
-      type="button"
-      onClick={onOpen}
-      className="group fixed bottom-6 left-6 z-[125] h-14 w-14 rounded-full border border-primary/45 bg-background/80 shadow-elevated backdrop-blur-xl transition-all duration-200 hover:scale-105 hover:border-primary/70"
-      aria-label="Open chat now modal"
-    >
-      <span className="absolute inset-[3px] overflow-hidden rounded-full">
-        <img
-          src={brainCircuit}
-          alt=""
-          className="h-full w-full object-cover opacity-75"
-        />
-        <span className="absolute inset-0 bg-background/45" />
-      </span>
-      <MessageCircle className="relative mx-auto h-6 w-6 text-primary transition-colors group-hover:text-white" />
-    </button>
-  );
-}
-
 type CookiePreferences = {
   necessary: true;
   analytics: boolean;
@@ -567,63 +459,6 @@ export function SiteOverlaysProvider({ children }: { children: ReactNode }) {
     null,
   );
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);
-  const [isChatOpen, setIsChatOpen] = useState(false);
-
-  const applyHubSpotTargeting = (actor: string) => {
-    const currentUrl = new URL(window.location.href);
-
-    currentUrl.searchParams.set(HUBSPOT_CHAT_ACTOR_PARAM, actor);
-
-    if (window.matchMedia("(max-width: 767px)").matches) {
-      currentUrl.searchParams.set(
-        HUBSPOT_CHATFLOW_PARAM,
-        HUBSPOT_MOBILE_CHATFLOW,
-      );
-    } else {
-      currentUrl.searchParams.delete(HUBSPOT_CHATFLOW_PARAM);
-    }
-
-    window.history.replaceState(
-      {},
-      "",
-      `${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`,
-    );
-  };
-
-  const openHubSpotChat = (actor: string = HUBSPOT_SALES_ACTOR) => {
-    applyHubSpotTargeting(actor);
-
-    const win = window as WindowWithHubSpot;
-    const hubspot = win.HubSpotConversations;
-    const widget = hubspot?.widget;
-
-    if (!widget) {
-      if (!win.hsConversationsOnReady) {
-        win.hsConversationsOnReady = [];
-      }
-      win.hsConversationsOnReady.push(() => {
-        openHubSpotChat(actor);
-      });
-      return false;
-    }
-
-    const status = widget.status?.();
-
-    if (!status?.loaded && typeof widget.load === "function") {
-      widget.load({ widgetOpen: true });
-    }
-
-    if (typeof widget.refresh === "function") {
-      widget.refresh({ openToNewThread: true });
-    }
-
-    if (!widget.open) {
-      return false;
-    }
-
-    widget.open();
-    return true;
-  };
 
   const contextValue = useMemo(
     () => ({
@@ -644,12 +479,6 @@ export function SiteOverlaysProvider({ children }: { children: ReactNode }) {
       <ScheduleConsultationModal
         isOpen={isScheduleOpen}
         onOpenChange={setIsScheduleOpen}
-      />
-      <FloatingChatBubble onOpen={() => setIsChatOpen(true)} />
-      <ChatNowModal
-        isOpen={isChatOpen}
-        onOpenChange={setIsChatOpen}
-        onOpenHubSpotChat={openHubSpotChat}
       />
       <CookieConsentBanner
         onOpenLegal={(document) => setOpenDocument(document)}
