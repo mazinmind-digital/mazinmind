@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import { Helmet } from "react-helmet-async";
 import {
   Brain,
@@ -220,13 +221,19 @@ export default function Services() {
                 >
                   {/* Icon Card */}
                   <div className="lg:w-1/3 flex justify-center">
-                    <div
-                      className={`w-72 h-72 glass-vibrant rounded-3xl flex items-center justify-center shadow-elevated border ${colors.split(" ")[1]} hover:glow-primary transition-all`}
-                    >
-                      <service.icon
-                        className={`w-36 h-36 ${colors.split(" ")[0]}`}
-                      />
-                    </div>
+                    <GraffitiIcon
+                      icon={service.icon}
+                      tone={
+                        service.color as
+                          | "primary"
+                          | "accent"
+                          | "electric"
+                          | "warning"
+                          | "neon"
+                      }
+                      className={`h-72 w-72 rounded-3xl ${colors.split(" ")[1]} hover:glow-primary transition-all`}
+                      iconClassName={`w-36 h-36 ${colors.split(" ")[0]}`}
+                    />
                   </div>
 
                   {/* Content */}
@@ -308,9 +315,12 @@ export default function Services() {
                   <div className="hidden lg:block absolute top-12 left-1/2 w-full h-1 bg-gradient-primary opacity-30" />
                 )}
                 <div className="glass-vibrant rounded-2xl p-8 text-center relative z-10 border border-primary/20 hover:glow-primary transition-all">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6 glow-primary">
-                    <step.icon className="w-8 h-8 text-primary-foreground" />
-                  </div>
+                  <GraffitiIcon
+                    icon={step.icon}
+                    size="lg"
+                    tone="primary"
+                    className="mx-auto mb-6"
+                  />
                   <div className="text-sm text-gradient-accent font-bold mb-2 tracking-wider">
                     STEP {index + 1}
                   </div>

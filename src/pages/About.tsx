@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import {
   ArrowRight,
   Users,
@@ -238,9 +239,13 @@ export default function About() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4 glass-vibrant rounded-xl p-6 border border-primary/20 hover:glow-primary transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                    <Zap className="w-6 h-6 text-primary-foreground" />
-                  </div>
+                  <GraffitiIcon
+                    icon={Zap}
+                    size="sm"
+                    tone="primary"
+                    className="flex-shrink-0"
+                    iconClassName="h-6 w-6"
+                  />
                   <div>
                     <h4 className="font-display text-lg font-bold text-foreground mb-1 tracking-wide">
                       AI-POWERED EFFICIENCY
@@ -251,9 +256,13 @@ export default function About() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4 glass-vibrant rounded-xl p-6 border border-accent/20 hover:glow-accent transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-accent flex items-center justify-center flex-shrink-0">
-                    <Users className="w-6 h-6 text-accent-foreground" />
-                  </div>
+                  <GraffitiIcon
+                    icon={Users}
+                    size="sm"
+                    tone="accent"
+                    className="flex-shrink-0"
+                    iconClassName="h-6 w-6"
+                  />
                   <div>
                     <h4 className="font-display text-lg font-bold text-foreground mb-1 tracking-wide">
                       HUMAN EXPERTISE
@@ -265,9 +274,13 @@ export default function About() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4 glass-vibrant rounded-xl p-6 border border-electric/20 hover:glow-electric transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-electric flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-electric-foreground" />
-                  </div>
+                  <GraffitiIcon
+                    icon={Clock}
+                    size="sm"
+                    tone="electric"
+                    className="flex-shrink-0"
+                    iconClassName="h-6 w-6"
+                  />
                   <div>
                     <h4 className="font-display text-lg font-bold text-foreground mb-1 tracking-wide">
                       RAPID DELIVERY
@@ -282,11 +295,15 @@ export default function About() {
 
             <div className="glass-vibrant rounded-3xl p-10 lg:p-14 shadow-elevated border border-primary/30">
               <div className="text-center">
-                <div className="w-28 h-28 rounded-3xl bg-gradient-primary flex items-center justify-center mx-auto mb-8 glow-primary animate-pulse-glow">
-                  <span className="text-5xl font-display font-bold text-primary-foreground">
+                <GraffitiIcon
+                  tone="primary"
+                  size="hero"
+                  className="mx-auto mb-8 animate-pulse-glow h-28 w-28"
+                >
+                  <span className="text-5xl font-display font-bold">
                     R
                   </span>
-                </div>
+                </GraffitiIcon>
                 <h3 className="text-3xl font-display font-bold mb-2 tracking-wider">
                   RANDY MAZIN
                 </h3>
@@ -341,9 +358,12 @@ export default function About() {
                   key={value.title}
                   className={`glass-vibrant rounded-2xl p-8 text-center border ${colors.border} ${colors.glow} transition-all`}
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6">
-                    <value.icon className="w-8 h-8 text-primary-foreground" />
-                  </div>
+                  <GraffitiIcon
+                    icon={value.icon}
+                    size="lg"
+                    tone={value.color as "primary" | "accent" | "electric" | "warning"}
+                    className="mx-auto mb-6"
+                  />
                   <h3
                     className={`font-display text-xl font-bold ${colors.text} mb-3 tracking-wider`}
                   >
@@ -385,11 +405,11 @@ export default function About() {
                   className={`glass-vibrant rounded-2xl p-8 border ${colors.border} ${colors.glow} transition-all`}
                 >
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center glow-primary">
-                      <span className="text-2xl font-display font-bold text-primary-foreground">
+                    <GraffitiIcon tone="primary" size="md">
+                      <span className="text-2xl font-display font-bold">
                         {process.step}
                       </span>
-                    </div>
+                    </GraffitiIcon>
                     <h3 className="text-xl font-display font-bold text-foreground tracking-wider">
                       {process.title.toUpperCase()}
                     </h3>
@@ -417,9 +437,12 @@ export default function About() {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="w-24 h-24 rounded-3xl bg-gradient-primary flex items-center justify-center mx-auto mb-10 glow-primary animate-pulse-glow">
-              <Rocket className="w-12 h-12 text-primary-foreground" />
-            </div>
+            <GraffitiIcon
+              icon={Rocket}
+              tone="primary"
+              size="hero"
+              className="mx-auto mb-10 animate-pulse-glow"
+            />
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-8 tracking-wider">
               READY TO <span className="text-gradient-accent">PARTNER</span>{" "}
               WITH US?

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Rocket, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import ScheduleButton from "@/components/ui/ScheduleButton";
 import bostonColorful from "@/assets/boston-colorful.png";
 
@@ -34,9 +35,12 @@ export function CTASection() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Icon */}
           <div className="relative inline-block mb-10">
-            <div className="w-24 h-24 rounded-3xl bg-gradient-primary flex items-center justify-center glow-primary animate-pulse-glow">
-              <Rocket className="w-12 h-12 text-primary-foreground" />
-            </div>
+            <GraffitiIcon
+              icon={Rocket}
+              tone="primary"
+              size="hero"
+              className="animate-pulse-glow"
+            />
             <Sparkles className="absolute -top-2 -right-2 w-8 h-8 text-warning animate-neon-flicker" />
           </div>
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import mazinmindLogo from "@/assets/mazinmind-logo.png";
 
 const footerLinks = {
@@ -60,10 +61,10 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-xl glass-vibrant flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-primary transition-all"
+                  className="hover:scale-105 transition-transform"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <GraffitiIcon icon={social.icon} size="sm" tone="primary" />
                 </a>
               ))}
             </div>
@@ -118,7 +119,7 @@ export function Footer() {
                   href="tel:+16174538776"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
-                  <Phone className="w-5 h-5 text-primary" />
+                  <GraffitiIcon icon={Phone} size="sm" tone="primary" />
                   <span>+1 (617) 453-8776</span>
                 </a>
               </li>
@@ -127,12 +128,17 @@ export function Footer() {
                   href="mailto:info@mazinmind.digital"
                   className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors font-medium"
                 >
-                  <Mail className="w-5 h-5 text-accent" />
+                  <GraffitiIcon icon={Mail} size="sm" tone="accent" />
                   <span>info@mazinmind.digital</span>
                 </a>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground font-medium">
-                <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-electric" />
+                <GraffitiIcon
+                  icon={MapPin}
+                  size="sm"
+                  tone="electric"
+                  className="flex-shrink-0"
+                />
                 <span>Boston, MA, USA</span>
               </li>
             </ul>

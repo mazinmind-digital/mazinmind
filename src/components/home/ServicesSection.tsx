@@ -11,6 +11,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import brainGreen from "@/assets/brain-green.png";
 
 const services = [
@@ -216,11 +217,19 @@ export function ServicesSection() {
               >
                 {/* Service Header */}
                 <div className="flex items-start gap-4 mb-4">
-                  <div
-                    className={`w-16 h-16 rounded-xl ${colors.gradient} flex items-center justify-center flex-shrink-0`}
-                  >
-                    <service.icon className="w-8 h-8 text-primary-foreground" />
-                  </div>
+                  <GraffitiIcon
+                    icon={service.icon}
+                    tone={
+                      service.color as
+                        | "primary"
+                        | "accent"
+                        | "electric"
+                        | "warning"
+                        | "neon"
+                    }
+                    size="lg"
+                    className="flex-shrink-0"
+                  />
                   <div className="flex-1">
                     <h3
                       className={`text-2xl font-display font-bold ${colors.text} mb-2 tracking-wider`}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, ArrowRight, Sparkles, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 
@@ -44,9 +45,7 @@ export function NewsletterSection() {
         <div className="max-w-3xl mx-auto glass-vibrant rounded-3xl p-10 md:p-14 border border-primary/30">
           <div className="text-center mb-8">
             {/* Icon */}
-            <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6 glow-primary">
-              <Mail className="w-8 h-8 text-primary-foreground" />
-            </div>
+            <GraffitiIcon icon={Mail} tone="primary" size="lg" className="mx-auto mb-6" />
 
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm mb-6">
               <Sparkles className="w-4 h-4 text-primary animate-neon-flicker" />
@@ -68,7 +67,7 @@ export function NewsletterSection() {
           {/* Form */}
           {isSubscribed ? (
             <div className="flex items-center justify-center gap-3 text-primary py-4">
-              <CheckCircle className="w-8 h-8" />
+              <GraffitiIcon icon={CheckCircle} tone="primary" size="sm" />
               <span className="text-xl font-display font-bold tracking-wider">
                 THANK YOU FOR SUBSCRIBING!
               </span>

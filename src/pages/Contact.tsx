@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import { Helmet } from "react-helmet-async";
 import ScheduleButton from "@/components/ui/ScheduleButton";
 import { Input } from "@/components/ui/input";
@@ -287,9 +288,18 @@ export default function Contact() {
                       key={item.title}
                       className={`flex items-start gap-4 glass-vibrant rounded-xl p-6 border ${colors.border} ${colors.glow} transition-all`}
                     >
-                      <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                        <item.icon className="w-7 h-7 text-primary-foreground" />
-                      </div>
+                      <GraffitiIcon
+                        icon={item.icon}
+                        size="md"
+                        tone={
+                          item.color as
+                            | "primary"
+                            | "accent"
+                            | "electric"
+                            | "warning"
+                        }
+                        className="flex-shrink-0"
+                      />
                       <div>
                         <h4
                           className={`font-display font-bold ${colors.text} mb-1 tracking-wider`}
@@ -317,9 +327,7 @@ export default function Contact() {
               {/* Schedule CTA */}
               <div className="glass-vibrant rounded-2xl p-8 border border-accent/30">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-accent flex items-center justify-center glow-accent">
-                    <Calendar className="w-7 h-7 text-accent-foreground" />
-                  </div>
+                  <GraffitiIcon icon={Calendar} size="md" tone="accent" />
                   <h3 className="text-2xl font-display font-bold tracking-wider">
                     SCHEDULE NOW
                   </h3>
@@ -341,9 +349,12 @@ export default function Contact() {
             <div className="glass-vibrant rounded-3xl p-10 lg:p-12 shadow-elevated border border-primary/30">
               {isSubmitted ? (
                 <div className="text-center py-12">
-                  <div className="w-24 h-24 rounded-3xl bg-gradient-primary flex items-center justify-center mx-auto mb-8 glow-primary animate-pulse-glow">
-                    <CheckCircle className="w-12 h-12 text-primary-foreground" />
-                  </div>
+                  <GraffitiIcon
+                    icon={CheckCircle}
+                    tone="primary"
+                    size="hero"
+                    className="mx-auto mb-8 animate-pulse-glow"
+                  />
                   <h3 className="text-3xl font-display font-bold mb-4 tracking-wider">
                     MESSAGE SENT!
                   </h3>
