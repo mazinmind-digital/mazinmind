@@ -33,13 +33,15 @@ export function Header() {
           {/* Left logo that overhangs below the header */}
           <Link
             to="/"
-            className="group absolute left-0 top-1/2 z-[70] -translate-y-[20%] pt-[5px]"
+            className="group absolute left-0 top-1/2 z-[70] -translate-y-[20%] -mt-[6px] pt-[5px]"
           >
-            <img
-              src={mazinmindLogo}
-              alt="MazinMind Digital"
-              className="h-[114px] w-auto max-w-none transition-transform group-hover:scale-105 drop-shadow-xl"
-            />
+            <span className="block h-[118px] overflow-hidden">
+              <img
+                src={mazinmindLogo}
+                alt="MazinMind Digital"
+                className="h-[125px] w-auto max-w-none -translate-y-[4px] transition-transform group-hover:scale-105 drop-shadow-xl"
+              />
+            </span>
           </Link>
 
           <div className="relative z-[90] flex items-center gap-3">

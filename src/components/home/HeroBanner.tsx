@@ -2,7 +2,7 @@
 import React from "react";
 import { useSiteOverlay } from "@/components/layout/site-overlays";
 import mazinmindWordmark from "@/assets/mazinmind-wordmark.png";
-import brainGreen from "@/assets/brain-green.png";
+import heroGraffiti from "@/assets/hero-graffiti.jpg";
 
 export default function HeroBanner() {
   const { openScheduleModal } = useSiteOverlay();
@@ -13,7 +13,7 @@ export default function HeroBanner() {
       <div
         className="absolute inset-0 opacity-35"
         style={{
-          backgroundImage: `url(${brainGreen})`,
+          backgroundImage: `url(${heroGraffiti})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           mixBlendMode: "screen",
