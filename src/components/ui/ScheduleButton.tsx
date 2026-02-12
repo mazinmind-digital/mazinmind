@@ -9,7 +9,12 @@ type Props = {
   url?: string;
 };
 
-export function ScheduleButton({ className, children, provider = "hubspot", url }: Props) {
+export function ScheduleButton({
+  className,
+  children,
+  provider = "hubspot",
+  url,
+}: Props) {
   const handleClick = () => {
     const target = url ?? (provider === "hubspot" ? DEFAULT_HUBSPOT_URL : "");
 
@@ -19,7 +24,11 @@ export function ScheduleButton({ className, children, provider = "hubspot", url 
     const left = Math.max(0, Math.floor((window.screen.width - w) / 2));
     const top = Math.max(0, Math.floor((window.screen.height - h) / 2));
     try {
-      window.open(target, "hubspot_schedule", `width=${w},height=${h},left=${left},top=${top}`);
+      window.open(
+        target,
+        "hubspot_schedule",
+        `width=${w},height=${h},left=${left},top=${top}`,
+      );
     } catch (e) {
       window.open(target, "_blank", "noopener,noreferrer");
     }

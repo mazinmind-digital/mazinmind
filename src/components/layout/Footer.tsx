@@ -35,7 +35,7 @@ export function Footer() {
       {/* Background Effects */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px]" />
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[150px]" />
-      
+
       <div className="container mx-auto px-4 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
@@ -49,8 +49,9 @@ export function Footer() {
               />
             </Link>
             <p className="text-muted-foreground leading-relaxed">
-              Transform your business with AI-powered solutions. We combine cutting-edge technology 
-              with human expertise to deliver exceptional results.
+              Transform your business with AI-powered solutions. We combine
+              cutting-edge technology with human expertise to deliver
+              exceptional results.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -70,7 +71,9 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-display text-xl font-bold text-foreground mb-6 tracking-wider">COMPANY</h4>
+            <h4 className="font-display text-xl font-bold text-foreground mb-6 tracking-wider">
+              COMPANY
+            </h4>
             <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -87,7 +90,9 @@ export function Footer() {
 
           {/* Services Links */}
           <div>
-            <h4 className="font-display text-xl font-bold text-foreground mb-6 tracking-wider">SERVICES</h4>
+            <h4 className="font-display text-xl font-bold text-foreground mb-6 tracking-wider">
+              SERVICES
+            </h4>
             <ul className="space-y-4">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
@@ -104,15 +109,17 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-display text-xl font-bold text-foreground mb-6 tracking-wider">CONTACT</h4>
+            <h4 className="font-display text-xl font-bold text-foreground mb-6 tracking-wider">
+              CONTACT
+            </h4>
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:+16173831220"
+                  href="tel:+16174538776"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
                   <Phone className="w-5 h-5 text-primary" />
-                  <span>+1 (617) 383-1220</span>
+                  <span>+1 (617) 453-8776</span>
                 </a>
               </li>
               <li>
@@ -120,8 +127,8 @@ export function Footer() {
                   href="mailto:info@mazinmind.digital"
                   className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors font-medium"
                 >
-                    <Mail className="w-5 h-5 text-accent" />
-                    <span>info@mazinmind.digital</span>
+                  <Mail className="w-5 h-5 text-accent" />
+                  <span>info@mazinmind.digital</span>
                 </a>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground font-medium">
@@ -135,7 +142,11 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-primary/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground">
-            © {new Date().getFullYear()} <span className="text-gradient-primary font-semibold">MazinMind Digital</span>. All rights reserved.
+            © {new Date().getFullYear()}{" "}
+            <span className="text-gradient-primary font-semibold">
+              MazinMind Digital
+            </span>
+            . All rights reserved.
           </p>
           <div className="flex gap-6">
             {footerLinks.legal.map((link) => (

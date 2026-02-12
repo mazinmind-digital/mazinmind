@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { 
-  Brain, 
-  TrendingUp, 
-  Cog, 
-  FileText, 
-  Code, 
-  ChevronDown, 
+import {
+  Brain,
+  TrendingUp,
+  Cog,
+  FileText,
+  Code,
+  ChevronDown,
   ChevronUp,
-  ArrowRight 
+  ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import brainGreen from "@/assets/brain-green.png";
@@ -164,7 +164,7 @@ export function ServicesSection() {
 
   const toggleService = (id: string) => {
     setExpandedServices((prev) =>
-      prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id],
     );
   };
 
@@ -173,31 +173,34 @@ export function ServicesSection() {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 grid-pattern opacity-20" />
-      
+
       {/* Graffiti Background */}
-      <div 
+      <div
         className="absolute right-0 top-0 w-1/2 h-full opacity-20"
         style={{
           backgroundImage: `url(${brainGreen})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          mixBlendMode: 'screen',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          mixBlendMode: "screen",
         }}
       />
-      
+
       {/* Floating Orbs */}
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-accent/20 rounded-full blur-[100px]" />
       <div className="absolute bottom-1/4 left-0 w-[300px] h-[300px] bg-electric/20 rounded-full blur-[100px]" />
-      
+
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 tracking-wider">
-            OUR <span className="text-gradient-primary text-shadow-neon">SERVICES</span>
+            OUR{" "}
+            <span className="text-gradient-primary text-shadow-neon">
+              SERVICES
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Comprehensive AI and digital solutions to transform your business operations 
-            and drive sustainable growth.
+            Comprehensive AI and digital solutions to transform your business
+            operations and drive sustainable growth.
           </p>
         </div>
 
@@ -213,23 +216,29 @@ export function ServicesSection() {
               >
                 {/* Service Header */}
                 <div className="flex items-start gap-4 mb-4">
-                  <div className={`w-16 h-16 rounded-xl ${colors.gradient} flex items-center justify-center flex-shrink-0`}>
+                  <div
+                    className={`w-16 h-16 rounded-xl ${colors.gradient} flex items-center justify-center flex-shrink-0`}
+                  >
                     <service.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <div className="flex-1">
-                    <h3 className={`text-2xl font-display font-bold ${colors.text} mb-2 tracking-wider`}>
+                    <h3
+                      className={`text-2xl font-display font-bold ${colors.text} mb-2 tracking-wider`}
+                    >
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground">
-                      {service.shortDesc}
-                    </p>
+                    <p className="text-muted-foreground">{service.shortDesc}</p>
                   </div>
                 </div>
 
                 {/* Expandable Content */}
-                <div className={`overflow-hidden transition-all duration-300 ${
-                  expandedServices.includes(service.id) ? "max-h-[800px]" : "max-h-0"
-                }`}>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    expandedServices.includes(service.id)
+                      ? "max-h-[800px]"
+                      : "max-h-0"
+                  }`}
+                >
                   <div className="pt-4 border-t border-border/50 mt-4">
                     <pre className="text-sm text-muted-foreground whitespace-pre-wrap font-sans leading-relaxed">
                       {service.fullDesc}
@@ -267,9 +276,9 @@ export function ServicesSection() {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <Button 
-            asChild 
-            size="lg" 
+          <Button
+            asChild
+            size="lg"
             className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-10 h-14 text-lg tracking-wider glow-primary"
           >
             <Link to="/services" className="flex items-center gap-3">

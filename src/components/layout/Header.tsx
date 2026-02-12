@@ -10,7 +10,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import mazinmindLogo from "@/assets/mazinmind-logo.png";
-import mazinmindWordmark from "@/assets/mazinmind-wordmark.png";
 import { useSiteOverlay } from "./site-overlays";
 
 const navigation = [
@@ -32,30 +31,24 @@ export function Header() {
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="relative flex h-24 items-center justify-end">
           {/* Left logo that overhangs below the header */}
-          <Link to="/" className="group absolute left-0 top-1/2 z-[70] -translate-y-[20%] pt-[10px]">
+          <Link
+            to="/"
+            className="group absolute left-0 top-1/2 z-[70] -translate-y-[20%] pt-[5px]"
+          >
             <img
               src={mazinmindLogo}
               alt="MazinMind Digital"
-              className="h-[143px] w-auto max-w-none transition-transform group-hover:scale-105 drop-shadow-xl"
+              className="h-[114px] w-auto max-w-none transition-transform group-hover:scale-105 drop-shadow-xl"
             />
           </Link>
 
-          {/* Centered wordmark */}
-          <div className="pointer-events-none absolute inset-x-0 top-1/2 z-[60] flex -translate-y-1/2 justify-center px-24">
-            <img
-              src={mazinmindWordmark}
-              alt="MazinMind"
-              className="h-14 w-auto max-w-[76vw] lg:h-20"
-            />
-          </div>
-
           <div className="relative z-[90] flex items-center gap-3">
-            <a 
-              href="tel:+16173831220" 
+            <a
+              href="tel:+16174538776"
               className="hidden xl:flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors font-medium"
             >
               <Phone className="w-4 h-4 text-accent" />
-              <span>+1 (617) 383-1220</span>
+              <span>+1 (617) 453-8776</span>
             </a>
 
             <DropdownMenu>
@@ -70,7 +63,11 @@ export function Header() {
                 </Button>
               </DropdownMenuTrigger>
 
-              <DropdownMenuContent align="end" sideOffset={10} className="w-60 border-primary/30">
+              <DropdownMenuContent
+                align="end"
+                sideOffset={10}
+                className="w-60 border-primary/30"
+              >
                 <DropdownMenuLabel>NAVIGATE</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {navigation.map((item) => (
@@ -78,7 +75,9 @@ export function Header() {
                     <Link
                       to={item.href}
                       className={`font-medium ${
-                        location.pathname === item.href ? "text-primary" : "text-foreground"
+                        location.pathname === item.href
+                          ? "text-primary"
+                          : "text-foreground"
                       }`}
                     >
                       {item.name}

@@ -7,7 +7,7 @@ describe("Footer", () => {
     render(
       <BrowserRouter>
         <Footer />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     const logo = screen.getByAltText(/MazinMind Digital/i);
     expect(logo).toBeInTheDocument();
@@ -17,7 +17,7 @@ describe("Footer", () => {
     render(
       <BrowserRouter>
         <Footer />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     expect(screen.getByText(/About Us/i)).toBeInTheDocument();
     expect(screen.getAllByText(/Services/i).length).toBeGreaterThan(0);
