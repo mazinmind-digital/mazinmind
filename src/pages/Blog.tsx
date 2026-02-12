@@ -35,7 +35,8 @@ type BlogPost = {
 const blogPosts: BlogPost[] = [
   {
     slug: "how-ai-automation-cuts-ops-costs",
-    title: "How AI Automation Can Cut Operating Costs Without Sacrificing Quality",
+    title:
+      "How AI Automation Can Cut Operating Costs Without Sacrificing Quality",
     excerpt:
       "A practical framework for identifying repetitive workflows, selecting the right automation stack, and measuring savings in the first 90 days.",
     category: "Automation",
@@ -71,7 +72,8 @@ const blogPosts: BlogPost[] = [
   },
   {
     slug: "predictive-analytics-for-marketing",
-    title: "Predictive Analytics for Marketing Teams: A Practical Starter Guide",
+    title:
+      "Predictive Analytics for Marketing Teams: A Practical Starter Guide",
     excerpt:
       "A step-by-step breakdown of how marketing teams can use predictive models to improve campaign timing, segmentation, and spend allocation.",
     category: "Marketing",
@@ -148,12 +150,18 @@ export default function Blog() {
   const [sortMode, setSortMode] = useState<SortMode>("newest");
 
   const categories = useMemo(
-    () => ["ALL", ...Array.from(new Set(blogPosts.map((post) => post.category)))],
+    () => [
+      "ALL",
+      ...Array.from(new Set(blogPosts.map((post) => post.category))),
+    ],
     [],
   );
 
   const tags = useMemo(
-    () => ["ALL", ...Array.from(new Set(blogPosts.flatMap((post) => post.tags)))],
+    () => [
+      "ALL",
+      ...Array.from(new Set(blogPosts.flatMap((post) => post.tags))),
+    ],
     [],
   );
 
@@ -170,21 +178,26 @@ export default function Blog() {
       const matchesCategory =
         selectedCategory === "ALL" || post.category === selectedCategory;
 
-      const matchesTag = selectedTag === "ALL" || post.tags.includes(selectedTag);
+      const matchesTag =
+        selectedTag === "ALL" || post.tags.includes(selectedTag);
 
       return matchesSearch && matchesCategory && matchesTag;
     });
 
     visible.sort((a, b) => {
       if (sortMode === "oldest") {
-        return new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime();
+        return (
+          new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime()
+        );
       }
 
       if (sortMode === "title") {
         return a.title.localeCompare(b.title);
       }
 
-      return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+      return (
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      );
     });
 
     return visible;
@@ -270,7 +283,9 @@ export default function Blog() {
         />
         <link rel="canonical" href="https://mazinmind.digital/blog" />
         <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
+        <script type="application/ld+json">
+          {JSON.stringify(itemListSchema)}
+        </script>
       </Helmet>
 
       <section className="py-24 relative overflow-hidden">
@@ -283,14 +298,19 @@ export default function Blog() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-vibrant text-sm font-medium mb-8">
               <NotebookPen className="w-5 h-5 text-primary" />
-              <span className="text-gradient-primary tracking-wide">LATEST INSIGHTS</span>
+              <span className="text-gradient-primary tracking-wide">
+                LATEST INSIGHTS
+              </span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 tracking-wider">
-              MAZINMIND <span className="text-gradient-primary text-shadow-neon">BLOG</span>
+              MAZINMIND{" "}
+              <span className="text-gradient-primary text-shadow-neon">
+                BLOG
+              </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Practical articles on AI implementation, automation systems, SEO strategy,
-              and digital growth.
+              Practical articles on AI implementation, automation systems, SEO
+              strategy, and digital growth.
             </p>
           </div>
         </div>
@@ -314,7 +334,9 @@ export default function Blog() {
               <span>Sort</span>
               <select
                 value={sortMode}
-                onChange={(event) => setSortMode(event.target.value as SortMode)}
+                onChange={(event) =>
+                  setSortMode(event.target.value as SortMode)
+                }
                 className="h-12 bg-transparent text-foreground focus:outline-none"
                 aria-label="Sort blog posts"
               >
@@ -326,7 +348,9 @@ export default function Blog() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold tracking-wide text-muted-foreground mb-3">CATEGORIES</p>
+            <p className="text-sm font-semibold tracking-wide text-muted-foreground mb-3">
+              CATEGORIES
+            </p>
             <div className="flex flex-wrap gap-3">
               {categories.map((category) => {
                 const active = selectedCategory === category;
@@ -349,7 +373,9 @@ export default function Blog() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold tracking-wide text-muted-foreground mb-3">POPULAR TAGS</p>
+            <p className="text-sm font-semibold tracking-wide text-muted-foreground mb-3">
+              POPULAR TAGS
+            </p>
             <div className="flex flex-wrap gap-2">
               {tags.map((tag) => {
                 const active = selectedTag === tag;
@@ -399,7 +425,9 @@ export default function Blog() {
                         <h2 className="text-3xl lg:text-4xl font-display font-bold tracking-wider mb-4">
                           {featuredPost.title}
                         </h2>
-                        <p className="text-muted-foreground text-lg mb-6">{featuredPost.excerpt}</p>
+                        <p className="text-muted-foreground text-lg mb-6">
+                          {featuredPost.excerpt}
+                        </p>
 
                         <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
                           <span className="inline-flex items-center gap-2">
@@ -458,13 +486,17 @@ export default function Blog() {
                             <p className="text-xs font-semibold tracking-[0.18em] text-accent uppercase">
                               {post.category}
                             </p>
-                            <p className="text-xs text-muted-foreground">{formatDate(post.publishedAt)}</p>
+                            <p className="text-xs text-muted-foreground">
+                              {formatDate(post.publishedAt)}
+                            </p>
                           </div>
 
                           <h3 className="text-2xl font-display font-bold tracking-wide mb-3">
                             {post.title}
                           </h3>
-                          <p className="text-muted-foreground mb-4">{post.excerpt}</p>
+                          <p className="text-muted-foreground mb-4">
+                            {post.excerpt}
+                          </p>
 
                           <div className="flex flex-wrap gap-2 mb-4">
                             {post.tags.map((tag) => (
@@ -494,9 +526,12 @@ export default function Blog() {
                 </>
               ) : (
                 <div className="glass-vibrant rounded-2xl border border-border p-10 text-center">
-                  <h2 className="text-3xl font-display font-bold mb-3 tracking-wide">No posts found</h2>
+                  <h2 className="text-3xl font-display font-bold mb-3 tracking-wide">
+                    No posts found
+                  </h2>
                   <p className="text-muted-foreground mb-6">
-                    Try adjusting your search query or clearing one of the filters.
+                    Try adjusting your search query or clearing one of the
+                    filters.
                   </p>
                   <button
                     type="button"
@@ -516,21 +551,33 @@ export default function Blog() {
 
             <aside className="space-y-6">
               <div className="glass-vibrant rounded-2xl border border-primary/20 p-6">
-                <h3 className="text-xl font-display font-bold tracking-wider mb-4">BLOG ARCHIVE</h3>
+                <h3 className="text-xl font-display font-bold tracking-wider mb-4">
+                  BLOG ARCHIVE
+                </h3>
                 <ul className="space-y-3">
                   {archive.map(([monthLabel, count]) => (
-                    <li key={monthLabel} className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">{monthLabel}</span>
-                      <span className="text-primary font-semibold">{count}</span>
+                    <li
+                      key={monthLabel}
+                      className="flex items-center justify-between text-sm"
+                    >
+                      <span className="text-muted-foreground">
+                        {monthLabel}
+                      </span>
+                      <span className="text-primary font-semibold">
+                        {count}
+                      </span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div className="glass-vibrant rounded-2xl border border-accent/20 p-6">
-                <h3 className="text-xl font-display font-bold tracking-wider mb-4">NEED A CUSTOM PLAN?</h3>
+                <h3 className="text-xl font-display font-bold tracking-wider mb-4">
+                  NEED A CUSTOM PLAN?
+                </h3>
                 <p className="text-muted-foreground mb-5">
-                  Get a practical roadmap for AI adoption, marketing performance, and process automation.
+                  Get a practical roadmap for AI adoption, marketing
+                  performance, and process automation.
                 </p>
                 <Link
                   to="/contact"

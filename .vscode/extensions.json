@@ -1,6 +1,3 @@
 {
-    "recommendations": [
-        "sourcery.sourcery",
-        "trunk.io"
-    ]
+  "recommendations": ["sourcery.sourcery", "trunk.io"]
 }

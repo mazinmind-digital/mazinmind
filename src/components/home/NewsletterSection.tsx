@@ -11,7 +11,7 @@ export function NewsletterSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       toast.error("Please enter your email address");
       return;
@@ -20,7 +20,9 @@ export function NewsletterSection() {
     // Open user's mail client to send subscription to inbox
     const to = "info@mazinmind.digital.com";
     const subject = encodeURIComponent("Newsletter subscription");
-    const body = encodeURIComponent(`Please subscribe ${email} to the newsletter.`);
+    const body = encodeURIComponent(
+      `Please subscribe ${email} to the newsletter.`,
+    );
     window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
     setIsLoading(false);
     setIsSubscribed(true);
@@ -33,7 +35,7 @@ export function NewsletterSection() {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-card" />
       <div className="absolute inset-0 grid-pattern opacity-10" />
-      
+
       {/* Glowing Orbs */}
       <div className="absolute top-0 right-1/4 w-[300px] h-[300px] bg-primary/20 rounded-full blur-[100px]" />
       <div className="absolute bottom-0 left-1/4 w-[250px] h-[250px] bg-accent/20 rounded-full blur-[100px]" />
@@ -45,17 +47,21 @@ export function NewsletterSection() {
             <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6 glow-primary">
               <Mail className="w-8 h-8 text-primary-foreground" />
             </div>
-            
+
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm mb-6">
               <Sparkles className="w-4 h-4 text-primary animate-neon-flicker" />
-              <span className="text-gradient-primary font-semibold tracking-wide">JOIN 1,000+ INNOVATORS</span>
+              <span className="text-gradient-primary font-semibold tracking-wide">
+                JOIN 1,000+ INNOVATORS
+              </span>
             </div>
-            
+
             <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4 tracking-wider">
-              STAY AHEAD WITH <span className="text-gradient-accent">AI INSIGHTS</span>
+              STAY AHEAD WITH{" "}
+              <span className="text-gradient-accent">AI INSIGHTS</span>
             </h3>
             <p className="text-muted-foreground">
-              Get the latest AI marketing trends, tips, and exclusive content delivered to your inbox.
+              Get the latest AI marketing trends, tips, and exclusive content
+              delivered to your inbox.
             </p>
           </div>
 
@@ -63,10 +69,15 @@ export function NewsletterSection() {
           {isSubscribed ? (
             <div className="flex items-center justify-center gap-3 text-primary py-4">
               <CheckCircle className="w-8 h-8" />
-              <span className="text-xl font-display font-bold tracking-wider">THANK YOU FOR SUBSCRIBING!</span>
+              <span className="text-xl font-display font-bold tracking-wider">
+                THANK YOU FOR SUBSCRIBING!
+              </span>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col sm:flex-row gap-4"
+            >
               <div className="relative flex-1">
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" />
                 <Input
@@ -77,8 +88,8 @@ export function NewsletterSection() {
                   className="pl-12 h-14 bg-secondary/50 border-primary/30 text-foreground placeholder:text-muted-foreground focus:border-primary focus:glow-primary text-base"
                 />
               </div>
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 disabled={isLoading}
                 className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold h-14 px-8 glow-primary tracking-wider"
               >

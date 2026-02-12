@@ -1,4 +1,11 @@
-import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -206,10 +213,15 @@ function LegalDocumentModal({
   const sections = isPrivacy ? privacySections : termsSections;
 
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => onOpenDocumentChange(open ? openDocument : null)}>
+    <Dialog
+      open={isOpen}
+      onOpenChange={(open) => onOpenDocumentChange(open ? openDocument : null)}
+    >
       <DialogContent className="w-[96vw] max-w-3xl border-primary/30 p-0 sm:rounded-2xl">
         <DialogHeader className="border-b border-border px-6 py-5 text-left">
-          <DialogTitle className="text-2xl font-display tracking-wide">{title}</DialogTitle>
+          <DialogTitle className="text-2xl font-display tracking-wide">
+            {title}
+          </DialogTitle>
           <DialogDescription className="text-sm text-muted-foreground">
             Last updated: {updatedDate}
           </DialogDescription>
@@ -218,12 +230,15 @@ function LegalDocumentModal({
         <div className="max-h-[65vh] overflow-y-auto px-6 py-5">
           <div className="space-y-6 text-sm leading-relaxed text-muted-foreground">
             <p>
-              This document is provided for general informational purposes and describes standard
-              website privacy and use practices for MazinMind Digital.
+              This document is provided for general informational purposes and
+              describes standard website privacy and use practices for MazinMind
+              Digital.
             </p>
             {sections.map((section) => (
               <section key={section.heading} className="space-y-2">
-                <h3 className="font-semibold text-foreground">{section.heading}</h3>
+                <h3 className="font-semibold text-foreground">
+                  {section.heading}
+                </h3>
                 {section.points.map((point) => (
                   <p key={point}>{point}</p>
                 ))}
@@ -231,7 +246,10 @@ function LegalDocumentModal({
             ))}
             <p>
               Questions about this document can be sent to{" "}
-              <a className="text-primary hover:underline" href="mailto:info@mazinmind.digital">
+              <a
+                className="text-primary hover:underline"
+                href="mailto:info@mazinmind.digital"
+              >
                 info@mazinmind.digital
               </a>
               .
@@ -254,7 +272,9 @@ function ScheduleConsultationModal({
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="w-[96vw] max-w-5xl border-primary/30 p-0 sm:rounded-2xl">
         <DialogHeader className="border-b border-border px-6 py-5 text-left">
-          <DialogTitle className="text-2xl font-display tracking-wide">Schedule a Free Consultation</DialogTitle>
+          <DialogTitle className="text-2xl font-display tracking-wide">
+            Schedule a Free Consultation
+          </DialogTitle>
           <DialogDescription className="text-sm text-muted-foreground">
             Choose a time directly through our HubSpot scheduling form.
           </DialogDescription>
@@ -293,21 +313,30 @@ function ChatNowModal({
   onOpenChange: (open: boolean) => void;
   onOpenHubSpotChat: (actor?: string) => boolean;
 }) {
-  const smsBody = encodeURIComponent("Hi MazinMind, I would like to chat about AI services.");
+  const smsBody = encodeURIComponent(
+    "Hi MazinMind, I would like to chat about AI services.",
+  );
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="w-[95vw] max-w-md border-primary/30 p-0 sm:rounded-2xl">
         <DialogHeader className="border-b border-border px-6 py-5 text-left">
-          <DialogTitle className="text-2xl font-display tracking-wide">Chat Now</DialogTitle>
+          <DialogTitle className="text-2xl font-display tracking-wide">
+            Chat Now
+          </DialogTitle>
           <DialogDescription className="text-sm text-muted-foreground">
             Text us at {GOOGLE_VOICE_DISPLAY} or continue in HubSpot.
           </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-3 px-6 py-5">
-          <Button asChild className="w-full bg-gradient-primary text-primary-foreground font-semibold">
-            <a href={`${GOOGLE_VOICE_SMS_URL}?body=${smsBody}`}>Chat Now via Google Voice</a>
+          <Button
+            asChild
+            className="w-full bg-gradient-primary text-primary-foreground font-semibold"
+          >
+            <a href={`${GOOGLE_VOICE_SMS_URL}?body=${smsBody}`}>
+              Chat Now via Google Voice
+            </a>
           </Button>
 
           <Button
@@ -325,7 +354,10 @@ function ChatNowModal({
 
           <p className="text-sm text-muted-foreground">
             Prefer a call?{" "}
-            <a href={GOOGLE_VOICE_CALL_URL} className="font-medium text-primary hover:underline">
+            <a
+              href={GOOGLE_VOICE_CALL_URL}
+              className="font-medium text-primary hover:underline"
+            >
               {GOOGLE_VOICE_DISPLAY}
             </a>
           </p>
@@ -344,7 +376,11 @@ function FloatingChatBubble({ onOpen }: { onOpen: () => void }) {
       aria-label="Open chat now modal"
     >
       <span className="absolute inset-[3px] overflow-hidden rounded-full">
-        <img src={brainCircuit} alt="" className="h-full w-full object-cover opacity-75" />
+        <img
+          src={brainCircuit}
+          alt=""
+          className="h-full w-full object-cover opacity-75"
+        />
         <span className="absolute inset-0 bg-background/45" />
       </span>
       <MessageCircle className="relative mx-auto h-6 w-6 text-primary transition-colors group-hover:text-white" />
@@ -426,22 +462,31 @@ function CookieConsentBanner({
     <div className="fixed inset-x-4 bottom-4 z-[120] mx-auto max-w-3xl rounded-2xl border border-primary/30 bg-background/95 p-5 shadow-elevated backdrop-blur-xl">
       <div className="space-y-4">
         <div>
-          <h3 className="mb-2 text-lg font-display font-bold tracking-wide">Cookie Preferences</h3>
+          <h3 className="mb-2 text-lg font-display font-bold tracking-wide">
+            Cookie Preferences
+          </h3>
           <p className="text-sm text-muted-foreground">
-            We use essential cookies to run this site and optional cookies to improve analytics and
-            marketing performance. You can accept all, decline optional cookies, or manage
-            preferences.
+            We use essential cookies to run this site and optional cookies to
+            improve analytics and marketing performance. You can accept all,
+            decline optional cookies, or manage preferences.
           </p>
         </div>
 
         {isManaging && (
           <div className="rounded-xl border border-border bg-secondary/30 p-4">
             <div className="mb-3 flex items-center justify-between">
-              <span className="text-sm font-medium text-foreground">Essential cookies</span>
-              <span className="text-xs font-semibold text-primary">Always active</span>
+              <span className="text-sm font-medium text-foreground">
+                Essential cookies
+              </span>
+              <span className="text-xs font-semibold text-primary">
+                Always active
+              </span>
             </div>
             <div className="mb-3 flex items-center justify-between">
-              <label htmlFor="cookie-analytics" className="text-sm text-foreground">
+              <label
+                htmlFor="cookie-analytics"
+                className="text-sm text-foreground"
+              >
                 Analytics cookies
               </label>
               <input
@@ -453,7 +498,10 @@ function CookieConsentBanner({
               />
             </div>
             <div className="flex items-center justify-between">
-              <label htmlFor="cookie-marketing" className="text-sm text-foreground">
+              <label
+                htmlFor="cookie-marketing"
+                className="text-sm text-foreground"
+              >
                 Marketing cookies
               </label>
               <input
@@ -468,7 +516,11 @@ function CookieConsentBanner({
         )}
 
         <div className="flex flex-wrap gap-2">
-          <Button type="button" className="bg-gradient-primary" onClick={acceptAll}>
+          <Button
+            type="button"
+            className="bg-gradient-primary"
+            onClick={acceptAll}
+          >
             Accept All
           </Button>
           <Button type="button" variant="outline" onClick={declineOptional}>
@@ -479,7 +531,11 @@ function CookieConsentBanner({
               Save Preferences
             </Button>
           ) : (
-            <Button type="button" variant="outline" onClick={() => setIsManaging(true)}>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setIsManaging(true)}
+            >
               Manage Preferences
             </Button>
           )}
@@ -507,7 +563,9 @@ function CookieConsentBanner({
 }
 
 export function SiteOverlaysProvider({ children }: { children: ReactNode }) {
-  const [openDocument, setOpenDocument] = useState<LegalDocumentType | null>(null);
+  const [openDocument, setOpenDocument] = useState<LegalDocumentType | null>(
+    null,
+  );
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
 
@@ -517,12 +575,19 @@ export function SiteOverlaysProvider({ children }: { children: ReactNode }) {
     currentUrl.searchParams.set(HUBSPOT_CHAT_ACTOR_PARAM, actor);
 
     if (window.matchMedia("(max-width: 767px)").matches) {
-      currentUrl.searchParams.set(HUBSPOT_CHATFLOW_PARAM, HUBSPOT_MOBILE_CHATFLOW);
+      currentUrl.searchParams.set(
+        HUBSPOT_CHATFLOW_PARAM,
+        HUBSPOT_MOBILE_CHATFLOW,
+      );
     } else {
       currentUrl.searchParams.delete(HUBSPOT_CHATFLOW_PARAM);
     }
 
-    window.history.replaceState({}, "", `${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`);
+    window.history.replaceState(
+      {},
+      "",
+      `${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`,
+    );
   };
 
   const openHubSpotChat = (actor: string = HUBSPOT_SALES_ACTOR) => {
@@ -562,7 +627,8 @@ export function SiteOverlaysProvider({ children }: { children: ReactNode }) {
 
   const contextValue = useMemo(
     () => ({
-      openLegalModal: (document: LegalDocumentType) => setOpenDocument(document),
+      openLegalModal: (document: LegalDocumentType) =>
+        setOpenDocument(document),
       openScheduleModal: () => setIsScheduleOpen(true),
     }),
     [],
@@ -571,15 +637,23 @@ export function SiteOverlaysProvider({ children }: { children: ReactNode }) {
   return (
     <SiteOverlayContext.Provider value={contextValue}>
       {children}
-      <LegalDocumentModal openDocument={openDocument} onOpenDocumentChange={setOpenDocument} />
-      <ScheduleConsultationModal isOpen={isScheduleOpen} onOpenChange={setIsScheduleOpen} />
+      <LegalDocumentModal
+        openDocument={openDocument}
+        onOpenDocumentChange={setOpenDocument}
+      />
+      <ScheduleConsultationModal
+        isOpen={isScheduleOpen}
+        onOpenChange={setIsScheduleOpen}
+      />
       <FloatingChatBubble onOpen={() => setIsChatOpen(true)} />
       <ChatNowModal
         isOpen={isChatOpen}
         onOpenChange={setIsChatOpen}
         onOpenHubSpotChat={openHubSpotChat}
       />
-      <CookieConsentBanner onOpenLegal={(document) => setOpenDocument(document)} />
+      <CookieConsentBanner
+        onOpenLegal={(document) => setOpenDocument(document)}
+      />
     </SiteOverlayContext.Provider>
   );
 }

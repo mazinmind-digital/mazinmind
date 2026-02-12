@@ -20,10 +20,15 @@ function TermsContent() {
             TERMS OF <span className="text-gradient-primary">SERVICE</span>
           </h1>
           <p className="mb-8 text-muted-foreground">
-            The Terms modal opens automatically on this route for direct sharing.
+            The Terms modal opens automatically on this route for direct
+            sharing.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button type="button" onClick={() => openLegalModal("terms")} className="bg-gradient-primary">
+            <Button
+              type="button"
+              onClick={() => openLegalModal("terms")}
+              className="bg-gradient-primary"
+            >
               Open Terms of Service
             </Button>
             <Button asChild variant="outline">
@@ -45,7 +50,10 @@ export default function Terms() {
           name="description"
           content="Review MazinMind Digital Terms of Service covering website use, intellectual property, purchases, and liability limits."
         />
-        <meta property="og:title" content="Terms of Service | MazinMind Digital" />
+        <meta
+          property="og:title"
+          content="Terms of Service | MazinMind Digital"
+        />
         <meta
           property="og:description"
           content="Review MazinMind Digital Terms of Service covering website use, intellectual property, purchases, and liability limits."

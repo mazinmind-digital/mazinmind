@@ -82,7 +82,8 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
   "boston-colorful.png": {
     id: "signal-over-boston",
     title: "Signal Over Boston",
-    description: "Neon skyline interpretation designed for modern office and studio walls.",
+    description:
+      "Neon skyline interpretation designed for modern office and studio walls.",
     collection: "City Futures",
     orientation: "Landscape",
     size: "24 x 16 in",
@@ -93,7 +94,8 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
   "boston-rain.png": {
     id: "rainline-memory",
     title: "Rainline Memory",
-    description: "Atmospheric city composition with deep contrast and reflective tones.",
+    description:
+      "Atmospheric city composition with deep contrast and reflective tones.",
     collection: "City Futures",
     orientation: "Portrait",
     size: "16 x 24 in",
@@ -104,7 +106,8 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
   "boston-corridor.png": {
     id: "corridor-of-light",
     title: "Corridor of Light",
-    description: "Architectural depth piece with layered gradients and cinematic texture.",
+    description:
+      "Architectural depth piece with layered gradients and cinematic texture.",
     collection: "City Futures",
     orientation: "Landscape",
     size: "30 x 20 in",
@@ -115,7 +118,8 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
   "brain-circuit.png": {
     id: "electric-neural-grid",
     title: "Electric Neural Grid",
-    description: "High-energy abstract inspired by machine learning neural pathways.",
+    description:
+      "High-energy abstract inspired by machine learning neural pathways.",
     collection: "AI Dreams",
     orientation: "Square",
     size: "20 x 20 in",
@@ -126,7 +130,8 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
   "brain-green.png": {
     id: "green-pulse",
     title: "Green Pulse",
-    description: "Organic digital gradient artwork blending natural and synthetic motifs.",
+    description:
+      "Organic digital gradient artwork blending natural and synthetic motifs.",
     collection: "AI Dreams",
     orientation: "Square",
     size: "16 x 16 in",
@@ -137,7 +142,8 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
   "ai-mask.png": {
     id: "mask-of-intelligence",
     title: "Mask of Intelligence",
-    description: "Conceptual portrait balancing mystery, identity, and machine aesthetics.",
+    description:
+      "Conceptual portrait balancing mystery, identity, and machine aesthetics.",
     collection: "AI Portraits",
     orientation: "Portrait",
     size: "18 x 24 in",
@@ -148,7 +154,8 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
   "ai-face.png": {
     id: "echo-face",
     title: "Echo Face",
-    description: "Cyber-inspired portrait composition suited for creative and tech interiors.",
+    description:
+      "Cyber-inspired portrait composition suited for creative and tech interiors.",
     collection: "AI Portraits",
     orientation: "Portrait",
     size: "24 x 36 in",
@@ -159,7 +166,8 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
   "neon-city.png": {
     id: "nightline-velocity",
     title: "Nightline Velocity",
-    description: "Vibrant city-motion scene with an electric palette and layered depth.",
+    description:
+      "Vibrant city-motion scene with an electric palette and layered depth.",
     collection: "City Futures",
     orientation: "Landscape",
     size: "36 x 24 in",
@@ -170,7 +178,8 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
   "world-peace.png": {
     id: "peace-in-circuits",
     title: "Peace in Circuits",
-    description: "Symbolic statement piece blending digital futurism with social themes.",
+    description:
+      "Symbolic statement piece blending digital futurism with social themes.",
     collection: "AI Dreams",
     orientation: "Square",
     size: "30 x 30 in",
@@ -180,10 +189,13 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
   },
 };
 
-const importedImages = import.meta.glob("../assets/art_gallery/*.{png,jpg,jpeg,webp,avif}", {
-  eager: true,
-  import: "default",
-}) as Record<string, string>;
+const importedImages = import.meta.glob(
+  "../assets/art_gallery/*.{png,jpg,jpeg,webp,avif}",
+  {
+    eager: true,
+    import: "default",
+  },
+) as Record<string, string>;
 
 const artworks: Artwork[] = Object.entries(importedImages)
   .sort(([leftPath], [rightPath]) => leftPath.localeCompare(rightPath))
@@ -212,7 +224,9 @@ const artworks: Artwork[] = Object.entries(importedImages)
       finish: "Gallery-wrapped canvas",
       price: inferPrice(index),
       image,
-      addedAt: new Date(Date.UTC(2026, 0, Math.max(1, 31 - index))).toISOString().slice(0, 10),
+      addedAt: new Date(Date.UTC(2026, 0, Math.max(1, 31 - index)))
+        .toISOString()
+        .slice(0, 10),
       filename,
     };
   });
@@ -237,7 +251,10 @@ export default function ArtGallery() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const collections = useMemo(
-    () => ["ALL", ...Array.from(new Set(artworks.map((artwork) => artwork.collection)))],
+    () => [
+      "ALL",
+      ...Array.from(new Set(artworks.map((artwork) => artwork.collection))),
+    ],
     [],
   );
 
@@ -255,10 +272,12 @@ export default function ArtGallery() {
         artwork.filename.toLowerCase().includes(normalizedQuery);
 
       const matchesCollection =
-        selectedCollection === "ALL" || artwork.collection === selectedCollection;
+        selectedCollection === "ALL" ||
+        artwork.collection === selectedCollection;
 
       const matchesOrientation =
-        selectedOrientation === "ALL" || artwork.orientation === selectedOrientation;
+        selectedOrientation === "ALL" ||
+        artwork.orientation === selectedOrientation;
 
       return matchesSearch && matchesCollection && matchesOrientation;
     });
@@ -286,7 +305,10 @@ export default function ArtGallery() {
     setCurrentPage(1);
   }, [searchQuery, selectedCollection, selectedOrientation, sortMode]);
 
-  const totalPages = Math.max(1, Math.ceil(filteredArtworks.length / PAGE_SIZE));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredArtworks.length / PAGE_SIZE),
+  );
   const safeCurrentPage = Math.min(currentPage, totalPages);
 
   const paginatedArtworks = useMemo(() => {
@@ -345,7 +367,10 @@ export default function ArtGallery() {
           property="og:description"
           content="Browse AI-generated artwork available for purchase as high-quality canvas prints."
         />
-        <meta property="og:url" content="https://mazinmind.digital/art-gallery" />
+        <meta
+          property="og:url"
+          content="https://mazinmind.digital/art-gallery"
+        />
         <meta property="og:site_name" content="MazinMind Digital" />
         <meta name="twitter:title" content="MazinMind Art Gallery" />
         <meta
@@ -353,7 +378,9 @@ export default function ArtGallery() {
           content="Midjourney-inspired artwork available as canvas prints from MazinMind."
         />
         <link rel="canonical" href="https://mazinmind.digital/art-gallery" />
-        <script type="application/ld+json">{JSON.stringify(gallerySchema)}</script>
+        <script type="application/ld+json">
+          {JSON.stringify(gallerySchema)}
+        </script>
       </Helmet>
 
       <section className="py-24 relative overflow-hidden">
@@ -366,10 +393,15 @@ export default function ArtGallery() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-vibrant text-sm font-medium mb-8">
               <ImageIcon className="w-5 h-5 text-primary" />
-              <span className="text-gradient-primary tracking-wide">LIMITED RELEASES</span>
+              <span className="text-gradient-primary tracking-wide">
+                LIMITED RELEASES
+              </span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 tracking-wider">
-              ART <span className="text-gradient-primary text-shadow-neon">GALLERY</span>
+              ART{" "}
+              <span className="text-gradient-primary text-shadow-neon">
+                GALLERY
+              </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Curated Midjourney artwork available as premium canvas prints.
@@ -431,7 +463,9 @@ export default function ArtGallery() {
               <span>Sort</span>
               <select
                 value={sortMode}
-                onChange={(event) => setSortMode(event.target.value as SortMode)}
+                onChange={(event) =>
+                  setSortMode(event.target.value as SortMode)
+                }
                 className="h-12 bg-transparent text-foreground focus:outline-none"
                 aria-label="Sort artwork"
               >
@@ -443,7 +477,8 @@ export default function ArtGallery() {
             </label>
 
             <p className="text-sm text-muted-foreground">
-              Showing {paginatedArtworks.length} of {filteredArtworks.length} artwork items
+              Showing {paginatedArtworks.length} of {filteredArtworks.length}{" "}
+              artwork items
             </p>
           </div>
         </div>
@@ -453,7 +488,9 @@ export default function ArtGallery() {
         <div className="container mx-auto px-4 lg:px-8">
           {filteredArtworks.length === 0 ? (
             <div className="glass-vibrant rounded-2xl border border-border p-10 text-center">
-              <h2 className="text-3xl font-display font-bold mb-3 tracking-wide">No artwork found</h2>
+              <h2 className="text-3xl font-display font-bold mb-3 tracking-wide">
+                No artwork found
+              </h2>
               <p className="text-muted-foreground mb-6">
                 Adjust your search or filters to see more pieces.
               </p>
@@ -501,20 +538,32 @@ export default function ArtGallery() {
                       <h2 className="text-2xl font-display font-bold tracking-wide mb-3">
                         {artwork.title}
                       </h2>
-                      <p className="text-muted-foreground mb-5">{artwork.description}</p>
+                      <p className="text-muted-foreground mb-5">
+                        {artwork.description}
+                      </p>
 
                       <div className="grid grid-cols-2 gap-3 text-sm mb-6">
                         <div className="rounded-lg border border-border p-3 bg-secondary/40">
                           <p className="text-muted-foreground mb-1">Size</p>
-                          <p className="font-medium text-foreground">{artwork.size}</p>
+                          <p className="font-medium text-foreground">
+                            {artwork.size}
+                          </p>
                         </div>
                         <div className="rounded-lg border border-border p-3 bg-secondary/40">
-                          <p className="text-muted-foreground mb-1">Orientation</p>
-                          <p className="font-medium text-foreground">{artwork.orientation}</p>
+                          <p className="text-muted-foreground mb-1">
+                            Orientation
+                          </p>
+                          <p className="font-medium text-foreground">
+                            {artwork.orientation}
+                          </p>
                         </div>
                         <div className="rounded-lg border border-border p-3 bg-secondary/40 col-span-2">
-                          <p className="text-muted-foreground mb-1">Canvas Finish</p>
-                          <p className="font-medium text-foreground">{artwork.finish}</p>
+                          <p className="text-muted-foreground mb-1">
+                            Canvas Finish
+                          </p>
+                          <p className="font-medium text-foreground">
+                            {artwork.finish}
+                          </p>
                         </div>
                       </div>
 
@@ -534,7 +583,9 @@ export default function ArtGallery() {
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
                   <button
                     type="button"
-                    onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+                    onClick={() =>
+                      setCurrentPage((page) => Math.max(1, page - 1))
+                    }
                     disabled={safeCurrentPage === 1}
                     className="rounded-lg border border-border px-4 py-2 text-sm disabled:opacity-50"
                   >
@@ -550,7 +601,9 @@ export default function ArtGallery() {
                       >
                         1
                       </button>
-                      {pageNumbers[0] > 2 && <span className="px-1 text-muted-foreground">...</span>}
+                      {pageNumbers[0] > 2 && (
+                        <span className="px-1 text-muted-foreground">...</span>
+                      )}
                     </>
                   )}
 
@@ -586,7 +639,9 @@ export default function ArtGallery() {
 
                   <button
                     type="button"
-                    onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
+                    onClick={() =>
+                      setCurrentPage((page) => Math.min(totalPages, page + 1))
+                    }
                     disabled={safeCurrentPage === totalPages}
                     className="rounded-lg border border-border px-4 py-2 text-sm disabled:opacity-50"
                   >
@@ -606,31 +661,50 @@ export default function ArtGallery() {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-display font-bold tracking-wider text-center mb-10">
-              HOW <span className="text-gradient-primary text-shadow-neon">ORDERING</span> WORKS
+              HOW{" "}
+              <span className="text-gradient-primary text-shadow-neon">
+                ORDERING
+              </span>{" "}
+              WORKS
             </h2>
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="glass-vibrant rounded-2xl border border-primary/20 p-6">
-                <p className="text-primary text-sm font-bold tracking-[0.18em] mb-3">STEP 1</p>
-                <h3 className="text-2xl font-display font-bold tracking-wide mb-2">Choose a Piece</h3>
+                <p className="text-primary text-sm font-bold tracking-[0.18em] mb-3">
+                  STEP 1
+                </p>
+                <h3 className="text-2xl font-display font-bold tracking-wide mb-2">
+                  Choose a Piece
+                </h3>
                 <p className="text-muted-foreground">
-                  Browse the gallery and select artwork by collection, size, and style.
+                  Browse the gallery and select artwork by collection, size, and
+                  style.
                 </p>
               </div>
 
               <div className="glass-vibrant rounded-2xl border border-accent/20 p-6">
-                <p className="text-accent text-sm font-bold tracking-[0.18em] mb-3">STEP 2</p>
-                <h3 className="text-2xl font-display font-bold tracking-wide mb-2">Request Purchase</h3>
+                <p className="text-accent text-sm font-bold tracking-[0.18em] mb-3">
+                  STEP 2
+                </p>
+                <h3 className="text-2xl font-display font-bold tracking-wide mb-2">
+                  Request Purchase
+                </h3>
                 <p className="text-muted-foreground">
-                  Send an inquiry and we will confirm print availability and production timeline.
+                  Send an inquiry and we will confirm print availability and
+                  production timeline.
                 </p>
               </div>
 
               <div className="glass-vibrant rounded-2xl border border-electric/20 p-6">
-                <p className="text-electric text-sm font-bold tracking-[0.18em] mb-3">STEP 3</p>
-                <h3 className="text-2xl font-display font-bold tracking-wide mb-2">Approve and Print</h3>
+                <p className="text-electric text-sm font-bold tracking-[0.18em] mb-3">
+                  STEP 3
+                </p>
+                <h3 className="text-2xl font-display font-bold tracking-wide mb-2">
+                  Approve and Print
+                </h3>
                 <p className="text-muted-foreground">
-                  Finalize your order and receive your premium canvas print, ready to hang.
+                  Finalize your order and receive your premium canvas print,
+                  ready to hang.
                 </p>
               </div>
             </div>

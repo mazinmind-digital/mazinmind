@@ -33,7 +33,8 @@ export default function HeroBanner() {
           Unlock AI Potential
         </h1>
         <p className="text-lg md:text-2xl text-white/90 max-w-xl mb-6">
-          Mazinmind.Digital: AI solutions, automation, and creative tech for the next generation of digital business.
+          Mazinmind.Digital: AI solutions, automation, and creative tech for the
+          next generation of digital business.
         </p>
         <button
           type="button"

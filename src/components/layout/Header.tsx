@@ -31,7 +31,10 @@ export function Header() {
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="relative flex h-24 items-center justify-end">
           {/* Left logo that overhangs below the header */}
-          <Link to="/" className="group absolute left-0 top-1/2 z-[70] -translate-y-[20%] pt-[5px]">
+          <Link
+            to="/"
+            className="group absolute left-0 top-1/2 z-[70] -translate-y-[20%] pt-[5px]"
+          >
             <img
               src={mazinmindLogo}
               alt="MazinMind Digital"
@@ -40,8 +43,8 @@ export function Header() {
           </Link>
 
           <div className="relative z-[90] flex items-center gap-3">
-            <a 
-              href="tel:+16173831220" 
+            <a
+              href="tel:+16173831220"
               className="hidden xl:flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors font-medium"
             >
               <Phone className="w-4 h-4 text-accent" />
@@ -60,7 +63,11 @@ export function Header() {
                 </Button>
               </DropdownMenuTrigger>
 
-              <DropdownMenuContent align="end" sideOffset={10} className="w-60 border-primary/30">
+              <DropdownMenuContent
+                align="end"
+                sideOffset={10}
+                className="w-60 border-primary/30"
+              >
                 <DropdownMenuLabel>NAVIGATE</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {navigation.map((item) => (
@@ -68,7 +75,9 @@ export function Header() {
                     <Link
                       to={item.href}
                       className={`font-medium ${
-                        location.pathname === item.href ? "text-primary" : "text-foreground"
+                        location.pathname === item.href
+                          ? "text-primary"
+                          : "text-foreground"
                       }`}
                     >
                       {item.name}

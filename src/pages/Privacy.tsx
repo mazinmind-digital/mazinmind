@@ -20,10 +20,15 @@ function PrivacyContent() {
             PRIVACY <span className="text-gradient-primary">POLICY</span>
           </h1>
           <p className="mb-8 text-muted-foreground">
-            The Privacy Policy modal opens automatically on this route for direct sharing.
+            The Privacy Policy modal opens automatically on this route for
+            direct sharing.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button type="button" onClick={() => openLegalModal("privacy")} className="bg-gradient-primary">
+            <Button
+              type="button"
+              onClick={() => openLegalModal("privacy")}
+              className="bg-gradient-primary"
+            >
               Open Privacy Policy
             </Button>
             <Button asChild variant="outline">
@@ -45,7 +50,10 @@ export default function Privacy() {
           name="description"
           content="Read the MazinMind Digital Privacy Policy, including information collection, cookie usage, and your privacy rights."
         />
-        <meta property="og:title" content="Privacy Policy | MazinMind Digital" />
+        <meta
+          property="og:title"
+          content="Privacy Policy | MazinMind Digital"
+        />
         <meta
           property="og:description"
           content="Read the MazinMind Digital Privacy Policy, including information collection, cookie usage, and your privacy rights."

@@ -7,7 +7,7 @@ describe("Header", () => {
     render(
       <BrowserRouter>
         <Header />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     const logo = screen.getByAltText(/MazinMind Digital/i);
     expect(logo).toBeInTheDocument();
@@ -17,9 +17,11 @@ describe("Header", () => {
     render(
       <BrowserRouter>
         <Header />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     expect(screen.getByRole("button", { name: /menu/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /get started/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /get started/i }),
+    ).toBeInTheDocument();
   });
 });
