@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Input } from "@/components/ui/input";
+import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
@@ -297,7 +298,7 @@ export default function Blog() {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-vibrant text-sm font-medium mb-8">
-              <NotebookPen className="w-5 h-5 text-primary" />
+              <GraffitiIcon icon={NotebookPen} size="sm" tone="primary" />
               <span className="text-gradient-primary tracking-wide">
                 LATEST INSIGHTS
               </span>

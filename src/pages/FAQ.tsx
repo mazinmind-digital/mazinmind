@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ArrowRight, HelpCircle, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import bostonRain from "@/assets/boston-rain.png";
 
 const faqs = [
@@ -155,9 +155,6 @@ export default function FAQ() {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-8 glow-primary animate-pulse-glow">
-              <HelpCircle className="w-10 h-10 text-primary-foreground" />
-            </div>
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-vibrant text-sm font-medium mb-8">
               <Sparkles className="w-5 h-5 text-primary animate-neon-flicker" />
               <span className="text-gradient-primary tracking-wide">

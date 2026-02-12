@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import aiFace from "@/assets/ai-face.png";
 
 export function ValueProposition() {
@@ -26,9 +27,12 @@ export function ValueProposition() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           {/* Quote Icon */}
-          <div className="w-20 h-20 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-10 glow-primary animate-pulse-glow">
-            <Quote className="w-10 h-10 text-primary-foreground" />
-          </div>
+          <GraffitiIcon
+            icon={Quote}
+            tone="primary"
+            size="xl"
+            className="mx-auto mb-10 animate-pulse-glow"
+          />
 
           {/* Quote */}
           <blockquote className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground leading-tight mb-10 tracking-wide">
@@ -54,11 +58,11 @@ export function ValueProposition() {
 
           {/* Attribution */}
           <div className="flex items-center justify-center gap-4 mb-16">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-accent flex items-center justify-center glow-accent">
-              <span className="text-2xl font-display font-bold text-accent-foreground">
+            <GraffitiIcon tone="accent" size="lg">
+              <span className="text-2xl font-display font-bold">
                 R
               </span>
-            </div>
+            </GraffitiIcon>
             <div className="text-left">
               <p className="font-display text-xl font-bold text-foreground tracking-wider">
                 RANDY MAZIN
