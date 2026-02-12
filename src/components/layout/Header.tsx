@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -25,21 +26,47 @@ const navigation = [
 export function Header() {
   const location = useLocation();
   const { openScheduleModal } = useSiteOverlay();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 24);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass">
       <nav className="container mx-auto px-4 lg:px-8">
-        <div className="relative flex h-24 items-center justify-end">
+        <div
+          className={`relative flex items-center justify-end transition-all duration-300 ${
+            isScrolled ? "h-20" : "h-24"
+          }`}
+        >
           {/* Left logo that overhangs below the header */}
           <Link
             to="/"
-            className="group absolute left-0 top-1/2 z-[70] -translate-y-[20%] -mt-[6px] pt-[5px]"
+            className={`group absolute left-0 top-1/2 z-[70] -mt-[3px] pt-[2px] transition-all duration-300 ${
+              isScrolled ? "-translate-y-1/2" : "-translate-y-[20%]"
+            }`}
           >
-            <span className="block h-[118px] overflow-hidden">
+            <span
+              className={`block overflow-hidden transition-all duration-300 ${
+                isScrolled ? "h-[88px]" : "h-[122px]"
+              }`}
+            >
               <img
                 src={mazinmindLogo}
                 alt="MazinMind Digital"
-                className="h-[125px] w-auto max-w-none -translate-y-[4px] transition-transform group-hover:scale-105 drop-shadow-xl"
+                className={`w-auto max-w-none drop-shadow-xl transition-all duration-300 group-hover:scale-105 ${
+                  isScrolled ? "h-[92px]" : "h-[125px]"
+                }`}
               />
             </span>
           </Link>
