@@ -12,216 +12,7 @@ import {
   Search,
   Tag,
 } from "lucide-react";
-import heroGraffiti from "@/assets/hero-graffiti.jpg";
-import aiMask from "@/assets/ai-mask.png";
-import aiFace from "@/assets/ai-face.png";
-import worldPeace from "@/assets/world-peace.png";
-import bostonColorful from "@/assets/boston-colorful.png";
-import bostonRain from "@/assets/boston-rain.png";
-import bostonCorridor from "@/assets/boston-corridor.png";
-import brainGreen from "@/assets/brain-green.png";
-import aiBusinessBenefitsGraffiti from "@/assets/blog/ai-business-benefits-graffiti.jpg";
-import aiRoiOverheadGraffiti from "@/assets/blog/ai-roi-overhead-graffiti.jpg";
-import aiConsultingAdvantageGraffiti from "@/assets/blog/ai-consulting-advantage-graffiti.jpg";
-
-type BlogPostSection = {
-  heading: string;
-  summary: string;
-  bullets: string[];
-  image?: string;
-  imageAlt?: string;
-};
-
-type BlogPostLongForm = {
-  intro: string;
-  sections: BlogPostSection[];
-  conclusion: string;
-  ctaLabel: string;
-};
-
-type BlogPost = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  category: string;
-  tags: string[];
-  author: string;
-  publishedAt: string;
-  readingTimeMinutes: number;
-  image: string;
-  longForm?: BlogPostLongForm;
-};
-
-const blogPosts: BlogPost[] = [
-  {
-    slug: "ai-implementation-benefits-roi-overhead-consulting",
-    title:
-      "The Business Case for AI: Higher ROI, Lower Overhead, and Faster Production",
-    excerpt:
-      "AI implementation gives businesses measurable gains in productivity, revenue velocity, and customer response time. This guide covers high-impact AI use cases, practical ROI modeling, and why independent AI consulting helps teams deploy faster with less risk.",
-    category: "AI Strategy",
-    tags: [
-      "AI Consulting",
-      "AI ROI",
-      "Business Automation",
-      "SEM Growth",
-      "Productivity",
-    ],
-    author: "MazinMind Editorial",
-    publishedAt: "2026-02-12",
-    readingTimeMinutes: 12,
-    image: aiBusinessBenefitsGraffiti,
-    longForm: {
-      intro:
-        "If your team is asking whether AI is worth the investment, the short answer is yes when implementation is tied to operational bottlenecks and revenue goals. The strongest programs start with practical workflows, clear economics, and execution support that keeps strategy grounded in outcomes.",
-      sections: [
-        {
-          heading: "High-Value AI Use Cases for Business Teams",
-          summary:
-            "Most companies see early wins by focusing AI where manual throughput is slowing growth and decision quality.",
-          bullets: [
-            "Sales and CRM: lead scoring, next-best-action prompts, proposal drafts, and follow-up automation.",
-            "Marketing and SEM: keyword clustering, ad testing cycles, audience segmentation, and creative optimization.",
-            "Customer service: instant triage, intelligent reply suggestions, and 24/7 support routing.",
-            "Operations and finance: document processing, reporting automation, forecasting support, and anomaly detection.",
-          ],
-          image: aiBusinessBenefitsGraffiti,
-          imageAlt:
-            "Graffiti-style visual representing AI automation workflows across business teams.",
-        },
-        {
-          heading: "ROI, Overhead, and Production Improvements",
-          summary:
-            "AI economics become clear when leaders track labor savings, cycle-time reductions, and incremental revenue from better execution.",
-          bullets: [
-            "ROI model: (hours saved + revenue lift - tooling costs - implementation costs) / implementation costs.",
-            "Overhead impact: fewer repetitive manual tasks, reduced rework, and less dependence on fragmented point solutions.",
-            "Production gains: faster campaign launches, shorter content and development cycles, and quicker turnaround on client deliverables.",
-            "Team output effect: employees spend more time on strategic work and less time on low-value production tasks.",
-          ],
-          image: aiRoiOverheadGraffiti,
-          imageAlt:
-            "Graffiti-style abstract brain and circuitry art symbolizing AI ROI and process efficiency.",
-        },
-        {
-          heading: "Why Outside AI Consulting Creates an Edge",
-          summary:
-            "External consultants bring objective implementation leadership that internal teams often cannot maintain while running day-to-day operations.",
-          bullets: [
-            "Unbiased planning: vendor-agnostic stack recommendations based on fit, cost, and business goals.",
-            "Faster execution: proven implementation playbooks, governance patterns, and rollout sequencing.",
-            "Lower adoption risk: change-management support, team training, and KPI-driven optimization.",
-            "Stronger accountability: neutral assessment of what is working, what is wasting budget, and what to cut.",
-          ],
-          image: aiConsultingAdvantageGraffiti,
-          imageAlt:
-            "Graffiti-style consulting strategy artwork showing dynamic urban elements and directional energy.",
-        },
-      ],
-      conclusion:
-        "AI is no longer a side experiment. It is now core infrastructure for growth, margin improvement, and competitive speed. Companies that combine focused AI implementation with independent consulting support typically reach value faster, avoid expensive detours, and build systems that keep compounding over time.",
-      ctaLabel: "Book an AI implementation consultation",
-    },
-  },
-  {
-    slug: "how-ai-automation-cuts-ops-costs",
-    title:
-      "How AI Automation Can Cut Operating Costs Without Sacrificing Quality",
-    excerpt:
-      "A practical framework for identifying repetitive workflows, selecting the right automation stack, and measuring savings in the first 90 days.",
-    category: "Automation",
-    tags: ["AI Automation", "Operations", "ROI"],
-    author: "MazinMind Editorial",
-    publishedAt: "2026-02-02",
-    readingTimeMinutes: 7,
-    image: heroGraffiti,
-  },
-  {
-    slug: "seo-in-the-age-of-ai-search",
-    title: "SEO in the Age of AI Search: What Businesses Need to Change Now",
-    excerpt:
-      "Search behavior is shifting quickly. Learn how to optimize site structure, authority signals, and content strategy for AI-assisted search results.",
-    category: "SEO",
-    tags: ["SEO", "Content Strategy", "AI"],
-    author: "MazinMind Editorial",
-    publishedAt: "2026-01-22",
-    readingTimeMinutes: 9,
-    image: bostonColorful,
-  },
-  {
-    slug: "from-idea-to-mvp-using-ai",
-    title: "From Idea to MVP Faster: Using AI in Product Discovery",
-    excerpt:
-      "Use AI to accelerate customer research, requirement mapping, and feature prioritization while avoiding common MVP launch traps.",
-    category: "Product",
-    tags: ["MVP", "Product Strategy", "Startups"],
-    author: "MazinMind Editorial",
-    publishedAt: "2026-01-18",
-    readingTimeMinutes: 6,
-    image: aiMask,
-  },
-  {
-    slug: "predictive-analytics-for-marketing",
-    title:
-      "Predictive Analytics for Marketing Teams: A Practical Starter Guide",
-    excerpt:
-      "A step-by-step breakdown of how marketing teams can use predictive models to improve campaign timing, segmentation, and spend allocation.",
-    category: "Marketing",
-    tags: ["Predictive Analytics", "Digital Marketing", "Attribution"],
-    author: "MazinMind Editorial",
-    publishedAt: "2026-01-10",
-    readingTimeMinutes: 8,
-    image: aiFace,
-  },
-  {
-    slug: "building-trust-in-ai-adoption",
-    title: "Building Trust in AI Adoption Across Your Team",
-    excerpt:
-      "Change management matters as much as technology. This article covers governance, enablement, and communication patterns that reduce resistance.",
-    category: "Leadership",
-    tags: ["AI Adoption", "Change Management", "Leadership"],
-    author: "MazinMind Editorial",
-    publishedAt: "2025-12-28",
-    readingTimeMinutes: 5,
-    image: worldPeace,
-  },
-  {
-    slug: "devops-foundations-for-ai-products",
-    title: "DevOps Foundations for AI Products That Need to Scale",
-    excerpt:
-      "Set up reliable release pipelines, monitoring, and infrastructure standards that support continuous AI model improvements in production.",
-    category: "Engineering",
-    tags: ["DevOps", "MLOps", "Cloud"],
-    author: "MazinMind Editorial",
-    publishedAt: "2025-12-15",
-    readingTimeMinutes: 10,
-    image: bostonCorridor,
-  },
-  {
-    slug: "content-systems-that-rank-and-convert",
-    title: "Content Systems That Rank and Convert",
-    excerpt:
-      "How to build topic clusters, internal linking, and editorial workflows that increase qualified traffic while supporting conversion goals.",
-    category: "SEO",
-    tags: ["Content Marketing", "SEO", "Conversion"],
-    author: "MazinMind Editorial",
-    publishedAt: "2025-11-30",
-    readingTimeMinutes: 7,
-    image: bostonRain,
-  },
-  {
-    slug: "ai-readiness-checklist-for-smbs",
-    title: "AI Readiness Checklist for Small and Mid-Sized Businesses",
-    excerpt:
-      "Before purchasing tools, assess data quality, process maturity, and team capability with this readiness checklist for SMB leaders.",
-    category: "Strategy",
-    tags: ["AI Strategy", "SMB", "Digital Transformation"],
-    author: "MazinMind Editorial",
-    publishedAt: "2025-11-18",
-    readingTimeMinutes: 6,
-    image: brainGreen,
-  },
-];
+import { blogPosts } from "@/data/blogPosts";
 
 type SortMode = "newest" | "oldest" | "title";
 
@@ -339,7 +130,7 @@ export default function Blog() {
       .map((post, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        url: `https://mazinmind.digital/blog#${post.slug}`,
+        url: `https://mazinmind.digital/blog/${post.slug}`,
         name: post.title,
       })),
   };
@@ -361,8 +152,8 @@ export default function Blog() {
         name: "MazinMind Digital",
         url: "https://mazinmind.digital",
       },
-      mainEntityOfPage: `https://mazinmind.digital/blog#${post.slug}`,
-      url: `https://mazinmind.digital/blog#${post.slug}`,
+      mainEntityOfPage: `https://mazinmind.digital/blog/${post.slug}`,
+      url: `https://mazinmind.digital/blog/${post.slug}`,
       keywords: post.tags.join(", "),
       articleSection: post.category,
       inLanguage: "en-US",
@@ -523,17 +314,16 @@ export default function Blog() {
             <div>
               {featuredPost ? (
                 <>
-                  <article
-                    id={featuredPost.slug}
-                    className="glass-vibrant rounded-3xl overflow-hidden border border-primary/30 mb-10"
-                  >
+                  <article className="glass-vibrant rounded-3xl overflow-hidden border border-primary/30 mb-10">
                     <div className="grid lg:grid-cols-2">
                       <div className="h-72 lg:h-full">
-                        <img
-                          src={featuredPost.image}
-                          alt={featuredPost.title}
-                          className="w-full h-full object-cover"
-                        />
+                        <Link to={`/blog/${featuredPost.slug}`}>
+                          <img
+                            src={featuredPost.image}
+                            alt={featuredPost.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </Link>
                       </div>
 
                       <div className="p-8 lg:p-10">
@@ -541,7 +331,12 @@ export default function Blog() {
                           FEATURED POST
                         </p>
                         <h2 className="text-3xl lg:text-4xl font-display font-bold tracking-wider mb-4">
-                          {featuredPost.title}
+                          <Link
+                            to={`/blog/${featuredPost.slug}`}
+                            className="hover:text-primary transition-colors"
+                          >
+                            {featuredPost.title}
+                          </Link>
                         </h2>
                         <p className="text-muted-foreground text-lg mb-6">
                           {featuredPost.excerpt}
@@ -574,93 +369,30 @@ export default function Blog() {
                         </div>
 
                         <Link
-                          to="/contact"
+                          to={`/blog/${featuredPost.slug}`}
                           className="inline-flex items-center gap-2 font-semibold text-primary hover:text-primary/80 transition-colors"
                         >
-                          Discuss this topic with our team
+                          Read full post
                           <ArrowRight className="w-4 h-4" />
                         </Link>
                       </div>
                     </div>
                   </article>
 
-                  {featuredPost.longForm ? (
-                    <article className="glass-vibrant rounded-3xl border border-accent/30 p-6 lg:p-10 mb-10">
-                      <p className="text-xs font-bold tracking-[0.2em] text-accent mb-4">
-                        FEATURED DEEP DIVE
-                      </p>
-                      <h3 className="text-3xl lg:text-4xl font-display font-bold tracking-wide mb-5">
-                        {featuredPost.title}
-                      </h3>
-                      <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                        {featuredPost.longForm.intro}
-                      </p>
-
-                      <div className="grid gap-6 lg:grid-cols-3 mb-8">
-                        {featuredPost.longForm.sections.map((section) => (
-                          <section
-                            key={section.heading}
-                            className="rounded-2xl border border-border bg-secondary/25 overflow-hidden"
-                          >
-                            {section.image ? (
-                              <div className="h-44">
-                                <img
-                                  src={section.image}
-                                  alt={section.imageAlt ?? section.heading}
-                                  className="w-full h-full object-cover"
-                                />
-                              </div>
-                            ) : null}
-                            <div className="p-5">
-                              <h4 className="text-xl font-display font-bold tracking-wide mb-3">
-                                {section.heading}
-                              </h4>
-                              <p className="text-sm text-muted-foreground mb-4">
-                                {section.summary}
-                              </p>
-                              <ul className="space-y-2">
-                                {section.bullets.map((bullet) => (
-                                  <li
-                                    key={bullet}
-                                    className="text-sm text-muted-foreground flex gap-2"
-                                  >
-                                    <span className="text-primary">•</span>
-                                    <span>{bullet}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </section>
-                        ))}
-                      </div>
-
-                      <p className="text-muted-foreground leading-relaxed mb-7">
-                        {featuredPost.longForm.conclusion}
-                      </p>
-
-                      <Link
-                        to="/contact"
-                        className="inline-flex items-center gap-2 font-semibold text-accent hover:text-accent/80 transition-colors"
-                      >
-                        {featuredPost.longForm.ctaLabel}
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </article>
-                  ) : null}
-
                   <div className="grid md:grid-cols-2 gap-6">
                     {remainingPosts.map((post) => (
                       <article
                         key={post.slug}
-                        id={post.slug}
                         className="glass-vibrant rounded-2xl overflow-hidden border border-border hover:border-primary/40 transition-colors"
                       >
                         <div className="h-52">
-                          <img
-                            src={post.image}
-                            alt={post.title}
-                            className="w-full h-full object-cover"
-                          />
+                          <Link to={`/blog/${post.slug}`}>
+                            <img
+                              src={post.image}
+                              alt={post.title}
+                              className="w-full h-full object-cover"
+                            />
+                          </Link>
                         </div>
 
                         <div className="p-6">
@@ -674,7 +406,12 @@ export default function Blog() {
                           </div>
 
                           <h3 className="text-2xl font-display font-bold tracking-wide mb-3">
-                            {post.title}
+                            <Link
+                              to={`/blog/${post.slug}`}
+                              className="hover:text-primary transition-colors"
+                            >
+                              {post.title}
+                            </Link>
                           </h3>
                           <p className="text-muted-foreground mb-4">
                             {post.excerpt}
@@ -694,10 +431,10 @@ export default function Blog() {
                           <div className="flex items-center justify-between text-sm text-muted-foreground">
                             <span>{post.readingTimeMinutes} min read</span>
                             <Link
-                              to="/contact"
+                              to={`/blog/${post.slug}`}
                               className="inline-flex items-center gap-2 font-semibold text-primary hover:text-primary/80 transition-colors"
                             >
-                              Ask about this topic
+                              Read full post
                               <ArrowRight className="w-4 h-4" />
                             </Link>
                           </div>
