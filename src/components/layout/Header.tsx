@@ -46,26 +46,26 @@ export function Header() {
       <nav className="container mx-auto px-4 lg:px-8">
         <div
           className={`relative flex items-center justify-end transition-all duration-300 ${
-            isScrolled ? "h-20" : "h-24"
+            isScrolled ? "h-16 md:h-20" : "h-16 md:h-24"
           }`}
         >
           {/* Left logo that overhangs below the header */}
           <Link
             to="/"
-            className={`group absolute left-0 top-1/2 z-[70] -mt-[3px] pt-[2px] transition-all duration-300 ${
-              isScrolled ? "-translate-y-1/2" : "-translate-y-[20%]"
+            className={`group absolute left-0 top-1/2 z-[70] -translate-y-1/2 transition-all duration-300 md:-mt-[3px] md:pt-[2px] ${
+              isScrolled ? "" : "md:-translate-y-[20%]"
             }`}
           >
             <span
-              className={`block overflow-hidden transition-all duration-300 ${
-                isScrolled ? "h-[88px]" : "h-[122px]"
+              className={`flex items-center overflow-hidden transition-all duration-300 ${
+                isScrolled ? "h-[50px] md:h-[88px]" : "h-[50px] md:h-[122px]"
               }`}
             >
               <img
                 src={mazinmindLogo}
                 alt="MazinMind Digital"
                 className={`w-auto max-w-none drop-shadow-xl transition-all duration-300 group-hover:scale-105 ${
-                  isScrolled ? "h-[92px]" : "h-[125px]"
+                  isScrolled ? "h-[46px] md:h-[92px]" : "h-[46px] md:h-[125px]"
                 }`}
               />
             </span>
