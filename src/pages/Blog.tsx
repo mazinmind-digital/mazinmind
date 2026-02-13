@@ -12,127 +12,7 @@ import {
   Search,
   Tag,
 } from "lucide-react";
-import heroGraffiti from "@/assets/hero-graffiti.jpg";
-import aiMask from "@/assets/ai-mask.png";
-import aiFace from "@/assets/ai-face.png";
-import worldPeace from "@/assets/world-peace.png";
-import bostonColorful from "@/assets/boston-colorful.png";
-import bostonRain from "@/assets/boston-rain.png";
-import bostonCorridor from "@/assets/boston-corridor.png";
-import brainGreen from "@/assets/brain-green.png";
-
-type BlogPost = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  category: string;
-  tags: string[];
-  author: string;
-  publishedAt: string;
-  readingTimeMinutes: number;
-  image: string;
-};
-
-const blogPosts: BlogPost[] = [
-  {
-    slug: "how-ai-automation-cuts-ops-costs",
-    title:
-      "How AI Automation Can Cut Operating Costs Without Sacrificing Quality",
-    excerpt:
-      "A practical framework for identifying repetitive workflows, selecting the right automation stack, and measuring savings in the first 90 days.",
-    category: "Automation",
-    tags: ["AI Automation", "Operations", "ROI"],
-    author: "MazinMind Editorial",
-    publishedAt: "2026-02-02",
-    readingTimeMinutes: 7,
-    image: heroGraffiti,
-  },
-  {
-    slug: "seo-in-the-age-of-ai-search",
-    title: "SEO in the Age of AI Search: What Businesses Need to Change Now",
-    excerpt:
-      "Search behavior is shifting quickly. Learn how to optimize site structure, authority signals, and content strategy for AI-assisted search results.",
-    category: "SEO",
-    tags: ["SEO", "Content Strategy", "AI"],
-    author: "MazinMind Editorial",
-    publishedAt: "2026-01-22",
-    readingTimeMinutes: 9,
-    image: bostonColorful,
-  },
-  {
-    slug: "from-idea-to-mvp-using-ai",
-    title: "From Idea to MVP Faster: Using AI in Product Discovery",
-    excerpt:
-      "Use AI to accelerate customer research, requirement mapping, and feature prioritization while avoiding common MVP launch traps.",
-    category: "Product",
-    tags: ["MVP", "Product Strategy", "Startups"],
-    author: "MazinMind Editorial",
-    publishedAt: "2026-01-18",
-    readingTimeMinutes: 6,
-    image: aiMask,
-  },
-  {
-    slug: "predictive-analytics-for-marketing",
-    title:
-      "Predictive Analytics for Marketing Teams: A Practical Starter Guide",
-    excerpt:
-      "A step-by-step breakdown of how marketing teams can use predictive models to improve campaign timing, segmentation, and spend allocation.",
-    category: "Marketing",
-    tags: ["Predictive Analytics", "Digital Marketing", "Attribution"],
-    author: "MazinMind Editorial",
-    publishedAt: "2026-01-10",
-    readingTimeMinutes: 8,
-    image: aiFace,
-  },
-  {
-    slug: "building-trust-in-ai-adoption",
-    title: "Building Trust in AI Adoption Across Your Team",
-    excerpt:
-      "Change management matters as much as technology. This article covers governance, enablement, and communication patterns that reduce resistance.",
-    category: "Leadership",
-    tags: ["AI Adoption", "Change Management", "Leadership"],
-    author: "MazinMind Editorial",
-    publishedAt: "2025-12-28",
-    readingTimeMinutes: 5,
-    image: worldPeace,
-  },
-  {
-    slug: "devops-foundations-for-ai-products",
-    title: "DevOps Foundations for AI Products That Need to Scale",
-    excerpt:
-      "Set up reliable release pipelines, monitoring, and infrastructure standards that support continuous AI model improvements in production.",
-    category: "Engineering",
-    tags: ["DevOps", "MLOps", "Cloud"],
-    author: "MazinMind Editorial",
-    publishedAt: "2025-12-15",
-    readingTimeMinutes: 10,
-    image: bostonCorridor,
-  },
-  {
-    slug: "content-systems-that-rank-and-convert",
-    title: "Content Systems That Rank and Convert",
-    excerpt:
-      "How to build topic clusters, internal linking, and editorial workflows that increase qualified traffic while supporting conversion goals.",
-    category: "SEO",
-    tags: ["Content Marketing", "SEO", "Conversion"],
-    author: "MazinMind Editorial",
-    publishedAt: "2025-11-30",
-    readingTimeMinutes: 7,
-    image: bostonRain,
-  },
-  {
-    slug: "ai-readiness-checklist-for-smbs",
-    title: "AI Readiness Checklist for Small and Mid-Sized Businesses",
-    excerpt:
-      "Before purchasing tools, assess data quality, process maturity, and team capability with this readiness checklist for SMB leaders.",
-    category: "Strategy",
-    tags: ["AI Strategy", "SMB", "Digital Transformation"],
-    author: "MazinMind Editorial",
-    publishedAt: "2025-11-18",
-    readingTimeMinutes: 6,
-    image: brainGreen,
-  },
-];
+import { blogPosts } from "@/data/blogPosts";
 
 type SortMode = "newest" | "oldest" | "title";
 
@@ -250,9 +130,34 @@ export default function Blog() {
       .map((post, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        url: `https://mazinmind.digital/blog#${post.slug}`,
+        url: `https://mazinmind.digital/blog/${post.slug}`,
         name: post.title,
       })),
+  };
+
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@graph": blogPosts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.publishedAt,
+      dateModified: post.publishedAt,
+      author: {
+        "@type": "Organization",
+        name: post.author,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "MazinMind Digital",
+        url: "https://mazinmind.digital",
+      },
+      mainEntityOfPage: `https://mazinmind.digital/blog/${post.slug}`,
+      url: `https://mazinmind.digital/blog/${post.slug}`,
+      keywords: post.tags.join(", "),
+      articleSection: post.category,
+      inLanguage: "en-US",
+    })),
   };
 
   return (
@@ -261,11 +166,11 @@ export default function Blog() {
         <title>AI, SEO, and Automation Blog | MazinMind Digital</title>
         <meta
           name="description"
-          content="Explore MazinMind Digital's latest blog posts on AI automation, SEO strategy, digital marketing, and product innovation. Find practical insights and implementation guides."
+          content="Explore MazinMind Digital blog insights on AI implementation, AI consulting, ROI optimization, overhead reduction, SEM strategy, SEO growth, and automation systems."
         />
         <meta
           name="keywords"
-          content="AI blog, SEO blog, automation insights, digital marketing strategy, AI consulting articles, MazinMind Digital"
+          content="AI implementation for business, AI consulting services, AI ROI, overhead reduction, SEM strategy, SEO automation, digital transformation blog"
         />
         <meta
           property="og:title"
@@ -286,6 +191,9 @@ export default function Blog() {
         <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>
         <script type="application/ld+json">
           {JSON.stringify(itemListSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(blogPostingSchema)}
         </script>
       </Helmet>
 
@@ -406,17 +314,16 @@ export default function Blog() {
             <div>
               {featuredPost ? (
                 <>
-                  <article
-                    id={featuredPost.slug}
-                    className="glass-vibrant rounded-3xl overflow-hidden border border-primary/30 mb-10"
-                  >
+                  <article className="glass-vibrant rounded-3xl overflow-hidden border border-primary/30 mb-10">
                     <div className="grid lg:grid-cols-2">
                       <div className="h-72 lg:h-full">
-                        <img
-                          src={featuredPost.image}
-                          alt={featuredPost.title}
-                          className="w-full h-full object-cover"
-                        />
+                        <Link to={`/blog/${featuredPost.slug}`}>
+                          <img
+                            src={featuredPost.image}
+                            alt={featuredPost.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </Link>
                       </div>
 
                       <div className="p-8 lg:p-10">
@@ -424,7 +331,12 @@ export default function Blog() {
                           FEATURED POST
                         </p>
                         <h2 className="text-3xl lg:text-4xl font-display font-bold tracking-wider mb-4">
-                          {featuredPost.title}
+                          <Link
+                            to={`/blog/${featuredPost.slug}`}
+                            className="hover:text-primary transition-colors"
+                          >
+                            {featuredPost.title}
+                          </Link>
                         </h2>
                         <p className="text-muted-foreground text-lg mb-6">
                           {featuredPost.excerpt}
@@ -457,10 +369,10 @@ export default function Blog() {
                         </div>
 
                         <Link
-                          to="/contact"
+                          to={`/blog/${featuredPost.slug}`}
                           className="inline-flex items-center gap-2 font-semibold text-primary hover:text-primary/80 transition-colors"
                         >
-                          Discuss this topic with our team
+                          Read full post
                           <ArrowRight className="w-4 h-4" />
                         </Link>
                       </div>
@@ -471,15 +383,16 @@ export default function Blog() {
                     {remainingPosts.map((post) => (
                       <article
                         key={post.slug}
-                        id={post.slug}
                         className="glass-vibrant rounded-2xl overflow-hidden border border-border hover:border-primary/40 transition-colors"
                       >
                         <div className="h-52">
-                          <img
-                            src={post.image}
-                            alt={post.title}
-                            className="w-full h-full object-cover"
-                          />
+                          <Link to={`/blog/${post.slug}`}>
+                            <img
+                              src={post.image}
+                              alt={post.title}
+                              className="w-full h-full object-cover"
+                            />
+                          </Link>
                         </div>
 
                         <div className="p-6">
@@ -493,7 +406,12 @@ export default function Blog() {
                           </div>
 
                           <h3 className="text-2xl font-display font-bold tracking-wide mb-3">
-                            {post.title}
+                            <Link
+                              to={`/blog/${post.slug}`}
+                              className="hover:text-primary transition-colors"
+                            >
+                              {post.title}
+                            </Link>
                           </h3>
                           <p className="text-muted-foreground mb-4">
                             {post.excerpt}
@@ -513,10 +431,10 @@ export default function Blog() {
                           <div className="flex items-center justify-between text-sm text-muted-foreground">
                             <span>{post.readingTimeMinutes} min read</span>
                             <Link
-                              to="/contact"
+                              to={`/blog/${post.slug}`}
                               className="inline-flex items-center gap-2 font-semibold text-primary hover:text-primary/80 transition-colors"
                             >
-                              Ask about this topic
+                              Read full post
                               <ArrowRight className="w-4 h-4" />
                             </Link>
                           </div>
