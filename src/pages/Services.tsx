@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
+import { useSiteOverlay } from "@/components/layout/site-overlays";
 import { Helmet } from "react-helmet-async";
 import {
   Brain,
@@ -143,6 +144,8 @@ const processSteps = [
 ];
 
 export default function Services() {
+  const { openScheduleModal } = useSiteOverlay();
+
   return (
     <Layout>
       <Helmet>
@@ -357,14 +360,15 @@ export default function Services() {
               discover how MazinMind Digital can help you achieve your goals.
             </p>
             <Button
-              asChild
+              type="button"
+              onClick={openScheduleModal}
               size="lg"
               className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-12 h-16 text-lg tracking-wider glow-primary"
             >
-              <Link to="/contact" className="flex items-center gap-3">
+              <span className="flex items-center gap-3">
                 SCHEDULE NOW
                 <ArrowRight className="w-6 h-6" />
-              </Link>
+              </span>
             </Button>
           </div>
         </div>

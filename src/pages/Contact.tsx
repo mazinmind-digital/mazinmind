@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import { Helmet } from "react-helmet-async";
-import ScheduleButton from "@/components/ui/ScheduleButton";
+import { useSiteOverlay } from "@/components/layout/site-overlays";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -109,6 +109,7 @@ const colorMap = {
 
 export default function Contact() {
   const location = useLocation();
+  const { openScheduleModal } = useSiteOverlay();
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -336,12 +337,13 @@ export default function Contact() {
                   Book a free 30-minute consultation to discuss your needs and
                   explore how we can help transform your business.
                 </p>
-                <ScheduleButton
-                  provider="hubspot"
+                <Button
+                  type="button"
+                  onClick={openScheduleModal}
                   className="w-full bg-gradient-accent hover:opacity-90 text-accent-foreground font-bold h-14 tracking-wider glow-accent"
                 >
                   BOOK A CONSULTATION
-                </ScheduleButton>
+                </Button>
               </div>
             </div>
 
@@ -507,12 +509,13 @@ export default function Contact() {
                         )}
                       </Button>
 
-                      <ScheduleButton
-                        provider="hubspot"
+                      <Button
+                        type="button"
+                        onClick={openScheduleModal}
                         className="w-full bg-gradient-accent hover:opacity-90 text-accent-foreground font-bold h-14 tracking-wider glow-accent"
                       >
                         SCHEDULE A CALL
-                      </ScheduleButton>
+                      </Button>
                     </div>
                   </form>
                 </>
