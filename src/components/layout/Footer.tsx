@@ -1,5 +1,13 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  X,
+  Github,
+  Instagram,
+} from "lucide-react";
 import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import mazinmindLogo from "@/assets/mazinmind-logo.png";
 
@@ -25,9 +33,22 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Github, href: "https://github.com", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/company/mazinmind-digital",
+    label: "LinkedIn",
+  },
+  { icon: X, href: "https://x.com/MazinmindD", label: "X" },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/mazinmind.digital/",
+    label: "Instagram",
+  },
+  {
+    icon: Github,
+    href: "https://github.com/mazinmind-digital/mazinmind",
+    label: "GitHub",
+  },
 ];
 
 export function Footer() {

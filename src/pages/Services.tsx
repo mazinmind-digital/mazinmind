@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
@@ -265,13 +264,14 @@ export default function Services() {
                     </ul>
 
                     <Button
-                      asChild
+                      type="button"
+                      onClick={openScheduleModal}
                       className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold tracking-wider glow-primary"
                     >
-                      <Link to="/contact" className="flex items-center gap-2">
+                      <span className="flex items-center gap-2">
                         GET STARTED
                         <ArrowRight className="w-5 h-5" />
-                      </Link>
+                      </span>
                     </Button>
                   </div>
                 </div>
