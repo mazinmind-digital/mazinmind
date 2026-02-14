@@ -8,7 +8,7 @@ const contentSecurityPolicy = [
   "base-uri 'self'",
   "object-src 'none'",
   "frame-ancestors 'none'",
-  "script-src 'self' https://js-na2.hs-scripts.com https://js.hs-scripts.com https://*.hubspot.com https://*.hubspot.net",
+  "script-src 'self' https://js-na2.hs-scripts.com https://js.hs-scripts.com https://static.hsappstatic.net https://*.hubspot.com https://*.hubspot.net",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: blob: https://*.hubspot.com https://*.hubspot.net https://*.hubspotusercontent.com https://*.hubspotusercontent-na1.net https://*.hubspotusercontent-na2.net",
   "font-src 'self' data: https://fonts.gstatic.com",

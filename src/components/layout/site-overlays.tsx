@@ -4,6 +4,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import { Button } from "@/components/ui/button";
@@ -41,7 +42,36 @@ type PolicySection = {
 const PRIVACY_UPDATED = "February 11, 2026";
 const TERMS_UPDATED = "February 11, 2026";
 const HUBSPOT_MEETINGS_URL = "https://meetings-na2.hubspot.com/randy-mazin";
+const HUBSPOT_MEETINGS_EMBED_URL = `${HUBSPOT_MEETINGS_URL}?embed=true`;
+const HUBSPOT_MEETINGS_EMBED_SCRIPT_URL =
+  "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
 const COOKIE_STORAGE_KEY = "mazinmind_cookie_preferences_v1";
+
+function HubSpotMeetingsEmbed() {
+  const scriptHostRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scriptHost = scriptHostRef.current;
+    if (!scriptHost) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = HUBSPOT_MEETINGS_EMBED_SCRIPT_URL;
+    script.async = true;
+    scriptHost.appendChild(script);
+  }, []);
+
+  return (
+    <div ref={scriptHostRef}>
+      <div
+        className="meetings-iframe-container h-[60vh] w-full rounded-xl border border-border bg-secondary/30 overflow-hidden"
+        data-src={HUBSPOT_MEETINGS_EMBED_URL}
+      />
+    </div>
+  );
+}
 
 const privacySections: PolicySection[] = [
   {
@@ -257,11 +287,7 @@ function ScheduleConsultationModal({
         </DialogHeader>
 
         <div className="space-y-4 px-6 py-5">
-          <iframe
-            title="Schedule a free consultation"
-            src={`${HUBSPOT_MEETINGS_URL}?embed=true`}
-            className="h-[60vh] w-full rounded-xl border border-border bg-secondary/30"
-          />
+          <HubSpotMeetingsEmbed />
           <p className="text-sm text-muted-foreground">
             If the embedded scheduler does not load, use{" "}
             <a
