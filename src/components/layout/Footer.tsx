@@ -1,11 +1,22 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  X,
+  Github,
+  Instagram,
+} from "lucide-react";
+import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import mazinmindLogo from "@/assets/mazinmind-logo.png";
 
 const footerLinks = {
   company: [
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
+    { name: "Blog", href: "/blog" },
+    { name: "Art Gallery", href: "/art-gallery" },
     { name: "Contact", href: "/contact" },
     { name: "FAQ", href: "/faq" },
   ],
@@ -22,9 +33,22 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Github, href: "https://github.com", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/company/mazinmind-digital",
+    label: "LinkedIn",
+  },
+  { icon: X, href: "https://x.com/MazinmindD", label: "X" },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/mazinmind.digital/",
+    label: "Instagram",
+  },
+  {
+    icon: Github,
+    href: "https://github.com/mazinmind-digital/mazinmind",
+    label: "GitHub",
+  },
 ];
 
 export function Footer() {
@@ -33,7 +57,7 @@ export function Footer() {
       {/* Background Effects */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px]" />
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[150px]" />
-      
+
       <div className="container mx-auto px-4 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
@@ -47,8 +71,9 @@ export function Footer() {
               />
             </Link>
             <p className="text-muted-foreground leading-relaxed">
-              Transform your business with AI-powered solutions. We combine cutting-edge technology 
-              with human expertise to deliver exceptional results.
+              Transform your business with AI-powered solutions. We combine
+              cutting-edge technology with human expertise to deliver
+              exceptional results.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -57,10 +82,10 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-xl glass-vibrant flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-primary transition-all"
+                  className="hover:scale-105 transition-transform"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <GraffitiIcon icon={social.icon} size="sm" tone="primary" />
                 </a>
               ))}
             </div>
@@ -68,7 +93,9 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-display text-xl font-bold text-foreground mb-6 tracking-wider">COMPANY</h4>
+            <h4 className="font-display text-xl font-bold text-foreground mb-6 tracking-wider">
+              COMPANY
+            </h4>
             <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -85,7 +112,9 @@ export function Footer() {
 
           {/* Services Links */}
           <div>
-            <h4 className="font-display text-xl font-bold text-foreground mb-6 tracking-wider">SERVICES</h4>
+            <h4 className="font-display text-xl font-bold text-foreground mb-6 tracking-wider">
+              SERVICES
+            </h4>
             <ul className="space-y-4">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
@@ -102,28 +131,35 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-display text-xl font-bold text-foreground mb-6 tracking-wider">CONTACT</h4>
+            <h4 className="font-display text-xl font-bold text-foreground mb-6 tracking-wider">
+              CONTACT
+            </h4>
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:+16173831220"
+                  href="tel:+16174538776"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
-                  <Phone className="w-5 h-5 text-primary" />
-                  <span>+1 (617) 383-1220</span>
+                  <GraffitiIcon icon={Phone} size="sm" tone="primary" />
+                  <span>+1 (617) 453-8776</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@mazinmind.digital.com"
+                  href="mailto:info@mazinmind.digital"
                   className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors font-medium"
                 >
-                    <Mail className="w-5 h-5 text-accent" />
-                    <span>info@mazinmind.digital.com</span>
+                  <GraffitiIcon icon={Mail} size="sm" tone="accent" />
+                  <span>info@mazinmind.digital</span>
                 </a>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground font-medium">
-                <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-electric" />
+                <GraffitiIcon
+                  icon={MapPin}
+                  size="sm"
+                  tone="electric"
+                  className="flex-shrink-0"
+                />
                 <span>Boston, MA, USA</span>
               </li>
             </ul>
@@ -133,7 +169,11 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-primary/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground">
-            © {new Date().getFullYear()} <span className="text-gradient-primary font-semibold">MazinMind Digital</span>. All rights reserved.
+            © {new Date().getFullYear()}{" "}
+            <span className="text-gradient-primary font-semibold">
+              MazinMind Digital
+            </span>
+            . All rights reserved.
           </p>
           <div className="flex gap-6">
             {footerLinks.legal.map((link) => (
