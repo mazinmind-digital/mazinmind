@@ -21,7 +21,7 @@ const services = [
     title: "AI CONSULTING",
     color: "primary",
     shortDesc: "Transform Your Business with AI-Powered Digital Solutions",
-    fullDesc: `Experience intelligent marketing and cutting-edge technology that delivers measurable results. At MazinMind Digital, we architect your success through innovative AI solutions that drive growth and engagement.
+    fullDesc: `Experience intelligent marketing and cutting-edge technology that delivers measurable results. At Mazinmind.Digital, we architect your success through innovative AI solutions that drive growth and engagement.
 
 🚀 Revolutionize Your Digital Presence:
 • Cut operational costs by 50% while doubling market impact

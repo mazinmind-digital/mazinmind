@@ -16,12 +16,12 @@ const faqs = [
     color: "primary",
     questions: [
       {
-        question: "What is MazinMind Digital?",
+        question: "What is Mazinmind.Digital?",
         answer:
-          "MazinMind Digital is an AI consulting and digital transformation company. We help businesses leverage artificial intelligence and cutting-edge technology to improve operations, reduce costs, and drive growth. With over 20 years of experience in software development, we combine AI innovation with human expertise to deliver exceptional results.",
+          "Mazinmind.Digital is an AI consulting and digital transformation company. We help businesses leverage artificial intelligence and cutting-edge technology to improve operations, reduce costs, and drive growth. With over 20 years of experience in software development, we combine AI innovation with human expertise to deliver exceptional results.",
       },
       {
-        question: "How is MazinMind Digital different from other AI companies?",
+        question: "How is Mazinmind.Digital different from other AI companies?",
         answer:
           "We take a hybrid approach that combines AI power with human creativity and strategic thinking. While many companies offer pure automation, we believe the best results come from blending AI efficiency with human insight. We're also highly focused on ROI – every solution we develop is designed to deliver measurable business value.",
       },
@@ -111,26 +111,26 @@ export default function FAQ() {
   return (
     <Layout>
       <Helmet>
-        <title>FAQ | MazinMind Digital</title>
+        <title>FAQ | Mazinmind.Digital</title>
         <meta
           name="description"
-          content="Find answers to common questions about MazinMind Digital's AI consulting, digital transformation, and technology services. Learn more about our process, pricing, and support."
+          content="Find answers to common questions about Mazinmind.Digital's AI consulting, digital transformation, and technology services. Learn more about our process, pricing, and support."
         />
         <meta
           name="keywords"
-          content="FAQ, MazinMind Digital, AI consulting, digital transformation, technology services, support, pricing"
+          content="FAQ, Mazinmind.Digital, AI consulting, digital transformation, technology services, support, pricing"
         />
-        <meta property="og:title" content="FAQ | MazinMind Digital" />
+        <meta property="og:title" content="FAQ | Mazinmind.Digital" />
         <meta
           property="og:description"
-          content="Find answers to common questions about MazinMind Digital's AI consulting, digital transformation, and technology services."
+          content="Find answers to common questions about Mazinmind.Digital's AI consulting, digital transformation, and technology services."
         />
         <meta property="og:url" content="https://mazinmind.digital/faq" />
-        <meta property="og:site_name" content="MazinMind Digital" />
-        <meta name="twitter:title" content="FAQ | MazinMind Digital" />
+        <meta property="og:site_name" content="Mazinmind.Digital" />
+        <meta name="twitter:title" content="FAQ | Mazinmind.Digital" />
         <meta
           name="twitter:description"
-          content="Find answers to common questions about MazinMind Digital's AI consulting, digital transformation, and technology services."
+          content="Find answers to common questions about Mazinmind.Digital's AI consulting, digital transformation, and technology services."
         />
         <link rel="canonical" href="https://mazinmind.digital/faq" />
       </Helmet>

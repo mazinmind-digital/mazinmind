@@ -65,7 +65,7 @@ export function Footer() {
             <Link to="/" className="inline-block group">
               <img
                 src={mazinmindLogo}
-                alt="MazinMind Digital"
+                alt="Mazinmind.Digital"
                 className="h-[140px] w-auto group-hover:scale-105 transition-transform relative z-20"
                 style={{ maxHeight: 140 }}
               />
@@ -171,7 +171,7 @@ export function Footer() {
           <p className="text-muted-foreground">
             © {new Date().getFullYear()}{" "}
             <span className="text-gradient-primary font-semibold">
-              MazinMind Digital
+              Mazinmind.Digital
             </span>
             . All rights reserved.
           </p>

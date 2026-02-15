@@ -15,29 +15,29 @@ const NotFound = () => {
   return (
     <>
       <Helmet>
-        <title>404 Not Found | MazinMind Digital</title>
+        <title>404 Not Found | Mazinmind.Digital</title>
         <meta name="robots" content="noindex, follow" />
         <meta
           name="description"
-          content="404 error: The page you are looking for does not exist on MazinMind Digital."
+          content="404 error: The page you are looking for does not exist on Mazinmind.Digital."
         />
-        <meta property="og:title" content="404 Not Found | MazinMind Digital" />
+        <meta property="og:title" content="404 Not Found | Mazinmind.Digital" />
         <meta
           property="og:description"
-          content="404 error: The page you are looking for does not exist on MazinMind Digital."
+          content="404 error: The page you are looking for does not exist on Mazinmind.Digital."
         />
         <meta
           property="og:url"
           content={`https://mazinmind.digital${location.pathname}`}
         />
-        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:site_name" content="Mazinmind.Digital" />
         <meta
           name="twitter:title"
-          content="404 Not Found | MazinMind Digital"
+          content="404 Not Found | Mazinmind.Digital"
         />
         <meta
           name="twitter:description"
-          content="404 error: The page you are looking for does not exist on MazinMind Digital."
+          content="404 error: The page you are looking for does not exist on Mazinmind.Digital."
         />
       </Helmet>
       <div className="flex min-h-screen items-center justify-center bg-muted">

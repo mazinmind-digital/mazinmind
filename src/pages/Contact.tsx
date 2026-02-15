@@ -53,6 +53,112 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
+const HUBSPOT_PORTAL_ID = "243856745";
+const HUBSPOT_CONTACT_FORM_ID =
+  import.meta.env.VITE_HUBSPOT_CONTACT_FORM_ID ??
+  "8d1ae045-5353-4e44-97e8-17b3c597d5e1";
+const CONTACT_INBOX_EMAIL = "rmazin@mazinmind.digital";
+
+function splitName(name: string) {
+  const normalized = name.trim().replace(/\s+/g, " ");
+  if (!normalized) {
+    return { firstName: "", lastName: "" };
+  }
+
+  const [firstName, ...rest] = normalized.split(" ");
+  return {
+    firstName,
+    lastName: rest.join(" "),
+  };
+}
+
+function buildMailtoLink(formData: ContactFormData): string {
+  const subject = encodeURIComponent(
+    `Contact form submission from ${formData.name || "Website"}`,
+  );
+  const bodyLines = [
+    `Name: ${formData.name}`,
+    `Email: ${formData.email}`,
+    `Company: ${formData.company || ""}`,
+    `Phone: ${formData.phone || ""}`,
+    "",
+    "Message:",
+    formData.message,
+  ];
+  const body = encodeURIComponent(bodyLines.join("\n"));
+  return `mailto:${CONTACT_INBOX_EMAIL}?subject=${subject}&body=${body}`;
+}
+
+async function submitContactToHubSpot(formData: ContactFormData): Promise<void> {
+  const { firstName, lastName } = splitName(formData.name);
+
+  if (!HUBSPOT_CONTACT_FORM_ID) {
+    const hubspotQueue = (window as { _hsq?: unknown[] })._hsq;
+    if (Array.isArray(hubspotQueue)) {
+      hubspotQueue.push([
+        "identify",
+        {
+          email: formData.email,
+          firstname: firstName,
+          lastname: lastName,
+          company: formData.company || "",
+          phone: formData.phone || "",
+        },
+      ]);
+      hubspotQueue.push([
+        "trackEvent",
+        {
+          id: "contact_form_submission",
+          message: formData.message,
+          recipient_email: CONTACT_INBOX_EMAIL,
+        },
+      ]);
+      hubspotQueue.push(["trackPageView"]);
+      return;
+    }
+
+    throw new Error("Missing VITE_HUBSPOT_CONTACT_FORM_ID and HubSpot queue unavailable");
+  }
+
+  const context: Record<string, string> = {
+    pageUri: window.location.href,
+    pageName: document.title,
+  };
+
+  const hutkMatch = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+  if (hutkMatch?.[1]) {
+    context.hutk = decodeURIComponent(hutkMatch[1]);
+  }
+
+  const payload = {
+    fields: [
+      { name: "firstname", value: firstName },
+      { name: "lastname", value: lastName },
+      { name: "email", value: formData.email },
+      { name: "company", value: formData.company || "" },
+      { name: "phone", value: formData.phone || "" },
+      { name: "message", value: formData.message },
+    ],
+    context,
+  };
+
+  const response = await fetch(
+    `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_CONTACT_FORM_ID}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    },
+  );
+
+  if (!response.ok) {
+    const errorBody = await response.text();
+    throw new Error(errorBody || `HubSpot request failed with status ${response.status}`);
+  }
+}
+
 const contactInfo = [
   {
     icon: Phone,
@@ -172,56 +278,62 @@ export default function Contact() {
       return;
     }
 
-    // Open user's mail client with prefilled message to site inbox
-    const to = "info@mazinmind.digital";
-    const subject = encodeURIComponent(
-      `Contact form submission from ${formData.name || "Website"}`,
-    );
-    const bodyLines = [
-      `Name: ${formData.name}`,
-      `Email: ${formData.email}`,
-      `Company: ${formData.company || ""}`,
-      `Phone: ${formData.phone || ""}`,
-      "",
-      "Message:",
-      formData.message,
-    ];
-    const body = encodeURIComponent(bodyLines.join("\n"));
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-    setIsSubmitted(true);
-    setIsLoading(false);
-    toast.success("Opened mail client to send your message.");
+    setIsLoading(true);
+
+    try {
+      await submitContactToHubSpot(result.data);
+      window.location.href = buildMailtoLink(result.data);
+      setIsSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        phone: "",
+        message: "",
+      });
+      toast.success(
+        "Submitted to HubSpot and opened an email draft to rmazin@mazinmind.digital.",
+      );
+    } catch (error) {
+      console.error("Contact submission error:", error);
+      window.location.href = buildMailtoLink(result.data);
+      toast.error(
+        "Could not log to HubSpot. Opened an email draft to rmazin@mazinmind.digital as fallback.",
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <Layout>
       <Helmet>
-        <title>Contact MazinMind Digital | AI Consulting & Support</title>
+        <title>Contact Mazinmind.Digital | AI Consulting & Support</title>
         <meta
           name="description"
-          content="Contact MazinMind Digital for expert AI consulting, digital transformation, and support. Get in touch for a free consultation or to learn more about our services."
+          content="Contact Mazinmind.Digital for expert AI consulting, digital transformation, and support. Get in touch for a free consultation or to learn more about our services."
         />
         <meta
           name="keywords"
-          content="Contact MazinMind Digital, AI consulting, support, digital transformation, free consultation"
+          content="Contact Mazinmind.Digital, AI consulting, support, digital transformation, free consultation"
         />
         <meta
           property="og:title"
-          content="Contact MazinMind Digital | AI Consulting & Support"
+          content="Contact Mazinmind.Digital | AI Consulting & Support"
         />
         <meta
           property="og:description"
-          content="Contact MazinMind Digital for expert AI consulting, digital transformation, and support."
+          content="Contact Mazinmind.Digital for expert AI consulting, digital transformation, and support."
         />
         <meta property="og:url" content="https://mazinmind.digital/contact" />
-        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:site_name" content="Mazinmind.Digital" />
         <meta
           name="twitter:title"
-          content="Contact MazinMind Digital | AI Consulting & Support"
+          content="Contact Mazinmind.Digital | AI Consulting & Support"
         />
         <meta
           name="twitter:description"
-          content="Contact MazinMind Digital for expert AI consulting, digital transformation, and support."
+          content="Contact Mazinmind.Digital for expert AI consulting, digital transformation, and support."
         />
         <link rel="canonical" href="https://mazinmind.digital/contact" />
       </Helmet>
@@ -517,6 +629,10 @@ export default function Contact() {
                         SCHEDULE A CALL
                       </Button>
                     </div>
+
+                    <p className="text-xs text-muted-foreground text-center">
+                      Form data is logged to HubSpot and routed to rmazin@mazinmind.digital.
+                    </p>
                   </form>
                 </>
               )}

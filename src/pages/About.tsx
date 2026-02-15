@@ -151,8 +151,8 @@ export default function About() {
               Where AI Innovation Meets Human Expertise 🚀
             </p>
             <p className="text-xl text-muted-foreground max-w-3xl">
-              At MazinMind Digital, we're not just another AI company – we're
-              your partners in digital transformation. Founded by Randy, a
+              At Mazinmind.Digital, we're not just another AI company – we're
+              your partners in digital transformation. Founded by Randy Mazin, a
               software development veteran with 20+ years of experience, we
               combine cutting-edge AI solutions with human creativity to deliver
               exceptional results.
@@ -188,32 +188,32 @@ export default function About() {
         </div>
       </section>
       <Helmet>
-        <title>About MazinMind Digital | AI Experts & Innovators</title>
+        <title>About Mazinmind.Digital | AI Experts & Innovators</title>
         <meta
           name="description"
-          content="Learn about MazinMind Digital, a leader in AI consulting, digital transformation, and innovative technology solutions. Discover our values, mission, and expert team."
+          content="Learn about Mazinmind.Digital, a leader in AI consulting, digital transformation, and innovative technology solutions. Discover our values, mission, and expert team."
         />
         <meta
           name="keywords"
-          content="About MazinMind Digital, AI experts, digital transformation, technology consulting, company values, innovation"
+          content="About Mazinmind.Digital, AI experts, digital transformation, technology consulting, company values, innovation"
         />
         <meta
           property="og:title"
-          content="About MazinMind Digital | AI Experts & Innovators"
+          content="About Mazinmind.Digital | AI Experts & Innovators"
         />
         <meta
           property="og:description"
-          content="Learn about MazinMind Digital, a leader in AI consulting, digital transformation, and innovative technology solutions."
+          content="Learn about Mazinmind.Digital, a leader in AI consulting, digital transformation, and innovative technology solutions."
         />
         <meta property="og:url" content="https://mazinmind.digital/about" />
-        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:site_name" content="Mazinmind.Digital" />
         <meta
           name="twitter:title"
-          content="About MazinMind Digital | AI Experts & Innovators"
+          content="About Mazinmind.Digital | AI Experts & Innovators"
         />
         <meta
           name="twitter:description"
-          content="Learn about MazinMind Digital, a leader in AI consulting, digital transformation, and innovative technology solutions."
+          content="Learn about Mazinmind.Digital, a leader in AI consulting, digital transformation, and innovative technology solutions."
         />
         <link rel="canonical" href="https://mazinmind.digital/about" />
       </Helmet>
@@ -312,7 +312,7 @@ export default function About() {
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   With over 20 years of experience in software development and
-                  digital transformation, Randy founded MazinMind Digital to
+                  digital transformation, Randy founded Mazinmind.Digital to
                   help businesses harness the power of AI while maintaining the
                   human touch that drives real results.
                 </p>
@@ -346,7 +346,7 @@ export default function About() {
               </span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              These core principles guide everything we do at MazinMind Digital.
+              These core principles guide everything we do at Mazinmind.Digital.
             </p>
           </div>
 
@@ -448,7 +448,7 @@ export default function About() {
               WITH US?
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Let's discuss how MazinMind Digital can help transform your
+              Let's discuss how Mazinmind.Digital can help transform your
               business with AI-powered solutions.
             </p>
             <Button

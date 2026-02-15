@@ -57,7 +57,7 @@ export default function BlogPost() {
     },
     publisher: {
       "@type": "Organization",
-      name: "MazinMind Digital",
+      name: "Mazinmind.Digital",
       url: "https://mazinmind.digital",
     },
     keywords: post.tags.join(", "),
@@ -68,7 +68,7 @@ export default function BlogPost() {
   return (
     <Layout>
       <Helmet>
-        <title>{`${post.title} | MazinMind Digital`}</title>
+        <title>{`${post.title} | Mazinmind.Digital`}</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={post.tags.join(", ")} />
         <meta property="og:title" content={post.title} />

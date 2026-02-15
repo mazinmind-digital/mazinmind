@@ -27,7 +27,7 @@ const services = [
     color: "primary",
     tagline: "Transform Your Business with AI-Powered Digital Solutions",
     description:
-      "Experience intelligent marketing and cutting-edge technology that delivers measurable results. At MazinMind Digital, we architect your success through innovative AI solutions that drive growth and engagement.",
+      "Experience intelligent marketing and cutting-edge technology that delivers measurable results. At Mazinmind.Digital, we architect your success through innovative AI solutions that drive growth and engagement.",
     features: [
       "Cut operational costs by 50% while doubling market impact",
       "Deploy AI-powered SEO strategies that boost visibility",
@@ -148,26 +148,26 @@ export default function Services() {
   return (
     <Layout>
       <Helmet>
-        <title>AI Services | MazinMind Digital</title>
+        <title>AI Services | Mazinmind.Digital</title>
         <meta
           name="description"
-          content="Explore MazinMind Digital's full suite of AI services: consulting, marketing, automation, content creation, and custom software. Drive growth and efficiency with expert solutions."
+          content="Explore Mazinmind.Digital's full suite of AI services: consulting, marketing, automation, content creation, and custom software. Drive growth and efficiency with expert solutions."
         />
         <meta
           name="keywords"
-          content="AI services, consulting, digital marketing, automation, content creation, custom software, MazinMind Digital"
+          content="AI services, consulting, digital marketing, automation, content creation, custom software, Mazinmind.Digital"
         />
-        <meta property="og:title" content="AI Services | MazinMind Digital" />
+        <meta property="og:title" content="AI Services | Mazinmind.Digital" />
         <meta
           property="og:description"
-          content="Explore MazinMind Digital's full suite of AI services: consulting, marketing, automation, content creation, and custom software."
+          content="Explore Mazinmind.Digital's full suite of AI services: consulting, marketing, automation, content creation, and custom software."
         />
         <meta property="og:url" content="https://mazinmind.digital/services" />
-        <meta property="og:site_name" content="MazinMind Digital" />
-        <meta name="twitter:title" content="AI Services | MazinMind Digital" />
+        <meta property="og:site_name" content="Mazinmind.Digital" />
+        <meta name="twitter:title" content="AI Services | Mazinmind.Digital" />
         <meta
           name="twitter:description"
-          content="Explore MazinMind Digital's full suite of AI services: consulting, marketing, automation, content creation, and custom software."
+          content="Explore Mazinmind.Digital's full suite of AI services: consulting, marketing, automation, content creation, and custom software."
         />
         <link rel="canonical" href="https://mazinmind.digital/services" />
       </Helmet>
@@ -357,7 +357,7 @@ export default function Services() {
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
               Schedule a free 30-minute consultation to discuss your needs and
-              discover how MazinMind Digital can help you achieve your goals.
+              discover how Mazinmind.Digital can help you achieve your goals.
             </p>
             <Button
               type="button"

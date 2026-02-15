@@ -553,7 +553,7 @@ export default function ArtGallery() {
     "@type": "CollectionPage",
     name: "MazinMind Art Gallery",
     description:
-      "Browse Midjourney art pieces available as premium canvas prints from MazinMind Digital.",
+      "Browse Midjourney art pieces available as premium canvas prints from Mazinmind.Digital.",
     url: "https://mazinmind.digital/art-gallery",
     mainEntity: {
       "@type": "ItemList",
@@ -600,7 +600,7 @@ export default function ArtGallery() {
           property="og:url"
           content="https://mazinmind.digital/art-gallery"
         />
-        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:site_name" content="Mazinmind.Digital" />
         <meta name="twitter:title" content="MazinMind Art Gallery" />
         <meta
           name="twitter:description"

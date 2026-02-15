@@ -63,7 +63,7 @@ export function Header() {
             >
               <img
                 src={mazinmindLogo}
-                alt="MazinMind Digital"
+                alt="Mazinmind.Digital"
                 className={`w-auto max-w-none drop-shadow-xl transition-all duration-300 group-hover:scale-105 ${
                   isScrolled ? "h-[46px] md:h-[92px]" : "h-[46px] md:h-[125px]"
                 }`}

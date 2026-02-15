@@ -9,7 +9,7 @@ describe("Footer", () => {
         <Footer />
       </BrowserRouter>,
     );
-    const logo = screen.getByAltText(/MazinMind Digital/i);
+    const logo = screen.getByAltText(/Mazinmind.Digital/i);
     expect(logo).toBeInTheDocument();
   });
 

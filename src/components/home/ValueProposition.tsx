@@ -36,7 +36,7 @@ export function ValueProposition() {
 
           {/* Quote */}
           <blockquote className="text-3xl md:text-4xl lg:text-5xl font-display text-foreground leading-tight mb-10 tracking-wide">
-            "AT MAZINMIND DIGITAL, WE'RE NOT JUST ANOTHER AI COMPANY – WE'RE
+            "AT MAZINMIND.DIGITAL, WE'RE NOT JUST ANOTHER AI COMPANY – WE'RE
             YOUR PARTNERS IN{" "}
             <span className="text-gradient-primary text-shadow-neon">
               DIGITAL TRANSFORMATION
@@ -68,7 +68,7 @@ export function ValueProposition() {
                 RANDY MAZIN
               </p>
               <p className="text-muted-foreground font-medium">
-                Founder, MazinMind Digital
+                Founder, Mazinmind.Digital
               </p>
             </div>
           </div>

@@ -55,7 +55,7 @@ export function CTASection() {
 
           {/* Description */}
           <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Partner with MazinMind Digital to{" "}
+            Partner with Mazinmind.Digital to{" "}
             <span className="text-primary font-semibold">revolutionize</span>{" "}
             your market position through intelligent marketing practices.{" "}
             <span className="text-accent font-semibold">

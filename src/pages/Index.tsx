@@ -4,6 +4,7 @@ import { ServicesSection } from "@/components/home/ServicesSection";
 import { ValueProposition } from "@/components/home/ValueProposition";
 import { CTASection } from "@/components/home/CTASection";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
+import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { Helmet } from "react-helmet-async";
 
 const Index = () => {
@@ -11,11 +12,11 @@ const Index = () => {
     <Layout>
       <Helmet>
         <title>
-          MazinMind Digital | AI Consulting & Digital Transformation
+          Mazinmind.Digital | AI Consulting & Digital Transformation
         </title>
         <meta
           name="description"
-          content="Transform your business with AI-powered digital solutions. MazinMind Digital offers AI consulting, digital marketing, automation, and custom software development. Cut costs by 50% while doubling market impact."
+          content="Transform your business with AI-powered digital solutions. Mazinmind.Digital offers AI consulting, digital marketing, automation, and custom software development. Cut costs by 50% while doubling market impact."
         />
         <meta
           name="keywords"
@@ -23,17 +24,17 @@ const Index = () => {
         />
         <meta
           property="og:title"
-          content="MazinMind Digital | AI Consulting & Digital Transformation"
+          content="Mazinmind.Digital | AI Consulting & Digital Transformation"
         />
         <meta
           property="og:description"
           content="Transform your business with AI-powered digital solutions. Expert AI consulting, digital marketing, and custom software development."
         />
         <meta property="og:url" content="https://mazinmind.digital" />
-        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:site_name" content="Mazinmind.Digital" />
         <meta
           name="twitter:title"
-          content="MazinMind Digital | AI Consulting"
+          content="Mazinmind.Digital | AI Consulting"
         />
         <meta
           name="twitter:description"
@@ -45,6 +46,7 @@ const Index = () => {
       <ServicesSection />
       <ValueProposition />
       <CTASection />
+      <TestimonialsSection />
       <NewsletterSection />
     </Layout>
   );

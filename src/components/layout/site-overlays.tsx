@@ -164,7 +164,7 @@ const termsSections: PolicySection[] = [
   {
     heading: "4. Intellectual Property",
     points: [
-      "Unless otherwise noted, website content, branding, and design elements are owned by MazinMind Digital and protected by intellectual property laws.",
+      "Unless otherwise noted, website content, branding, and design elements are owned by Mazinmind.Digital and protected by intellectual property laws.",
       "Artwork displayed in the gallery may not be copied, redistributed, or commercially used without prior written permission.",
     ],
   },
@@ -187,7 +187,7 @@ const termsSections: PolicySection[] = [
     heading: "7. Warranty Disclaimer and Liability Limits",
     points: [
       "The website is provided on an as-is and as-available basis without warranties of any kind, to the maximum extent permitted by law.",
-      "To the extent permitted by law, MazinMind Digital is not liable for indirect, incidental, special, consequential, or punitive damages related to website use.",
+      "To the extent permitted by law, Mazinmind.Digital is not liable for indirect, incidental, special, consequential, or punitive damages related to website use.",
     ],
   },
   {

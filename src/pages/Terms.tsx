@@ -45,18 +45,18 @@ export default function Terms() {
   return (
     <Layout>
       <Helmet>
-        <title>Terms of Service | MazinMind Digital</title>
+        <title>Terms of Service | Mazinmind.Digital</title>
         <meta
           name="description"
-          content="Review MazinMind Digital Terms of Service covering website use, intellectual property, purchases, and liability limits."
+          content="Review Mazinmind.Digital Terms of Service covering website use, intellectual property, purchases, and liability limits."
         />
         <meta
           property="og:title"
-          content="Terms of Service | MazinMind Digital"
+          content="Terms of Service | Mazinmind.Digital"
         />
         <meta
           property="og:description"
-          content="Review MazinMind Digital Terms of Service covering website use, intellectual property, purchases, and liability limits."
+          content="Review Mazinmind.Digital Terms of Service covering website use, intellectual property, purchases, and liability limits."
         />
         <meta property="og:url" content="https://mazinmind.digital/terms" />
         <link rel="canonical" href="https://mazinmind.digital/terms" />

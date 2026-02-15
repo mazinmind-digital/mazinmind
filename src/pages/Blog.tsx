@@ -106,14 +106,14 @@ export default function Blog() {
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "MazinMind Digital Blog",
+    name: "Mazinmind.Digital Blog",
     description:
-      "Insights on AI consulting, automation, SEO, and digital transformation from the MazinMind Digital team.",
+      "Insights on AI consulting, automation, SEO, and digital transformation from the Mazinmind.Digital team.",
     url: "https://mazinmind.digital/blog",
     inLanguage: "en-US",
     publisher: {
       "@type": "Organization",
-      name: "MazinMind Digital",
+      name: "Mazinmind.Digital",
       url: "https://mazinmind.digital",
     },
   };
@@ -149,7 +149,7 @@ export default function Blog() {
       },
       publisher: {
         "@type": "Organization",
-        name: "MazinMind Digital",
+        name: "Mazinmind.Digital",
         url: "https://mazinmind.digital",
       },
       mainEntityOfPage: `https://mazinmind.digital/blog/${post.slug}`,
@@ -163,10 +163,10 @@ export default function Blog() {
   return (
     <Layout>
       <Helmet>
-        <title>AI, SEO, and Automation Blog | MazinMind Digital</title>
+        <title>AI, SEO, and Automation Blog | Mazinmind.Digital</title>
         <meta
           name="description"
-          content="Explore MazinMind Digital blog insights on AI implementation, AI consulting, ROI optimization, overhead reduction, SEM strategy, SEO growth, and automation systems."
+          content="Explore Mazinmind.Digital blog insights on AI implementation, AI consulting, ROI optimization, overhead reduction, SEM strategy, SEO growth, and automation systems."
         />
         <meta
           name="keywords"
@@ -174,18 +174,18 @@ export default function Blog() {
         />
         <meta
           property="og:title"
-          content="AI, SEO, and Automation Blog | MazinMind Digital"
+          content="AI, SEO, and Automation Blog | Mazinmind.Digital"
         />
         <meta
           property="og:description"
-          content="Discover the latest MazinMind Digital insights on AI automation, SEO, and growth strategy."
+          content="Discover the latest Mazinmind.Digital insights on AI automation, SEO, and growth strategy."
         />
         <meta property="og:url" content="https://mazinmind.digital/blog" />
-        <meta property="og:site_name" content="MazinMind Digital" />
-        <meta name="twitter:title" content="MazinMind Digital Blog" />
+        <meta property="og:site_name" content="Mazinmind.Digital" />
+        <meta name="twitter:title" content="Mazinmind.Digital Blog" />
         <meta
           name="twitter:description"
-          content="Latest AI, SEO, and automation insights from MazinMind Digital."
+          content="Latest AI, SEO, and automation insights from Mazinmind.Digital."
         />
         <link rel="canonical" href="https://mazinmind.digital/blog" />
         <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>

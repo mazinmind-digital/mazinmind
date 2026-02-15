@@ -8,7 +8,7 @@ export default function HeroBanner() {
   const { openScheduleModal } = useSiteOverlay();
 
   return (
-    <section className="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden bg-black md:-mt-12">
       <div className="absolute inset-0 bg-gradient-hero" />
       <div
         className="absolute inset-0 opacity-35"
@@ -27,7 +27,7 @@ export default function HeroBanner() {
         <img
           src={mazinmindWordmark}
           alt="MazinMind"
-          className="mb-5 w-full max-w-[min(92vw,980px)] h-auto"
+          className="mb-5 w-full max-w-[min(92vw,980px)] h-auto relative z-40 transform-gpu md:scale-[1.2] md:-translate-y-6 pointer-events-none select-none"
         />
         <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg graffiti-text mb-4">
           Unlock AI Potential

@@ -45,18 +45,18 @@ export default function Privacy() {
   return (
     <Layout>
       <Helmet>
-        <title>Privacy Policy | MazinMind Digital</title>
+        <title>Privacy Policy | Mazinmind.Digital</title>
         <meta
           name="description"
-          content="Read the MazinMind Digital Privacy Policy, including information collection, cookie usage, and your privacy rights."
+          content="Read the Mazinmind.Digital Privacy Policy, including information collection, cookie usage, and your privacy rights."
         />
         <meta
           property="og:title"
-          content="Privacy Policy | MazinMind Digital"
+          content="Privacy Policy | Mazinmind.Digital"
         />
         <meta
           property="og:description"
-          content="Read the MazinMind Digital Privacy Policy, including information collection, cookie usage, and your privacy rights."
+          content="Read the Mazinmind.Digital Privacy Policy, including information collection, cookie usage, and your privacy rights."
         />
         <meta property="og:url" content="https://mazinmind.digital/privacy" />
         <link rel="canonical" href="https://mazinmind.digital/privacy" />

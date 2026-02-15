@@ -8,7 +8,7 @@ test("homepage renders hero and includes HubSpot chat embed", async ({
   await expect(
     page
       .getByRole("navigation")
-      .getByRole("img", { name: /MazinMind Digital/i }),
+      .getByRole("img", { name: /Mazinmind.Digital/i }),
   ).toBeVisible();
   await expect(
     page.getByRole("heading", { name: /Unlock AI Potential/i }),
