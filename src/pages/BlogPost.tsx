@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft, CalendarDays, Clock3, Tag } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import mazinmindLogo from "@/assets/mazinmind-logo.png";
 import { getBlogPostBySlug } from "@/data/blogPosts";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
@@ -40,30 +41,55 @@ export default function BlogPost() {
     );
   }
 
-  const canonicalUrl = `https://mazinmind.digital/blog/${post.slug}`;
+  const siteUrl = "https://mazinmind.digital";
+  const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
+  const absoluteImageUrl = new URL(post.image, siteUrl).href;
+  const publisherLogoUrl = new URL(mazinmindLogo, siteUrl).href;
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": "Article",
     headline: post.title,
     description: post.excerpt,
+    image: [absoluteImageUrl],
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
-    mainEntityOfPage: canonicalUrl,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonicalUrl,
+    },
     url: canonicalUrl,
-    image: post.image,
     author: {
       "@type": "Organization",
-      name: post.author,
+      name: "MazinMind Digital",
+      url: siteUrl,
     },
     publisher: {
       "@type": "Organization",
-      name: "Mazinmind.Digital",
-      url: "https://mazinmind.digital",
+      name: "MazinMind Digital",
+      url: siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: publisherLogoUrl,
+      },
     },
-    keywords: post.tags.join(", "),
+    keywords: post.tags,
     articleSection: post.category,
     inLanguage: "en-US",
   };
+  const faqSchema = post.faq?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
   return (
     <Layout>
@@ -74,11 +100,14 @@ export default function BlogPost() {
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content={post.image} />
+        <meta property="og:image" content={absoluteImageUrl} />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.excerpt} />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        {faqSchema ? (
+          <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        ) : null}
       </Helmet>
 
       <section className="py-20 border-b border-primary/20 bg-secondary/20">
