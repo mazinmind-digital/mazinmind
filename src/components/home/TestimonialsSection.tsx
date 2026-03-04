@@ -3,31 +3,22 @@ import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 
 const outcomes = [
   {
-    title: "Local Services Business",
-    problem:
-      "Leads were inconsistent and follow-up was manual, so opportunities stalled in inboxes.",
-    solution:
-      "Installed an AI lead generation system with outreach sequencing, qualification prompts, and CRM automation.",
-    result:
-      "Typical results include more booked calls per month and faster first-response times within days, not weeks.",
+    title: "Example outcome 1",
+    problem: "Marketing inconsistency",
+    solution: "AI marketing engine",
+    result: "Consistent SEO traffic and automated content production.",
   },
   {
-    title: "B2B Team With Small Marketing Staff",
-    problem:
-      "Content and SEO execution depended on one person, causing missed publishing windows.",
-    solution:
-      "Implemented AI marketing automation for keyword planning, content briefs, drafting, and publishing workflow.",
-    result:
-      "Typical results include more pages shipped per month, stronger organic traffic trends, and better lead quality.",
+    title: "Example outcome 2",
+    problem: "Manual lead generation",
+    solution: "AI outreach automation",
+    result: "Steady weekly pipeline of qualified prospects.",
   },
   {
-    title: "Operations-Heavy SMB",
-    problem:
-      "Daily operations relied on copy-paste work across forms, spreadsheets, and CRM records.",
-    solution:
-      "Built custom AI workflows for business process automation and error-checked handoffs between tools.",
-    result:
-      "Typical results include reclaimed team hours each week, fewer manual errors, and improved visibility into pipeline health.",
+    title: "Example outcome 3",
+    problem: "Operational inefficiencies",
+    solution: "workflow automation system",
+    result: "20+ hours per month saved.",
   },
 ];
 
@@ -43,11 +34,11 @@ export function TestimonialsSection() {
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <GraffitiIcon icon={BarChart3} tone="accent" size="lg" className="mx-auto mb-6" />
           <h2 className="mb-4 text-4xl font-display font-bold tracking-wider md:text-5xl">
-            PROOF: <span className="text-gradient-accent">EXAMPLE OUTCOMES</span>
+            Typical Results Businesses Achieve
           </h2>
           <p className="text-lg text-muted-foreground">
-            Each engagement is different, but these scenarios reflect common
-            outcomes when AI systems are installed correctly.
+            Example outcomes based on common implementation patterns across lead
+            generation, marketing, and operations automation.
           </p>
         </div>
 

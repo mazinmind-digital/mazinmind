@@ -16,56 +16,61 @@ type Package = {
 const packages: Package[] = [
   {
     name: "Starter AI Automation",
-    price: "$1,500",
+    price: "$1500",
     includes: [
-      "One system installed (lead follow-up, CRM automation, or intake workflow)",
-      "Discovery call + implementation setup + handoff SOP",
-      "One revision cycle and deployment support",
+      "one automation system",
+      "CRM integration",
+      "workflow automation",
+      "setup + training",
     ],
-    idealFor: "Ideal for SMBs starting AI automation for small business operations.",
-    timeframe: "Delivery timeframe: 7-10 business days",
+    idealFor: "Perfect for businesses just getting started with AI.",
+    timeframe: "Delivery: 1-2 weeks",
     ctaLink: "/contact?interest=starter-ai-automation",
-    ctaLabel: "Get Started",
+    ctaLabel: "Start Automation",
   },
   {
     name: "AI Marketing Engine",
-    price: "$3,000",
+    price: "$3000",
     includes: [
-      "AI marketing automation setup for SEO/content workflows",
-      "Publishing cadence, optimization checklist, and analytics dashboard",
-      "Light ad creative/testing workflow integration",
+      "AI content generation",
+      "SEO automation",
+      "social media automation",
+      "marketing workflow automation",
     ],
-    idealFor: "Ideal for teams that need consistent demand generation from content and search.",
-    timeframe: "Delivery timeframe: 14-21 business days",
+    idealFor: "Automated marketing system powered by AI.",
+    timeframe: "Delivery: 2-3 weeks",
     ctaLink: "/contact?interest=ai-marketing-engine-package",
-    ctaLabel: "Get Started",
+    ctaLabel: "Launch My AI Marketing",
     highlighted: true,
   },
   {
     name: "AI Business System",
-    price: "$7,500",
+    price: "$7500",
     includes: [
-      "AI lead generation system + business process automation rollout",
-      "CRM automation, custom AI workflows, and integration architecture",
-      "Team training, monitoring, and optimization handoff",
+      "AI lead generation system",
+      "AI marketing automation",
+      "workflow automation",
+      "analytics dashboards",
     ],
-    idealFor: "Ideal for SMBs that want one connected growth and operations system.",
-    timeframe: "Delivery timeframe: 30-45 business days",
+    idealFor:
+      "Full AI automation system for sales, marketing, and operations.",
+    timeframe: "Delivery: 3-5 weeks",
     ctaLink: "/contact?interest=ai-business-system",
-    ctaLabel: "Get Started",
+    ctaLabel: "Install My AI System",
   },
   {
-    name: "Enterprise / Custom",
-    price: "Book a Call",
+    name: "Enterprise AI Architecture",
+    price: "Custom",
     includes: [
-      "Advanced architecture for multi-team environments",
-      "DevOps automation consulting, cloud architecture, and secure deployments",
-      "Phased implementation roadmap with SLAs and governance",
+      "AI infrastructure",
+      "custom automation tools",
+      "cloud architecture",
+      "DevOps automation",
     ],
-    idealFor: "Ideal for advanced teams with complex systems and compliance requirements.",
-    timeframe: "Delivery timeframe: scoped after discovery",
+    idealFor: "Designed for advanced teams with multi-system requirements.",
+    timeframe: "Delivery: scoped after strategy call",
     ctaLink: "/contact?interest=enterprise-custom",
-    ctaLabel: "Book a Call",
+    ctaLabel: "Book a Strategy Call",
   },
 ];
 
@@ -80,7 +85,7 @@ export function PackagesSection() {
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="mb-5 text-5xl font-display font-bold tracking-wider md:text-6xl">
-            AI AUTOMATION <span className="text-gradient-accent">PACKAGES</span>
+            AI Automation Packages
           </h2>
           <p className="text-lg text-muted-foreground md:text-xl">
             Fixed-scope packages for faster decisions. Pick a tier and we install

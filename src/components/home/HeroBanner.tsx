@@ -4,9 +4,9 @@ import mazinmindWordmark from "@/assets/mazinmind-wordmark.png";
 import heroGraffiti from "@/assets/hero-graffiti.jpg";
 
 const outcomes = [
-  "Book more qualified leads with an AI lead generation system",
-  "Save 10-20+ hours per week through business process automation",
-  "Reduce response time with an AI chatbot for customer support",
+  "Generate leads automatically",
+  "Automate operations and workflows",
+  "Replace repetitive tasks with AI",
 ];
 
 export default function HeroBanner() {
@@ -32,13 +32,13 @@ export default function HeroBanner() {
         />
 
         <h1 className="mb-4 max-w-5xl text-4xl font-extrabold text-white drop-shadow-lg graffiti-text md:text-6xl">
-          We install AI systems inside your business to generate leads,
-          automate operations, and reduce workload.
+          Install AI Systems That Generate Leads and Automate Your Business
         </h1>
 
         <p className="mb-7 max-w-4xl text-lg text-white/90 md:text-2xl">
-          We install AI systems that save time and generate revenue. Get a
-          clear 30-day rollout path for leads, operations, and support.
+          MazinMind Digital installs production-grade AI systems that help small
+          businesses generate leads, automate marketing, and eliminate
+          repetitive work.
         </p>
 
         <ul className="mb-8 grid w-full max-w-4xl grid-cols-1 gap-3 text-left sm:grid-cols-3">
@@ -62,11 +62,11 @@ export default function HeroBanner() {
             Get a Free AI Automation Audit
           </a>
           <a
-            href="#packages"
+            href="#ai-systems-install"
             className="inline-flex h-14 items-center justify-center rounded-full border-2 border-primary/70 bg-black/30 px-8 text-base font-bold tracking-wide text-primary hover:bg-primary/10"
-            aria-label="See Packages"
+            aria-label="See AI Systems We Install"
           >
-            See Packages
+            See AI Systems We Install
           </a>
         </div>
 

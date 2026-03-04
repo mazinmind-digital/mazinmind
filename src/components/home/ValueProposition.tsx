@@ -5,30 +5,20 @@ import aiFace from "@/assets/ai-face.png";
 const credibilityPoints = [
   {
     icon: ServerCog,
-    title: "Senior Engineering Depth",
-    description:
-      "Founder-led delivery with deep DevOps automation consulting and cloud architecture experience.",
+    title: "scalable infrastructure",
+    description: "Systems designed to scale with your growth goals.",
     tone: "primary" as const,
   },
   {
     icon: Workflow,
-    title: "Custom AI Workflows",
-    description:
-      "We map your real process, then build production workflows across CRM, marketing, and operations tools.",
+    title: "reliable automation",
+    description: "Automation workflows that run cleanly in production.",
     tone: "accent" as const,
   },
   {
     icon: Bot,
-    title: "Real-World Reliability",
-    description:
-      "We build production-grade systems, not toy chatbots, with monitoring, handoff rules, and documentation.",
-    tone: "electric" as const,
-  },
-  {
-    icon: ShieldCheck,
-    title: "Secure, Scalable Delivery",
-    description:
-      "Solutions are implemented with clear guardrails, auditability, and a roadmap for scaling safely.",
+    title: "real business impact",
+    description: "Every system is tied to measurable business outcomes.",
     tone: "warning" as const,
   },
 ];
@@ -53,18 +43,17 @@ export function ValueProposition() {
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="mb-6 text-5xl font-display font-bold tracking-wider md:text-6xl">
-            FOUNDER-LED <span className="text-gradient-primary">CREDIBILITY</span>
+            Built by Engineers, Not Prompt Engineers
           </h2>
-          <p className="mx-auto mb-4 max-w-3xl text-xl text-foreground">
-            We install AI systems that save time and generate revenue.
-          </p>
           <p className="mx-auto mb-14 max-w-3xl text-lg text-muted-foreground">
-            MazinMind is led by a senior engineer and automation consultant with
-            hands-on experience shipping reliable systems for growth, operations,
-            and cloud infrastructure.
+            MazinMind Digital was founded by a senior engineer with decades of
+            experience building real production systems. Unlike typical AI
+            consultants who only write prompts, MazinMind installs
+            production-grade automation systems that integrate with your
+            existing tools and workflows.
           </p>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {credibilityPoints.map((point) => (
               <article
                 key={point.title}

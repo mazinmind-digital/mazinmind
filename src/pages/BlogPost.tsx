@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft, CalendarDays, Clock3, Tag } from "lucide-react";
@@ -12,6 +13,43 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 });
 
 const formatDate = (isoDate: string) => dateFormatter.format(new Date(isoDate));
+
+const urlTextPattern = /(https?:\/\/[^\s]+)/g;
+const exactUrlPattern = /^https?:\/\/[^\s]+$/;
+
+const splitTrailingPunctuation = (value: string) => {
+  let clean = value;
+  let trailing = "";
+
+  while (/[),.;:!?]$/.test(clean)) {
+    trailing = clean.slice(-1) + trailing;
+    clean = clean.slice(0, -1);
+  }
+
+  return { clean, trailing };
+};
+
+const renderTextWithLinks = (text: string): ReactNode =>
+  text.split(urlTextPattern).flatMap((part, index) => {
+    if (!exactUrlPattern.test(part)) {
+      return [part];
+    }
+
+    const { clean, trailing } = splitTrailingPunctuation(part);
+
+    return [
+      <a
+        key={`${clean}-${index}`}
+        href={clean}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors break-all"
+      >
+        {clean}
+      </a>,
+      trailing,
+    ];
+  });
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -158,7 +196,7 @@ export default function BlogPost() {
             <div className="space-y-5 mb-10">
               {post.content.intro.map((paragraph) => (
                 <p key={paragraph} className="text-lg text-muted-foreground leading-relaxed">
-                  {paragraph}
+                  {renderTextWithLinks(paragraph)}
                 </p>
               ))}
             </div>
@@ -175,7 +213,7 @@ export default function BlogPost() {
                         key={paragraph}
                         className="text-muted-foreground leading-relaxed"
                       >
-                        {paragraph}
+                        {renderTextWithLinks(paragraph)}
                       </p>
                     ))}
                   </div>
@@ -187,7 +225,7 @@ export default function BlogPost() {
                           className="text-muted-foreground leading-relaxed flex gap-2"
                         >
                           <span className="text-primary">•</span>
-                          <span>{bullet}</span>
+                          <span>{renderTextWithLinks(bullet)}</span>
                         </li>
                       ))}
                     </ul>
@@ -197,7 +235,7 @@ export default function BlogPost() {
             </div>
 
             <p className="text-muted-foreground leading-relaxed mt-10">
-              {post.content.conclusion}
+              {renderTextWithLinks(post.content.conclusion)}
             </p>
           </article>
         </div>

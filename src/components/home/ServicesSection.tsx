@@ -11,16 +11,16 @@ const offerCards = [
     tone: "accent" as const,
     title: "AI Lead Generation System",
     description:
-      "We install an AI lead generation system that handles prospecting, outreach, and calendar booking for your team.",
+      "Automatically find prospects, send outreach, and book meetings.",
     features: [
-      "ICP targeting and account list building",
-      "Personalized multichannel outreach sequences",
-      "Automated meeting qualification and booking",
+      "automated prospect discovery",
+      "AI outreach messaging",
+      "CRM integration",
     ],
-    outcome:
-      "Typical outcome: a steadier flow of qualified meetings without manual prospecting all day.",
+    outcome: "Businesses typically see 5-15 new qualified leads per week.",
     ctaLink: "/contact?interest=ai-lead-generation-system",
     detailsLink: "/services/ai-marketing",
+    ctaText: "Get This Installed",
   },
   {
     id: "ai-marketing-engine",
@@ -28,16 +28,16 @@ const offerCards = [
     tone: "primary" as const,
     title: "AI Marketing Engine",
     description:
-      "We install AI marketing automation for SEO, content production, ad testing, and social distribution.",
+      "Automate SEO, content, ads, and social media marketing.",
     features: [
-      "SEO brief and content pipeline automation",
-      "Ad copy/testing loops based on conversion data",
-      "Cross-channel publishing with analytics feedback",
+      "AI blog writing",
+      "automated SEO optimization",
+      "social media automation",
     ],
-    outcome:
-      "Typical outcome: faster content velocity, improved organic visibility, and lower cost per qualified lead.",
+    outcome: "Consistent marketing without hiring a full team.",
     ctaLink: "/contact?interest=ai-marketing-engine",
     detailsLink: "/services/ai-marketing",
+    ctaText: "Launch My AI Marketing Engine",
   },
   {
     id: "ai-operations-automation",
@@ -45,39 +45,39 @@ const offerCards = [
     tone: "electric" as const,
     title: "AI Operations Automation",
     description:
-      "We build custom AI workflows for business process automation, CRM automation, and system integrations.",
+      "Remove repetitive manual tasks from your business workflows.",
     features: [
-      "SOP-to-workflow mapping and automation design",
-      "CRM automation for pipeline updates and follow-up tasks",
-      "Integration across forms, CRM, email, and internal tools",
+      "CRM automation",
+      "workflow automation",
+      "software integrations",
     ],
-    outcome:
-      "Typical outcome: 10-20+ hours saved per week and fewer handoff errors between teams.",
+    outcome: "Save 20-40 hours per month of manual work.",
     ctaLink: "/contact?interest=ai-operations-automation",
     detailsLink: "/services/ai-automation",
+    ctaText: "Automate My Operations",
   },
   {
     id: "ai-support-agent",
     icon: Wrench,
     tone: "warning" as const,
-    title: "AI Support Agent",
+    title: "AI Customer Support Agent",
     description:
-      "We install an AI chatbot for customer support that answers common questions over chat and email from your knowledge base.",
+      "AI chatbot and email assistant trained on your business.",
     features: [
-      "Knowledge base ingestion and guardrails",
-      "Chat and email triage with human handoff",
-      "Response templates aligned to your tone and policies",
+      "website chatbot",
+      "email automation",
+      "knowledge base AI",
     ],
-    outcome:
-      "Typical outcome: faster first-response times and reduced support load on your team.",
+    outcome: "Handle support questions without hiring more staff.",
     ctaLink: "/contact?interest=ai-support-agent",
     detailsLink: "/services/ai-automation",
+    ctaText: "Install AI Support",
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section id="what-we-install" className="relative overflow-hidden py-24">
+    <section id="ai-systems-install" className="relative overflow-hidden py-24">
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 grid-pattern opacity-20" />
       <div
@@ -95,11 +95,11 @@ export function ServicesSection() {
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="mb-5 text-5xl font-display font-bold tracking-wider md:text-6xl">
-            WHAT WE <span className="text-gradient-primary text-shadow-neon">INSTALL</span>
+            AI Systems We Install in Your Business
           </h2>
           <p className="text-lg text-muted-foreground md:text-xl">
-            AI automation for small business teams that want more leads, cleaner
-            operations, and predictable execution.
+            We install systems that drive leads, automate execution, and reduce
+            repetitive work.
           </p>
         </div>
 
@@ -133,7 +133,7 @@ export function ServicesSection() {
               <div className="flex flex-wrap items-center gap-3 border-t border-border/60 pt-4">
                 <Button asChild className="bg-gradient-primary text-primary-foreground hover:opacity-90">
                   <Link to={offer.ctaLink} aria-label={`Get ${offer.title} installed`}>
-                    Get this installed
+                    {offer.ctaText}
                   </Link>
                 </Button>
                 <Link
