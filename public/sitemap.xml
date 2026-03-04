@@ -21,6 +21,24 @@
   </url>
 
   <url>
+    <loc>https://mazinmind.digital/services/ai-automation</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://mazinmind.digital/services/ai-marketing</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://mazinmind.digital/services/devops-cloud</loc>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
     <loc>https://mazinmind.digital/contact</loc>
     <priority>0.70</priority>
     <changefreq>monthly</changefreq>

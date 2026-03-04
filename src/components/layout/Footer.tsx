@@ -21,10 +21,10 @@ const footerLinks = {
     { name: "FAQ", href: "/faq" },
   ],
   services: [
-    { name: "AI Consulting", href: "/services#ai-consulting" },
-    { name: "Digital Marketing", href: "/services#digital-marketing" },
-    { name: "AI Automation", href: "/services#automation" },
-    { name: "Custom Software", href: "/services#software" },
+    { name: "AI Automation", href: "/services/ai-automation" },
+    { name: "AI Marketing", href: "/services/ai-marketing" },
+    { name: "DevOps & Cloud", href: "/services/devops-cloud" },
+    { name: "All Services", href: "/services" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy" },

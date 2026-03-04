@@ -1,68 +1,93 @@
-import { Quote } from "lucide-react";
+import { BarChart3 } from "lucide-react";
 import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 
-const testimonials = [
+const outcomes = [
   {
-    quote:
-      "Mazinmind.Digital helped us launch an AI-driven lead scoring workflow in under a month, and our close rate improved by 38%.",
-    name: "Sarah Chen",
-    role: "VP Marketing, Vertex Growth",
+    title: "Local Services Business",
+    problem:
+      "Leads were inconsistent and follow-up was manual, so opportunities stalled in inboxes.",
+    solution:
+      "Installed an AI lead generation system with outreach sequencing, qualification prompts, and CRM automation.",
+    result:
+      "Typical results include more booked calls per month and faster first-response times within days, not weeks.",
   },
   {
-    quote:
-      "Their team translated complex automation ideas into a practical rollout. We cut manual reporting time by nearly 60%.",
-    name: "David Romero",
-    role: "Operations Director, Helix Logistics",
+    title: "B2B Team With Small Marketing Staff",
+    problem:
+      "Content and SEO execution depended on one person, causing missed publishing windows.",
+    solution:
+      "Implemented AI marketing automation for keyword planning, content briefs, drafting, and publishing workflow.",
+    result:
+      "Typical results include more pages shipped per month, stronger organic traffic trends, and better lead quality.",
   },
   {
-    quote:
-      "From SEO automation to conversion-focused content, we saw measurable gains in traffic quality and pipeline value.",
-    name: "Nina Patel",
-    role: "Head of Growth, Northline Health",
-  },
-  {
-    quote:
-      "Mazinmind.Digital balanced technical execution with business clarity. The solutions felt custom-built for our goals.",
-    name: "Marcus Reid",
-    role: "Founder, Atlas Advisory",
+    title: "Operations-Heavy SMB",
+    problem:
+      "Daily operations relied on copy-paste work across forms, spreadsheets, and CRM records.",
+    solution:
+      "Built custom AI workflows for business process automation and error-checked handoffs between tools.",
+    result:
+      "Typical results include reclaimed team hours each week, fewer manual errors, and improved visibility into pipeline health.",
   },
 ];
 
 export function TestimonialsSection() {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="relative overflow-hidden py-20">
       <div className="absolute inset-0 bg-secondary/20" />
       <div className="absolute inset-0 grid-pattern opacity-10" />
-      <div className="absolute top-0 left-1/4 w-[280px] h-[280px] bg-primary/15 rounded-full blur-[100px]" />
-      <div className="absolute bottom-0 right-1/4 w-[260px] h-[260px] bg-accent/15 rounded-full blur-[100px]" />
+      <div className="absolute left-1/4 top-0 h-[280px] w-[280px] rounded-full bg-primary/15 blur-[100px]" />
+      <div className="absolute bottom-0 right-1/4 h-[260px] w-[260px] rounded-full bg-accent/15 blur-[100px]" />
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <GraffitiIcon icon={Quote} tone="accent" size="lg" className="mx-auto mb-6" />
-          <h3 className="text-4xl md:text-5xl font-display font-bold tracking-wider mb-4">
-            CLIENT <span className="text-gradient-accent">TESTIMONIALS</span>
-          </h3>
-          <p className="text-muted-foreground text-lg">
-            Real outcomes from teams that partnered with Mazinmind.Digital.
+      <div className="container relative z-10 mx-auto px-4 lg:px-8">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <GraffitiIcon icon={BarChart3} tone="accent" size="lg" className="mx-auto mb-6" />
+          <h2 className="mb-4 text-4xl font-display font-bold tracking-wider md:text-5xl">
+            PROOF: <span className="text-gradient-accent">EXAMPLE OUTCOMES</span>
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Each engagement is different, but these scenarios reflect common
+            outcomes when AI systems are installed correctly.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-          {testimonials.map((testimonial) => (
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          {outcomes.map((item) => (
             <article
-              key={testimonial.name}
-              className="glass-vibrant rounded-2xl p-6 border border-primary/20 hover:glow-primary transition-all"
+              key={item.title}
+              className="glass-vibrant rounded-2xl border border-primary/20 p-6"
             >
-              <p className="text-muted-foreground leading-relaxed mb-5">
-                "{testimonial.quote}"
-              </p>
-              <p className="font-display text-foreground font-bold tracking-wide">
-                {testimonial.name}
-              </p>
-              <p className="text-sm text-primary/90 mt-1">{testimonial.role}</p>
+              <h3 className="mb-5 text-2xl font-display font-bold tracking-wide text-foreground">
+                {item.title}
+              </h3>
+
+              <div className="mb-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-warning">
+                  Problem
+                </p>
+                <p className="text-sm text-muted-foreground">{item.problem}</p>
+              </div>
+
+              <div className="mb-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+                  Solution
+                </p>
+                <p className="text-sm text-muted-foreground">{item.solution}</p>
+              </div>
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+                  Result
+                </p>
+                <p className="text-sm text-muted-foreground">{item.result}</p>
+              </div>
             </article>
           ))}
         </div>
+
+        <p className="mt-6 text-center text-sm text-muted-foreground">
+          Results vary; examples are illustrative.
+        </p>
       </div>
     </section>
   );
