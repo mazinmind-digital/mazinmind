@@ -66,6 +66,8 @@ async function submitAuditRequest(data: AuditFormData) {
 
   const payload = {
     fields: [
+      // Some HubSpot forms use this generated "name" key instead of first/last fields.
+      { name: "0-2/name", value: data.name },
       { name: "firstname", value: firstName },
       { name: "lastname", value: lastName },
       { name: "email", value: data.email },
@@ -135,7 +137,6 @@ export function NewsletterSection() {
       toast.success("Audit request submitted. We reply within 1 business day.");
     } catch (error) {
       console.error("Audit form submission failed", error);
-      setIsSubmitted(true);
       window.location.href = mailtoLink;
       toast.error("Could not reach HubSpot. Opened your email client as fallback.");
     } finally {
