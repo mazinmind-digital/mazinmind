@@ -7,10 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 
+// HubSpot embed config (kept in sync with the provided embed snippet).
 const HUBSPOT_PORTAL_ID = "243856745";
-const HUBSPOT_CONTACT_FORM_ID =
-  import.meta.env.VITE_HUBSPOT_CONTACT_FORM_ID ??
-  "8d1ae045-5353-4e44-97e8-17b3c597d5e1";
+const HUBSPOT_AUDIT_FORM_ID = "8d1ae045-5353-4e44-97e8-17b3c597d5e1";
 const CONTACT_INBOX_EMAIL = "rmazin@mazinmind.digital";
 
 type AuditFormData = {
@@ -81,7 +80,7 @@ async function submitAuditRequest(data: AuditFormData) {
   };
 
   const response = await fetch(
-    `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_CONTACT_FORM_ID}`,
+    `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_AUDIT_FORM_ID}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
