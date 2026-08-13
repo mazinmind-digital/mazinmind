@@ -5,9 +5,9 @@ import heroGraffiti from "@/assets/hero-graffiti.jpg";
 import ScheduleButton from "@/components/ui/ScheduleButton";
 
 const outcomes = [
-  "Generate leads automatically",
-  "Automate operations and workflows",
-  "Replace repetitive tasks with AI",
+  "Answer more calls and web leads faster",
+  "Follow up automatically before leads go cold",
+  "Reduce admin work and missed opportunities",
 ];
 
 export default function HeroBanner() {
@@ -33,13 +33,13 @@ export default function HeroBanner() {
         />
 
         <h1 className="mb-4 max-w-5xl text-4xl font-extrabold text-white drop-shadow-lg graffiti-text md:text-6xl">
-          Install AI Systems That Generate Leads and Automate Your Business
+          Stop losing leads. Automate the follow-up. Book more appointments.
         </h1>
 
         <p className="mb-7 max-w-4xl text-lg text-white/90 md:text-2xl">
-          MazinMind Digital installs production-grade AI systems that help small
-          businesses generate leads, automate marketing, and eliminate
-          repetitive work.
+          MazinMind Digital builds AI systems for small businesses that capture
+          leads faster, automate follow-up, and eliminate repetitive admin work
+          without adding more staff.
         </p>
 
         <ul className="mb-8 grid w-full max-w-4xl grid-cols-1 gap-3 text-left sm:grid-cols-3">
@@ -57,13 +57,14 @@ export default function HeroBanner() {
         <div className="mb-6 flex flex-col items-center gap-4 sm:flex-row">
           <ScheduleButton
             provider="hubspot"
+            analyticsEvent="primary_audit_cta_click"
             className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-primary px-8 text-base font-bold tracking-wide text-primary-foreground glow-primary hover:opacity-90"
             aria-label="Get a Free AI Automation Audit"
           >
             Get a Free AI Automation Audit
           </ScheduleButton>
           <a
-            href="#ai-systems-install"
+            href="#ai-systems-we-install"
             className="inline-flex h-14 items-center justify-center rounded-full border-2 border-primary/70 bg-black/30 px-8 text-base font-bold tracking-wide text-primary hover:bg-primary/10"
             aria-label="See AI Systems We Install"
           >
@@ -72,14 +73,14 @@ export default function HeroBanner() {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-5 text-sm font-semibold">
-          <Link to="/services/ai-automation" className="text-primary hover:text-primary/80">
-            AI Automation for Small Business
+          <Link to="/ai-automation-contractors" className="text-primary hover:text-primary/80">
+            AI Automation for Contractors
           </Link>
-          <Link to="/services/ai-marketing" className="text-accent hover:text-accent/80">
-            AI Marketing Automation
+          <Link to="/lead-follow-up-automation" className="text-accent hover:text-accent/80">
+            Lead Follow-Up Automation
           </Link>
-          <Link to="/services/devops-cloud" className="text-electric hover:text-electric/80">
-            DevOps Automation Consulting
+          <Link to="/ai-receptionist" className="text-electric hover:text-electric/80">
+            AI Receptionist
           </Link>
           <Link to="/contact" className="text-warning hover:text-warning/80">
             Contact

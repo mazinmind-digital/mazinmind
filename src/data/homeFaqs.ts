@@ -5,43 +5,28 @@ export type HomeFaq = {
 
 export const homeFaqs: HomeFaq[] = [
   {
-    question: "What is AI automation for small business, and where should we start?",
+    question: "What does the free AI automation audit cover?",
     answer:
-      "AI automation for small business means installing practical systems that handle repetitive work in lead handling, marketing execution, support, and internal operations. We usually start with one high-impact bottleneck and build from there.",
+      "We look at the bottlenecks in your lead flow, customer follow-up, and daily operations to identify the quickest opportunities for automation and the best place to start.",
   },
   {
-    question: "How is AI marketing automation different from hiring more marketing staff?",
+    question: "How quickly can we see results?",
     answer:
-      "AI marketing automation improves output per person by automating research, content workflows, SEO tasks, ad testing, and reporting. Your team focuses on strategy and decision-making instead of repetitive production work.",
+      "Many businesses see improvements in response time and lead handling within the first couple of weeks. Larger workflow rollouts typically produce more noticeable gains after the system is fully in place.",
   },
   {
-    question: "Can you integrate business process automation with our existing CRM?",
+    question: "Will this work with our current tools and CRM?",
     answer:
-      "Yes. We design business process automation that works with your current stack, then implement CRM automation so lead records, follow-ups, and pipeline updates happen automatically.",
+      "Yes. We design around the systems you already use whenever possible, integrating with your CRM, inboxes, calendars, forms, and internal workflows to reduce friction and manual work.",
   },
   {
-    question: "What does an AI lead generation system include?",
+    question: "Do you work with small service businesses?",
     answer:
-      "A typical AI lead generation system includes targeting logic, outbound sequencing, qualification rules, CRM routing, and booking automation so your sales process runs with less manual effort.",
+      "Yes. We regularly help local service businesses, contractors, clinics, agencies, and other small businesses improve lead response, follow-up, and scheduling without adding headcount.",
   },
   {
-    question: "Do you build custom AI workflows, or only templates?",
+    question: "What is the first automation we should implement?",
     answer:
-      "We build custom AI workflows around your actual sales, marketing, or operations process. Templates can be used as accelerators, but the final system is tailored to your team and tools.",
-  },
-  {
-    question: "Do you offer DevOps automation consulting and cloud architecture support?",
-    answer:
-      "Yes. Advanced engagements include DevOps automation consulting, cloud architecture design, CI/CD improvements, reliability controls, and cost-aware scaling plans.",
-  },
-  {
-    question: "Can you deploy an AI chatbot for customer support without hurting quality?",
-    answer:
-      "Yes. We install an AI chatbot for customer support with knowledge controls, escalation paths, and human handoff rules so quality stays high while response times improve.",
-  },
-  {
-    question: "How long does implementation take, and when do results show up?",
-    answer:
-      "Starter systems are commonly delivered in 1-2 weeks. Larger systems take 3-6 weeks. Early gains usually appear in saved team hours, faster response times, and improved lead flow once workflows are live.",
+      "Usually it is the workflow with the clearest financial impact: missed calls and form submissions, lead follow-up, appointment booking, or repetitive admin tasks that drain staff time each week.",
   },
 ];

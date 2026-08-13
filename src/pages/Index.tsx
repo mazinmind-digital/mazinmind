@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 
 const homepageTitle = "AI Automation for Small Businesses | MazinMind Digital";
 const homepageDescription =
-  "MazinMind Digital helps small businesses automate lead generation, customer follow-up, missed calls, scheduling, support, and repetitive business processes using practical AI automation.";
+  "Stop missing leads and automate follow-up, appointment booking, and repetitive work with AI systems designed for small businesses.";
 const canonicalUrl = "https://mazinmind.digital";
 const ogImage = "https://mazinmind.digital/apple-touch-icon.png";
 
@@ -38,7 +38,6 @@ const organizationSchema = {
       image: "https://mazinmind.digital/apple-touch-icon.png",
       description: homepageDescription,
       areaServed: "United States",
-      priceRange: "$1,500-$7,500+",
       telephone: "+1-617-453-8776",
       address: {
         "@type": "PostalAddress",
@@ -89,7 +88,7 @@ const Index = () => {
         <meta name="description" content={homepageDescription} />
         <meta
           name="keywords"
-          content="AI automation for small business, AI marketing automation, business process automation, CRM automation, AI lead generation system, custom AI workflows, DevOps automation consulting, AI chatbot for customer support"
+          content="AI automation for small business, AI receptionist, lead follow-up automation, missed call automation, AI appointment booking, business process automation, CRM automation, AI lead generation system"
         />
         <meta name="robots" content="index, follow" />
 

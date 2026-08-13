@@ -350,7 +350,7 @@ export const blogPosts: BlogPost[] = [
         {
           heading: "3. AI Can Answer Common Customer Questions",
           paragraphs: [
-            "AI assistants can answer routine questions instantly (hours, service areas, pricing, how to schedule). More complex issues can be escalated to a human, leaving your team to focus on higher-value work.",
+            "AI assistants can answer routine questions instantly (hours, service areas, and scheduling). More complex issues can be escalated to a human, leaving your team to focus on higher-value work.",
           ],
         },
         {
@@ -623,7 +623,7 @@ export const blogPosts: BlogPost[] = [
           ],
           bullets: [
             "Build topic clusters around high-intent business outcomes.",
-            "Use internal links to connect strategy, execution, and pricing context.",
+            "Use internal links to connect strategy, execution, and decision context.",
             "Refresh pages regularly with updated examples and data.",
           ],
         },
@@ -908,7 +908,7 @@ export const blogPosts: BlogPost[] = [
         {
           heading: "Build Topic Clusters Around Buying Intent",
           paragraphs: [
-            "Choose core topics based on your service lines and customer decision stages. Support each pillar with practical subtopics: comparisons, implementation guides, pricing context, and common objections.",
+            "Choose core topics based on your service lines and customer decision stages. Support each pillar with practical subtopics: comparisons, implementation guides, buying criteria, and common objections.",
             "This structure improves discoverability and helps readers progress from awareness to action.",
           ],
           bullets: [

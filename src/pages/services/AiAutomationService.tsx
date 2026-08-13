@@ -119,7 +119,7 @@ const installSteps = [
     title: "1) Audit (15-30 min)",
     timeline: "Timeline: Day 1",
     description:
-      "We identify high-impact bottlenecks and map where automation will produce the fastest ROI.",
+      "We identify high-impact bottlenecks and map where automation will produce the fastest operational improvements.",
     clientNeeds: "Client provides: current process notes, tools used, and main bottlenecks.",
   },
   {
@@ -148,7 +148,6 @@ const installSteps = [
 const packages = [
   {
     name: "Starter AI Automation",
-    price: "$1500",
     idealFor: "Ideal for: teams starting automation with one high-impact workflow.",
     includes: [
       "one automation system",
@@ -162,7 +161,6 @@ const packages = [
   },
   {
     name: "AI Marketing Engine",
-    price: "$3000",
     idealFor: "Ideal for: teams needing consistent AI-powered demand generation.",
     includes: [
       "AI content generation",
@@ -176,7 +174,6 @@ const packages = [
   },
   {
     name: "AI Business System",
-    price: "$7500",
     idealFor: "Ideal for: sales + marketing + operations automation in one system.",
     includes: [
       "AI lead generation system",
@@ -190,7 +187,6 @@ const packages = [
   },
   {
     name: "Enterprise / Custom",
-    price: "Book a Call",
     idealFor: "Ideal for: advanced architecture and custom automation requirements.",
     includes: [
       "AI infrastructure",
@@ -222,9 +218,9 @@ const faqs = [
       "AI automation connects your tools so repetitive tasks run automatically, such as lead follow-up, CRM updates, support replies, and reporting.",
   },
   {
-    question: "How much does AI automation cost?",
+    question: "How do I know if AI automation fits my business?",
     answer:
-      "Most projects start at $1500 and scale based on scope. Starter and packaged options reduce time-to-value for common use cases.",
+      "Most businesses benefit when they have repeatable manual work, slow response times, missed leads, or disconnected systems. We help you identify the highest-value workflows before investing in any implementation.",
   },
   {
     question: "How fast can you install an automation system?",
@@ -273,7 +269,7 @@ function splitName(name: string) {
 
 function buildMailtoLink(data: AuditFormData) {
   const subject = encodeURIComponent(
-    `Free AI Automation Audit request from ${data.name || "Website"}`,
+    `AI Automation assessment request from ${data.name || "Website"}`,
   );
   const body = encodeURIComponent(
     [
@@ -615,7 +611,6 @@ export default function AiAutomationService() {
                   <h3 className="text-3xl font-display font-bold tracking-wide text-foreground">
                     {item.name}
                   </h3>
-                  <p className="text-2xl font-bold text-primary">{item.price}</p>
                 </div>
 
                 <p className="mb-4 text-sm text-foreground/90">{item.idealFor}</p>

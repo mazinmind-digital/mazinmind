@@ -15,10 +15,11 @@ import { useSiteOverlay } from "./site-overlays";
 
 const navigation = [
   { name: "HOME", href: "/" },
+  { name: "AI AUTOMATION", href: "/ai-automation-contractors" },
+  { name: "LEAD FOLLOW-UP", href: "/lead-follow-up-automation" },
+  { name: "AI RECEPTIONIST", href: "/ai-receptionist" },
   { name: "SERVICES", href: "/services" },
   { name: "BLOG", href: "/blog" },
-  { name: "ART GALLERY", href: "/art-gallery" },
-  { name: "ABOUT", href: "/about" },
   { name: "CONTACT", href: "/contact" },
   { name: "FAQ", href: "/faq" },
 ];
