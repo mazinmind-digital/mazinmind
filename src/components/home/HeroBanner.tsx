@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { CheckCircle2 } from "lucide-react";
 import mazinmindWordmark from "@/assets/mazinmind-wordmark.png";
 import heroGraffiti from "@/assets/hero-graffiti.jpg";
+import ScheduleButton from "@/components/ui/ScheduleButton";
 
 const outcomes = [
   "Generate leads automatically",
@@ -54,13 +55,13 @@ export default function HeroBanner() {
         </ul>
 
         <div className="mb-6 flex flex-col items-center gap-4 sm:flex-row">
-          <a
-            href="#free-ai-audit"
+          <ScheduleButton
+            provider="hubspot"
             className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-primary px-8 text-base font-bold tracking-wide text-primary-foreground glow-primary hover:opacity-90"
             aria-label="Get a Free AI Automation Audit"
           >
             Get a Free AI Automation Audit
-          </a>
+          </ScheduleButton>
           <a
             href="#ai-systems-install"
             className="inline-flex h-14 items-center justify-center rounded-full border-2 border-primary/70 bg-black/30 px-8 text-base font-bold tracking-wide text-primary hover:bg-primary/10"

@@ -1,18 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import HeroBanner from "@/components/home/HeroBanner";
-import { ServicesSection } from "@/components/home/ServicesSection";
-import { ValueProposition } from "@/components/home/ValueProposition";
+import HomeContent from "@/components/home/HomeContent";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
-import { PackagesSection } from "@/components/home/PackagesSection";
 import { HomeFaqSection } from "@/components/home/HomeFaqSection";
 import { homeFaqs } from "@/data/homeFaqs";
 import { Helmet } from "react-helmet-async";
 
-const homepageTitle =
-  "AI Automation & AI Marketing Systems for Small Businesses | MazinMind Digital";
+const homepageTitle = "AI Automation for Small Businesses | MazinMind Digital";
 const homepageDescription =
-  "We install AI systems that generate leads, automate operations, and power marketing. Free AI Automation Audit. Serving SMBs with production-grade automation.";
+  "MazinMind Digital helps small businesses automate lead generation, customer follow-up, missed calls, scheduling, support, and repetitive business processes using practical AI automation.";
 const canonicalUrl = "https://mazinmind.digital";
 const ogImage = "https://mazinmind.digital/apple-touch-icon.png";
 
@@ -39,8 +36,7 @@ const organizationSchema = {
       name: "MazinMind Digital",
       url: "https://mazinmind.digital",
       image: "https://mazinmind.digital/apple-touch-icon.png",
-      description:
-        "AI automation consulting and implementation for lead generation, AI marketing automation, CRM automation, and DevOps automation consulting.",
+      description: homepageDescription,
       areaServed: "United States",
       priceRange: "$1,500-$7,500+",
       telephone: "+1-617-453-8776",
@@ -117,10 +113,8 @@ const Index = () => {
       </Helmet>
 
       <HeroBanner />
-      <ServicesSection />
-      <PackagesSection />
+      <HomeContent />
       <TestimonialsSection />
-      <ValueProposition />
       <HomeFaqSection />
       <NewsletterSection />
     </Layout>
