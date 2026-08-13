@@ -11,6 +11,7 @@ import aiBlizzardsGrantGraffiti from "@/assets/blog/ai-blizzards-grant-graffiti.
 import aiRoiOverheadGraffiti from "@/assets/blog/ai-roi-overhead-graffiti.jpg";
 import aiConsultingAdvantageGraffiti from "@/assets/blog/ai-consulting-advantage-graffiti.jpg";
 import aiVoiceSupportGraffiti from "@/assets/blog/ai-voice-support-graffiti.jpg";
+import aiAutomationMissedLeadsGraffiti from "@/assets/blog/ai-automation-missed-leads-graffiti.svg";
 
 export type BlogPostSection = {
   heading: string;
@@ -294,6 +295,107 @@ export const blogPosts: BlogPost[] = [
         question: "Can these AI blizzard response projects be structured for grants?",
         answer:
           "Yes. Municipal and utility AI initiatives can be scoped around public safety, infrastructure protection, and disaster resilience outcomes such as grid reliability, emergency coordination, and transportation continuity, which makes them easier to frame for grant funding programs.",
+      },
+    ],
+  },
+  {
+    slug: "ai-automation-small-business-missed-leads",
+    title: "How AI Automation Helps Small Businesses Stop Losing Customers",
+    excerpt:
+      "Discover how AI automation helps small businesses capture missed leads, automate follow-up, improve customer service, and turn more inquiries into paying customers.",
+    category: "AI Automation",
+    tags: [
+      "AI automation for small businesses",
+      "small business automation",
+      "AI lead generation",
+      "AI customer service",
+      "automated lead follow-up",
+      "missed call automation",
+      "AI business automation",
+    ],
+    author: "Randy Mazin / MazinMind Digital",
+    publishedAt: "2026-08-13",
+    readingTimeMinutes: 8,
+    image: aiAutomationMissedLeadsGraffiti,
+    content: {
+      intro: [
+        "How many customers is your business losing without knowing it? A visitor fills out a form, calls, or messages — and nobody responds quickly enough. That lead becomes someone else's customer. AI automation helps small businesses recover those missed opportunities by automating responses, follow-up, scheduling, and qualification.",
+        "You may already be spending to acquire leads. The bigger opportunity is often doing a better job with the leads you already have. AI automation gives teams reliable workflows that capture, qualify, and route opportunities so fewer prospects slip through the cracks.",
+      ],
+      sections: [
+        {
+          heading: "What Is AI Automation for Small Businesses?",
+          paragraphs: [
+            "AI automation combines artificial intelligence with automated workflows to handle repetitive tasks that would otherwise require a person. For small businesses this often means faster responses, reliable follow-up, appointment scheduling, and basic qualification — all without replacing your people.",
+          ],
+        },
+        {
+          heading: "1. AI Can Help Recover Missed Calls",
+          paragraphs: [
+            "Missed calls are a major source of lost revenue for local businesses. An automated missed-call workflow can text a customer shortly after the call, collect basic information, answer common questions, or offer an appointment link — converting a missed call into a conversation rather than a lost opportunity.",
+          ],
+        },
+        {
+          heading: "2. Automated Follow-Up Keeps Leads From Falling Through the Cracks",
+          paragraphs: [
+            "Getting a lead is only the beginning. AI-powered follow-up creates consistent schedules (Day 0, Day 1, Day 3, Day 7, etc.) so prospects receive timely reminders and check-ins. Automation doesn't get distracted when your team is busy — it keeps the cadence that closes deals.",
+          ],
+        },
+        {
+          heading: "3. AI Can Answer Common Customer Questions",
+          paragraphs: [
+            "AI assistants can answer routine questions instantly (hours, service areas, pricing, how to schedule). More complex issues can be escalated to a human, leaving your team to focus on higher-value work.",
+          ],
+        },
+        {
+          heading: "4. AI Can Help Schedule Appointments",
+          paragraphs: [
+            "Automated scheduling removes friction: the customer sees available times, selects one, and the appointment is created without back-and-forth. This reduces drop-off and increases booking conversion for appointment-based businesses.",
+          ],
+        },
+        {
+          heading: "5. AI Can Qualify Leads Before Your Team Gets Involved",
+          paragraphs: [
+            "AI can collect structured information (project type, location, timeline, budget) so your sales team receives prioritized, qualified prospects instead of a pile of unfiltered inquiries.",
+          ],
+        },
+        {
+          heading: "6. Automation Can Connect The Tools You Already Use",
+          paragraphs: [
+            "Automation links website forms, CRM, calendar, SMS, and email so data flows where it needs to go. That reduces manual copying and ensures every step in the workflow happens reliably and on schedule.",
+          ],
+        },
+        {
+          heading: "7. Automation Doesn't Have to Be Complicated",
+          paragraphs: [
+            "Start with one workflow: recover missed calls, or create a follow-up sequence. Measure the impact, then expand. Small, measured wins reduce risk and show clear ROI.",
+          ],
+        },
+        {
+          heading: "How MazinMind Digital Can Help",
+          paragraphs: [
+            "MazinMind Digital helps small businesses identify the highest-value automation opportunities and implement pragmatic AI-driven workflows — from missed-call recovery to automated follow-up and appointment scheduling.",
+          ],
+        },
+      ],
+      conclusion:
+        "Start with one workflow and measure the result. If you'd like help identifying the best place to start, schedule an AI Automation Assessment with MazinMind Digital.",
+    },
+    faq: [
+      {
+        question: "What is AI automation?",
+        answer:
+          "AI automation combines artificial intelligence with workflow automation to perform repetitive tasks like follow-up, scheduling, and basic customer service with minimal human intervention.",
+      },
+      {
+        question: "Is AI automation expensive?",
+        answer:
+          "It doesn't have to be. Start with a single workflow and expand as you see measurable value.",
+      },
+      {
+        question: "Can small businesses benefit from AI?",
+        answer:
+          "Yes. Small businesses usually benefit by automating repetitive tasks and improving response time, which increases conversions and reduces operational overhead.",
       },
     ],
   },
