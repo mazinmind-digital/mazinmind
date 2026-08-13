@@ -12,6 +12,8 @@ import aiRoiOverheadGraffiti from "@/assets/blog/ai-roi-overhead-graffiti.jpg";
 import aiConsultingAdvantageGraffiti from "@/assets/blog/ai-consulting-advantage-graffiti.jpg";
 import aiVoiceSupportGraffiti from "@/assets/blog/ai-voice-support-graffiti.jpg";
 import aiAutomationMissedLeadsGraffiti from "@/assets/blog/ai-automation-missed-leads-graffiti.svg";
+import aiAutomationMissedLeadsThumb from "@/assets/blog/ai-automation-missed-leads-thumb.svg";
+import aiAutomationMissedLeadsOg from "@/assets/blog/ai-automation-missed-leads-og.svg";
 
 export type BlogPostSection = {
   heading: string;
@@ -40,6 +42,8 @@ export type BlogPost = {
   publishedAt: string;
   readingTimeMinutes: number;
   image: string;
+  thumbnail?: string;
+  ogImage?: string;
   content: BlogPostContent;
   faq?: BlogPostFaq[];
 };
@@ -317,6 +321,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-08-13",
     readingTimeMinutes: 8,
     image: aiAutomationMissedLeadsGraffiti,
+    thumbnail: aiAutomationMissedLeadsThumb,
+    ogImage: aiAutomationMissedLeadsOg,
     content: {
       intro: [
         "How many customers is your business losing without knowing it? A visitor fills out a form, calls, or messages — and nobody responds quickly enough. That lead becomes someone else's customer. AI automation helps small businesses recover those missed opportunities by automating responses, follow-up, scheduling, and qualification.",
