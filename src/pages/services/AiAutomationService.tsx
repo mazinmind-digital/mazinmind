@@ -401,12 +401,12 @@ export default function AiAutomationService() {
         <title>AI Automation for Small Businesses | MazinMind Digital</title>
         <meta
           name="description"
-          content="We install AI automation systems that save time, reduce costs, and generate leads. Workflow automation, CRM automation, AI support agents, and more. Get a Free AI Automation Audit."
+          content="We install AI automation systems that save time, reduce costs, and generate leads. Workflow automation, CRM automation, AI support agents, and more. Get a Free 15-Minute Automation Audit."
         />
         <meta property="og:title" content="AI Automation for Small Businesses | MazinMind Digital" />
         <meta
           property="og:description"
-          content="We install AI automation systems that save time, reduce costs, and generate leads. Workflow automation, CRM automation, AI support agents, and more. Get a Free AI Automation Audit."
+          content="We install AI automation systems that save time, reduce costs, and generate leads. Workflow automation, CRM automation, AI support agents, and more. Get a Free 15-Minute Automation Audit."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
@@ -415,7 +415,7 @@ export default function AiAutomationService() {
         <meta name="twitter:title" content="AI Automation for Small Businesses | MazinMind Digital" />
         <meta
           name="twitter:description"
-          content="We install AI automation systems that save time, reduce costs, and generate leads. Workflow automation, CRM automation, AI support agents, and more. Get a Free AI Automation Audit."
+          content="We install AI automation systems that save time, reduce costs, and generate leads. Workflow automation, CRM automation, AI support agents, and more. Get a Free 15-Minute Automation Audit."
         />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(professionalServiceSchema)}</script>
@@ -466,7 +466,7 @@ export default function AiAutomationService() {
                 href="#free-ai-automation-audit"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-primary px-8 text-base font-bold tracking-wide text-primary-foreground glow-primary hover:opacity-90"
               >
-                Get a Free AI Automation Audit
+                Get a Free 15-Minute Automation Audit
               </a>
               <a
                 href="#packages"
@@ -696,7 +696,7 @@ export default function AiAutomationService() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-5xl rounded-3xl border border-primary/30 p-8 glass-vibrant md:p-12">
             <h2 className="mb-4 text-4xl font-display font-bold tracking-wider md:text-5xl">
-              Get a Free AI Automation Audit
+              Get a Free 15-Minute Automation Audit
             </h2>
 
             <ul className="mb-7 space-y-3">
@@ -789,7 +789,7 @@ export default function AiAutomationService() {
                       <Loader2 className="h-5 w-5 animate-spin" />
                     ) : (
                       <>
-                        Get a Free AI Automation Audit
+                        Get a Free 15-Minute Automation Audit
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </>
                     )}
