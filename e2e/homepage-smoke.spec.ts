@@ -12,7 +12,7 @@ test("homepage renders hero and includes HubSpot chat embed", async ({
   ).toBeVisible();
   const heroHeading = page.getByRole("heading", { level: 1 });
   await expect(heroHeading).toBeVisible();
-  await expect(heroHeading).toContainText(/AI/i);
+  await expect(heroHeading).toContainText(/Follow-Up/i);
 
   const cookieBanner = page.getByRole("heading", {
     name: /Cookie Preferences/i,

@@ -18,14 +18,14 @@ test("CTAs open HubSpot scheduler modal", async ({ page }) => {
   };
 
   // Hero CTA
-  await clickAndAssertModal(/Get a Free AI Automation Audit/i);
+  await clickAndAssertModal(/Get a Free 15-Minute Automation Audit/i);
 
-  // CTA Section
-  await clickAndAssertModal(/SCHEDULE FREE CONSULTATION/i);
+  // Blueprint CTA
+  await clickAndAssertModal(/Get My Automation Blueprint/i);
 
-  // HomeContent CTAs (there may be multiple with same text) - click first
-  const assessmentBtn = page.getByRole("button", { name: /Get Your AI Automation Assessment/i }).first();
-  await expect(assessmentBtn).toBeVisible();
-  await assessmentBtn.click();
+  // The homepage has one primary blueprint CTA.
+  const blueprintBtn = page.getByRole("button", { name: /Get My Automation Blueprint/i }).first();
+  await expect(blueprintBtn).toBeVisible();
+  await blueprintBtn.click();
   await expect(page.getByRole("heading", { name: /Schedule a Free Consultation/i })).toBeVisible();
 });
