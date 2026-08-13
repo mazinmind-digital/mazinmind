@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => ({
   base: "/",
   build: {
     modulePreload: { polyfill: false },
+    polyfillModulePreload: false,
   },
   server: {
     host: "::",
