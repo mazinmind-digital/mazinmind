@@ -5,10 +5,10 @@ import { ArrowRight, CheckCircle2, MessageSquareText, Workflow } from "lucide-re
 import { Link } from "react-router-dom";
 
 const steps = [
-  "Capture new inquiries from web forms, calls, and DMs",
-  "Respond instantly with a personalized message or qualification flow",
-  "Route hot leads to the right sales rep or booking step",
-  "Nurture cold leads with timed reminders and follow-up sequences",
+  "Receive inquiries from web forms, emails, calls, and chat",
+  "Immediately respond with a personalized message or qualification",
+  "Keep conversations moving with timed follow-ups and reminders",
+  "Hand off qualified leads to the right person or next step",
 ];
 
 const problems = [
@@ -33,18 +33,17 @@ export default function LeadFollowUpAutomation() {
         <link rel="canonical" href="https://mazinmind.digital/lead-follow-up-automation" />
       </Helmet>
 
-      <main className="mx-auto max-w-6xl px-4 py-20">
+      <div className="mx-auto max-w-6xl px-4 py-20">
         <section className="mb-16 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
               Lead follow-up automation
             </p>
             <h1 className="text-4xl font-display font-bold tracking-wider md:text-6xl">
-              Convert more leads by responding before they go cold.
+              Convert More Leads by Responding Before They Go Cold.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-              We build follow-up systems that reply instantly, qualify inquiries,
-              and keep leads moving with timely reminders and personalized next steps.
+              Follow up with leads automatically so opportunities don't disappear because your team was busy. Instant responses, consistent reminders, and smooth handoffs keep prospects moving.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <ScheduleButton
@@ -52,13 +51,13 @@ export default function LeadFollowUpAutomation() {
                 analyticsEvent="landing_page_cta_click"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
               >
-                Get a Lead Follow-Up Audit
+                Get a Free 15-Minute Automation Audit
               </ScheduleButton>
               <Link
                 to="/contact"
                 className="inline-flex h-14 items-center justify-center rounded-full border border-primary/40 px-8 text-base font-bold text-primary"
               >
-                Talk to a Strategist
+                Talk to MazinMind
               </Link>
             </div>
           </div>
@@ -123,19 +122,22 @@ export default function LeadFollowUpAutomation() {
 
         <section className="mt-16 text-center">
           <h2 className="text-3xl font-display font-bold tracking-wider md:text-5xl">
-            Ready to stop losing leads to slow follow-up?
+            Stop Losing Leads to Slow Follow-Up
           </h2>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+            Automation handles the repetitive work of staying in touch. Your team focuses on closing.
+          </p>
           <div className="mt-8 flex justify-center">
             <ScheduleButton
               provider="hubspot"
               analyticsEvent="scheduling_cta_click"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
             >
-              Schedule a Strategy Call <ArrowRight className="h-4 w-4" />
+              Schedule a Free Consultation <ArrowRight className="h-4 w-4" />
             </ScheduleButton>
           </div>
         </section>
-      </main>
+      </div>
     </Layout>
   );
 }

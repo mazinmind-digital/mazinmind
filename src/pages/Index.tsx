@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 
 const homepageTitle = "AI Automation for Small Businesses | MazinMind Digital";
 const homepageDescription =
-  "Stop missing leads and automate follow-up, appointment booking, and repetitive work with AI systems designed for small businesses.";
+  "MazinMind Digital helps small businesses recover missed leads, automate follow-up, book appointments, and eliminate repetitive work with practical AI automation.";
 const canonicalUrl = "https://mazinmind.digital";
 const ogImage = "https://mazinmind.digital/apple-touch-icon.png";
 
@@ -88,7 +88,7 @@ const Index = () => {
         <meta name="description" content={homepageDescription} />
         <meta
           name="keywords"
-          content="AI automation for small business, AI receptionist, lead follow-up automation, missed call automation, AI appointment booking, business process automation, CRM automation, AI lead generation system"
+          content="AI automation for small business, lead follow-up automation, missed lead recovery, small business automation, appointment booking automation, AI receptionist, business workflow automation"
         />
         <meta name="robots" content="index, follow" />
 

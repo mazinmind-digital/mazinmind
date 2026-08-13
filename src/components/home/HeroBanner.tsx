@@ -5,9 +5,9 @@ import heroGraffiti from "@/assets/hero-graffiti.jpg";
 import ScheduleButton from "@/components/ui/ScheduleButton";
 
 const outcomes = [
-  "Answer more calls and web leads faster",
-  "Follow up automatically before leads go cold",
-  "Reduce admin work and missed opportunities",
+  "Respond to new leads automatically",
+  "Recover missed opportunities",
+  "Automate repetitive business tasks",
 ];
 
 export default function HeroBanner() {
@@ -33,13 +33,15 @@ export default function HeroBanner() {
         />
 
         <h1 className="mb-4 max-w-5xl text-4xl font-extrabold text-white drop-shadow-lg graffiti-text md:text-6xl">
-          Stop losing leads. Automate the follow-up. Book more appointments.
+          Stop Losing Leads. Put Your Follow-Up on Autopilot.
         </h1>
 
         <p className="mb-7 max-w-4xl text-lg text-white/90 md:text-2xl">
-          MazinMind Digital builds AI systems for small businesses that capture
-          leads faster, automate follow-up, and eliminate repetitive admin work
-          without adding more staff.
+          MazinMind Digital builds practical AI automation for small businesses that responds to leads, follows up with prospects, books appointments, and eliminates repetitive work.
+        </p>
+
+        <p className="mb-7 max-w-4xl text-base text-white/80">
+          Start with one problem, prove the value, then automate more.
         </p>
 
         <ul className="mb-8 grid w-full max-w-4xl grid-cols-1 gap-3 text-left sm:grid-cols-3">
@@ -59,16 +61,16 @@ export default function HeroBanner() {
             provider="hubspot"
             analyticsEvent="primary_audit_cta_click"
             className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-primary px-8 text-base font-bold tracking-wide text-primary-foreground glow-primary hover:opacity-90"
-            aria-label="Get a Free AI Automation Audit"
+            aria-label="Get a Free 15-Minute Automation Audit"
           >
-            Get a Free AI Automation Audit
+            Get a Free 15-Minute Automation Audit
           </ScheduleButton>
           <a
             href="#ai-systems-we-install"
             className="inline-flex h-14 items-center justify-center rounded-full border-2 border-primary/70 bg-black/30 px-8 text-base font-bold tracking-wide text-primary hover:bg-primary/10"
-            aria-label="See AI Systems We Install"
+            aria-label="See What We Can Automate"
           >
-            See AI Systems We Install
+            See What We Can Automate
           </a>
         </div>
 

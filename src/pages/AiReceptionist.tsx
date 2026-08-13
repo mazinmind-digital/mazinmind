@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import ScheduleButton from "@/components/ui/ScheduleButton";
 
 const features = [
-  "Answer missed calls and after-hours inquiries",
-  "Gather lead information and qualify the request",
-  "Provide consistent answers to common customer questions",
-  "Route urgent issues or appointment requests to the right person",
+  "Handle common questions and inquiries automatically",
+  "Collect customer details and qualify the request",
+  "Book appointments and reschedule with no back-and-forth",
+  "Alert your team to urgent issues or new opportunities",
 ];
 
 export default function AiReceptionist() {
@@ -27,7 +27,7 @@ export default function AiReceptionist() {
         <link rel="canonical" href="https://mazinmind.digital/ai-receptionist" />
       </Helmet>
 
-      <main className="mx-auto max-w-6xl px-4 py-20">
+      <div className="mx-auto max-w-6xl px-4 py-20">
         <section className="mb-16 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
@@ -37,8 +37,7 @@ export default function AiReceptionist() {
               Never miss a call or inquiry again.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-              Give customers a professional first response even when your team is busy,
-              out in the field, or unavailable after hours.
+              Handle routine inquiries, collect customer details, route requests, and help customers book appointments. Your team handles the conversations that need human judgment.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <ScheduleButton
@@ -46,13 +45,13 @@ export default function AiReceptionist() {
                 analyticsEvent="landing_page_cta_click"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
               >
-                Book a Demo
+                Get a Free 15-Minute Automation Audit
               </ScheduleButton>
               <Link
                 to="/contact"
                 className="inline-flex h-14 items-center justify-center rounded-full border border-primary/40 px-8 text-base font-bold text-primary"
               >
-                Ask a Question
+                Talk to MazinMind
               </Link>
             </div>
           </div>
@@ -80,36 +79,39 @@ export default function AiReceptionist() {
 
         <section className="grid gap-6 md:grid-cols-2">
           <article className="rounded-2xl border border-border bg-card p-6">
-            <MessageSquare className="mb-4 h-8 w-8 text-primary" />
-            <h2 className="text-xl font-display font-bold">Eleven-hour coverage without extra staff</h2>
+            <Headphones className="mb-4 h-8 w-8 text-primary" />
+            <h2 className="text-xl font-display font-bold">Never Miss a Call or Inquiry</h2>
             <p className="mt-3 text-muted-foreground">
-              Answer common questions and capture details for new prospects even when your office is closed.
+              After-hours calls and web inquiries are answered immediately with a professional response, not a voicemail or silence.
             </p>
           </article>
           <article className="rounded-2xl border border-border bg-card p-6">
             <CheckCircle2 className="mb-4 h-8 w-8 text-primary" />
-            <h2 className="text-xl font-display font-bold">Professional first impression</h2>
+            <h2 className="text-xl font-display font-bold">Faster Appointments, Less Back-and-Forth</h2>
             <p className="mt-3 text-muted-foreground">
-              Customers hear a clear, branded experience that feels polished instead of rushed or confusing.
+              Customers book appointments directly without waiting for someone to call them back. Your calendar and team stay informed.
             </p>
           </article>
         </section>
 
         <section className="mt-16 rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary/10 via-card to-accent/10 p-8 md:p-12 text-center">
           <h2 className="text-3xl font-display font-bold tracking-wider md:text-5xl">
-            See how an AI receptionist could keep more calls and leads from slipping away.
+            Stop Missing Calls and Inquiries
           </h2>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+            An AI receptionist works around the clock so you never miss an opportunity, appointment request, or customer question.
+          </p>
           <div className="mt-8 flex justify-center">
             <ScheduleButton
               provider="hubspot"
               analyticsEvent="scheduling_cta_click"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
             >
-              Schedule a Strategy Call <ArrowRight className="h-4 w-4" />
+              Schedule a Free Consultation <ArrowRight className="h-4 w-4" />
             </ScheduleButton>
           </div>
         </section>
-      </main>
+      </div>
     </Layout>
   );
 }
