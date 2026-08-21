@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 
 type Package = {
   name: string;
-  price: string;
   includes: string[];
   idealFor: string;
   timeframe: string;
@@ -16,7 +15,6 @@ type Package = {
 const packages: Package[] = [
   {
     name: "Starter AI Automation",
-    price: "$1500",
     includes: [
       "one automation system",
       "CRM integration",
@@ -30,7 +28,6 @@ const packages: Package[] = [
   },
   {
     name: "AI Marketing Engine",
-    price: "$3000",
     includes: [
       "AI content generation",
       "SEO automation",
@@ -45,7 +42,6 @@ const packages: Package[] = [
   },
   {
     name: "AI Business System",
-    price: "$7500",
     includes: [
       "AI lead generation system",
       "AI marketing automation",
@@ -53,14 +49,13 @@ const packages: Package[] = [
       "analytics dashboards",
     ],
     idealFor:
-      "Full AI automation system for sales, marketing, and operations.",
+      "Full AI automation system for sales, marketing, and operations support.",
     timeframe: "Delivery: 3-5 weeks",
     ctaLink: "/contact?interest=ai-business-system",
     ctaLabel: "Install My AI System",
   },
   {
     name: "Enterprise AI Architecture",
-    price: "Custom",
     includes: [
       "AI infrastructure",
       "custom automation tools",
@@ -103,11 +98,10 @@ export function PackagesSection() {
                   : "glass border-border/70"
               }`}
             >
-              <div className="mb-5 flex items-start justify-between gap-4">
+              <div className="mb-5">
                 <h3 className="text-3xl font-display font-bold tracking-wide text-foreground">
                   {item.name}
                 </h3>
-                <p className="text-2xl font-bold text-primary">{item.price}</p>
               </div>
 
               <ul className="mb-5 space-y-2">

@@ -13,8 +13,8 @@ import {
   Shield,
   Zap,
 } from "lucide-react";
-import worldPeace from "@/assets/world-peace.png";
-import bostonCorridor from "@/assets/boston-corridor.png";
+import heroGraffiti from "@/assets/hero-graffiti.jpg";
+import servicesGraffiti from "@/assets/services-graffiti.jpg";
 import { Helmet } from "react-helmet-async";
 
 const values = [
@@ -127,9 +127,9 @@ export default function About() {
 
         {/* Graffiti Background */}
         <div
-          className="absolute right-0 bottom-0 w-1/2 h-full opacity-30"
+          className="absolute right-0 bottom-0 w-1/2 h-full opacity-35"
           style={{
-            backgroundImage: `url(${worldPeace})`,
+            backgroundImage: `url(${heroGraffiti})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             mixBlendMode: "screen",
@@ -330,7 +330,7 @@ export default function About() {
         <div
           className="absolute left-0 bottom-0 w-1/3 h-full opacity-20"
           style={{
-            backgroundImage: `url(${bostonCorridor})`,
+            backgroundImage: `url(${servicesGraffiti})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             mixBlendMode: "screen",

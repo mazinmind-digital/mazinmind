@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g3" x1="0" x2="1">
+      <stop offset="0%" stop-color="#5b21b6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <style>
+      .bg{fill:url(#g3)}
+      .title{font:800 48px/1.05 'Inter', sans-serif; fill:#fff}
+      .sub{font:600 28px/1.1 'Inter', sans-serif; fill:#fff; opacity:0.95}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="630" rx="18"/>
+  <text x="80" y="140" class="title">How AI Automation Helps</text>
+  <text x="80" y="200" class="title">Small Businesses Stop Losing Customers</text>
+  <text x="80" y="280" class="sub">Recover missed leads • Automate follow-up • Improve conversions</text>
+</svg>
