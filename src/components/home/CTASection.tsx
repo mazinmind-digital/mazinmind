@@ -3,7 +3,7 @@ import { ArrowRight, Rocket, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import ScheduleButton from "@/components/ui/ScheduleButton";
-import bostonColorful from "@/assets/boston-colorful.png";
+import neonCity from "@/assets/neon-city.png";
 
 export function CTASection() {
   return (
@@ -12,11 +12,11 @@ export function CTASection() {
       <div className="absolute inset-0 bg-gradient-primary opacity-5" />
       <div className="absolute inset-0 grid-pattern opacity-20" />
 
-      {/* Boston Colorful Background */}
+      {/* Graffiti city background */}
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-30"
         style={{
-          backgroundImage: `url(${bostonColorful})`,
+          backgroundImage: `url(${neonCity})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           mixBlendMode: "screen",

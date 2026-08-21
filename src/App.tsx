@@ -18,6 +18,9 @@ import { HubSpotSpaTracking } from "./components/analytics/HubSpotSpaTracking";
 import AiAutomationService from "./pages/services/AiAutomationService";
 import AiMarketingService from "./pages/services/AiMarketingService";
 import DevOpsCloudService from "./pages/services/DevOpsCloudService";
+import AiAutomationContractors from "./pages/AiAutomationContractors";
+import LeadFollowUpAutomation from "./pages/LeadFollowUpAutomation";
+import AiReceptionist from "./pages/AiReceptionist";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +37,9 @@ const App = () => (
           <Route path="/services/ai-automation" element={<AiAutomationService />} />
           <Route path="/services/ai-marketing" element={<AiMarketingService />} />
           <Route path="/services/devops-cloud" element={<DevOpsCloudService />} />
+          <Route path="/ai-automation-contractors" element={<AiAutomationContractors />} />
+          <Route path="/lead-follow-up-automation" element={<LeadFollowUpAutomation />} />
+          <Route path="/ai-receptionist" element={<AiReceptionist />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
