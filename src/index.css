@@ -238,6 +238,50 @@
     pointer-events: none;
   }
 
+  .graffiti-icon {
+    position: relative;
+    isolation: isolate;
+    transform: rotate(-2deg) skewX(-1deg);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      0 16px 36px rgba(0, 0, 0, 0.32);
+  }
+
+  .graffiti-icon::before {
+    content: "";
+    position: absolute;
+    inset: 10% 12%;
+    border-radius: 1.2rem;
+    border: 2px solid rgba(255, 255, 255, 0.22);
+    transform: rotate(2deg) translateY(-2px);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.14),
+      rgba(255, 255, 255, 0.02) 30%,
+      rgba(0, 0, 0, 0.06)
+    );
+    opacity: 0.95;
+    z-index: 0;
+  }
+
+  .graffiti-icon::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.5), transparent 18%),
+      radial-gradient(circle at 72% 28%, rgba(0, 0, 0, 0.2), transparent 18%),
+      radial-gradient(circle at 52% 80%, rgba(255, 255, 255, 0.12), transparent 20%);
+    mix-blend-mode: screen;
+    opacity: 0.9;
+    z-index: 0;
+  }
+
+  .graffiti-icon > span {
+    transform: rotate(1.5deg) translateY(-1px);
+  }
+
   .neon-border {
     position: relative;
   }

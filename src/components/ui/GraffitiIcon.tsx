@@ -53,7 +53,7 @@ export function GraffitiIcon({
   return (
     <span
       className={cn(
-        "relative inline-flex items-center justify-center overflow-hidden border text-primary-foreground",
+        "graffiti-icon relative inline-flex items-center justify-center overflow-hidden border text-primary-foreground",
         "before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.38)_0,rgba(255,255,255,0)_55%)]",
         "after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_80%_75%,rgba(0,0,0,0.24)_0,rgba(0,0,0,0)_58%)]",
         toneStyles[tone],
@@ -62,9 +62,9 @@ export function GraffitiIcon({
       )}
     >
       <span className="spray-texture absolute inset-0 opacity-30" />
-      <span className="relative z-[1]">
+      <span className="relative z-[1] flex items-center justify-center">
         {Icon ? (
-          <Icon className={cn(iconSizeStyles[size], iconClassName)} />
+          <Icon className={cn("drop-shadow-[0_0_14px_rgba(255,255,255,0.25)]", iconSizeStyles[size], iconClassName)} />
         ) : (
           children
         )}
