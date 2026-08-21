@@ -1,0 +1,163 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+      
+      .graffiti-headline {
+        font-family: 'Fredoka One', cursive;
+        font-size: 96px;
+        font-weight: 900;
+        fill: #fbbf24;
+        text-anchor: middle;
+        filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.6)) drop-shadow(2px 2px 4px rgba(0,0,0,0.8));
+        letter-spacing: 3px;
+      }
+      
+      .graffiti-subtext {
+        font-family: 'Fredoka One', cursive;
+        font-size: 42px;
+        fill: #22d3ee;
+        text-anchor: middle;
+        filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.5)) drop-shadow(2px 2px 3px rgba(0,0,0,0.8));
+      }
+      
+      .pulse {
+        animation: pulse 2.5s ease-in-out infinite;
+      }
+      
+      .glow-pulse {
+        animation: glow-pulse 1.5s ease-in-out infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 1; r: 8px; }
+        50% { opacity: 0.6; r: 12px; }
+      }
+      
+      @keyframes glow-pulse {
+        0%, 100% { filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.8)); }
+        50% { filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.4)); }
+      }
+    </style>
+    
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a2744;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d1b4e;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="neon-glow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="spray-paint">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+    </filter>
+  </defs>
+  
+  <!-- Background gradient -->
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+  
+  <!-- Graffiti texture overlay -->
+  <rect width="1600" height="900" fill="#000" opacity="0.4"/>
+  
+  <!-- Abstract spray paint strokes (background) -->
+  <g opacity="0.15">
+    <path d="M 0 150 Q 400 100 800 200 T 1600 150" stroke="#22d3ee" stroke-width="8" fill="none"/>
+    <path d="M 1600 700 Q 1200 800 800 750 T 0 700" stroke="#ec4899" stroke-width="10" fill="none"/>
+    <circle cx="200" cy="150" r="120" fill="none" stroke="#a855f7" stroke-width="6"/>
+    <circle cx="1400" cy="750" r="100" fill="none" stroke="#fbbf24" stroke-width="5"/>
+  </g>
+  
+  <!-- Left side: Dynamic phone graphic -->
+  <g transform="translate(300, 450)">
+    <!-- Phone glow -->
+    <circle cx="0" cy="0" r="95" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.3" filter="url(#neon-glow)"/>
+    
+    <!-- Energy waves expanding -->
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#22d3ee" stroke-width="2" opacity="0.8" class="pulse"/>
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#ec4899" stroke-width="1.5" opacity="0.5" class="pulse" style="animation-delay: 0.3s"/>
+    
+    <!-- Phone body -->
+    <rect x="-45" y="-100" width="90" height="180" rx="12" fill="#1a1a2e" stroke="#22d3ee" stroke-width="3" filter="url(#neon-glow)"/>
+    
+    <!-- Phone screen -->
+    <rect x="-40" y="-95" width="80" height="120" rx="8" fill="#0f1729" stroke="#22d3ee" stroke-width="2"/>
+    
+    <!-- Screen content: ringing indicator -->
+    <circle cx="0" cy="-45" r="8" fill="#22d3ee" class="glow-pulse"/>
+    <line x1="-15" y1="-55" x2="-22" y2="-68" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="15" y1="-55" x2="22" y2="-68" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="-30" y1="-60" x2="-42" y2="-78" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <line x1="30" y1="-60" x2="42" y2="-78" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    
+    <!-- Time display -->
+    <text x="0" y="15" font-family="monospace" font-size="10" fill="#22d3ee" text-anchor="middle" opacity="0.8">MISSED CALL</text>
+  </g>
+  
+  <!-- Center: Captured/caught concept with geometric shapes -->
+  <g transform="translate(800, 450)">
+    <!-- Central geometric network -->
+    <circle cx="0" cy="0" r="8" fill="#fbbf24" filter="url(#neon-glow)"/>
+    
+    <!-- Connecting lines (network) -->
+    <line x1="0" y1="0" x2="-60" y2="-60" stroke="#22d3ee" stroke-width="2" opacity="0.8"/>
+    <line x1="0" y1="0" x2="60" y2="-60" stroke="#22d3ee" stroke-width="2" opacity="0.8"/>
+    <line x1="0" y1="0" x2="-80" y2="0" stroke="#ec4899" stroke-width="2" opacity="0.8"/>
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#ec4899" stroke-width="2" opacity="0.8"/>
+    <line x1="0" y1="0" x2="-60" y2="60" stroke="#a855f7" stroke-width="2" opacity="0.8"/>
+    <line x1="0" y1="0" x2="60" y2="60" stroke="#a855f7" stroke-width="2" opacity="0.8"/>
+    
+    <!-- Node points -->
+    <circle cx="-60" cy="-60" r="6" fill="#22d3ee" filter="url(#neon-glow)"/>
+    <circle cx="60" cy="-60" r="6" fill="#22d3ee" filter="url(#neon-glow)"/>
+    <circle cx="-80" cy="0" r="6" fill="#ec4899" filter="url(#neon-glow)"/>
+    <circle cx="80" cy="0" r="6" fill="#ec4899" filter="url(#neon-glow)"/>
+    <circle cx="-60" cy="60" r="6" fill="#a855f7" filter="url(#neon-glow)"/>
+    <circle cx="60" cy="60" r="6" fill="#a855f7" filter="url(#neon-glow)"/>
+  </g>
+  
+  <!-- Right side: Capture/conversion indicator -->
+  <g transform="translate(1300, 450)">
+    <!-- Circular rings closing around (capturing concept) -->
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#fbbf24" stroke-width="3" opacity="0.8" filter="url(#neon-glow)"/>
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#ec4899" stroke-width="2" opacity="0.6"/>
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#22d3ee" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Central checkmark (captured) -->
+    <path d="M -12 0 L -3 12 L 15 -10" stroke="#22d3ee" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#neon-glow)"/>
+    
+    <!-- Success dots -->
+    <circle cx="-45" cy="-45" r="4" fill="#fbbf24" class="glow-pulse"/>
+    <circle cx="45" cy="-45" r="4" fill="#a855f7" class="glow-pulse" style="animation-delay: 0.2s"/>
+    <circle cx="0" cy="55" r="4" fill="#ec4899" class="glow-pulse" style="animation-delay: 0.4s"/>
+  </g>
+  
+  <!-- Top headline -->
+  <text x="800" y="100" class="graffiti-headline">MISSED CALLS</text>
+  <text x="800" y="170" class="graffiti-headline" style="font-size: 96px; fill: #22d3ee;">CAPTURED</text>
+  
+  <!-- Bottom tagline -->
+  <text x="800" y="820" class="graffiti-subtext">AI Automation for Small Business</text>
+  
+  <!-- Decorative corner elements -->
+  <g opacity="0.4">
+    <!-- Top left accent -->
+    <path d="M 50 50 L 120 50 M 50 50 L 50 120" stroke="#ec4899" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Bottom right accent -->
+    <path d="M 1550 850 L 1480 850 M 1550 850 L 1550 780" stroke="#a855f7" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Subtle spray paint texture -->
+  <g opacity="0.08" filter="url(#spray-paint)">
+    <circle cx="150" cy="200" r="80" fill="#22d3ee"/>
+    <circle cx="1450" cy="750" r="100" fill="#fbbf24"/>
+    <rect x="600" y="100" width="200" height="200" fill="#ec4899"/>
+  </g>
+</svg>
