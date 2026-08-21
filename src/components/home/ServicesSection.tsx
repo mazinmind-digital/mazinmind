@@ -95,11 +95,10 @@ export function ServicesSection() {
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="mb-5 text-5xl font-display font-bold tracking-wider md:text-6xl">
-            AI Systems We Install in Your Business
+            AI Systems That Recover Leads and Remove Busywork
           </h2>
           <p className="text-lg text-muted-foreground md:text-xl">
-            We install systems that drive leads, automate execution, and reduce
-            repetitive work.
+            We install practical automation that responds faster, follows up consistently, and gives your team time back.
           </p>
         </div>
 

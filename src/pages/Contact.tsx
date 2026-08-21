@@ -246,7 +246,7 @@ export default function Contact() {
 
       return {
         ...prev,
-        message: `Hi MazinMind team,\n\nI am interested in ${normalizedInterest}. Please share pricing and next steps.\n`,
+        message: `Hi MazinMind team,\n\nI am interested in ${normalizedInterest}. Please share the next steps and recommended approach.\n`,
       };
     });
   }, [location.search]);

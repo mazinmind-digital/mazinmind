@@ -318,11 +318,11 @@ export default function Blog() {
                     <div className="grid lg:grid-cols-2">
                       <div className="h-72 lg:h-full">
                         <Link to={`/blog/${featuredPost.slug}`}>
-                          <img
-                            src={featuredPost.image}
-                            alt={featuredPost.title}
-                            className="w-full h-full object-cover"
-                          />
+                            <img
+                              src={featuredPost.thumbnail ?? featuredPost.image}
+                              alt={featuredPost.title}
+                              className="w-full h-full object-cover"
+                            />
                         </Link>
                       </div>
 
@@ -387,11 +387,11 @@ export default function Blog() {
                       >
                         <div className="h-52">
                           <Link to={`/blog/${post.slug}`}>
-                            <img
-                              src={post.image}
-                              alt={post.title}
-                              className="w-full h-full object-cover"
-                            />
+                              <img
+                                src={post.thumbnail ?? post.image}
+                                alt={post.title}
+                                className="w-full h-full object-cover"
+                              />
                           </Link>
                         </div>
 

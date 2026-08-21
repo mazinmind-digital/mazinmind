@@ -54,7 +54,7 @@ const faqs = [
     ],
   },
   {
-    category: "PROCESS & PRICING",
+    category: "PROCESS & APPROACH",
     color: "electric",
     questions: [
       {
@@ -63,9 +63,9 @@ const faqs = [
           "Our process starts with a free 30-minute consultation to understand your needs. We then conduct an AI readiness assessment and develop a custom solution roadmap. We use Agile Scrum methodology for development, with regular updates and demos. After implementation, we provide training and ongoing support.",
       },
       {
-        question: "How much do your services cost?",
+        question: "What does a typical engagement look like?",
         answer:
-          "Our pricing varies based on the scope and complexity of each project. We offer flexible engagement models including project-based pricing, retainer agreements, and hourly consulting. Contact us for a custom quote based on your specific needs.",
+          "Every engagement begins with a discovery conversation, followed by a tailored roadmap and phased implementation. We focus on the least complex solution that creates measurable value, then expand intentionally as your business grows.",
       },
       {
         question: "Do you offer free consultations?",
@@ -114,11 +114,11 @@ export default function FAQ() {
         <title>FAQ | Mazinmind.Digital</title>
         <meta
           name="description"
-          content="Find answers to common questions about Mazinmind.Digital's AI consulting, digital transformation, and technology services. Learn more about our process, pricing, and support."
+          content="Find answers to common questions about Mazinmind.Digital's AI consulting, digital transformation, and technology services. Learn more about our process, approach, and support."
         />
         <meta
           name="keywords"
-          content="FAQ, Mazinmind.Digital, AI consulting, digital transformation, technology services, support, pricing"
+          content="FAQ, Mazinmind.Digital, AI consulting, digital transformation, technology services, support, AI implementation"
         />
         <meta property="og:title" content="FAQ | Mazinmind.Digital" />
         <meta

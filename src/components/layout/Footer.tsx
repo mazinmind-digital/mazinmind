@@ -14,9 +14,9 @@ import mazinmindLogo from "@/assets/mazinmind-logo.png";
 const footerLinks = {
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Blog", href: "/blog" },
-    { name: "Art Gallery", href: "/art-gallery" },
+    { name: "AI Automation", href: "/ai-automation-contractors" },
+    { name: "Lead Follow-Up", href: "/lead-follow-up-automation" },
+    { name: "AI Receptionist", href: "/ai-receptionist" },
     { name: "Contact", href: "/contact" },
     { name: "FAQ", href: "/faq" },
   ],
