@@ -1,73 +1,72 @@
-# Welcome to your Lovable project
+# MazinMind Digital
 
-## Project info
+MazinMind Digital is a marketing and AI automation consultancy for small businesses that want to stop losing leads, automate follow-up, and run more efficiently with practical AI systems.
 
-Project URL: <https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID>
+Website: https://mazinmind.digital
 
-## How can I edit this code?
+## What this project does
 
-There are several ways of editing your application.
+This repository powers the MazinMind Digital marketing site and conversion-focused landing pages. The site is designed to help local and small businesses:
 
-### Use Lovable
+- capture and respond to more leads faster
+- automate missed follow-up and lead nurturing
+- book more appointments with AI-powered intake and receptionist workflows
+- reduce repetitive admin work with practical automation
+- improve their marketing and operations without adding more overhead
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Core stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- Vite
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn-style UI primitives
 
-### Use your preferred IDE
+## Local development
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Requirements:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js 20+
+- npm
 
-Follow these steps:
+Install dependencies:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Start the local dev server:
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
 npm run dev
 ```
 
-### Edit a file directly in GitHub
+Build the production bundle:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run build
+```
 
-### Use GitHub Codespaces
+Run type checking:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run typecheck
+```
 
-## What technologies are used for this project?
+## Project structure
 
-This project is built with:
+- `src/pages` — route pages and landing pages
+- `src/components` — reusable UI and homepage sections
+- `src/data` — page content and structured marketing data
+- `public` — static assets, headers, and generated sitemap/robots output
+- `scripts` — build-time generation scripts
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
 
-## How can I deploy this project?
+This project is deployed to GitHub Pages for the production site at https://mazinmind.digital.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Notes
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- The site uses SEO metadata, structured page content, and commercial landing pages targeting specific lead-generation and AI automation search intents.
+- Content is intentionally focused on conversion, business outcomes, and practical automation value rather than generic SaaS language.
+- This repository is not a Lovable-generated project and is not meant to be run through the Lovable editor workflow.

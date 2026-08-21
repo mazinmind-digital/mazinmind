@@ -3,22 +3,22 @@ import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 
 const outcomes = [
   {
-    title: "Example outcome 1",
-    problem: "Marketing inconsistency",
-    solution: "AI marketing engine",
-    result: "Consistent SEO traffic and automated content production.",
+    title: "Lead handling gets faster",
+    problem: "Missed or slow responses",
+    solution: "AI intake and routing",
+    result: "New inquiries get acknowledged and triaged quickly without manual delay.",
   },
   {
-    title: "Example outcome 2",
-    problem: "Manual lead generation",
-    solution: "AI outreach automation",
-    result: "Steady weekly pipeline of qualified prospects.",
+    title: "Follow-up becomes consistent",
+    problem: "Leads go cold between touchpoints",
+    solution: "Automated nurturing and reminders",
+    result: "Prospects receive timely next steps without extra admin work.",
   },
   {
-    title: "Example outcome 3",
-    problem: "Operational inefficiencies",
-    solution: "workflow automation system",
-    result: "20+ hours per month saved.",
+    title: "Operations get less manual",
+    problem: "Repetitive admin tasks",
+    solution: "Workflow automation and scheduling",
+    result: "The team spends more time on customer service and revenue-generating work.",
   },
 ];
 
@@ -34,11 +34,11 @@ export function TestimonialsSection() {
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <GraffitiIcon icon={BarChart3} tone="accent" size="lg" className="mx-auto mb-6" />
           <h2 className="mb-4 text-4xl font-display font-bold tracking-wider md:text-5xl">
-            Typical Results Businesses Achieve
+            How businesses benefit from smarter follow-up
           </h2>
           <p className="text-lg text-muted-foreground">
-            Example outcomes based on common implementation patterns across lead
-            generation, marketing, and operations automation.
+            Common bottlenecks we solve across lead capture, service scheduling,
+            and day-to-day operations.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export function TestimonialsSection() {
         </div>
 
         <p className="mt-6 text-center text-sm text-muted-foreground">
-          Results vary; examples are illustrative.
+          Outcomes vary by business, workflow, and implementation scope.
         </p>
       </div>
     </section>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#5b21b6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <style>
+      .bg{fill:url(#g)}
+      .accent{fill:#fde68a}
+      .muted{fill:rgba(255,255,255,0.85)}
+      .tag{font:700 42px/1.1 'Inter', sans-serif}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="900" rx="16"/>
+  <g transform="translate(80,120)">
+    <rect x="0" y="0" width="1040" height="660" rx="12" fill="rgba(255,255,255,0.06)"/>
+    <g transform="translate(60,60)">
+      <text x="0" y="0" class="tag" fill="#fff">AI Automation</text>
+      <text x="0" y="70" font-size="36" fill="#fff">for Small Businesses</text>
+      <rect x="-12" y="120" width="520" height="220" rx="12" fill="#fff" opacity="0.06"/>
+      <g transform="translate(20,150)">
+        <circle cx="60" cy="60" r="46" class="accent" />
+        <rect x="140" y="10" width="320" height="100" rx="12" fill="#fff" opacity="0.08"/>
+        <rect x="140" y="130" width="240" height="20" rx="6" fill="#fff" opacity="0.06"/>
+      </g>
+    </g>
+  </g>
+  <g transform="translate(1180,520) rotate(-12)">
+    <rect width="360" height="220" rx="12" fill="#fff" opacity="0.06" />
+    <text x="22" y="46" fill="#fff" font-size="28">Missed leads</text>
+    <text x="22" y="90" fill="#fff" font-size="20" opacity="0.9">Recovered automatically</text>
+  </g>
+</svg>

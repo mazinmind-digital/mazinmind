@@ -16,23 +16,16 @@ type Artwork = {
   orientation: ArtworkOrientation;
   size: string;
   finish: string;
-  price: number;
   image: string;
   addedAt: string;
   filename: string;
 };
 
-type SortMode = "newest" | "price-low" | "price-high" | "title";
+type SortMode = "newest" | "title";
 
 type ArtworkSeed = Omit<Artwork, "image" | "filename">;
 
 const PAGE_SIZE = 25;
-
-const currency = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  maximumFractionDigits: 0,
-});
 
 const titleFromFilename = (filename: string) =>
   filename
@@ -77,8 +70,6 @@ const inferSize = (orientation: ArtworkOrientation) => {
   return "30 x 20 in";
 };
 
-const inferPrice = (index: number) => 140 + index * 15;
-
 const seedsByFilename: Record<string, ArtworkSeed> = {
   "boston-colorful.png": {
     id: "signal-over-boston",
@@ -89,7 +80,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "24 x 16 in",
     finish: "Gallery-wrapped canvas",
-    price: 165,
     addedAt: "2026-02-04",
   },
   "boston-rain.png": {
@@ -101,7 +91,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Portrait",
     size: "16 x 24 in",
     finish: "Matte canvas",
-    price: 155,
     addedAt: "2026-01-31",
   },
   "boston-corridor.png": {
@@ -113,7 +102,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "30 x 20 in",
     finish: "Gallery-wrapped canvas",
-    price: 210,
     addedAt: "2026-01-26",
   },
   "brain-circuit.png": {
@@ -125,7 +113,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Square",
     size: "20 x 20 in",
     finish: "Satin canvas",
-    price: 180,
     addedAt: "2026-01-19",
   },
   "brain-green.png": {
@@ -137,7 +124,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Square",
     size: "16 x 16 in",
     finish: "Matte canvas",
-    price: 135,
     addedAt: "2026-01-13",
   },
   "ai-mask.png": {
@@ -149,7 +135,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Portrait",
     size: "18 x 24 in",
     finish: "Gallery-wrapped canvas",
-    price: 195,
     addedAt: "2026-01-08",
   },
   "ai-face.png": {
@@ -161,7 +146,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Portrait",
     size: "24 x 36 in",
     finish: "Premium canvas",
-    price: 240,
     addedAt: "2025-12-29",
   },
   "neon-city.png": {
@@ -173,7 +157,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "36 x 24 in",
     finish: "Premium canvas",
-    price: 260,
     addedAt: "2025-12-20",
   },
   "world-peace.png": {
@@ -185,7 +168,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Square",
     size: "30 x 30 in",
     finish: "Gallery-wrapped canvas",
-    price: 275,
     addedAt: "2025-12-14",
   },
   "digital-minimalism-habits-shift.png": {
@@ -197,7 +179,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Portrait",
     size: "18 x 24 in",
     finish: "Matte canvas",
-    price: 172,
     addedAt: "2026-02-11",
   },
   "digital-minimalism-habits-focus.png": {
@@ -209,7 +190,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Portrait",
     size: "18 x 24 in",
     finish: "Satin canvas",
-    price: 178,
     addedAt: "2026-02-10",
   },
   "digital-minimalism-habits-ritual.png": {
@@ -221,7 +201,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Portrait",
     size: "18 x 24 in",
     finish: "Gallery-wrapped canvas",
-    price: 184,
     addedAt: "2026-02-09",
   },
   "digital-minimalism-habits-balance.png": {
@@ -233,7 +212,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Portrait",
     size: "18 x 24 in",
     finish: "Matte canvas",
-    price: 176,
     addedAt: "2026-02-08",
   },
   "digital-minimalism-habits-deep-work.png": {
@@ -245,7 +223,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Portrait",
     size: "20 x 28 in",
     finish: "Premium canvas",
-    price: 189,
     addedAt: "2026-02-07",
   },
   "digital-minimalism-guide-cover.png": {
@@ -257,7 +234,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Portrait",
     size: "18 x 24 in",
     finish: "Satin canvas",
-    price: 168,
     addedAt: "2026-02-06",
   },
   "future-glimpse-chaos-study-i.png": {
@@ -269,7 +245,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "36 x 20 in",
     finish: "Premium canvas",
-    price: 248,
     addedAt: "2026-02-05",
   },
   "future-glimpse-chaos-study-ii.png": {
@@ -281,7 +256,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "36 x 20 in",
     finish: "Premium canvas",
-    price: 252,
     addedAt: "2026-02-04",
   },
   "azazel-iron-stance.png": {
@@ -293,7 +267,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "30 x 20 in",
     finish: "Gallery-wrapped canvas",
-    price: 235,
     addedAt: "2026-02-03",
   },
   "azazel-shadow-guard.png": {
@@ -305,7 +278,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "30 x 20 in",
     finish: "Gallery-wrapped canvas",
-    price: 229,
     addedAt: "2026-02-02",
   },
   "war-within-biblical-study.png": {
@@ -317,7 +289,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Portrait",
     size: "20 x 30 in",
     finish: "Premium canvas",
-    price: 265,
     addedAt: "2026-02-01",
   },
   "ai-tech-samurai-relic.png": {
@@ -329,7 +300,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Portrait",
     size: "20 x 30 in",
     finish: "Premium canvas",
-    price: 272,
     addedAt: "2026-01-31",
   },
   "mazinmind-tech-altarpiece.png": {
@@ -341,7 +311,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Portrait",
     size: "20 x 30 in",
     finish: "Premium canvas",
-    price: 268,
     addedAt: "2026-01-30",
   },
   "enki-ancient-network-i.png": {
@@ -353,7 +322,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "36 x 20 in",
     finish: "Satin canvas",
-    price: 242,
     addedAt: "2026-01-29",
   },
   "enki-ancient-network-ii.png": {
@@ -365,7 +333,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "36 x 20 in",
     finish: "Satin canvas",
-    price: 246,
     addedAt: "2026-01-28",
   },
   "enki-ancient-network-iii.png": {
@@ -377,7 +344,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "36 x 20 in",
     finish: "Satin canvas",
-    price: 244,
     addedAt: "2026-01-27",
   },
   "enki-ancient-network-iv.png": {
@@ -389,7 +355,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "36 x 20 in",
     finish: "Satin canvas",
-    price: 249,
     addedAt: "2026-01-26",
   },
   "annunaki-igigi-council.png": {
@@ -401,7 +366,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "36 x 20 in",
     finish: "Premium canvas",
-    price: 258,
     addedAt: "2026-01-25",
   },
   "spectrum-chaos-signal.png": {
@@ -413,7 +377,6 @@ const seedsByFilename: Record<string, ArtworkSeed> = {
     orientation: "Landscape",
     size: "40 x 20 in",
     finish: "Satin canvas",
-    price: 238,
     addedAt: "2026-01-24",
   },
 };
@@ -446,12 +409,11 @@ const artworks: Artwork[] = Object.entries(importedImages)
       id: slugFromFilename(filename),
       title: titleFromFilename(filename),
       description:
-        "Midjourney canvas artwork available in limited print runs. Contact us to request purchasing details and delivery timeline.",
+        "Midjourney canvas artwork available in limited print runs. Contact us to request details and delivery timeline.",
       collection: inferCollection(filename),
       orientation,
       size: inferSize(orientation),
       finish: "Gallery-wrapped canvas",
-      price: inferPrice(index),
       image,
       addedAt: new Date(Date.UTC(2026, 0, Math.max(1, 31 - index)))
         .toISOString()
@@ -512,14 +474,6 @@ export default function ArtGallery() {
     });
 
     visible.sort((a, b) => {
-      if (sortMode === "price-low") {
-        return a.price - b.price;
-      }
-
-      if (sortMode === "price-high") {
-        return b.price - a.price;
-      }
-
       if (sortMode === "title") {
         return a.title.localeCompare(b.title);
       }
@@ -553,7 +507,7 @@ export default function ArtGallery() {
     "@type": "CollectionPage",
     name: "MazinMind Art Gallery",
     description:
-      "Browse Midjourney art pieces available as premium canvas prints from Mazinmind.Digital.",
+      "Browse curated Midjourney art pieces and collection highlights from Mazinmind.Digital.",
     url: "https://mazinmind.digital/art-gallery",
     mainEntity: {
       "@type": "ItemList",
@@ -561,16 +515,10 @@ export default function ArtGallery() {
         "@type": "ListItem",
         position: index + 1,
         item: {
-          "@type": "Product",
+          "@type": "CreativeWork",
           name: artwork.title,
           category: artwork.collection,
           image: artwork.image,
-          offers: {
-            "@type": "Offer",
-            price: artwork.price,
-            priceCurrency: "USD",
-            availability: "https://schema.org/InStock",
-          },
         },
       })),
     },
@@ -582,19 +530,19 @@ export default function ArtGallery() {
         <title>Art Gallery | Midjourney Canvas Prints by MazinMind</title>
         <meta
           name="description"
-          content="Explore the MazinMind Art Gallery featuring Midjourney-generated artwork available as premium canvas prints. Browse by collection, orientation, and price."
+          content="Explore the MazinMind Art Gallery featuring Midjourney-generated artwork in curated collections and visual studies."
         />
         <meta
           name="keywords"
-          content="AI art gallery, Midjourney art prints, canvas prints for sale, digital art Boston, MazinMind art"
+          content="AI art gallery, Midjourney artwork, digital art collections, MazinMind art, visual studies"
         />
         <meta
           property="og:title"
-          content="Art Gallery | Midjourney Canvas Prints by MazinMind"
+          content="Art Gallery | Midjourney Artwork by MazinMind"
         />
         <meta
           property="og:description"
-          content="Browse AI-generated artwork available for purchase as high-quality canvas prints."
+          content="Browse AI-generated artwork and visual studies from the MazinMind Art Gallery."
         />
         <meta
           property="og:url"
@@ -604,7 +552,7 @@ export default function ArtGallery() {
         <meta name="twitter:title" content="MazinMind Art Gallery" />
         <meta
           name="twitter:description"
-          content="Midjourney-inspired artwork available as canvas prints from MazinMind."
+          content="Midjourney-inspired artwork and collection highlights from MazinMind."
         />
         <link rel="canonical" href="https://mazinmind.digital/art-gallery" />
         <script type="application/ld+json">
@@ -633,8 +581,8 @@ export default function ArtGallery() {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Curated Midjourney artwork available as premium canvas prints.
-              Browse current and future uploads from our gallery folder.
+              Curated Midjourney artwork and visual studies from our ongoing gallery collection.
+              Browse current and future uploads from our creative archive.
             </p>
           </div>
         </div>
@@ -699,8 +647,6 @@ export default function ArtGallery() {
                 aria-label="Sort artwork"
               >
                 <option value="newest">Newest first</option>
-                <option value="price-low">Price low to high</option>
-                <option value="price-high">Price high to low</option>
                 <option value="title">Title A-Z</option>
               </select>
             </label>
@@ -755,12 +701,9 @@ export default function ArtGallery() {
                     </div>
 
                     <div className="p-6">
-                      <div className="flex items-center justify-between gap-4 mb-3">
+                      <div className="mb-3">
                         <p className="text-xs font-semibold tracking-[0.18em] text-accent uppercase">
                           {artwork.collection}
-                        </p>
-                        <p className="text-sm font-semibold text-primary">
-                          {currency.format(artwork.price)}
                         </p>
                       </div>
 
@@ -800,7 +743,7 @@ export default function ArtGallery() {
                         to={`/contact?interest=${artwork.id}`}
                         className="inline-flex items-center gap-2 font-semibold text-primary hover:text-primary/80 transition-colors"
                       >
-                        Request purchase
+                        Request details
                         <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
@@ -916,10 +859,10 @@ export default function ArtGallery() {
                   STEP 2
                 </p>
                 <h3 className="text-2xl font-display font-bold tracking-wide mb-2">
-                  Request Purchase
+                  Request Details
                 </h3>
                 <p className="text-muted-foreground">
-                  Send an inquiry and we will confirm print availability and
+                  Send an inquiry and we will confirm collection details and
                   production timeline.
                 </p>
               </div>
@@ -929,11 +872,11 @@ export default function ArtGallery() {
                   STEP 3
                 </p>
                 <h3 className="text-2xl font-display font-bold tracking-wide mb-2">
-                  Approve and Print
+                  Confirm and Produce
                 </h3>
                 <p className="text-muted-foreground">
-                  Finalize your order and receive your premium canvas print,
-                  ready to hang.
+                  Finalize your details and receive your finished piece, ready
+                  to display.
                 </p>
               </div>
             </div>
