@@ -16,8 +16,8 @@ import {
   Lightbulb,
   Users,
 } from "lucide-react";
-import brainGreen from "@/assets/brain-green.png";
-import bostonCorridor from "@/assets/boston-corridor.png";
+import servicesGraffiti from "@/assets/services-graffiti.jpg";
+import neonCity from "@/assets/neon-city.png";
 
 const services = [
   {
@@ -178,9 +178,9 @@ export default function Services() {
 
         {/* Graffiti Background */}
         <div
-          className="absolute right-0 top-0 w-1/2 h-full opacity-30"
+          className="absolute right-0 top-0 w-1/2 h-full opacity-35"
           style={{
-            backgroundImage: `url(${brainGreen})`,
+            backgroundImage: `url(${servicesGraffiti})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             mixBlendMode: "screen",
@@ -290,7 +290,7 @@ export default function Services() {
         <div
           className="absolute left-0 bottom-0 w-1/3 h-full opacity-20"
           style={{
-            backgroundImage: `url(${bostonCorridor})`,
+            backgroundImage: `url(${neonCity})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             mixBlendMode: "screen",
