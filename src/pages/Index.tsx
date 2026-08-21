@@ -1,15 +1,18 @@
 import { Layout } from "@/components/layout/Layout";
 import HeroBanner from "@/components/home/HeroBanner";
-import HomeContent from "@/components/home/HomeContent";
+import { MissedCallWorkflowSection } from "@/components/home/MissedCallWorkflowSection";
+import { RevenueLeakAuditSection } from "@/components/home/RevenueLeakAuditSection";
+import { EngineeredReliabilitySection } from "@/components/home/EngineeredReliabilitySection";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { HomeFaqSection } from "@/components/home/HomeFaqSection";
 import { homeFaqs } from "@/data/homeFaqs";
 import { Helmet } from "react-helmet-async";
 
-const homepageTitle = "AI Automation for Small Businesses | MazinMind Digital";
+const homepageTitle =
+  "Stop Losing Customers When You Miss the Phone | MazinMind Digital";
 const homepageDescription =
-  "MazinMind Digital helps small businesses recover missed leads, automate follow-up, book appointments, and eliminate repetitive work with practical AI automation.";
+  "MazinMind builds AI receptionist and speed-to-lead systems for Greater Boston service businesses. Capture missed opportunities, respond to leads faster, and keep your team focused on what requires a human.";
 const canonicalUrl = "https://mazinmind.digital";
 const ogImage = "https://mazinmind.digital/apple-touch-icon.png";
 
@@ -24,6 +27,19 @@ const organizationSchema = {
       logo: "https://mazinmind.digital/apple-touch-icon.png",
       email: "info@mazinmind.digital",
       telephone: "+1-617-453-8776",
+      description:
+        "AI receptionist and missed-call recovery systems for Greater Boston service businesses",
+      areaServed: [
+        "Boston",
+        "Chelsea",
+        "Revere",
+        "Everett",
+        "Cambridge",
+        "Somerville",
+        "Quincy",
+        "Lynn",
+        "Salem",
+      ],
       sameAs: [
         "https://www.linkedin.com/company/mazinmind-digital",
         "https://x.com/MazinmindD",
@@ -37,7 +53,7 @@ const organizationSchema = {
       url: "https://mazinmind.digital",
       image: "https://mazinmind.digital/apple-touch-icon.png",
       description: homepageDescription,
-      areaServed: "United States",
+      areaServed: "Greater Boston, MA",
       telephone: "+1-617-453-8776",
       address: {
         "@type": "PostalAddress",
@@ -88,7 +104,7 @@ const Index = () => {
         <meta name="description" content={homepageDescription} />
         <meta
           name="keywords"
-          content="AI automation for small business, lead follow-up automation, missed lead recovery, small business automation, appointment booking automation, AI receptionist, business workflow automation"
+          content="missed call recovery, AI receptionist, Greater Boston, stop losing calls, lead response automation, service business, HVAC, plumbing, contractors, AI automation"
         />
         <meta name="robots" content="index, follow" />
 
@@ -112,7 +128,9 @@ const Index = () => {
       </Helmet>
 
       <HeroBanner />
-      <HomeContent />
+      <MissedCallWorkflowSection />
+      <RevenueLeakAuditSection />
+      <EngineeredReliabilitySection />
       <TestimonialsSection />
       <HomeFaqSection />
       <NewsletterSection />
