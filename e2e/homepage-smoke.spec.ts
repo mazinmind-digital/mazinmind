@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test("homepage renders hero and includes HubSpot chat embed", async ({
+test("homepage renders hero and loads HubSpot chat embed script", async ({
   page,
 }) => {
   await page.goto("/");
@@ -21,13 +21,19 @@ test("homepage renders hero and includes HubSpot chat embed", async ({
     await page.getByRole("button", { name: /Decline Optional/i }).click();
   }
 
+  // The HubSpot embed script should be present, but the "Open chat now modal"
+  // button is not expected to be rendered on initial page load.
   await expect(
     page.getByRole("button", { name: /Open chat now modal/i }),
   ).toHaveCount(0);
 
   const hubSpotScript = page.locator("script#hs-script-loader");
   await expect(hubSpotScript).toHaveCount(1);
-  await expect(
-    hubSpotScript,
-  ).toHaveAttribute("src", /js-na2\.hs-scripts\.com\/243856745\.js/);
+
+  const hubSpotAccountId = process.env.HUBSPOT_ACCOUNT_ID ?? "243856745";
+  const hubSpotSrcPattern = new RegExp(
+    `js-na2\\.hs-scripts\\.com/${hubSpotAccountId}\\.js`,
+  );
+
+  await expect(hubSpotScript).toHaveAttribute("src", hubSpotSrcPattern);
 });
