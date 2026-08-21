@@ -1,0 +1,171 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+      
+      .headline {
+        font-family: 'Fredoka One', cursive;
+        font-size: 72px;
+        font-weight: 900;
+        fill: #22d3ee;
+        text-anchor: middle;
+        filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.6)) drop-shadow(2px 2px 4px rgba(0,0,0,0.8));
+        letter-spacing: 2px;
+      }
+      
+      .subheading {
+        font-family: 'Fredoka One', cursive;
+        font-size: 36px;
+        fill: #fbbf24;
+        text-anchor: middle;
+        filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.5)) drop-shadow(2px 2px 3px rgba(0,0,0,0.8));
+      }
+      
+      .pulse-glow {
+        animation: glow-pulse 2s ease-in-out infinite;
+      }
+      
+      @keyframes glow-pulse {
+        0%, 100% { filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.8)) drop-shadow(0 0 12px rgba(168, 85, 247, 0.4)); }
+        50% { filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.6)) drop-shadow(0 0 20px rgba(168, 85, 247, 0.6)); }
+      }
+      
+      .wave-pulse {
+        animation: wave-movement 3s ease-in-out infinite;
+      }
+      
+      @keyframes wave-movement {
+        0%, 100% { transform: translateY(0); opacity: 0.4; }
+        50% { transform: translateY(-8px); opacity: 0.8; }
+      }
+    </style>
+    
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a2744;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d1b4e;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="earthGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0" />
+    </radialGradient>
+    
+    <filter id="neon">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+  
+  <!-- Decorative grid lines -->
+  <g stroke="#22d3ee" stroke-width="0.5" opacity="0.1">
+    <line x1="300" y1="0" x2="300" y2="900"/>
+    <line x1="600" y1="0" x2="600" y2="900"/>
+    <line x1="900" y1="0" x2="900" y2="900"/>
+    <line x1="1200" y1="0" x2="1200" y2="900"/>
+    <line x1="0" y1="225" x2="1600" y2="225"/>
+    <line x1="0" y1="450" x2="1600" y2="450"/>
+    <line x1="0" y1="675" x2="1600" y2="675"/>
+  </g>
+  
+  <!-- Earth with satellite zones -->
+  <circle cx="400" cy="450" r="140" fill="url(#earthGlow)" stroke="#22d3ee" stroke-width="2" opacity="0.8" class="pulse-glow"/>
+  
+  <!-- Earth gradient sphere -->
+  <defs>
+    <radialGradient id="earthSphere" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.4" />
+      <stop offset="50%" style="stop-color:#0891b2;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#164e63;stop-opacity:0.1" />
+    </radialGradient>
+  </defs>
+  
+  <circle cx="400" cy="450" r="140" fill="url(#earthSphere)"/>
+  
+  <!-- Seismic fault lines on earth -->
+  <path d="M 320 400 Q 360 420 400 430 T 480 440" stroke="#ec4899" stroke-width="2" fill="none" opacity="0.6" filter="url(#neon)"/>
+  <path d="M 350 520 Q 390 500 440 480" stroke="#ec4899" stroke-width="1.5" fill="none" opacity="0.4"/>
+  
+  <!-- Satellite positions around earth -->
+  <g class="pulse-glow">
+    <circle cx="300" cy="300" r="5" fill="#fbbf24" opacity="0.8"/>
+    <line x1="400" y1="450" x2="300" y2="300" stroke="#fbbf24" stroke-width="1" opacity="0.3" stroke-dasharray="5,5"/>
+  </g>
+  
+  <g class="pulse-glow" style="animation-delay: 0.4s">
+    <circle cx="500" cy="280" r="5" fill="#fbbf24" opacity="0.8"/>
+    <line x1="400" y1="450" x2="500" y2="280" stroke="#fbbf24" stroke-width="1" opacity="0.3" stroke-dasharray="5,5"/>
+  </g>
+  
+  <g class="pulse-glow" style="animation-delay: 0.8s">
+    <circle cx="550" cy="550" r="5" fill="#fbbf24" opacity="0.8"/>
+    <line x1="400" y1="450" x2="550" y2="550" stroke="#fbbf24" stroke-width="1" opacity="0.3" stroke-dasharray="5,5"/>
+  </g>
+  
+  <!-- AI Data Analysis nodes on right side -->
+  <g>
+    <!-- Node 1: Analysis -->
+    <circle cx="950" cy="300" r="8" fill="#22d3ee" opacity="0.6" class="pulse-glow"/>
+    <circle cx="950" cy="300" r="12" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.3"/>
+    <text x="1050" y="310" font-family="Arial, sans-serif" font-size="18" fill="#22d3ee" filter="url(#neon)">AI Analysis</text>
+    
+    <!-- Node 2: Prediction -->
+    <circle cx="950" cy="450" r="8" fill="#a855f7" opacity="0.6" class="pulse-glow" style="animation-delay: 0.3s"/>
+    <circle cx="950" cy="450" r="12" fill="none" stroke="#a855f7" stroke-width="1" opacity="0.3"/>
+    <text x="1050" y="460" font-family="Arial, sans-serif" font-size="18" fill="#a855f7" filter="url(#neon)">Forecasting</text>
+    
+    <!-- Node 3: Response -->
+    <circle cx="950" cy="600" r="8" fill="#fbbf24" opacity="0.6" class="pulse-glow" style="animation-delay: 0.6s"/>
+    <circle cx="950" cy="600" r="12" fill="none" stroke="#fbbf24" stroke-width="1" opacity="0.3"/>
+    <text x="1050" y="610" font-family="Arial, sans-serif" font-size="18" fill="#fbbf24" filter="url(#neon)">Response</text>
+  </g>
+  
+  <!-- Connection lines from earth to data nodes -->
+  <line x1="540" y1="400" x2="900" y2="300" stroke="#22d3ee" stroke-width="1.5" opacity="0.4" stroke-dasharray="8,4"/>
+  <line x1="540" y1="450" x2="900" y2="450" stroke="#a855f7" stroke-width="1.5" opacity="0.4" stroke-dasharray="8,4"/>
+  <line x1="540" y1="500" x2="900" y2="600" stroke="#fbbf24" stroke-width="1.5" opacity="0.4" stroke-dasharray="8,4"/>
+  
+  <!-- Seismic waveform visualization -->
+  <g opacity="0.7" class="wave-pulse">
+    <path d="M 100 750 L 120 745 L 140 760 L 160 745 L 180 755 L 200 745 L 220 760 L 240 745 L 260 750" 
+          stroke="#ec4899" stroke-width="2" fill="none" filter="url(#neon)"/>
+  </g>
+  
+  <text x="320" y="800" font-family="Arial, sans-serif" font-size="14" fill="#ec4899" opacity="0.7">Seismic Data</text>
+  
+  <!-- Satellite waveform -->
+  <g opacity="0.7" class="wave-pulse" style="animation-delay: 0.5s">
+    <path d="M 400 810 L 420 800 L 440 825 L 460 800 L 480 815 L 500 800 L 520 825 L 540 800 L 560 810" 
+          stroke="#fbbf24" stroke-width="2" fill="none" filter="url(#neon)"/>
+  </g>
+  
+  <text x="620" y="800" font-family="Arial, sans-serif" font-size="14" fill="#fbbf24" opacity="0.7">Satellite Imagery</text>
+  
+  <!-- Emergency response network indicator -->
+  <g>
+    <circle cx="1200" cy="750" r="6" fill="#a855f7" opacity="0.8" class="pulse-glow"/>
+    <circle cx="1200" cy="750" r="10" fill="none" stroke="#a855f7" stroke-width="1" opacity="0.4"/>
+    <circle cx="1200" cy="750" r="16" fill="none" stroke="#a855f7" stroke-width="0.5" opacity="0.2" style="animation: pulse-ring 2s ease-out infinite"/>
+    <text x="1280" y="760" font-family="Arial, sans-serif" font-size="14" fill="#a855f7" opacity="0.9">Early Warning</text>
+  </g>
+  
+  <style>
+    @keyframes pulse-ring {
+      0% { r: 16; opacity: 0.5; }
+      100% { r: 28; opacity: 0; }
+    }
+  </style>
+  
+  <!-- Main headline -->
+  <text x="800" y="120" class="headline">Can AI Predict</text>
+  <text x="800" y="200" class="headline">Earthquakes?</text>
+  
+  <!-- Subheading -->
+  <text x="800" y="280" class="subheading">AI in Disaster Forecasting</text>
+</svg>

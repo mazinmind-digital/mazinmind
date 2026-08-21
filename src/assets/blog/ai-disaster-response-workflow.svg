@@ -1,0 +1,110 @@
+<svg viewBox="0 0 1400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .workflow-box { fill: none; stroke-width: 2; }
+      .workflow-label { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
+      .workflow-sublabel { font-family: Arial, sans-serif; font-size: 12px; }
+      .arrow-line { stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      
+      @keyframes pulse-box {
+        0%, 100% { filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.6)); }
+        50% { filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.9)); }
+      }
+      
+      .pulse { animation: pulse-box 2s ease-in-out infinite; }
+    </style>
+    
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2744;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d1b4e;stop-opacity:1" />
+    </linearGradient>
+    
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#22d3ee" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="400" fill="#0a1628"/>
+  
+  <!-- Workflow Boxes -->
+  
+  <!-- Box 1: Sensors + Satellites -->
+  <g class="pulse">
+    <rect x="40" y="80" width="160" height="240" rx="12" fill="url(#boxGrad)" class="workflow-box" stroke="#22d3ee"/>
+    <circle cx="120" cy="140" r="35" fill="none" stroke="#22d3ee" stroke-width="2"/>
+    <text x="120" y="145" class="workflow-label" text-anchor="middle" fill="#22d3ee">📡</text>
+    <text x="120" y="200" class="workflow-label" text-anchor="middle" fill="#22d3ee" font-size="14">Sensors</text>
+    <text x="120" y="240" class="workflow-label" text-anchor="middle" fill="#fbbf24" font-size="14">Satellites</text>
+    <text x="120" y="285" class="workflow-sublabel" text-anchor="middle" fill="#a0aec0">Data Collection</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path class="arrow-line" stroke="#22d3ee" d="M 210 200 L 270 200"/>
+  
+  <!-- Box 2: AI Analysis -->
+  <g class="pulse" style="animation-delay: 0.3s">
+    <rect x="270" y="80" width="160" height="240" rx="12" fill="url(#boxGrad)" class="workflow-box" stroke="#a855f7"/>
+    <circle cx="350" cy="140" r="35" fill="none" stroke="#a855f7" stroke-width="2"/>
+    <text x="350" y="150" class="workflow-label" text-anchor="middle" fill="#a855f7" font-size="28">⚡</text>
+    <text x="350" y="205" class="workflow-label" text-anchor="middle" fill="#a855f7" font-size="14">AI</text>
+    <text x="350" y="235" class="workflow-label" text-anchor="middle" fill="#a855f7" font-size="14">Analysis</text>
+    <text x="350" y="285" class="workflow-sublabel" text-anchor="middle" fill="#a0aec0">Pattern Recognition</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path class="arrow-line" stroke="#a855f7" d="M 440 200 L 500 200"/>
+  
+  <!-- Box 3: Forecasting / Early Warning -->
+  <g class="pulse" style="animation-delay: 0.6s">
+    <rect x="500" y="80" width="160" height="240" rx="12" fill="url(#boxGrad)" class="workflow-box" stroke="#ec4899"/>
+    <circle cx="580" cy="140" r="35" fill="none" stroke="#ec4899" stroke-width="2"/>
+    <text x="580" y="150" class="workflow-label" text-anchor="middle" fill="#ec4899" font-size="28">🚨</text>
+    <text x="580" y="205" class="workflow-label" text-anchor="middle" fill="#ec4899" font-size="12">Early</text>
+    <text x="580" y="225" class="workflow-label" text-anchor="middle" fill="#ec4899" font-size="12">Warning</text>
+    <text x="580" y="285" class="workflow-sublabel" text-anchor="middle" fill="#a0aec0">Seconds to Minutes</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path class="arrow-line" stroke="#ec4899" d="M 670 200 L 730 200"/>
+  
+  <!-- Box 4: Emergency Response -->
+  <g class="pulse" style="animation-delay: 0.9s">
+    <rect x="730" y="80" width="160" height="240" rx="12" fill="url(#boxGrad)" class="workflow-box" stroke="#fbbf24"/>
+    <circle cx="810" cy="140" r="35" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <text x="810" y="150" class="workflow-label" text-anchor="middle" fill="#fbbf24" font-size="28">🛟</text>
+    <text x="810" y="210" class="workflow-label" text-anchor="middle" fill="#fbbf24" font-size="13">Response</text>
+    <text x="810" y="285" class="workflow-sublabel" text-anchor="middle" fill="#a0aec0">Alert Distribution</text>
+  </g>
+  
+  <!-- Arrow 4 -->
+  <path class="arrow-line" stroke="#fbbf24" d="M 900 200 L 960 200"/>
+  
+  <!-- Box 5: Damage Detection / Recovery -->
+  <g class="pulse" style="animation-delay: 1.2s">
+    <rect x="960" y="80" width="160" height="240" rx="12" fill="url(#boxGrad)" class="workflow-box" stroke="#06b6d4"/>
+    <circle cx="1040" cy="140" r="35" fill="none" stroke="#06b6d4" stroke-width="2"/>
+    <text x="1040" y="150" class="workflow-label" text-anchor="middle" fill="#06b6d4" font-size="28">🏗</text>
+    <text x="1040" y="205" class="workflow-label" text-anchor="middle" fill="#06b6d4" font-size="12">Damage</text>
+    <text x="1040" y="230" class="workflow-label" text-anchor="middle" fill="#06b6d4" font-size="12">Assessment</text>
+    <text x="1040" y="285" class="workflow-sublabel" text-anchor="middle" fill="#a0aec0">Satellite Imagery</text>
+  </g>
+  
+  <!-- Arrow 5 -->
+  <path class="arrow-line" stroke="#06b6d4" d="M 1130 200 L 1190 200"/>
+  
+  <!-- Box 6: Recovery Planning -->
+  <g class="pulse" style="animation-delay: 1.5s">
+    <rect x="1190" y="80" width="160" height="240" rx="12" fill="url(#boxGrad)" class="workflow-box" stroke="#10b981"/>
+    <circle cx="1270" cy="140" r="35" fill="none" stroke="#10b981" stroke-width="2"/>
+    <text x="1270" y="150" class="workflow-label" text-anchor="middle" fill="#10b981" font-size="28">📋</text>
+    <text x="1270" y="205" class="workflow-label" text-anchor="middle" fill="#10b981" font-size="12">Recovery</text>
+    <text x="1270" y="230" class="workflow-label" text-anchor="middle" fill="#10b981" font-size="12">Planning</text>
+    <text x="1270" y="285" class="workflow-sublabel" text-anchor="middle" fill="#a0aec0">Resource Allocation</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="700" y="35" font-family="Fredoka One, cursive" font-size="24" font-weight="bold" fill="#22d3ee" text-anchor="middle" filter="drop-shadow(0 0 4px rgba(34, 211, 238, 0.6))">
+    AI Disaster Response Workflow
+  </text>
+</svg>

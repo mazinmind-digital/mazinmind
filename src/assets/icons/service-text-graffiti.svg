@@ -1,0 +1,49 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .icon-main { fill: none; stroke: #fbbf24; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .icon-accent { fill: none; stroke: #22d3ee; stroke-width: 2; }
+      .icon-glow { filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.6)); }
+      .spark { fill: #ec4899; }
+      @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+      .spark-anim { animation: pulse 2s ease-in-out infinite; }
+    </style>
+    <filter id="icon-glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background glow -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#fbbf24" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- File/document shape -->
+  <rect class="icon-main icon-glow" x="60" y="45" width="45" height="65" rx="3"/>
+  
+  <!-- Paper lines -->
+  <line class="icon-accent icon-glow" x1="70" y1="60" x2="95" y2="60"/>
+  <line class="icon-accent icon-glow" x1="70" y1="72" x2="95" y2="72"/>
+  <line class="icon-accent icon-glow" x1="70" y1="84" x2="95" y2="84"/>
+  <line class="icon-accent icon-glow" x1="70" y1="96" x2="85" y2="96"/>
+  
+  <!-- Second document (rotated) -->
+  <rect class="icon-main icon-glow" x="95" y="70" width="45" height="65" rx="3" transform="rotate(-15 117 102)" opacity="0.8"/>
+  
+  <!-- Third document (stacked) -->
+  <rect class="icon-main icon-glow" x="75" y="105" width="45" height="65" rx="3" transform="rotate(15 97 137)" opacity="0.6"/>
+  
+  <!-- Pen/pencil icon -->
+  <path class="icon-accent icon-glow" d="M 130 55 L 150 35 L 155 40 L 135 60 Z"/>
+  <line class="icon-accent icon-glow" x1="130" y1="55" x2="120" y2="70"/>
+  
+  <!-- Content creation dots -->
+  <circle class="spark spark-anim" cx="82" cy="78" r="2"/>
+  <circle class="spark spark-anim" cx="90" cy="90" r="2" style="animation-delay: 0.2s"/>
+  <circle class="spark spark-anim" cx="110" cy="120" r="2" style="animation-delay: 0.4s"/>
+  
+  <!-- Neon border -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#fbbf24" stroke-width="1.5" opacity="0.5"/>
+</svg>
