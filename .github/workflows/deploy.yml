@@ -31,7 +31,7 @@ jobs:
 
       - name: Check lockfile is up to date
         run: |
-          npm install
+          npm install --package-lock-only --ignore-scripts
           git diff --exit-code package-lock.json
 
       - name: Typecheck
