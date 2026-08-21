@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#5b21b6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <style>
+      .bg{fill:url(#g2)}
+      .txt{font:700 24px/1.1 'Inter', sans-serif; fill:#fff}
+    </style>
+  </defs>
+  <rect class="bg" width="800" height="450" rx="12"/>
+  <text x="40" y="80" class="txt">AI Automation</text>
+  <text x="40" y="120" font-size="20" fill="#fff">Stop Losing Customers</text>
+  <rect x="40" y="150" width="220" height="110" rx="10" fill="#fff" opacity="0.06"/>
+</svg>

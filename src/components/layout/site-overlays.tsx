@@ -150,7 +150,7 @@ const termsSections: PolicySection[] = [
     heading: "2. Services and Content",
     points: [
       "Website content is provided for general information and business inquiry purposes.",
-      "Descriptions of services, artwork, pricing, and availability may change without notice.",
+      "Descriptions of services, artwork, and availability may change without notice.",
       "We reserve the right to modify or discontinue website features at any time.",
     ],
   },
@@ -172,7 +172,7 @@ const termsSections: PolicySection[] = [
     heading: "5. Purchases and Inquiries",
     points: [
       "Submitting a purchase inquiry does not create a binding sale agreement until confirmed in writing.",
-      "Prices, production timelines, shipping, and fulfillment terms are finalized during order confirmation.",
+      "Production timelines, shipping, and fulfillment terms are finalized during order confirmation.",
       "We may decline transactions at our discretion where necessary for operational, legal, or security reasons.",
     ],
   },

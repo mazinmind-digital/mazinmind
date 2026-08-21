@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
-import aiMask from "@/assets/ai-mask.png";
+import heroGraffiti from "@/assets/hero-graffiti.jpg";
 
 const contactSchema = z.object({
   name: z
@@ -246,7 +246,7 @@ export default function Contact() {
 
       return {
         ...prev,
-        message: `Hi MazinMind team,\n\nI am interested in ${normalizedInterest}. Please share pricing and next steps.\n`,
+        message: `Hi MazinMind team,\n\nI am interested in ${normalizedInterest}. Please share the next steps and recommended approach.\n`,
       };
     });
   }, [location.search]);
@@ -344,9 +344,9 @@ export default function Contact() {
 
         {/* Graffiti Background */}
         <div
-          className="absolute left-0 top-0 w-1/2 h-full opacity-30"
+          className="absolute right-0 top-0 w-1/2 h-full opacity-30"
           style={{
-            backgroundImage: `url(${aiMask})`,
+            backgroundImage: `url(${heroGraffiti})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             mixBlendMode: "screen",

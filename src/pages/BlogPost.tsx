@@ -81,7 +81,7 @@ export default function BlogPost() {
 
   const siteUrl = "https://mazinmind.digital";
   const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
-  const absoluteImageUrl = new URL(post.image, siteUrl).href;
+  const absoluteImageUrl = new URL(post.ogImage ?? post.image, siteUrl).href;
   const publisherLogoUrl = new URL(mazinmindLogo, siteUrl).href;
   const articleSchema = {
     "@context": "https://schema.org",

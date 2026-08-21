@@ -40,7 +40,7 @@ export default function AiMarketingService() {
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button asChild className="bg-gradient-primary text-primary-foreground hover:opacity-90">
-                <Link to="/contact?interest=ai-marketing-automation">Get a Free AI Automation Audit</Link>
+                <Link to="/contact?interest=ai-marketing-automation">Get a Free 15-Minute Automation Audit</Link>
               </Button>
               <Button asChild variant="outline" className="border-primary/50 text-primary hover:bg-primary/10">
                 <Link to="/">Back to Homepage</Link>
