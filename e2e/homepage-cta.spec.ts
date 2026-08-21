@@ -18,7 +18,7 @@ test("CTAs open HubSpot scheduler modal", async ({ page }) => {
   };
 
   // Hero CTA
-  await clickAndAssertModal(/Get a Free 15-Minute Automation Audit/i);
+  await clickAndAssertModal(/Get a Revenue Leak Audit/i);
 
   // Blueprint CTA
   await clickAndAssertModal(/Get My Automation Blueprint/i);
