@@ -8,7 +8,7 @@ const contentSecurityPolicy = [
   "base-uri 'self'",
   "object-src 'none'",
   "frame-ancestors 'none'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://js-na2.hs-scripts.com https://js.hs-scripts.com https://static.hsappstatic.net https://*.hubspot.com https://*.hubspot.net",
+  "script-src 'self' 'unsafe-inline' 'sha256-92gQq1QEZkGyuW83c3+JEh+ZCbnYlC45vf3wZs92sZ0=' https://www.googletagmanager.com https://www.google-analytics.com https://js-na2.hs-scripts.com https://js.hs-scripts.com https://static.hsappstatic.net https://*.hubspot.com https://*.hubspot.net",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: blob: https://www.google-analytics.com https://*.google-analytics.com https://*.hubspot.com https://*.hubspot.net https://*.hubspotusercontent.com https://*.hubspotusercontent-na1.net https://*.hubspotusercontent-na2.net",
   "font-src 'self' data: https://fonts.gstatic.com",
