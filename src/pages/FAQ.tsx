@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import bostonRain from "@/assets/boston-rain.png";
+import automationGraffiti from "@/assets/automation-graffiti.jpg";
 
 const faqs = [
   {
@@ -141,9 +141,9 @@ export default function FAQ() {
 
         {/* Graffiti Background */}
         <div
-          className="absolute right-0 top-0 w-1/3 h-full opacity-25"
+          className="absolute right-0 top-0 w-1/3 h-full opacity-30"
           style={{
-            backgroundImage: `url(${bostonRain})`,
+            backgroundImage: `url(${automationGraffiti})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             mixBlendMode: "screen",

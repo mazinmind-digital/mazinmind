@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Bot, Megaphone, Workflow, Wrench, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
-import brainGreen from "@/assets/brain-green.png";
+import servicesGraffiti from "@/assets/services-graffiti.jpg";
 
 const offerCards = [
   {
@@ -81,9 +81,9 @@ export function ServicesSection() {
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 grid-pattern opacity-20" />
       <div
-        className="absolute right-0 top-0 h-full w-1/2 opacity-20"
+        className="absolute right-0 top-0 h-full w-1/2 opacity-30"
         style={{
-          backgroundImage: `url(${brainGreen})`,
+          backgroundImage: `url(${servicesGraffiti})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           mixBlendMode: "screen",

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CheckCircle2 } from "lucide-react";
 import mazinmindWordmark from "@/assets/mazinmind-wordmark.png";
-import heroGraffiti from "@/assets/hero-graffiti.jpg";
+import heroWide from "@/assets/hero1.png";
 import ScheduleButton from "@/components/ui/ScheduleButton";
 
 const outcomes = [
@@ -12,18 +12,19 @@ const outcomes = [
 
 export default function HeroBanner() {
   return (
-    <section className="relative flex min-h-[70vh] w-full items-center justify-center overflow-hidden bg-black md:-mt-12">
+    <section className="relative flex min-h-[78vh] w-full items-center justify-center overflow-hidden bg-black md:-mt-12">
       <div className="absolute inset-0 bg-gradient-hero" />
       <div
-        className="absolute inset-0 opacity-35"
+        className="absolute inset-0 opacity-80"
         style={{
-          backgroundImage: `url(${heroGraffiti})`,
+          backgroundImage: `url(${heroWide})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
-          mixBlendMode: "screen",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+          filter: "saturate(1.2) contrast(1.08)",
         }}
       />
-      <div className="absolute inset-0 z-10 bg-gradient-to-br from-black/80 via-transparent to-black/80" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/90 via-black/45 to-black/85" />
 
       <div className="relative z-30 flex w-full max-w-6xl flex-col items-center px-4 text-center">
         <img

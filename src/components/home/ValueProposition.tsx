@@ -1,6 +1,6 @@
 import { ShieldCheck, ServerCog, Workflow, Bot } from "lucide-react";
 import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
-import aiFace from "@/assets/ai-face.png";
+import heroGraffiti from "@/assets/hero-graffiti.jpg";
 
 const credibilityPoints = [
   {
@@ -29,9 +29,9 @@ export function ValueProposition() {
       <div className="absolute inset-0 bg-secondary/30" />
       <div className="absolute inset-0 grid-pattern opacity-10" />
       <div
-        className="absolute right-0 top-0 h-full w-1/2 opacity-20"
+        className="absolute right-0 top-0 h-full w-1/2 opacity-25"
         style={{
-          backgroundImage: `url(${aiFace})`,
+          backgroundImage: `url(${heroGraffiti})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           mixBlendMode: "screen",
