@@ -1,0 +1,160 @@
+<svg viewBox="0 0 1400 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .section-title { font-family: 'Fredoka One', cursive; font-size: 28px; font-weight: bold; filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.6)); }
+      .subsection { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; }
+      .body-text { font-family: Arial, sans-serif; font-size: 14px; }
+      
+      @keyframes shake-no { animation: shake-motion 0.4s ease-in-out infinite; }
+      @keyframes pulse-yes { animation: pulse-motion 1.5s ease-in-out infinite; }
+      
+      @keyframes shake-motion {
+        0%, 100% { transform: translateX(0) rotateZ(-5deg); }
+        50% { transform: translateX(4px) rotateZ(5deg); }
+      }
+      
+      @keyframes pulse-motion {
+        0%, 100% { filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.4)); }
+        50% { filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.8)); }
+      }
+    </style>
+    
+    <linearGradient id="bgPred" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d1b3d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a3d;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="bgFore" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3d2d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a3d;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="bgWarn" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3d2d1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a3d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="1400" height="600" fill="#0a1628"/>
+  
+  <!-- Title -->
+  <text x="700" y="40" class="section-title" text-anchor="middle" fill="#22d3ee">
+    Prediction vs. Forecasting vs. Early Warning
+  </text>
+  
+  <!-- Left column: Prediction -->
+  <g>
+    <rect x="20" y="80" width="420" height="500" rx="16" fill="url(#bgPred)" stroke="#ec4899" stroke-width="2"/>
+    
+    <!-- Header -->
+    <text x="230" y="125" class="subsection" text-anchor="middle" fill="#ec4899">
+      ❌ Prediction
+    </text>
+    
+    <!-- Definition -->
+    <text x="230" y="165" class="body-text" text-anchor="middle" fill="#a0aec0" font-style="italic">
+      Exact time, place & magnitude
+    </text>
+    
+    <!-- Content sections -->
+    <line x1="30" y1="180" x2="430" y2="180" stroke="#ec4899" stroke-width="1" opacity="0.3"/>
+    
+    <text x="40" y="210" class="body-text" font-weight="bold" fill="#ec4899">Can AI Do This?</text>
+    <text x="40" y="235" class="body-text" fill="#a0aec0">Not yet. Despite advances,</text>
+    <text x="40" y="255" class="body-text" fill="#a0aec0">we cannot predict earthquakes</text>
+    <text x="40" y="275" class="body-text" fill="#a0aec0">with precision. This remains</text>
+    <text x="40" y="295" class="body-text" fill="#a0aec0">a scientific frontier.</text>
+    
+    <line x1="30" y1="310" x2="430" y2="310" stroke="#ec4899" stroke-width="1" opacity="0.3"/>
+    
+    <text x="40" y="340" class="body-text" font-weight="bold" fill="#ec4899">Why Not?</text>
+    <text x="40" y="360" class="body-text" fill="#a0aec0">• Earthquake physics remain</text>
+    <text x="40" y="378" class="body-text" fill="#a0aec0">  complex and chaotic</text>
+    <text x="40" y="396" class="body-text" fill="#a0aec0">• No repeating patterns yet</text>
+    <text x="40" y="414" class="body-text" fill="#a0aec0">  found for AI to learn</text>
+    <text x="40" y="432" class="body-text" fill="#a0aec0">• Too many variables at play</text>
+    
+    <line x1="30" y1="450" x2="430" y2="450" stroke="#ec4899" stroke-width="1" opacity="0.3"/>
+    
+    <text x="40" y="475" class="body-text" font-weight="bold" fill="#ec4899">Status</text>
+    <text x="40" y="495" class="body-text" fill="#a0aec0">Future possibility, not today</text>
+  </g>
+  
+  <!-- Middle column: Forecasting -->
+  <g>
+    <rect x="490" y="80" width="420" height="500" rx="16" fill="url(#bgFore)" stroke="#10b981" stroke-width="3"/>
+    <circle cx="700" cy="90" r="8" fill="#10b981" opacity="0.5" class="pulse-yes"/>
+    
+    <!-- Header -->
+    <text x="700" y="125" class="subsection" text-anchor="middle" fill="#10b981">
+      ✓ Forecasting
+    </text>
+    
+    <!-- Definition -->
+    <text x="700" y="165" class="body-text" text-anchor="middle" fill="#a0aec0" font-style="italic">
+      Probability & risk assessment
+    </text>
+    
+    <!-- Content sections -->
+    <line x1="500" y1="180" x2="900" y2="180" stroke="#10b981" stroke-width="1" opacity="0.3"/>
+    
+    <text x="510" y="210" class="body-text" font-weight="bold" fill="#10b981">Can AI Do This?</text>
+    <text x="510" y="235" class="body-text" fill="#a0aec0">Yes! AI excels at analyzing</text>
+    <text x="510" y="255" class="body-text" fill="#a0aec0">historical data, seismic patterns,</text>
+    <text x="510" y="275" class="body-text" fill="#a0aec0">and geological risk to assess</text>
+    <text x="510" y="295" class="body-text" fill="#a0aec0">earthquake likelihood.</text>
+    
+    <line x1="500" y1="310" x2="900" y2="310" stroke="#10b981" stroke-width="1" opacity="0.3"/>
+    
+    <text x="510" y="340" class="body-text" font-weight="bold" fill="#10b981">How It Works</text>
+    <text x="510" y="360" class="body-text" fill="#a0aec0">• Analyzes fault lines & history</text>
+    <text x="510" y="378" class="body-text" fill="#a0aec0">  for high-risk zones</text>
+    <text x="510" y="396" class="body-text" fill="#a0aec0">• Identifies aftershock patterns</text>
+    <text x="510" y="414" class="body-text" fill="#a0aec0">• Produces risk maps & trends</text>
+    <text x="510" y="432" class="body-text" fill="#a0aec0">• Refines with new data</text>
+    
+    <line x1="500" y1="450" x2="900" y2="450" stroke="#10b981" stroke-width="1" opacity="0.3"/>
+    
+    <text x="510" y="475" class="body-text" font-weight="bold" fill="#10b981">Status</text>
+    <text x="510" y="495" class="body-text" fill="#a0aec0">Working now, improving daily</text>
+  </g>
+  
+  <!-- Right column: Early Warning -->
+  <g>
+    <rect x="960" y="80" width="420" height="500" rx="16" fill="url(#bgWarn)" stroke="#fbbf24" stroke-width="2"/>
+    
+    <!-- Header -->
+    <text x="1170" y="125" class="subsection" text-anchor="middle" fill="#fbbf24">
+      ⚡ Early Warning
+    </text>
+    
+    <!-- Definition -->
+    <text x="1170" y="165" class="body-text" text-anchor="middle" fill="#a0aec0" font-style="italic">
+      Alert after quake starts
+    </text>
+    
+    <!-- Content sections -->
+    <line x1="970" y1="180" x2="1370" y2="180" stroke="#fbbf24" stroke-width="1" opacity="0.3"/>
+    
+    <text x="980" y="210" class="body-text" font-weight="bold" fill="#fbbf24">Can AI Do This?</text>
+    <text x="980" y="235" class="body-text" fill="#a0aec0">Yes! This is AI's strength.</text>
+    <text x="980" y="255" class="body-text" fill="#a0aec0">Earth shaking is detected</text>
+    <text x="980" y="275" class="body-text" fill="#a0aec0">and alerts sent in seconds,</text>
+    <text x="980" y="295" class="body-text" fill="#a0aec0">before shaking arrives.</text>
+    
+    <line x1="970" y1="310" x2="1370" y2="310" stroke="#fbbf24" stroke-width="1" opacity="0.3"/>
+    
+    <text x="980" y="340" class="body-text" font-weight="bold" fill="#fbbf24">How It Works</text>
+    <text x="980" y="360" class="body-text" fill="#a0aec0">• Detects P-waves at sensors</text>
+    <text x="980" y="378" class="body-text" fill="#a0aec0">• Estimates shaking magnitude</text>
+    <text x="980" y="396" class="body-text" fill="#a0aec0">• Broadcasts alert in seconds</text>
+    <text x="980" y="414" class="body-text" fill="#a0aec0">• Provides 3–60s warning time</text>
+    <text x="980" y="432" class="body-text" fill="#a0aec0">  depending on distance</text>
+    
+    <line x1="970" y1="450" x2="1370" y2="450" stroke="#fbbf24" stroke-width="1" opacity="0.3"/>
+    
+    <text x="980" y="475" class="body-text" font-weight="bold" fill="#fbbf24">Status</text>
+    <text x="980" y="495" class="body-text" fill="#a0aec0">Deployed & saving lives</text>
+  </g>
+</svg>
