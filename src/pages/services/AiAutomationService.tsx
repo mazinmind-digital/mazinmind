@@ -17,6 +17,8 @@ import { toast } from "sonner";
 
 const canonicalUrl = "https://mazinmind.digital/services/ai-automation";
 const ogImage = "https://mazinmind.digital/apple-touch-icon.png";
+const AI_AUTOMATION_AUDIT_MESSAGE_PREFIX =
+  "Free AI Automation Audit request. Biggest bottleneck: ";
 
 // HubSpot embed config (kept in sync with the provided embed snippet).
 const HUBSPOT_PORTAL_ID = "243856745";
@@ -278,7 +280,7 @@ function buildMailtoLink(data: AuditFormData) {
       `Name: ${data.name}`,
       `Email: ${data.email}`,
       `Company: ${data.company}`,
-      `Biggest Bottleneck: ${data.bottleneck}`,
+      `Biggest bottleneck: ${data.bottleneck}`,
     ].join("\n"),
   );
 
@@ -307,7 +309,7 @@ async function submitAuditRequest(data: AuditFormData) {
       { name: "company", value: data.company },
       {
         name: "message",
-        value: `AI automation audit request. Biggest bottleneck: ${data.bottleneck}`,
+        value: AI_AUTOMATION_AUDIT_MESSAGE_PREFIX + data.bottleneck,
       },
     ],
     context,
