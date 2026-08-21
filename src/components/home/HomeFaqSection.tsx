@@ -20,8 +20,8 @@ export function HomeFaqSection() {
             AI AUTOMATION <span className="text-gradient-primary">FAQ</span>
           </h2>
           <p className="mx-auto mb-10 max-w-3xl text-center text-lg text-muted-foreground">
-            Straight answers about AI marketing automation, CRM automation,
-            custom AI workflows, and implementation timelines.
+            Straight answers about lead response, automation priorities, and the
+            practical systems that help small businesses work more efficiently.
           </p>
 
           <Accordion type="single" collapsible className="space-y-4">

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Bot, Megaphone, Workflow, Wrench, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
-import brainGreen from "@/assets/brain-green.png";
+import servicesGraffiti from "@/assets/services-graffiti.jpg";
 
 const offerCards = [
   {
@@ -81,9 +81,9 @@ export function ServicesSection() {
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 grid-pattern opacity-20" />
       <div
-        className="absolute right-0 top-0 h-full w-1/2 opacity-20"
+        className="absolute right-0 top-0 h-full w-1/2 opacity-30"
         style={{
-          backgroundImage: `url(${brainGreen})`,
+          backgroundImage: `url(${servicesGraffiti})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           mixBlendMode: "screen",
@@ -95,11 +95,10 @@ export function ServicesSection() {
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="mb-5 text-5xl font-display font-bold tracking-wider md:text-6xl">
-            AI Systems We Install in Your Business
+            AI Systems That Recover Leads and Remove Busywork
           </h2>
           <p className="text-lg text-muted-foreground md:text-xl">
-            We install systems that drive leads, automate execution, and reduce
-            repetitive work.
+            We install practical automation that responds faster, follows up consistently, and gives your team time back.
           </p>
         </div>
 
