@@ -32,7 +32,7 @@ export default function DevOpsCloudService() {
         <div className="container relative z-10 mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="mb-6 text-5xl font-display font-bold tracking-wider md:text-6xl">
-              DEVOPS AUTOMATION <span className="text-gradient-electric">CONSULTING</span>
+              DevOps automation <span className="text-gradient-electric">CONSULTING</span>
             </h1>
             <p className="mx-auto mb-8 max-w-3xl text-lg text-muted-foreground md:text-xl">
               Advanced tier support for teams that need production-grade cloud
@@ -76,7 +76,7 @@ export default function DevOpsCloudService() {
 
             <Button asChild className="bg-gradient-primary text-primary-foreground hover:opacity-90">
               <Link to="/contact?interest=devops-cloud-architecture">
-                Talk With an Engineer
+                Talk with an Engineer
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
