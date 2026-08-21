@@ -11,9 +11,9 @@ import aiBlizzardsGrantGraffiti from "@/assets/blog/ai-blizzards-grant-graffiti.
 import aiRoiOverheadGraffiti from "@/assets/blog/ai-roi-overhead-graffiti.jpg";
 import aiConsultingAdvantageGraffiti from "@/assets/blog/ai-consulting-advantage-graffiti.jpg";
 import aiVoiceSupportGraffiti from "@/assets/blog/ai-voice-support-graffiti.jpg";
-import aiAutomationMissedLeadsGraffiti from "@/assets/blog/ai-automation-missed-leads-graffiti.svg";
-import aiAutomationMissedLeadsThumb from "@/assets/blog/ai-automation-missed-leads-thumb.svg";
-import aiAutomationMissedLeadsOg from "@/assets/blog/ai-automation-missed-leads-og.svg";
+import aiAutomationMissedLeadsGraffiti from "@/assets/blog/ai-automation-missed-leads-graffiti-v2.svg";
+import aiAutomationMissedLeadsThumb from "@/assets/blog/ai-automation-missed-leads-thumb-v2.svg";
+import aiAutomationMissedLeadsOg from "@/assets/blog/ai-automation-missed-leads-og-v2.svg";
 
 export type BlogPostSection = {
   heading: string;
