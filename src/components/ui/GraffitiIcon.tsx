@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 
 type GraffitiTone = "primary" | "accent" | "electric" | "warning" | "neon";
 type GraffitiSize = "sm" | "md" | "lg" | "xl" | "hero";
+type GraffitiVariant = "tile" | "wall";
 
 const toneStyles: Record<GraffitiTone, string> = {
   primary:
@@ -25,6 +26,14 @@ const sizeStyles: Record<GraffitiSize, string> = {
   hero: "h-24 w-24 rounded-3xl",
 };
 
+const wallSizeStyles: Record<GraffitiSize, string> = {
+  sm: "h-12 w-12",
+  md: "h-14 w-14",
+  lg: "h-16 w-16",
+  xl: "h-20 w-20",
+  hero: "h-24 w-24",
+};
+
 const iconSizeStyles: Record<GraffitiSize, string> = {
   sm: "h-5 w-5",
   md: "h-7 w-7",
@@ -37,6 +46,7 @@ type GraffitiIconProps = {
   icon?: LucideIcon;
   tone?: GraffitiTone;
   size?: GraffitiSize;
+  variant?: GraffitiVariant;
   className?: string;
   iconClassName?: string;
   children?: ReactNode;
@@ -46,6 +56,7 @@ export function GraffitiIcon({
   icon: Icon,
   tone = "primary",
   size = "lg",
+  variant = "tile",
   className,
   iconClassName,
   children,
@@ -53,15 +64,19 @@ export function GraffitiIcon({
   return (
     <span
       className={cn(
-        "graffiti-icon relative inline-flex items-center justify-center overflow-hidden border text-primary-foreground",
-        "before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.38)_0,rgba(255,255,255,0)_55%)]",
-        "after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_80%_75%,rgba(0,0,0,0.24)_0,rgba(0,0,0,0)_58%)]",
-        toneStyles[tone],
-        sizeStyles[size],
+        "graffiti-icon relative inline-flex items-center justify-center text-primary-foreground",
+        variant === "tile" && [
+          "overflow-hidden border",
+          "before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.38)_0,rgba(255,255,255,0)_55%)]",
+          "after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_80%_75%,rgba(0,0,0,0.24)_0,rgba(0,0,0,0)_58%)]",
+          toneStyles[tone],
+        ],
+        variant === "wall" && `graffiti-icon-wall graffiti-icon-wall--${tone}`,
+        variant === "wall" ? wallSizeStyles[size] : sizeStyles[size],
         className,
       )}
     >
-      <span className="spray-texture absolute inset-0 opacity-30" />
+      <span className={cn("spray-texture absolute inset-0", variant === "wall" ? "opacity-100" : "opacity-30")} />
       <span className="relative z-[1] flex items-center justify-center">
         {Icon ? (
           <Icon className={cn("drop-shadow-[0_0_14px_rgba(255,255,255,0.25)]", iconSizeStyles[size], iconClassName)} />

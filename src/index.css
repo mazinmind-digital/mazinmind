@@ -282,6 +282,87 @@
     transform: rotate(1.5deg) translateY(-1px);
   }
 
+  .graffiti-icon-wall {
+    --spray-color: 185 100% 55%;
+    overflow: visible;
+    border: 0;
+    border-radius: 42% 58% 55% 45% / 48% 42% 58% 52%;
+    background:
+      radial-gradient(circle at 50% 48%, hsl(var(--spray-color) / 0.95) 0 27%, transparent 29%),
+      radial-gradient(ellipse at 48% 54%, hsl(var(--spray-color) / 0.72) 0 44%, transparent 47%),
+      radial-gradient(circle at 18% 22%, hsl(var(--spray-color) / 0.72) 0 3%, transparent 4%),
+      radial-gradient(circle at 83% 18%, hsl(var(--spray-color) / 0.62) 0 2.5%, transparent 3.5%),
+      radial-gradient(circle at 89% 67%, hsl(var(--spray-color) / 0.7) 0 3%, transparent 4%),
+      radial-gradient(circle at 13% 74%, hsl(var(--spray-color) / 0.55) 0 2%, transparent 3%);
+    box-shadow: none;
+    filter: drop-shadow(0 0 8px hsl(var(--spray-color) / 0.42));
+    isolation: isolate;
+    transform: rotate(-4deg);
+  }
+
+  .graffiti-icon-wall--accent {
+    --spray-color: 340 95% 65%;
+  }
+
+  .graffiti-icon-wall--electric {
+    --spray-color: 270 100% 70%;
+  }
+
+  .graffiti-icon-wall--warning {
+    --spray-color: 45 100% 55%;
+  }
+
+  .graffiti-icon-wall--neon {
+    --spray-color: 130 90% 55%;
+  }
+
+  .graffiti-icon-wall::before {
+    content: "";
+    position: absolute;
+    inset: -18%;
+    z-index: -1;
+    background:
+      radial-gradient(circle at 9% 44%, hsl(var(--spray-color) / 0.5) 0 1.4%, transparent 2%),
+      radial-gradient(circle at 20% 10%, hsl(var(--spray-color) / 0.72) 0 1.2%, transparent 2%),
+      radial-gradient(circle at 42% 3%, hsl(var(--spray-color) / 0.44) 0 1.6%, transparent 2.4%),
+      radial-gradient(circle at 72% 8%, hsl(var(--spray-color) / 0.65) 0 1.3%, transparent 2%),
+      radial-gradient(circle at 94% 39%, hsl(var(--spray-color) / 0.56) 0 1.5%, transparent 2.3%),
+      radial-gradient(circle at 84% 87%, hsl(var(--spray-color) / 0.6) 0 1.2%, transparent 2%),
+      radial-gradient(circle at 35% 96%, hsl(var(--spray-color) / 0.48) 0 1.5%, transparent 2.2%);
+    opacity: 0.95;
+  }
+
+  .graffiti-icon-wall::after {
+    content: "";
+    position: absolute;
+    left: 21%;
+    bottom: -17%;
+    width: 8%;
+    height: 29%;
+    z-index: -1;
+    border-radius: 0 0 999px 999px;
+    background: linear-gradient(to bottom, hsl(var(--spray-color) / 0.85), hsl(var(--spray-color) / 0.24));
+    box-shadow:
+      2.05rem 0.45rem 0 -0.08rem hsl(var(--spray-color) / 0.55),
+      1.25rem -0.2rem 0 -0.12rem hsl(var(--spray-color) / 0.48);
+  }
+
+  .graffiti-icon-wall > .spray-texture {
+    inset: -12%;
+    border-radius: inherit;
+    mix-blend-mode: screen;
+  }
+
+  .graffiti-icon-wall > span:last-child {
+    color: hsl(230 20% 8%);
+    filter: drop-shadow(1px 1px 0 hsl(0 0% 100% / 0.22));
+    transform: rotate(2deg) scale(1.08);
+  }
+
+  .graffiti-icon-wall svg {
+    stroke-width: 3;
+  }
+
   .neon-border {
     position: relative;
   }
