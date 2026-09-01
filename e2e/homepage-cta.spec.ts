@@ -20,12 +20,6 @@ test("CTAs open HubSpot scheduler modal", async ({ page }) => {
   // Hero CTA
   await clickAndAssertModal(/Get a Revenue Leak Audit/i);
 
-  // Blueprint CTA
-  await clickAndAssertModal(/Get My Automation Blueprint/i);
-
-  // The homepage has one primary blueprint CTA.
-  const blueprintBtn = page.getByRole("button", { name: /Get My Automation Blueprint/i }).first();
-  await expect(blueprintBtn).toBeVisible();
-  await blueprintBtn.click();
-  await expect(page.getByRole("heading", { name: /Schedule a Free Consultation/i })).toBeVisible();
+  // Revenue Leak Audit section CTA
+  await clickAndAssertModal(/Request Your Revenue Leak Audit/i);
 });

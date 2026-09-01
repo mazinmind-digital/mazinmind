@@ -281,30 +281,6 @@ export default function Blog() {
             </div>
           </div>
 
-          <div>
-            <p className="text-sm font-semibold tracking-wide text-muted-foreground mb-3">
-              POPULAR TAGS
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {tags.map((tag) => {
-                const active = selectedTag === tag;
-                return (
-                  <button
-                    key={tag}
-                    onClick={() => setSelectedTag(tag)}
-                    className={`px-3 py-1.5 rounded-full border text-xs font-medium transition-colors ${
-                      active
-                        ? "border-accent bg-accent/20 text-accent"
-                        : "border-border text-muted-foreground hover:text-foreground"
-                    }`}
-                    type="button"
-                  >
-                    {tag}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -469,6 +445,31 @@ export default function Blog() {
             </div>
 
             <aside className="space-y-6">
+              <div className="glass-vibrant rounded-2xl border border-accent/20 p-6">
+                <h3 className="text-xl font-display font-bold tracking-wider mb-4">
+                  POPULAR TAGS
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {tags.map((tag) => {
+                    const active = selectedTag === tag;
+                    return (
+                      <button
+                        key={tag}
+                        onClick={() => setSelectedTag(tag)}
+                        className={`px-3 py-1.5 rounded-full border text-xs font-medium transition-colors ${
+                          active
+                            ? "border-accent bg-accent/20 text-accent"
+                            : "border-border text-muted-foreground hover:text-foreground"
+                        }`}
+                        type="button"
+                      >
+                        {tag}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
               <div className="glass-vibrant rounded-2xl border border-primary/20 p-6">
                 <h3 className="text-xl font-display font-bold tracking-wider mb-4">
                   BLOG ARCHIVE

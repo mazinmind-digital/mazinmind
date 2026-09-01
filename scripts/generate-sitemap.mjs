@@ -17,6 +17,20 @@ const routes = [
   "/contact",
   "/faq",
   "/blog",
+  "/blog/how-ai-is-used-during-severe-weather-events-and-blizzards",
+  "/blog/ai-automation-small-business-missed-leads",
+  "/blog/ai-voice-support-reduce-costs-improve-csat",
+  "/blog/ai-implementation-benefits-roi-overhead-consulting",
+  "/blog/how-ai-automation-cuts-ops-costs",
+  "/blog/seo-in-the-age-of-ai-search",
+  "/blog/from-idea-to-mvp-using-ai",
+  "/blog/predictive-analytics-for-marketing",
+  "/blog/building-trust-in-ai-adoption",
+  "/blog/devops-foundations-for-ai-products",
+  "/blog/content-systems-that-rank-and-convert",
+  "/blog/ai-readiness-checklist-for-smbs",
+  "/blog/ai-receptionist-boston-missed-calls",
+  "/blog/ai-earthquake-prediction-disaster-recovery",
 ];
 
 const xml =
