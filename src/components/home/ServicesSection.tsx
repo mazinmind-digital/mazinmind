@@ -103,13 +103,20 @@ export function ServicesSection() {
         </div>
 
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-7 lg:grid-cols-2">
-          {offerCards.map((offer) => (
+          {offerCards.map((offer, index) => (
             <article
               key={offer.id}
               className="glass-vibrant rounded-2xl border border-primary/30 p-7 shadow-card"
             >
               <div className="mb-4 flex items-start gap-4">
-                <GraffitiIcon icon={offer.icon} tone={offer.tone} size="lg" className="flex-shrink-0" />
+                <GraffitiIcon
+                  icon={offer.icon}
+                  tone={offer.tone}
+                  size="lg"
+                  variant="wall"
+                  className="flex-shrink-0"
+                  iconClassName={index % 2 === 0 ? "rotate-[-4deg]" : "rotate-[4deg]"}
+                />
                 <div>
                   <h3 className="mb-2 text-2xl font-display font-bold text-foreground tracking-wide">
                     {offer.title}

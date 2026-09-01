@@ -225,6 +225,7 @@ export default function Services() {
                   <div className="lg:w-1/3 flex justify-center">
                     <GraffitiIcon
                       icon={service.icon}
+                      variant="wall"
                       tone={
                         service.color as
                           | "primary"
@@ -233,8 +234,8 @@ export default function Services() {
                           | "warning"
                           | "neon"
                       }
-                      className={`h-72 w-72 rounded-3xl ${colors.split(" ")[1]} hover:glow-primary transition-all`}
-                      iconClassName={`w-36 h-36 ${colors.split(" ")[0]}`}
+                      className="h-72 w-72 transition-transform duration-300 hover:scale-105"
+                      iconClassName={`h-36 w-36 ${index % 2 === 0 ? "rotate-[-4deg]" : "rotate-[4deg]"}`}
                     />
                   </div>
 
