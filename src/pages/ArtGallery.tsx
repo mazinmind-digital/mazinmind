@@ -507,7 +507,7 @@ export default function ArtGallery() {
     "@type": "CollectionPage",
     name: "MazinMind Art Gallery",
     description:
-      "Browse curated Midjourney art pieces and collection highlights from Mazinmind.Digital.",
+      "Browse curated AI-assisted art pieces and collection highlights from Mazinmind.Digital.",
     url: "https://mazinmind.digital/art-gallery",
     mainEntity: {
       "@type": "ItemList",
@@ -527,22 +527,22 @@ export default function ArtGallery() {
   return (
     <Layout>
       <Helmet>
-        <title>Art Gallery | Midjourney Canvas Prints by MazinMind</title>
+        <title>Art Gallery | AI-Assisted Artwork by MazinMind</title>
         <meta
           name="description"
-          content="Explore the MazinMind Art Gallery featuring Midjourney-generated artwork in curated collections and visual studies."
+          content="Explore the MazinMind Art Gallery featuring AI-assisted artwork and visual studies from the MazinMind creative archive."
         />
         <meta
           name="keywords"
-          content="AI art gallery, Midjourney artwork, digital art collections, MazinMind art, visual studies"
+          content="AI art gallery, AI-assisted artwork, digital art collections, MazinMind art, visual studies"
         />
         <meta
           property="og:title"
-          content="Art Gallery | Midjourney Artwork by MazinMind"
+          content="Art Gallery | AI-Assisted Artwork by MazinMind"
         />
         <meta
           property="og:description"
-          content="Browse AI-generated artwork and visual studies from the MazinMind Art Gallery."
+          content="Browse AI-assisted artwork and visual studies from the MazinMind Art Gallery."
         />
         <meta
           property="og:url"
@@ -552,7 +552,7 @@ export default function ArtGallery() {
         <meta name="twitter:title" content="MazinMind Art Gallery" />
         <meta
           name="twitter:description"
-          content="Midjourney-inspired artwork and collection highlights from MazinMind."
+          content="AI-assisted artwork and collection highlights from MazinMind."
         />
         <link rel="canonical" href="https://mazinmind.digital/art-gallery" />
         <script type="application/ld+json">
@@ -571,7 +571,7 @@ export default function ArtGallery() {
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-vibrant text-sm font-medium mb-8">
               <GraffitiIcon icon={ImageIcon} size="sm" tone="primary" />
               <span className="text-gradient-primary tracking-wide">
-                LIMITED RELEASES
+                ART PRINTS & APPAREL
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 tracking-wider">
@@ -581,8 +581,8 @@ export default function ArtGallery() {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Curated Midjourney artwork and visual studies from our ongoing gallery collection.
-              Browse current and future uploads from our creative archive.
+              Curated AI-assisted artwork and visual studies from our active gallery archive.
+              Commercial sale is pending explicit owner approval for each artwork.
             </p>
           </div>
         </div>
@@ -590,6 +590,10 @@ export default function ArtGallery() {
 
       <section className="py-10 border-y border-primary/20 bg-secondary/20">
         <div className="container mx-auto px-4 lg:px-8 space-y-6">
+          <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 px-4 py-3 text-sm text-amber-100">
+            Commercial sale remains blocked until an explicit owner approval is recorded for each artwork. Not currently available for purchase.
+          </div>
+
           <div className="grid gap-4 lg:grid-cols-[1fr_auto_auto]">
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -739,13 +743,10 @@ export default function ArtGallery() {
                         </div>
                       </div>
 
-                      <Link
-                        to={`/contact?interest=${artwork.id}`}
-                        className="inline-flex items-center gap-2 font-semibold text-primary hover:text-primary/80 transition-colors"
-                      >
-                        Request details
+                      <div className="inline-flex items-center gap-2 font-semibold text-muted-foreground">
+                        Not currently available
                         <ArrowRight className="w-4 h-4" />
-                      </Link>
+                      </div>
                     </div>
                   </article>
                 ))}
@@ -850,7 +851,7 @@ export default function ArtGallery() {
                 </h3>
                 <p className="text-muted-foreground">
                   Browse the gallery and select artwork by collection, size, and
-                  style.
+                  style. Purchase links remain disabled until approval is recorded.
                 </p>
               </div>
 
@@ -862,8 +863,8 @@ export default function ArtGallery() {
                   Request Details
                 </h3>
                 <p className="text-muted-foreground">
-                  Send an inquiry and we will confirm collection details and
-                  production timeline.
+                  Send an inquiry and we will confirm whether a piece is approved
+                  for sale and share any production timeline only after approval.
                 </p>
               </div>
 
