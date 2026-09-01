@@ -4,10 +4,19 @@ const base = "https://mazinmind.digital";
 
 const routes = [
   "/",
+  "/ai-receptionist",
+  "/ai-receptionist-boston",
+  "/home-services-automation",
+  "/ai-automation-contractors",
+  "/lead-follow-up-automation",
+  "/services",
   "/services/ai-automation",
   "/services/ai-marketing",
   "/services/devops-cloud",
+  "/about",
   "/contact",
+  "/faq",
+  "/blog",
 ];
 
 const xml =

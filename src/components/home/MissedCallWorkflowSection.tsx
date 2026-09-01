@@ -1,4 +1,5 @@
 import { ArrowRight, Phone, MessageSquare, CheckCircle, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const workflowSteps = [
   {
@@ -93,6 +94,21 @@ export function MissedCallWorkflowSection() {
                   <span className="text-sm">{capability}</span>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <Link
+                to="/ai-receptionist-boston"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-gradient-primary px-6 text-sm font-bold text-primary-foreground"
+              >
+                Boston AI Receptionist
+              </Link>
+              <Link
+                to="/home-services-automation"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-primary/40 px-6 text-sm font-bold text-primary"
+              >
+                Home Services Automation
+              </Link>
             </div>
           </div>
         </div>

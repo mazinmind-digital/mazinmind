@@ -1,12 +1,13 @@
 import React from "react";
 import { useSiteOverlay } from "@/components/layout/site-overlays";
+import { trackEvent, type AnalyticsEventName } from "@/lib/analytics";
 
 type Props = {
   className?: string;
   children?: React.ReactNode;
   provider?: "hubspot" | "link";
   url?: string;
-  analyticsEvent?: string;
+  analyticsEvent?: AnalyticsEventName;
   onClick?: () => void;
 };
 
@@ -21,9 +22,8 @@ export function ScheduleButton({
   const { openScheduleModal } = useSiteOverlay();
 
   const handleClick = () => {
-    if (analyticsEvent && typeof window !== "undefined") {
-      const dataLayer = (window as typeof window & { dataLayer?: Array<Record<string, unknown>> }).dataLayer;
-      dataLayer?.push({ event: analyticsEvent });
+    if (analyticsEvent) {
+      trackEvent(analyticsEvent, { cta_text: typeof children === "string" ? children : undefined });
     }
 
     onClick?.();

@@ -1,0 +1,304 @@
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - navigation [ref=e5]:
+        - generic [ref=e6]:
+          - link [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Mazinmind.Digital" [ref=e9]
+          - generic [ref=e10]:
+            - link "+1 (617) 453-8776" [ref=e11] [cursor=pointer]:
+              - /url: tel:+16174538776
+            - button "MENU" [ref=e15] [cursor=pointer]
+            - button "GET STARTED" [ref=e16] [cursor=pointer]
+    - main [ref=e17]:
+      - generic [ref=e22]:
+        - img "MazinMind"
+        - heading "Stop Losing Customers When You Miss the Phone." [level=1] [ref=e23]
+        - paragraph [ref=e24]: MazinMind builds AI receptionist and speed-to-lead systems for Greater Boston service businesses. Capture missed opportunities, respond to leads faster, handle routine customer interactions, and keep your team focused on the work that requires a human.
+        - generic [ref=e25]:
+          - link "See How It Works" [ref=e26] [cursor=pointer]:
+            - /url: "#how-it-works"
+          - button "Get a Revenue Leak Audit" [ref=e27] [cursor=pointer]
+        - generic [ref=e28]:
+          - generic [ref=e29]: Boston-Based
+          - generic [ref=e30]: •Engineer-Built
+          - generic [ref=e31]: •Production-Ready
+          - generic [ref=e32]: •Built Around Your Existing Tools
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - heading "MazinMind Missed-Call Revenue Rescue" [level=2] [ref=e38]
+          - paragraph [ref=e39]: Automatically capture and respond to every missed opportunity before your competitors do.
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - heading "Customer Calls" [level=3] [ref=e46]
+            - paragraph [ref=e47]: Incoming call arrives
+          - generic [ref=e51]:
+            - heading "AI Responds" [level=3] [ref=e55]
+            - paragraph [ref=e56]: Answers or routes via SMS/email
+          - generic [ref=e60]:
+            - heading "Lead Qualifies" [level=3] [ref=e65]
+            - paragraph [ref=e66]: Information captured and qualified
+          - generic [ref=e70]:
+            - heading "Human Handoff" [level=3] [ref=e77]
+            - paragraph [ref=e78]: Appointment or team notification
+        - generic [ref=e80]:
+          - heading "Core Capabilities" [level=3] [ref=e81]
+          - generic [ref=e82]:
+            - generic [ref=e83]: After-hours call handling
+            - generic [ref=e88]: Missed-call SMS recovery
+            - generic [ref=e93]: Lead qualification
+            - generic [ref=e98]: Approved FAQ handling
+            - generic [ref=e103]: Appointment requests
+            - generic [ref=e108]: Human escalation
+            - generic [ref=e113]: Owner notifications
+            - generic [ref=e118]: CRM integration
+            - generic [ref=e123]: Conversation summaries
+            - generic [ref=e128]: Automated lead follow-up
+      - generic [ref=e139]:
+        - generic [ref=e140]:
+          - heading "Revenue Leak Audit" [level=2] [ref=e141]
+          - paragraph [ref=e142]: Discover where leads and customer opportunities disappear in your business.
+        - generic [ref=e143]:
+          - generic [ref=e144]:
+            - heading "We Analyze:" [level=3] [ref=e145]
+            - list [ref=e146]:
+              - listitem [ref=e147]:
+                - generic [ref=e151]: Missed calls
+              - listitem [ref=e152]:
+                - generic [ref=e156]: Response times
+              - listitem [ref=e157]:
+                - generic [ref=e161]: Manual follow-up
+              - listitem [ref=e162]:
+                - generic [ref=e166]: Disconnected tools
+              - listitem [ref=e167]:
+                - generic [ref=e171]: Repetitive workflows
+              - listitem [ref=e172]:
+                - generic [ref=e176]: Scheduling friction
+              - listitem [ref=e177]:
+                - generic [ref=e181]: Customer communication gaps
+          - generic [ref=e182]:
+            - heading "You Receive:" [level=3] [ref=e183]
+            - list [ref=e184]:
+              - listitem [ref=e185]:
+                - generic [ref=e189]: Lead-response review
+              - listitem [ref=e190]:
+                - generic [ref=e194]: Missed-call analysis
+              - listitem [ref=e195]:
+                - generic [ref=e199]: Automation opportunities
+              - listitem [ref=e200]:
+                - generic [ref=e204]: Workflow recommendations
+              - listitem [ref=e205]:
+                - generic [ref=e209]: Recommended technology approach
+              - listitem [ref=e210]:
+                - generic [ref=e214]: Estimated business impact
+              - listitem [ref=e215]:
+                - generic [ref=e219]: Prioritized implementation roadmap
+        - generic [ref=e220]:
+          - button "Request Your Revenue Leak Audit" [ref=e221] [cursor=pointer]
+          - paragraph [ref=e222]: Qualification-focused. No pricing. Just insights.
+      - generic [ref=e227]:
+        - generic [ref=e228]:
+          - heading "Built by Engineers, Not Prompt Engineers" [level=2] [ref=e229]
+          - paragraph [ref=e230]: Enterprise engineering reliability for practical business automation.
+          - paragraph [ref=e231]: Most AI automation fails because it skips the engineering fundamentals. We don't. Every system is production-ready from day one.
+        - generic [ref=e233]:
+          - generic [ref=e234]:
+            - heading "Monitoring" [level=3] [ref=e239]
+            - paragraph [ref=e240]: 24/7 system health checks and automated alerting when issues arise.
+          - generic [ref=e241]:
+            - heading "Error Handling" [level=3] [ref=e245]
+            - paragraph [ref=e246]: Graceful degradation and recovery from failures without losing data or customer context.
+          - generic [ref=e247]:
+            - heading "Human Escalation" [level=3] [ref=e254]
+            - paragraph [ref=e255]: Clear pathways for AI to hand off complex issues to your team with full context.
+          - generic [ref=e256]:
+            - heading "API Integrations" [level=3] [ref=e260]
+            - paragraph [ref=e261]: Proper authentication, rate limiting, and error retry logic with your existing tools.
+          - generic [ref=e262]:
+            - heading "Logging & Observability" [level=3] [ref=e267]
+            - paragraph [ref=e268]: Complete audit trail of every interaction, decision, and result for compliance and debugging.
+          - generic [ref=e269]:
+            - heading "Security" [level=3] [ref=e274]
+            - paragraph [ref=e275]: Encryption, access controls, and data isolation that meet enterprise standards.
+          - generic [ref=e276]:
+            - heading "Scalability" [level=3] [ref=e280]
+            - paragraph [ref=e281]: Systems built to handle growth from 10 leads to 10,000 without breaking.
+          - generic [ref=e282]:
+            - heading "Maintainability" [level=3] [ref=e288]
+            - paragraph [ref=e289]: Code patterns, documentation, and architecture designed for long-term support.
+          - generic [ref=e290]:
+            - heading "Failure Recovery" [level=3] [ref=e295]
+            - paragraph [ref=e296]: Automatic rollback, retry logic, and incident response protocols.
+      - generic [ref=e302]:
+        - generic [ref=e303]:
+          - heading "How businesses benefit from smarter follow-up" [level=2] [ref=e312]
+          - paragraph [ref=e313]: Common bottlenecks we solve across lead capture, service scheduling, and day-to-day operations.
+        - generic [ref=e314]:
+          - article [ref=e315]:
+            - heading "Lead handling gets faster" [level=3] [ref=e316]
+            - generic [ref=e317]:
+              - paragraph [ref=e318]: Problem
+              - paragraph [ref=e319]: Missed or slow responses
+            - generic [ref=e320]:
+              - paragraph [ref=e321]: Solution
+              - paragraph [ref=e322]: AI intake and routing
+            - generic [ref=e323]:
+              - paragraph [ref=e324]: Result
+              - paragraph [ref=e325]: New inquiries get acknowledged and triaged quickly without manual delay.
+          - article [ref=e326]:
+            - heading "Follow-up becomes consistent" [level=3] [ref=e327]
+            - generic [ref=e328]:
+              - paragraph [ref=e329]: Problem
+              - paragraph [ref=e330]: Leads go cold between touchpoints
+            - generic [ref=e331]:
+              - paragraph [ref=e332]: Solution
+              - paragraph [ref=e333]: Automated nurturing and reminders
+            - generic [ref=e334]:
+              - paragraph [ref=e335]: Result
+              - paragraph [ref=e336]: Prospects receive timely next steps without extra admin work.
+          - article [ref=e337]:
+            - heading "Operations get less manual" [level=3] [ref=e338]
+            - generic [ref=e339]:
+              - paragraph [ref=e340]: Problem
+              - paragraph [ref=e341]: Repetitive admin tasks
+            - generic [ref=e342]:
+              - paragraph [ref=e343]: Solution
+              - paragraph [ref=e344]: Workflow automation and scheduling
+            - generic [ref=e345]:
+              - paragraph [ref=e346]: Result
+              - paragraph [ref=e347]: The team spends more time on customer service and revenue-generating work.
+        - paragraph [ref=e348]: Outcomes vary by business, workflow, and implementation scope.
+      - generic [ref=e355]:
+        - heading "AI AUTOMATION FAQ" [level=2] [ref=e356]
+        - paragraph [ref=e357]: Straight answers about lead response, automation priorities, and the practical systems that help small businesses work more efficiently.
+        - generic [ref=e358]:
+          - heading [level=3] [ref=e360]:
+            - button "How does MazinMind handle missed calls?" [ref=e361] [cursor=pointer]
+          - heading [level=3] [ref=e365]:
+            - button "Do I need to replace my current software?" [ref=e366] [cursor=pointer]
+          - heading [level=3] [ref=e370]:
+            - button "Can we start with one small automation?" [ref=e371] [cursor=pointer]
+          - heading [level=3] [ref=e375]:
+            - button "How quickly can we get started?" [ref=e376] [cursor=pointer]
+          - heading [level=3] [ref=e380]:
+            - button "What's included in the Revenue Leak Audit?" [ref=e381] [cursor=pointer]
+      - generic [ref=e391]:
+        - generic [ref=e392]:
+          - heading "FREE AI AUTOMATION AUDIT" [level=2] [ref=e401]
+          - paragraph [ref=e402]: Get a focused plan for AI automation for small business growth and operations.
+          - list [ref=e403]:
+            - listitem [ref=e404]:
+              - generic [ref=e408]: 10 automation opportunities prioritized by impact
+            - listitem [ref=e409]:
+              - generic [ref=e413]: Recommended tool stack for your current systems
+            - listitem [ref=e414]:
+              - generic [ref=e418]: A practical 30-day rollout plan for implementation
+        - generic [ref=e420]:
+          - generic [ref=e421]:
+            - generic [ref=e422]: Name
+            - textbox "Name" [ref=e423]:
+              - /placeholder: Your name
+          - generic [ref=e424]:
+            - generic [ref=e425]: Email
+            - textbox "Email" [ref=e426]:
+              - /placeholder: you@company.com
+          - generic [ref=e427]:
+            - generic [ref=e428]: Company
+            - textbox "Company" [ref=e429]:
+              - /placeholder: Company name
+          - generic [ref=e430]:
+            - generic [ref=e431]: Biggest bottleneck
+            - textbox "Biggest bottleneck" [ref=e432]:
+              - /placeholder: What is slowing down leads, marketing, or operations today?
+          - button "Submit free AI automation audit request" [ref=e433] [cursor=pointer]: Submit Audit Request
+          - paragraph [ref=e434]:
+            - text: If the form is blocked, email us directly at
+            - link "rmazin@mazinmind.digital" [ref=e435] [cursor=pointer]:
+              - /url: mailto:rmazin@mazinmind.digital?subject=Free%20AI%20Automation%20Audit%20request%20from%20Website&body=Free%20AI%20Automation%20Audit%20request%0A%0AName%3A%20%0AEmail%3A%20%0ACompany%3A%20%0ABiggest%20bottleneck%3A%20
+            - text: .
+    - contentinfo [ref=e436]:
+      - generic [ref=e439]:
+        - generic [ref=e440]:
+          - generic [ref=e441]:
+            - link [ref=e442] [cursor=pointer]:
+              - /url: /
+              - img "Mazinmind.Digital" [ref=e443]
+            - paragraph [ref=e444]: Transform your business with AI-powered solutions. We combine cutting-edge technology with human expertise to deliver exceptional results.
+            - generic [ref=e445]:
+              - link "LinkedIn" [ref=e446] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/mazinmind-digital
+              - link "X" [ref=e454] [cursor=pointer]:
+                - /url: https://x.com/MazinmindD
+              - link "Instagram" [ref=e461] [cursor=pointer]:
+                - /url: https://www.instagram.com/mazinmind.digital/
+              - link "GitHub" [ref=e468] [cursor=pointer]:
+                - /url: https://github.com/mazinmind-digital/mazinmind
+          - generic [ref=e475]:
+            - heading "COMPANY" [level=4] [ref=e476]
+            - list [ref=e477]:
+              - listitem [ref=e478]:
+                - link "About Us" [ref=e479] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e480]:
+                - link "AI Automation" [ref=e481] [cursor=pointer]:
+                  - /url: /ai-automation-contractors
+              - listitem [ref=e482]:
+                - link "Lead Follow-Up" [ref=e483] [cursor=pointer]:
+                  - /url: /lead-follow-up-automation
+              - listitem [ref=e484]:
+                - link "AI Receptionist" [ref=e485] [cursor=pointer]:
+                  - /url: /ai-receptionist
+              - listitem [ref=e486]:
+                - link "Contact" [ref=e487] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=e488]:
+                - link "FAQ" [ref=e489] [cursor=pointer]:
+                  - /url: /faq
+          - generic [ref=e490]:
+            - heading "SERVICES" [level=4] [ref=e491]
+            - list [ref=e492]:
+              - listitem [ref=e493]:
+                - link "AI Automation" [ref=e494] [cursor=pointer]:
+                  - /url: /services/ai-automation
+              - listitem [ref=e495]:
+                - link "AI Marketing" [ref=e496] [cursor=pointer]:
+                  - /url: /services/ai-marketing
+              - listitem [ref=e497]:
+                - link "DevOps & Cloud" [ref=e498] [cursor=pointer]:
+                  - /url: /services/devops-cloud
+              - listitem [ref=e499]:
+                - link "All Services" [ref=e500] [cursor=pointer]:
+                  - /url: /services
+          - generic [ref=e501]:
+            - heading "CONTACT" [level=4] [ref=e502]
+            - list [ref=e503]:
+              - listitem [ref=e504]:
+                - link "+1 (617) 453-8776" [ref=e505] [cursor=pointer]:
+                  - /url: tel:+16174538776
+              - listitem [ref=e512]:
+                - link "info@mazinmind.digital" [ref=e513] [cursor=pointer]:
+                  - /url: mailto:info@mazinmind.digital
+              - listitem [ref=e521]:
+                - generic [ref=e528]: Boston, MA, USA
+        - generic [ref=e529]:
+          - paragraph [ref=e530]: © 2026 Mazinmind.Digital. All rights reserved.
+          - generic [ref=e531]:
+            - link "Privacy Policy" [ref=e532] [cursor=pointer]:
+              - /url: /privacy
+            - link "Terms of Service" [ref=e533] [cursor=pointer]:
+              - /url: /terms
+  - generic [ref=e535]:
+    - generic [ref=e536]:
+      - heading "Cookie Preferences" [level=3] [ref=e537]
+      - paragraph [ref=e538]: We use essential cookies to run this site and optional cookies to improve analytics and marketing performance. You can accept all, decline optional cookies, or manage preferences.
+    - generic [ref=e539]:
+      - button "Accept All" [ref=e540] [cursor=pointer]
+      - button "Decline Optional" [ref=e541] [cursor=pointer]
+      - button "Manage Preferences" [ref=e542] [cursor=pointer]
+    - generic [ref=e543]:
+      - button "Privacy Policy" [ref=e544] [cursor=pointer]
+      - button "Terms of Service" [ref=e545] [cursor=pointer]

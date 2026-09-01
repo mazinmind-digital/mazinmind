@@ -1,0 +1,218 @@
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - navigation [ref=e5]:
+        - generic [ref=e6]:
+          - link [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Mazinmind.Digital" [ref=e9]
+          - generic [ref=e10]:
+            - link "+1 (617) 453-8776" [ref=e11] [cursor=pointer]:
+              - /url: tel:+16174538776
+            - button "MENU" [ref=e15] [cursor=pointer]
+            - button "GET STARTED" [ref=e16] [cursor=pointer]
+    - main [ref=e17]:
+      - generic [ref=e25]:
+        - heading "OUR SERVICES" [level=1] [ref=e26]
+        - paragraph [ref=e27]: Comprehensive AI and digital solutions designed to transform your business operations, drive sustainable growth, and maximize your ROI.
+      - generic [ref=e30]:
+        - generic [ref=e45]:
+          - heading "AI CONSULTING" [level=2] [ref=e46]
+          - paragraph [ref=e47]: Transform Your Business with AI-Powered Digital Solutions
+          - paragraph [ref=e48]: Experience intelligent marketing and cutting-edge technology that delivers measurable results. At Mazinmind.Digital, we architect your success through innovative AI solutions that drive growth and engagement.
+          - list [ref=e49]:
+            - listitem [ref=e50]:
+              - generic [ref=e54]: Cut operational costs by 50% while doubling market impact
+            - listitem [ref=e55]:
+              - generic [ref=e59]: Deploy AI-powered SEO strategies that boost visibility
+            - listitem [ref=e60]:
+              - generic [ref=e64]: Implement data-driven marketing solutions for higher ROI
+            - listitem [ref=e65]:
+              - generic [ref=e69]: Create compelling content that converts
+            - listitem [ref=e70]:
+              - generic [ref=e74]: AI Business Creation Suite for rapid venture launch
+            - listitem [ref=e75]:
+              - generic [ref=e79]: AI-Powered Training Solutions for team transformation
+          - button "GET STARTED" [ref=e80] [cursor=pointer]
+        - generic [ref=e90]:
+          - heading "AI-DRIVEN MARKETING" [level=2] [ref=e91]
+          - paragraph [ref=e92]: Predictive Analytics & SEO Strategies for Maximum ROI
+          - paragraph [ref=e93]: Harness the power of AI to supercharge your marketing efforts. Our data-driven approach ensures every campaign delivers maximum impact and measurable results.
+          - list [ref=e94]:
+            - listitem [ref=e95]:
+              - generic [ref=e99]: Predictive analytics for smarter decision-making
+            - listitem [ref=e100]:
+              - generic [ref=e104]: AI-powered SEO optimization
+            - listitem [ref=e105]:
+              - generic [ref=e109]: Automated campaign management
+            - listitem [ref=e110]:
+              - generic [ref=e114]: Real-time performance tracking
+            - listitem [ref=e115]:
+              - generic [ref=e119]: Customer behavior analysis
+            - listitem [ref=e120]:
+              - generic [ref=e124]: Social media automation
+          - button "GET STARTED" [ref=e125] [cursor=pointer]
+        - generic [ref=e147]:
+          - heading "AGILE & DEVOPS" [level=2] [ref=e148]
+          - paragraph [ref=e149]: Enterprise Software Solutions & Cloud Optimization
+          - paragraph [ref=e150]: Streamline your operations with our enterprise-grade automation solutions. We specialize in AWS, cloud optimization, and agile methodologies that scale with your business.
+          - list [ref=e151]:
+            - listitem [ref=e152]:
+              - generic [ref=e156]: Workflow automation and optimization
+            - listitem [ref=e157]:
+              - generic [ref=e161]: CI/CD pipeline implementation
+            - listitem [ref=e162]:
+              - generic [ref=e166]: Infrastructure as code
+            - listitem [ref=e167]:
+              - generic [ref=e171]: Container orchestration with Kubernetes
+            - listitem [ref=e172]:
+              - generic [ref=e176]: AWS optimization and cost management
+            - listitem [ref=e177]:
+              - generic [ref=e181]: Security and compliance automation
+          - button "GET STARTED" [ref=e182] [cursor=pointer]
+        - generic [ref=e192]:
+          - heading "CUSTOM SOFTWARE" [level=2] [ref=e193]
+          - paragraph [ref=e194]: Mobile & Web Solutions Tailored to Your Needs
+          - paragraph [ref=e195]: Build powerful, scalable applications that drive your business forward. Our experienced team delivers custom solutions using cutting-edge technologies.
+          - list [ref=e196]:
+            - listitem [ref=e197]:
+              - generic [ref=e201]: Web application development (React, Next.js)
+            - listitem [ref=e202]:
+              - generic [ref=e206]: Mobile app development (iOS & Android)
+            - listitem [ref=e207]:
+              - generic [ref=e211]: API design and integration
+            - listitem [ref=e212]:
+              - generic [ref=e216]: Database architecture
+            - listitem [ref=e217]:
+              - generic [ref=e221]: Legacy system modernization
+            - listitem [ref=e222]:
+              - generic [ref=e226]: Cloud-native solutions (AWS, Azure, GCP)
+          - button "GET STARTED" [ref=e227] [cursor=pointer]
+        - generic [ref=e240]:
+          - heading "AI CONTENT CREATION" [level=2] [ref=e241]
+          - paragraph [ref=e242]: Bulk & Bespoke Content Generation at Scale
+          - paragraph [ref=e243]: Create compelling content at unprecedented speed without sacrificing quality. Our AI-powered content solutions drive engagement and conversions across all channels.
+          - list [ref=e244]:
+            - listitem [ref=e245]:
+              - generic [ref=e249]: Blog posts and articles
+            - listitem [ref=e250]:
+              - generic [ref=e254]: Social media content at scale
+            - listitem [ref=e255]:
+              - generic [ref=e259]: Marketing copy that converts
+            - listitem [ref=e260]:
+              - generic [ref=e264]: Product descriptions
+            - listitem [ref=e265]:
+              - generic [ref=e269]: Email sequences and automation
+            - listitem [ref=e270]:
+              - generic [ref=e274]: SEO-optimized content strategy
+          - button "GET STARTED" [ref=e275] [cursor=pointer]
+      - generic [ref=e281]:
+        - generic [ref=e282]:
+          - heading "HOW WE WORK" [level=2] [ref=e283]
+          - paragraph [ref=e284]: Our proven process ensures successful delivery of every project, from initial consultation to ongoing support.
+        - generic [ref=e285]:
+          - generic [ref=e288]:
+            - generic [ref=e296]: STEP 1
+            - heading "Discovery & Analysis" [level=3] [ref=e297]
+            - paragraph [ref=e298]: 30-minute initial consultation to understand your needs and develop a custom solution roadmap.
+          - generic [ref=e301]:
+            - generic [ref=e309]: STEP 2
+            - heading "Strategy Development" [level=3] [ref=e310]
+            - paragraph [ref=e311]: Comprehensive AI readiness assessment and transparent development process using Agile Scrum.
+          - generic [ref=e314]:
+            - generic [ref=e323]: STEP 3
+            - heading "Implementation" [level=3] [ref=e324]
+            - paragraph [ref=e325]: Rapid deployment with continuous iteration and optimization based on real-time feedback.
+          - generic [ref=e327]:
+            - generic [ref=e336]: STEP 4
+            - heading "Ongoing Support" [level=3] [ref=e337]
+            - paragraph [ref=e338]: Dedicated support and training to ensure your team maximizes the value of our solutions.
+      - generic [ref=e344]:
+        - heading "READY TO TRANSFORM YOUR BUSINESS?" [level=2] [ref=e345]
+        - paragraph [ref=e346]: Schedule a free 30-minute consultation to discuss your needs and discover how Mazinmind.Digital can help you achieve your goals.
+        - button "SCHEDULE NOW" [ref=e347] [cursor=pointer]
+    - contentinfo [ref=e349]:
+      - generic [ref=e352]:
+        - generic [ref=e353]:
+          - generic [ref=e354]:
+            - link [ref=e355] [cursor=pointer]:
+              - /url: /
+              - img "Mazinmind.Digital" [ref=e356]
+            - paragraph [ref=e357]: Transform your business with AI-powered solutions. We combine cutting-edge technology with human expertise to deliver exceptional results.
+            - generic [ref=e358]:
+              - link "LinkedIn" [ref=e359] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/mazinmind-digital
+              - link "X" [ref=e367] [cursor=pointer]:
+                - /url: https://x.com/MazinmindD
+              - link "Instagram" [ref=e374] [cursor=pointer]:
+                - /url: https://www.instagram.com/mazinmind.digital/
+              - link "GitHub" [ref=e381] [cursor=pointer]:
+                - /url: https://github.com/mazinmind-digital/mazinmind
+          - generic [ref=e388]:
+            - heading "COMPANY" [level=4] [ref=e389]
+            - list [ref=e390]:
+              - listitem [ref=e391]:
+                - link "About Us" [ref=e392] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e393]:
+                - link "AI Automation" [ref=e394] [cursor=pointer]:
+                  - /url: /ai-automation-contractors
+              - listitem [ref=e395]:
+                - link "Lead Follow-Up" [ref=e396] [cursor=pointer]:
+                  - /url: /lead-follow-up-automation
+              - listitem [ref=e397]:
+                - link "AI Receptionist" [ref=e398] [cursor=pointer]:
+                  - /url: /ai-receptionist
+              - listitem [ref=e399]:
+                - link "Contact" [ref=e400] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=e401]:
+                - link "FAQ" [ref=e402] [cursor=pointer]:
+                  - /url: /faq
+          - generic [ref=e403]:
+            - heading "SERVICES" [level=4] [ref=e404]
+            - list [ref=e405]:
+              - listitem [ref=e406]:
+                - link "AI Automation" [ref=e407] [cursor=pointer]:
+                  - /url: /services/ai-automation
+              - listitem [ref=e408]:
+                - link "AI Marketing" [ref=e409] [cursor=pointer]:
+                  - /url: /services/ai-marketing
+              - listitem [ref=e410]:
+                - link "DevOps & Cloud" [ref=e411] [cursor=pointer]:
+                  - /url: /services/devops-cloud
+              - listitem [ref=e412]:
+                - link "All Services" [ref=e413] [cursor=pointer]:
+                  - /url: /services
+          - generic [ref=e414]:
+            - heading "CONTACT" [level=4] [ref=e415]
+            - list [ref=e416]:
+              - listitem [ref=e417]:
+                - link "+1 (617) 453-8776" [ref=e418] [cursor=pointer]:
+                  - /url: tel:+16174538776
+              - listitem [ref=e425]:
+                - link "info@mazinmind.digital" [ref=e426] [cursor=pointer]:
+                  - /url: mailto:info@mazinmind.digital
+              - listitem [ref=e434]:
+                - generic [ref=e441]: Boston, MA, USA
+        - generic [ref=e442]:
+          - paragraph [ref=e443]: © 2026 Mazinmind.Digital. All rights reserved.
+          - generic [ref=e444]:
+            - link "Privacy Policy" [ref=e445] [cursor=pointer]:
+              - /url: /privacy
+            - link "Terms of Service" [ref=e446] [cursor=pointer]:
+              - /url: /terms
+  - generic [ref=e448]:
+    - generic [ref=e449]:
+      - heading "Cookie Preferences" [level=3] [ref=e450]
+      - paragraph [ref=e451]: We use essential cookies to run this site and optional cookies to improve analytics and marketing performance. You can accept all, decline optional cookies, or manage preferences.
+    - generic [ref=e452]:
+      - button "Accept All" [ref=e453] [cursor=pointer]
+      - button "Decline Optional" [ref=e454] [cursor=pointer]
+      - button "Manage Preferences" [ref=e455] [cursor=pointer]
+    - generic [ref=e456]:
+      - button "Privacy Policy" [ref=e457] [cursor=pointer]
+      - button "Terms of Service" [ref=e458] [cursor=pointer]
