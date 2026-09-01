@@ -18,6 +18,8 @@ const navigation = [
   { name: "AI AUTOMATION", href: "/ai-automation-contractors" },
   { name: "LEAD FOLLOW-UP", href: "/lead-follow-up-automation" },
   { name: "AI RECEPTIONIST", href: "/ai-receptionist" },
+  { name: "BOSTON AI RECEPTIONIST", href: "/ai-receptionist-boston" },
+  { name: "HOME SERVICES", href: "/home-services-automation" },
   { name: "SERVICES", href: "/services" },
   { name: "BLOG", href: "/blog" },
   { name: "CONTACT", href: "/contact" },

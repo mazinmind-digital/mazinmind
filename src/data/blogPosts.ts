@@ -1173,7 +1173,7 @@ export const blogPosts: BlogPost[] = [
       conclusion:
         "Stop letting unanswered calls become unknown lost opportunities. MazinMind Digital helps Greater Boston businesses identify where customer opportunities are being lost and where practical automation can improve the process. The Revenue Leak Audit examines your existing lead flow, customer communication, missed-call handling, follow-up process, and business systems. You'll get a clearer picture of where leads may be disappearing, which processes can realistically be automated, where AI can help, where humans should remain involved, and which improvements deserve attention first.",
     },
-    faqs: [
+    faq: [
       {
         question: "What is an AI receptionist for small business?",
         answer:
@@ -1338,7 +1338,7 @@ export const blogPosts: BlogPost[] = [
       conclusion:
         "AI cannot predict the next earthquake, but it can forecast seismic risk, warn communities in seconds, and assess damage to speed recovery. For businesses, communities, and infrastructure in seismic zones, this distinction matters. By integrating AI-driven forecasting and early warning into resilience plans, organizations can reduce losses and recover faster. As AI and seismic science evolve together, the gap between prediction and preparedness narrows. The question isn't whether AI can predict earthquakes—it's whether we'll have the wisdom to use the forecasting and warning capabilities AI provides today.",
     },
-    faqs: [
+    faq: [
       {
         question: "Can AI predict earthquakes?",
         answer:
