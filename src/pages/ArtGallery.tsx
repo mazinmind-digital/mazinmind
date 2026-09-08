@@ -392,7 +392,9 @@ const importedImages = import.meta.glob(
 const artworks: Artwork[] = Object.entries(importedImages)
   .sort(([leftPath], [rightPath]) => leftPath.localeCompare(rightPath))
   .map(([path, image], index) => {
-    const filename = path.split("/").at(-1) ?? `artwork-${index + 1}.png`;
+    const pathSegments = path.split("/");
+    const filename =
+      pathSegments[pathSegments.length - 1] ?? `artwork-${index + 1}.png`;
     const seeded = seedsByFilename[filename];
 
     if (seeded) {
