@@ -11,14 +11,12 @@ import aiBlizzardsGrantGraffiti from "@/assets/blog/ai-blizzards-grant-graffiti.
 import aiRoiOverheadGraffiti from "@/assets/blog/ai-roi-overhead-graffiti.jpg";
 import aiConsultingAdvantageGraffiti from "@/assets/blog/ai-consulting-advantage-graffiti.jpg";
 import aiVoiceSupportGraffiti from "@/assets/blog/ai-voice-support-graffiti.jpg";
-import aiAutomationMissedLeadsGraffiti from "@/assets/blog/ai-automation-missed-leads-graffiti-enhanced.svg";
-import aiAutomationMissedLeadsThumb from "@/assets/blog/ai-automation-missed-leads-thumb-v2.svg";
-import aiAutomationMissedLeadsOg from "@/assets/blog/ai-automation-missed-leads-og-v2.svg";
-import aiReceptionistBostonGraffiti from "@/assets/blog/ai-receptionist-boston-graffiti.svg";
-import aiDisasterPredictionRecoveryHero from "@/assets/blog/ai-disaster-prediction-recovery-hero.svg";
 import aiDisasterResponseWorkflow from "@/assets/blog/ai-disaster-response-workflow.svg";
 import earthquakeAiPredictionVsForecasting from "@/assets/blog/earthquake-ai-prediction-vs-forecasting.svg";
-import aiDisasterOgImage from "@/assets/blog/ai-disaster-og-image.svg";
+
+const aiAutomationMissedLeadsGraffiti = "/images/blog/lead-automation-graffiti.webp";
+const aiReceptionistBostonGraffiti = "/images/blog/boston-receptionist-graffiti.webp";
+const aiDisasterPredictionRecoveryHero = "/images/blog/earthquake-graffiti.webp";
 
 export type BlogPostSection = {
   heading: string;
@@ -326,8 +324,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-08-13",
     readingTimeMinutes: 8,
     image: aiAutomationMissedLeadsGraffiti,
-    thumbnail: aiAutomationMissedLeadsThumb,
-    ogImage: aiAutomationMissedLeadsOg,
+    thumbnail: aiAutomationMissedLeadsGraffiti,
+    ogImage: aiAutomationMissedLeadsGraffiti,
     content: {
       intro: [
         "How many customers is your business losing without knowing it? A visitor fills out a form, calls, or messages — and nobody responds quickly enough. That lead becomes someone else's customer. AI automation helps small businesses recover those missed opportunities by automating responses, follow-up, scheduling, and qualification.",
@@ -1237,7 +1235,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-09-15",
     readingTimeMinutes: 9,
     image: aiDisasterPredictionRecoveryHero,
-    ogImage: aiDisasterOgImage,
+    ogImage: aiDisasterPredictionRecoveryHero,
     content: {
       intro: [
         "Can artificial intelligence predict the next earthquake? The short answer: not yet. But AI is transforming how we forecast seismic risk, warn communities in seconds, and assess damage after the ground stops shaking. Understanding what AI can and cannot do in earthquake science is critical for anyone building or protecting infrastructure in seismic zones.",
