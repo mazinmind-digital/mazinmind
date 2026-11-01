@@ -35,9 +35,9 @@ test("homepage renders SEO metadata and current form provider without meeting sc
   const description = await page.locator('meta[name="description"]').getAttribute("content");
   expect(description).toBeTruthy();
   expect(description!.length).toBeLessThanOrEqual(160);
-  const serviceSchema = page.locator('script[type="application/ld+json"]');
+  const serviceSchema = page.locator('script[type="application/ld+json"]').filter({ hasText: "ProfessionalService" });
   await expect(serviceSchema).toHaveCount(1);
-  await expect(serviceSchema).toContainText("ProfessionalService");
+  await expect(serviceSchema).toContainText("AI consulting and implementation");
 
   const hubSpotScript = page.locator("script#hs-script-loader");
   await expect(hubSpotScript).toHaveCount(1);
