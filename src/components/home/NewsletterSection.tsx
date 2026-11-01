@@ -145,7 +145,7 @@ export function NewsletterSection() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4" noValidate>
                   <div>
-                    <Label htmlFor="audit-name" className="mb-2 inline-block">
+                    <Label htmlFor="audit-name" className="mb-2 inline-block font-body text-sm font-semibold text-foreground">
                       Name
                     </Label>
                     <Input
@@ -161,7 +161,7 @@ export function NewsletterSection() {
                   </div>
 
                   <div>
-                    <Label htmlFor="audit-email" className="mb-2 inline-block">
+                    <Label htmlFor="audit-email" className="mb-2 inline-block font-body text-sm font-semibold text-foreground">
                       Email
                     </Label>
                     <Input
@@ -178,7 +178,7 @@ export function NewsletterSection() {
                   </div>
 
                   <div>
-                    <Label htmlFor="audit-company" className="mb-2 inline-block">
+                    <Label htmlFor="audit-company" className="mb-2 inline-block font-body text-sm font-semibold text-foreground">
                       Company
                     </Label>
                     <Input
@@ -193,7 +193,7 @@ export function NewsletterSection() {
                   </div>
 
                   <div>
-                    <Label htmlFor="audit-bottleneck" className="mb-2 inline-block">
+                    <Label htmlFor="audit-bottleneck" className="mb-2 inline-block font-body text-sm font-semibold text-foreground">
                       Biggest bottleneck
                     </Label>
                     <Textarea
