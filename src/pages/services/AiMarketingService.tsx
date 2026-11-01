@@ -21,6 +21,16 @@ export default function AiMarketingService() {
           content="AI marketing automation for SMBs: SEO, content, ads, and social systems designed to generate qualified leads and improve marketing ROI."
         />
         <link rel="canonical" href="https://mazinmind.digital/services/ai-marketing" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="AI Marketing Automation Services | MazinMind Digital" />
+        <meta property="og:description" content="AI marketing automation for SMBs: SEO, content, ads, and social systems designed to generate qualified leads and improve marketing ROI." />
+        <meta property="og:url" content="https://mazinmind.digital/services/ai-marketing" />
+        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Marketing Automation Services | MazinMind Digital" />
+        <meta name="twitter:description" content="AI marketing automation for SMBs: SEO, content, ads, and social systems designed to generate qualified leads and improve marketing ROI." />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
       </Helmet>
 
       <section className="relative overflow-hidden py-24">
