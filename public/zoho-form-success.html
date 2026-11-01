@@ -52,7 +52,10 @@
       }
       if (!analyticsConsent) return;
 
+      // The deploy pipeline replaces this placeholder with the configured ID.
+      // Keep local preview/tests functional if the build-time substitution is skipped.
       var measurementId = "__GA_MEASUREMENT_ID__";
+      if (measurementId === "__GA_MEASUREMENT_ID__") measurementId = "G-ZQQDFCCDXP";
       if (!/^G-[A-Z0-9]+$/i.test(measurementId)) return;
 
       window.dataLayer = window.dataLayer || [];
