@@ -602,17 +602,10 @@ export default function Contact() {
                         )}
                       </Button>
 
-                      <Button
-                        type="button"
-                        onClick={openScheduleModal}
-                        className="w-full bg-gradient-accent hover:opacity-90 text-accent-foreground font-bold h-14 tracking-wider glow-accent"
-                      >
-                        SCHEDULE A CALL
-                      </Button>
                     </div>
 
                     <p className="text-xs text-muted-foreground text-center">
-                      Form data is logged to HubSpot and routed to rmazin@mazinmind.digital.
+                      Form submissions are sent to HubSpot, our current form provider. Please do not include passwords or sensitive personal information.
                     </p>
                   </form>
                 </>
