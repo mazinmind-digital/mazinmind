@@ -10,11 +10,11 @@ import { homeFaqs } from "@/data/homeFaqs";
 import { Helmet } from "react-helmet-async";
 
 const homepageTitle =
-  "Stop Losing Customers When You Miss the Phone | MazinMind Digital";
+  "AI Automation & Consulting in Boston | MazinMind Digital";
 const homepageDescription =
-  "MazinMind builds AI receptionist and speed-to-lead systems for Greater Boston service businesses. Capture missed opportunities, respond to leads faster, and keep your team focused on what requires a human.";
+  "Boston AI consulting for small businesses: lead capture, CRM automation, AI reception, workflow integration, and cloud engineering. Practical systems with clear scope and pricing.";
 const canonicalUrl = "https://mazinmind.digital";
-const ogImage = "https://mazinmind.digital/apple-touch-icon.png";
+const ogImage = "https://mazinmind.digital/images/blog/lead-automation-graffiti.webp";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -104,7 +104,7 @@ const Index = () => {
         <meta name="description" content={homepageDescription} />
         <meta
           name="keywords"
-          content="missed call recovery, AI receptionist, Greater Boston, stop losing calls, lead response automation, service business, HVAC, plumbing, contractors, AI automation"
+          content="AI consulting Boston, AI automation for small business, CRM automation, lead nurturing, AI receptionist, workflow automation, cloud engineering, DevOps consulting"
         />
         <meta name="robots" content="index, follow" />
 
