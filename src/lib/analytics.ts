@@ -16,7 +16,7 @@ type Gtag = (command: GtagCommand, target: string | Date, parameters?: Record<st
 
 declare global {
   interface Window {
-    dataLayer?: IArguments[] | Array<Record<string, unknown>>;
+    dataLayer?: Array<IArguments | Record<string, unknown>>;
     gtag?: Gtag;
     __mazinmindAnalyticsInitialized?: boolean;
     __mazinmindGaMeasurementId?: string;
