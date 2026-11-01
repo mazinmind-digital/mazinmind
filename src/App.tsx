@@ -15,7 +15,7 @@ import ArtGallery from "./pages/ArtGallery";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
-import { HubSpotSpaTracking } from "./components/analytics/HubSpotSpaTracking";
+import { GoogleAnalyticsSpaTracking } from "./components/analytics/GoogleAnalyticsSpaTracking";
 import AiAutomationService from "./pages/services/AiAutomationService";
 import AiMarketingService from "./pages/services/AiMarketingService";
 import DevOpsCloudService from "./pages/services/DevOpsCloudService";
@@ -39,7 +39,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <HubSpotSpaTracking />
+          <GoogleAnalyticsSpaTracking />
           <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
