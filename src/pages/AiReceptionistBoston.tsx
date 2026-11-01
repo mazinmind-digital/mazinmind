@@ -36,6 +36,11 @@ export default function AiReceptionistBoston() {
         <meta property="og:title" content="AI Receptionist Boston | Missed-Call Recovery for Service Businesses" />
         <meta property="og:description" content="Answer after-hours calls, qualify opportunities, and keep humans in control with a monitored AI receptionist built for Boston service businesses." />
         <meta property="og:url" content="https://mazinmind.digital/ai-receptionist-boston" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Receptionist Boston | Missed-Call Recovery for Service Businesses" />
+        <meta name="twitter:description" content="Answer after-hours inquiries, qualify opportunities, and keep humans in control with a monitored AI receptionist for Boston service businesses." />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
       </Helmet>
 
       <div className="mx-auto max-w-6xl px-4 py-20">
