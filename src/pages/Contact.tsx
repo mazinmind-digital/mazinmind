@@ -1,161 +1,9 @@
-import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { Button } from "@/components/ui/button";
 import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import { Helmet } from "react-helmet-async";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Clock,
-  Send,
-  Loader2,
-  CheckCircle,
-  Sparkles,
-} from "lucide-react";
-import { toast } from "sonner";
-import { z } from "zod";
+import { Mail, Phone, MapPin, Clock, Sparkles } from "lucide-react";
 import heroGraffiti from "@/assets/hero-graffiti.jpg";
-
-const contactSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(1, "Name is required")
-    .max(100, "Name must be less than 100 characters"),
-  email: z
-    .string()
-    .trim()
-    .email("Invalid email address")
-    .max(255, "Email must be less than 255 characters"),
-  company: z
-    .string()
-    .trim()
-    .max(100, "Company name must be less than 100 characters")
-    .optional(),
-  phone: z
-    .string()
-    .trim()
-    .max(20, "Phone number must be less than 20 characters")
-    .optional(),
-  message: z
-    .string()
-    .trim()
-    .min(1, "Message is required")
-    .max(2000, "Message must be less than 2000 characters"),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
-
-const HUBSPOT_PORTAL_ID = "243856745";
-const HUBSPOT_CONTACT_FORM_ID =
-  import.meta.env.VITE_HUBSPOT_CONTACT_FORM_ID ??
-  "8d1ae045-5353-4e44-97e8-17b3c597d5e1";
-const CONTACT_INBOX_EMAIL = "rmazin@mazinmind.digital";
-
-function splitName(name: string) {
-  const normalized = name.trim().replace(/\s+/g, " ");
-  if (!normalized) {
-    return { firstName: "", lastName: "" };
-  }
-
-  const [firstName, ...rest] = normalized.split(" ");
-  return {
-    firstName,
-    lastName: rest.join(" "),
-  };
-}
-
-function buildMailtoLink(formData: ContactFormData): string {
-  const subject = encodeURIComponent(
-    `Contact form submission from ${formData.name || "Website"}`,
-  );
-  const bodyLines = [
-    `Name: ${formData.name}`,
-    `Email: ${formData.email}`,
-    `Company: ${formData.company || ""}`,
-    `Phone: ${formData.phone || ""}`,
-    "",
-    "Message:",
-    formData.message,
-  ];
-  const body = encodeURIComponent(bodyLines.join("\n"));
-  return `mailto:${CONTACT_INBOX_EMAIL}?subject=${subject}&body=${body}`;
-}
-
-async function submitContactToHubSpot(formData: ContactFormData): Promise<void> {
-  const { firstName, lastName } = splitName(formData.name);
-
-  if (!HUBSPOT_CONTACT_FORM_ID) {
-    const hubspotQueue = (window as { _hsq?: unknown[] })._hsq;
-    if (Array.isArray(hubspotQueue)) {
-      hubspotQueue.push([
-        "identify",
-        {
-          email: formData.email,
-          firstname: firstName,
-          lastname: lastName,
-          company: formData.company || "",
-          phone: formData.phone || "",
-        },
-      ]);
-      hubspotQueue.push([
-        "trackEvent",
-        {
-          id: "contact_form_submission",
-          message: formData.message,
-          recipient_email: CONTACT_INBOX_EMAIL,
-        },
-      ]);
-      hubspotQueue.push(["trackPageView"]);
-      return;
-    }
-
-    throw new Error("Missing VITE_HUBSPOT_CONTACT_FORM_ID and HubSpot queue unavailable");
-  }
-
-  const context: Record<string, string> = {
-    pageUri: window.location.href,
-    pageName: document.title,
-  };
-
-  const hutkMatch = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
-  if (hutkMatch?.[1]) {
-    context.hutk = decodeURIComponent(hutkMatch[1]);
-  }
-
-  const payload = {
-    fields: [
-      { name: "firstname", value: firstName },
-      { name: "lastname", value: lastName },
-      { name: "email", value: formData.email },
-      { name: "company", value: formData.company || "" },
-      { name: "phone", value: formData.phone || "" },
-      { name: "message", value: formData.message },
-    ],
-    context,
-  };
-
-  const response = await fetch(
-    `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_CONTACT_FORM_ID}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    },
-  );
-
-  if (!response.ok) {
-    const errorBody = await response.text();
-    throw new Error(errorBody || `HubSpot request failed with status ${response.status}`);
-  }
-}
 
 const contactInfo = [
   {
@@ -211,405 +59,82 @@ const colorMap = {
   },
 };
 
+
 export default function Contact() {
   const location = useLocation();
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: "",
-    email: "",
-    company: "",
-    phone: "",
-    message: "",
-  });
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [errors, setErrors] = useState<
-    Partial<Record<keyof ContactFormData, string>>
-  >({});
-
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const interest = params.get("interest");
-
-    if (!interest) {
-      return;
-    }
-
-    const normalizedInterest = interest.replace(/[-_]+/g, " ").trim();
-
-    setFormData((prev) => {
-      if (prev.message.trim().length > 0) {
-        return prev;
-      }
-
-      return {
-        ...prev,
-        message: `Hi MazinMind team,\n\nI am interested in ${normalizedInterest}. Please share the next steps and recommended approach.\n`,
-      };
-    });
-  }, [location.search]);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    if (errors[name as keyof ContactFormData]) {
-      setErrors((prev) => ({ ...prev, [name]: undefined }));
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setErrors({});
-
-    const result = contactSchema.safeParse(formData);
-
-    if (!result.success) {
-      const fieldErrors: Partial<Record<keyof ContactFormData, string>> = {};
-      result.error.issues.forEach((error) => {
-        const field = error.path[0] as keyof ContactFormData;
-        fieldErrors[field] = error.message;
-      });
-      setErrors(fieldErrors);
-      toast.error("Please fix the errors in the form");
-      return;
-    }
-
-    setIsLoading(true);
-
-    try {
-      await submitContactToHubSpot(result.data);
-      window.location.href = buildMailtoLink(result.data);
-      setIsSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        phone: "",
-        message: "",
-      });
-      toast.success(
-        "Submitted to HubSpot and opened an email draft to rmazin@mazinmind.digital.",
-      );
-    } catch (error) {
-      console.error("Contact submission error:", error);
-      window.location.href = buildMailtoLink(result.data);
-      toast.error(
-        "Could not log to HubSpot. Opened an email draft to rmazin@mazinmind.digital as fallback.",
-      );
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const interest = new URLSearchParams(location.search).get("interest");
+  const formUrl = interest
+    ? `/zoho-contact-form.html?interest=${encodeURIComponent(interest)}`
+    : "/zoho-contact-form.html";
 
   return (
     <Layout>
       <Helmet>
-        <title>Contact Mazinmind.Digital | AI Consulting & Support</title>
-        <meta
-          name="description"
-          content="Contact Mazinmind.Digital for expert AI consulting, digital transformation, and support. Get in touch for a free consultation or to learn more about our services."
-        />
-        <meta
-          name="keywords"
-          content="Contact Mazinmind.Digital, AI consulting, support, digital transformation, free consultation"
-        />
-        <meta
-          property="og:title"
-          content="Contact Mazinmind.Digital | AI Consulting & Support"
-        />
-        <meta
-          property="og:description"
-          content="Contact Mazinmind.Digital for expert AI consulting, digital transformation, and support."
-        />
+        <title>Contact MazinMind Digital | AI Consulting & Support</title>
+        <meta name="description" content="Contact MazinMind Digital for AI consulting, automation, CRM integration, and cloud engineering. Tell us about your project and receive a practical next-step recommendation." />
+        <meta property="og:title" content="Contact MazinMind Digital | AI Consulting & Support" />
+        <meta property="og:description" content="Contact MazinMind Digital for AI consulting, automation, CRM integration, and cloud engineering." />
         <meta property="og:url" content="https://mazinmind.digital/contact" />
-        <meta property="og:site_name" content="Mazinmind.Digital" />
-        <meta
-          name="twitter:title"
-          content="Contact Mazinmind.Digital | AI Consulting & Support"
-        />
-        <meta
-          name="twitter:description"
-          content="Contact Mazinmind.Digital for expert AI consulting, digital transformation, and support."
-        />
+        <meta property="og:site_name" content="MazinMind Digital" />
         <link rel="canonical" href="https://mazinmind.digital/contact" />
       </Helmet>
-      {/* Hero Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute inset-0 grid-pattern opacity-20" />
-
-        {/* Graffiti Background */}
-        <div
-          className="absolute right-0 top-0 w-1/2 h-full opacity-30"
-          style={{
-            backgroundImage: `url(${heroGraffiti})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            mixBlendMode: "screen",
-          }}
-        />
-
+        <div className="absolute right-0 top-0 w-1/2 h-full opacity-30" style={{ backgroundImage: `url(${heroGraffiti})`, backgroundSize: "cover", backgroundPosition: "center", mixBlendMode: "screen" }} />
         <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[150px] -translate-y-1/2" />
         <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-accent/15 rounded-full blur-[100px]" />
-
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-vibrant text-sm font-medium mb-8">
               <Sparkles className="w-5 h-5 text-primary animate-neon-flicker" />
-              <span className="text-gradient-primary tracking-wide">
-                FREE CONSULTATION
-              </span>
+              <span className="text-gradient-primary tracking-wide">LET'S TALK ABOUT YOUR PROJECT</span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 tracking-wider">
-              <span className="text-gradient-primary text-shadow-neon">
-                CONTACT
-              </span>{" "}
-              US
+              <span className="text-gradient-primary text-shadow-neon">CONTACT</span> US
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to transform your business with AI? Get in touch with us
-              today for a free consultation.
+              Tell us what you want to improve with AI, automation, or cloud engineering. We’ll follow up by email.
             </p>
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
-            {/* Contact Info */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 tracking-wider">
-                GET IN <span className="text-gradient-accent">TOUCH</span>
-              </h2>
-              <p className="text-lg text-muted-foreground mb-10">
-                Have a question or ready to start your AI journey? We'd love to
-                hear from you. Reach out using any of the methods below or fill
-                out the contact form.
-              </p>
-
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 tracking-wider">GET IN <span className="text-gradient-accent">TOUCH</span></h2>
+              <p className="text-lg text-muted-foreground mb-10">Have a question or ready to start your AI journey? Reach out using any of the methods below or send a project inquiry through our secure CRM form.</p>
               <div className="space-y-6 mb-12">
                 {contactInfo.map((item) => {
                   const colors = colorMap[item.color as keyof typeof colorMap];
                   return (
-                    <div
-                      key={item.title}
-                      className={`flex items-start gap-4 glass-vibrant rounded-xl p-6 border ${colors.border} ${colors.glow} transition-all`}
-                    >
-                      <GraffitiIcon
-                        icon={item.icon}
-                        size="md"
-                        tone={
-                          item.color as
-                            | "primary"
-                            | "accent"
-                            | "electric"
-                            | "warning"
-                        }
-                        className="flex-shrink-0"
-                      />
+                    <div key={item.title} className={`flex items-start gap-4 glass-vibrant rounded-xl p-6 border ${colors.border} ${colors.glow} transition-all`}>
+                      <GraffitiIcon icon={item.icon} size="md" tone={item.color as "primary" | "accent" | "electric" | "warning"} className="flex-shrink-0" />
                       <div>
-                        <h4
-                          className={`font-display font-bold ${colors.text} mb-1 tracking-wider`}
-                        >
-                          {item.title}
-                        </h4>
-                        {item.href ? (
-                          <a
-                            href={item.href}
-                            className="text-muted-foreground hover:text-foreground transition-colors text-lg"
-                          >
-                            {item.value}
-                          </a>
-                        ) : (
-                          <p className="text-muted-foreground text-lg">
-                            {item.value}
-                          </p>
-                        )}
+                        <h4 className={`font-display font-bold ${colors.text} mb-1 tracking-wider`}>{item.title}</h4>
+                        {item.href ? <a href={item.href} className="text-muted-foreground hover:text-foreground transition-colors text-lg">{item.value}</a> : <p className="text-muted-foreground text-lg">{item.value}</p>}
                       </div>
                     </div>
                   );
                 })}
               </div>
-
               <div className="rounded-2xl border border-accent/30 p-6 glass-vibrant">
                 <h3 className="mb-2 text-xl font-display font-bold">Prefer email?</h3>
-                <p className="text-muted-foreground">Send your project details through the form and we will follow up by email. Meeting scheduling is temporarily unavailable.</p>
+                <p className="text-muted-foreground">You can also email rmazin@mazinmind.digital. Meeting scheduling is temporarily unavailable.</p>
               </div>
-              </div>
-
-            {/* Contact Form */}
-            <div className="glass-vibrant rounded-3xl p-10 lg:p-12 shadow-elevated border border-primary/30">
-              {isSubmitted ? (
-                <div className="text-center py-12">
-                  <GraffitiIcon
-                    icon={CheckCircle}
-                    tone="primary"
-                    size="hero"
-                    className="mx-auto mb-8 animate-pulse-glow"
-                  />
-                  <h3 className="text-3xl font-display font-bold mb-4 tracking-wider">
-                    MESSAGE SENT!
-                  </h3>
-                  <p className="text-muted-foreground mb-10 text-lg">
-                    Thank you for reaching out. We'll get back to you within 24
-                    hours.
-                  </p>
-                  <Button
-                    onClick={() => {
-                      setIsSubmitted(false);
-                      setFormData({
-                        name: "",
-                        email: "",
-                        company: "",
-                        phone: "",
-                        message: "",
-                      });
-                    }}
-                    variant="outline"
-                    className="border-2 border-primary text-primary hover:bg-primary/10 font-bold tracking-wider"
-                  >
-                    SEND ANOTHER MESSAGE
-                  </Button>
-                </div>
-              ) : (
-                <>
-                  <h2 className="text-2xl font-display font-bold mb-8 tracking-wider">
-                    SEND US A{" "}
-                    <span className="text-gradient-primary">MESSAGE</span>
-                  </h2>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label
-                          htmlFor="name"
-                          className="font-semibold tracking-wide"
-                        >
-                          NAME *
-                        </Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Your name"
-                          className={`h-14 bg-secondary/50 border-border focus:border-primary focus:glow-primary ${errors.name ? "border-destructive" : ""}`}
-                        />
-                        {errors.name && (
-                          <p className="text-sm text-destructive">
-                            {errors.name}
-                          </p>
-                        )}
-                      </div>
-                      <div className="space-y-2">
-                        <Label
-                          htmlFor="email"
-                          className="font-semibold tracking-wide"
-                        >
-                          EMAIL *
-                        </Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="your@email.com"
-                          className={`h-14 bg-secondary/50 border-border focus:border-primary ${errors.email ? "border-destructive" : ""}`}
-                        />
-                        {errors.email && (
-                          <p className="text-sm text-destructive">
-                            {errors.email}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label
-                          htmlFor="company"
-                          className="font-semibold tracking-wide"
-                        >
-                          COMPANY
-                        </Label>
-                        <Input
-                          id="company"
-                          name="company"
-                          value={formData.company}
-                          onChange={handleChange}
-                          placeholder="Your company"
-                          className="h-14 bg-secondary/50 border-border focus:border-primary"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label
-                          htmlFor="phone"
-                          className="font-semibold tracking-wide"
-                        >
-                          PHONE
-                        </Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          placeholder="Your phone number"
-                          className="h-14 bg-secondary/50 border-border focus:border-primary"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="message"
-                        className="font-semibold tracking-wide"
-                      >
-                        MESSAGE *
-                      </Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Tell us about your project or how we can help..."
-                        rows={5}
-                        className={`bg-secondary/50 border-border resize-none focus:border-primary ${errors.message ? "border-destructive" : ""}`}
-                      />
-                      {errors.message && (
-                        <p className="text-sm text-destructive">
-                          {errors.message}
-                        </p>
-                      )}
-                    </div>
-
-                    <div className="space-y-3">
-                      <Button
-                        type="submit"
-                        disabled={isLoading}
-                        className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold h-14 tracking-wider glow-primary"
-                      >
-                        {isLoading ? (
-                          <Loader2 className="w-5 h-5 animate-spin" />
-                        ) : (
-                          <>
-                            <Send className="w-5 h-5 mr-2" />
-                            SEND MESSAGE
-                          </>
-                        )}
-                      </Button>
-
-                    </div>
-
-                    <p className="text-xs text-muted-foreground text-center">
-                      Form submissions are sent to HubSpot, our current form provider. Please do not include passwords or sensitive personal information.
-                    </p>
-                  </form>
-                </>
-              )}
+            </div>
+            <div className="glass-vibrant rounded-3xl p-6 md:p-8 shadow-elevated border border-primary/30">
+              <h2 className="text-2xl font-display font-bold mb-4 tracking-wider">SEND US A <span className="text-gradient-primary">MESSAGE</span></h2>
+              <p className="text-sm text-muted-foreground mb-5">Your inquiry is submitted directly to MazinMind Digital’s Zoho CRM lead form. Please do not include passwords or sensitive personal information.</p>
+              <iframe
+                title="MazinMind Digital contact form"
+                src={formUrl}
+                className="w-full border-0 min-h-[760px] bg-transparent"
+                loading="eager"
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+              <noscript><a href="/zoho-contact-form.html">Open the contact form</a></noscript>
             </div>
           </div>
         </div>
