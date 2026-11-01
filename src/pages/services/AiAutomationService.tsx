@@ -345,7 +345,7 @@ export default function AiAutomationService() {
     } catch (error) {
       console.error("AI automation audit submission failed", error);
       window.location.href = mailtoLink;
-      toast.error("Could not submit to HubSpot. Opened your email client as fallback.");
+      toast.error("Could not confirm Zoho submission. Opened your email client as fallback.");
     } finally {
       setIsLoading(false);
     }
