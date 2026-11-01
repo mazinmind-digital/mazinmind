@@ -31,6 +31,9 @@ const queryClient = new QueryClient();
 const App = () => {
   useEffect(() => {
     initializeAnalytics();
+    const handleCookiePreferencesChange = () => initializeAnalytics();
+    window.addEventListener("mazinmind:cookie-preferences-changed", handleCookiePreferencesChange);
+    return () => window.removeEventListener("mazinmind:cookie-preferences-changed", handleCookiePreferencesChange);
   }, []);
 
   return (
