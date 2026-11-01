@@ -73,6 +73,7 @@ export function submitZohoLead(lead: ZohoLeadInput): Promise<void> {
       reject(new Error("Zoho did not confirm the submission before the timeout."));
     }, 20000);
 
+    let submitted = false;
     iframe.onload = () => {
       try {
         const currentUrl = iframe.contentWindow?.location.href;
@@ -81,18 +82,20 @@ export function submitZohoLead(lead: ZohoLeadInput): Promise<void> {
           settled = true;
           cleanup();
           resolve();
+          return;
         }
       } catch {
         // Expected while the iframe is on Zoho's cross-origin response page.
       }
+
+      if (!submitted && !settled) {
+        submitted = true;
+        form.submit();
+      }
     };
 
+    // The iframe's initial about:blank load starts the POST; Zoho then redirects
+    // it to the same-origin success page only after accepting the lead.
     document.body.append(iframe, form);
-    // Let the initial about:blank frame load before submitting the form.
-    iframe.src = "about:blank";
-    iframe.addEventListener("load", () => {
-      if (settled) return;
-      form.submit();
-    }, { once: true });
   });
 }
