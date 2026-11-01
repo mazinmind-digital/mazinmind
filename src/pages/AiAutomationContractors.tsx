@@ -25,6 +25,16 @@ export default function AiAutomationContractors() {
           content="AI automation for contractors, contractor lead automation, field service automation, AI receptionist for contractors, quote follow-up automation"
         />
         <link rel="canonical" href="https://mazinmind.digital/ai-automation-contractors" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="AI Automation for Contractors | MazinMind Digital" />
+        <meta property="og:description" content="AI automation for contractors: improve lead intake, qualify inquiries, and streamline follow-up and scheduling handoffs." />
+        <meta property="og:url" content="https://mazinmind.digital/ai-automation-contractors" />
+        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Automation for Contractors | MazinMind Digital" />
+        <meta name="twitter:description" content="AI automation for contractors: improve lead intake, qualify inquiries, and streamline follow-up and scheduling handoffs." />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
       </Helmet>
 
       <div className="mx-auto max-w-6xl px-4 py-20">
