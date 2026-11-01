@@ -43,9 +43,9 @@ jobs:
         env:
           VITE_GA_MEASUREMENT_ID: ${{ vars.VITE_GA_MEASUREMENT_ID || 'G-ZQQDFCCDXP' }}
         run: |
-          test -f dist/zoho-form-success.html
+          test -f dist/zoho-form-success.js
           node -e 'if (!/^G-[A-Z0-9]+$/i.test(process.env.VITE_GA_MEASUREMENT_ID || "")) process.exit(1)'
-          sed -i "s|__GA_MEASUREMENT_ID__|${VITE_GA_MEASUREMENT_ID}|g" dist/zoho-form-success.html
+          sed -i "s|__GA_MEASUREMENT_ID__|${VITE_GA_MEASUREMENT_ID}|g" dist/zoho-form-success.js
 
       - name: Install Playwright browser
         run: npx playwright install --with-deps chromium
