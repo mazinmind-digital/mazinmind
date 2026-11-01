@@ -14,7 +14,7 @@ const contentSecurityPolicy = [
   "font-src 'self' data: https://fonts.gstatic.com",
   "connect-src 'self' ws: wss: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com",
   "frame-src 'self'",
-  "form-action 'self' mailto: https://*.hubspot.com https://*.hubspot.net",
+  "form-action 'self' mailto: https://crm.zoho.com",
 ].join("; ");
 
 // https://vitejs.dev/config/
