@@ -49,7 +49,6 @@ export default function HeroBanner() {
             See How It Works
           </a>
           <ScheduleButton
-            provider="hubspot"
             analyticsEvent="audit_cta_click"
             className="inline-flex h-14 items-center justify-center rounded-full border-2 border-primary/70 bg-black/30 px-8 text-base font-bold tracking-wide text-primary hover:bg-primary/10"
             aria-label="Get a Revenue Leak Audit"
