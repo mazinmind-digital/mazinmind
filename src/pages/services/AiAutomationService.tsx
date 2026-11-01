@@ -15,6 +15,7 @@ import {
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { submitZohoLead } from "@/lib/zohoForms";
+import { trackEvent } from "@/lib/analytics";
 
 const canonicalUrl = "https://mazinmind.digital/services/ai-automation";
 const ogImage = "https://mazinmind.digital/apple-touch-icon.png";
@@ -339,6 +340,7 @@ export default function AiAutomationService() {
 
     try {
       await submitAuditRequest(formData);
+      trackEvent("generate_lead", { form_name: "free_ai_automation_audit", form_provider: "zoho" });
       setIsSubmitted(true);
       setFormData({ name: "", email: "", company: "", bottleneck: "" });
       toast.success("Audit request submitted.");
