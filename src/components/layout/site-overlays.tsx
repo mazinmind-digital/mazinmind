@@ -46,14 +46,14 @@ const privacySections: PolicySection[] = [
     points: [
       "We may collect information you provide directly, such as your name, email, phone number, company name, and project details when you submit forms, request consultations, or contact us.",
       "We may collect technical information automatically, including browser type, device type, pages viewed, approximate location from IP address, and interaction data.",
-      "If you schedule meetings through HubSpot, information submitted through the scheduling experience is also processed by HubSpot under its applicable policies.",
+      "Website form submissions are processed by the service providers currently configured to receive those submissions.",
     ],
   },
   {
     heading: "2. How We Use Information",
     points: [
       "To provide, maintain, and improve our services and website experience.",
-      "To respond to inquiries, schedule consultations, and communicate about requested services.",
+      "To respond to inquiries and communicate about requested services.",
       "To monitor website performance, security, and reliability.",
       "To send service-related or marketing communications where permitted by law, and only where you have not opted out.",
     ],
@@ -70,7 +70,7 @@ const privacySections: PolicySection[] = [
     heading: "4. Sharing of Information",
     points: [
       "We do not sell your personal information.",
-      "We may share limited information with service providers that help us operate the website and business functions, such as hosting, analytics, scheduling, or communication tools.",
+      "We may share limited information with service providers that help us operate the website and business functions, such as hosting, analytics, CRM, or communication tools.",
       "We may disclose information when required by law, legal process, or to protect rights, safety, and security.",
     ],
   },
