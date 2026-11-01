@@ -34,6 +34,11 @@ export default function HomeServicesAutomation() {
         <meta property="og:title" content="Home Services Automation | AI Receptionist & Lead Capture for Contractors" />
         <meta property="og:description" content="Capture missed calls, book more jobs, and keep your home services team focused on the work that needs humans." />
         <meta property="og:url" content="https://mazinmind.digital/home-services-automation" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Home Services Automation | AI Receptionist & Lead Capture for Contractors" />
+        <meta name="twitter:description" content="Capture missed calls, book more jobs, and keep your home services team focused on the work that needs humans." />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
       </Helmet>
 
       <div className="mx-auto max-w-6xl px-4 py-20">
