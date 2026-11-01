@@ -14,15 +14,13 @@ import {
 } from "@/components/ui/accordion";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { submitZohoLead } from "@/lib/zohoForms";
 
 const canonicalUrl = "https://mazinmind.digital/services/ai-automation";
 const ogImage = "https://mazinmind.digital/apple-touch-icon.png";
 const AI_AUTOMATION_AUDIT_MESSAGE_PREFIX =
   "Free AI Automation Audit request. Biggest bottleneck: ";
 
-// HubSpot embed config (kept in sync with the provided embed snippet).
-const HUBSPOT_PORTAL_ID = "243856745";
-const HUBSPOT_AUDIT_FORM_ID = "8d1ae045-5353-4e44-97e8-17b3c597d5e1";
 const CONTACT_INBOX_EMAIL = "rmazin@mazinmind.digital";
 
 type AuditFormData = {
@@ -256,19 +254,6 @@ const faqs = [
   },
 ];
 
-function splitName(name: string) {
-  const normalized = name.trim().replace(/\s+/g, " ");
-  if (!normalized) {
-    return { firstName: "", lastName: "" };
-  }
-
-  const [firstName, ...rest] = normalized.split(" ");
-  return {
-    firstName,
-    lastName: rest.join(" "),
-  };
-}
-
 function buildMailtoLink(data: AuditFormData) {
   const subject = encodeURIComponent(
     `AI Automation assessment request from ${data.name || "Website"}`,
@@ -288,46 +273,15 @@ function buildMailtoLink(data: AuditFormData) {
 }
 
 async function submitAuditRequest(data: AuditFormData) {
-  const { firstName, lastName } = splitName(data.name);
-
-  const context: Record<string, string> = {
-    pageUri: window.location.href,
-    pageName: document.title,
-  };
-
-  const hutkMatch = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
-  if (hutkMatch?.[1]) {
-    context.hutk = decodeURIComponent(hutkMatch[1]);
-  }
-
-  const payload = {
-    fields: [
-      { name: "0-2/name", value: data.name },
-      { name: "firstname", value: firstName },
-      { name: "lastname", value: lastName },
-      { name: "email", value: data.email },
-      { name: "company", value: data.company },
-      {
-        name: "message",
-        value: AI_AUTOMATION_AUDIT_MESSAGE_PREFIX + data.bottleneck,
-      },
-    ],
-    context,
-  };
-
-  const response = await fetch(
-    `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_AUDIT_FORM_ID}`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    },
-  );
-
-  if (!response.ok) {
-    const errorBody = await response.text();
-    throw new Error(errorBody || `HubSpot request failed: ${response.status}`);
-  }
+  const normalizedName = data.name.trim().replace(/\s+/g, " ");
+  const [firstName, ...lastNameParts] = normalizedName.split(" ");
+  await submitZohoLead({
+    firstName: firstName || "",
+    lastName: lastNameParts.join(" ") || firstName || "Website Lead",
+    email: data.email.trim(),
+    company: data.company.trim() || "Not provided",
+    description: "Free AI Automation Audit request. Biggest bottleneck: " + data.bottleneck.trim() + "\n\nSubmitted from: " + window.location.href,
+  });
 }
 
 const faqSchema = {
