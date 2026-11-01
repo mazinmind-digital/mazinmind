@@ -13,7 +13,7 @@ const contentSecurityPolicy = [
   "img-src 'self' data: blob: https://www.google-analytics.com https://*.google-analytics.com",
   "font-src 'self' data: https://fonts.gstatic.com",
   "connect-src 'self' ws: wss: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com",
-  "frame-src 'self'",
+  "frame-src 'self' https://crm.zoho.com",
   "form-action 'self' mailto: https://crm.zoho.com",
 ].join("; ");
 
