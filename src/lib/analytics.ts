@@ -11,7 +11,7 @@ export type AnalyticsEventName =
   | "scheduling_cta_click";
 
 type AnalyticsEventProperties = Record<string, string | number | boolean | undefined>;
-type GtagCommand = "js" | "config" | "event";
+type GtagCommand = "js" | "config" | "event" | "consent";
 type Gtag = (command: GtagCommand, target: string | Date, parameters?: Record<string, unknown>) => void;
 
 declare global {
@@ -19,6 +19,7 @@ declare global {
     dataLayer?: Array<IArguments | Record<string, unknown>>;
     gtag?: Gtag;
     __mazinmindAnalyticsInitialized?: boolean;
+    __mazinmindAnalyticsConsent?: boolean;
     __mazinmindGaMeasurementId?: string;
   }
 }
@@ -41,8 +42,33 @@ function getCampaignContext(): AnalyticsEventProperties {
   };
 }
 
+const COOKIE_STORAGE_KEY = "mazinmind_cookie_preferences_v1";
+
+function analyticsConsentGranted(): boolean {
+  try {
+    const saved = localStorage.getItem(COOKIE_STORAGE_KEY);
+    return Boolean(saved && (JSON.parse(saved) as { analytics?: boolean }).analytics === true);
+  } catch {
+    return false;
+  }
+}
+
 export function initializeAnalytics() {
-  if (typeof window === "undefined" || window.__mazinmindAnalyticsInitialized) return;
+  if (typeof window === "undefined") return;
+
+  if (!analyticsConsentGranted()) {
+    window.__mazinmindAnalyticsConsent = false;
+    if (window.gtag && window.__mazinmindAnalyticsInitialized) {
+      window.gtag("consent", "update", { analytics_storage: "denied" });
+    }
+    return;
+  }
+
+  window.__mazinmindAnalyticsConsent = true;
+  if (window.__mazinmindAnalyticsInitialized) {
+    window.gtag?.("consent", "update", { analytics_storage: "granted" });
+    return;
+  }
 
   const measurementId = getEnvironmentValue("VITE_GA_MEASUREMENT_ID");
   const gtmId = getEnvironmentValue("VITE_GTM_ID");
@@ -80,11 +106,12 @@ export function initializeAnalytics() {
   }
 
   window.__mazinmindAnalyticsInitialized = true;
+  window.gtag?.("consent", "update", { analytics_storage: "granted" });
   trackPageView();
 }
 
 export function trackPageView() {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || !window.__mazinmindAnalyticsConsent) return;
   const context = getCampaignContext();
   if (window.gtag && window.__mazinmindGaMeasurementId) {
     window.gtag("event", "page_view", context);
@@ -97,7 +124,7 @@ export function trackEvent(
   eventName: AnalyticsEventName,
   properties: AnalyticsEventProperties = {},
 ) {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || !window.__mazinmindAnalyticsConsent) return;
   const event = { ...getCampaignContext(), ...properties };
   if (window.gtag && window.__mazinmindGaMeasurementId) {
     window.gtag("event", eventName, event);
