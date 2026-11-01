@@ -9,6 +9,7 @@ export type ZohoLeadInput = {
 
 const ZOHO_WEBFORM_ACTION = "https://crm.zoho.com/crm/WebToLeadForm";
 const ZOHO_FORM_SUCCESS_PATH = "/zoho-form-success.html";
+const ZOHO_SUBMISSION_TIMEOUT_MS = 30000;
 
 export function buildZohoLeadFields(lead: ZohoLeadInput, returnUrl: string): Record<string, string> {
   return {
@@ -76,13 +77,13 @@ export function submitZohoLead(lead: ZohoLeadInput): Promise<void> {
       settled = true;
       cleanup();
       reject(new Error("Zoho did not confirm the submission before the timeout."));
-    }, 20000);
+    }, ZOHO_SUBMISSION_TIMEOUT_MS);
 
     let submitted = false;
     iframe.onload = () => {
       try {
         const currentUrl = iframe.contentWindow?.location.href;
-        if (currentUrl && new URL(currentUrl).pathname === ZOHO_FORM_SUCCESS_PATH) {
+        if (currentUrl && new URL(currentUrl).origin === window.location.origin && new URL(currentUrl).pathname === ZOHO_FORM_SUCCESS_PATH) {
           if (settled) return;
           settled = true;
           cleanup();
