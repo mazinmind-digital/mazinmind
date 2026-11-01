@@ -438,6 +438,7 @@ export default function Contact() {
                 <h3 className="mb-2 text-xl font-display font-bold">Prefer email?</h3>
                 <p className="text-muted-foreground">Send your project details through the form and we will follow up by email. Meeting scheduling is temporarily unavailable.</p>
               </div>
+              </div>
 
             {/* Contact Form */}
             <div className="glass-vibrant rounded-3xl p-10 lg:p-12 shadow-elevated border border-primary/30">
