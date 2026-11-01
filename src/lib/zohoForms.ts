@@ -100,8 +100,11 @@ export function submitZohoLead(lead: ZohoLeadInput): Promise<void> {
       }
     };
 
-    // The iframe's initial about:blank load starts the POST; Zoho then redirects
-    // it to the same-origin success page only after accepting the lead.
+    // Submit explicitly after attaching both elements. Relying on the iframe's
+    // initial about:blank load is race-prone and can leave the form unsubmitted.
+    // Zoho should redirect this iframe to the same-origin success page on acceptance.
+    submitted = true;
     document.body.append(iframe, form);
+    form.submit();
   });
 }
