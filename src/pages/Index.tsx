@@ -6,6 +6,7 @@ import { EngineeredReliabilitySection } from "@/components/home/EngineeredReliab
 import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { HomeFaqSection } from "@/components/home/HomeFaqSection";
+import { PackagesSection } from "@/components/home/PackagesSection";
 import { homeFaqs } from "@/data/homeFaqs";
 import { Helmet } from "react-helmet-async";
 
@@ -28,7 +29,7 @@ const organizationSchema = {
       email: "info@mazinmind.digital",
       telephone: "+1-617-453-8776",
       description:
-        "AI receptionist and missed-call recovery systems for Greater Boston service businesses",
+        "AI consulting and implementation for small businesses, including lead capture, CRM automation, workflow integration, and cloud engineering.",
       areaServed: [
         "Boston",
         "Chelsea",
@@ -133,6 +134,7 @@ const Index = () => {
       <EngineeredReliabilitySection />
       <TestimonialsSection />
       <HomeFaqSection />
+      <PackagesSection />
       <NewsletterSection />
     </Layout>
   );
