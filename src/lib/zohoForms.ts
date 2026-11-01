@@ -1,4 +1,4 @@
-type ZohoLeadInput = {
+export type ZohoLeadInput = {
   firstName: string;
   lastName: string;
   email: string;
@@ -9,6 +9,25 @@ type ZohoLeadInput = {
 
 const ZOHO_WEBFORM_ACTION = "https://crm.zoho.com/crm/WebToLeadForm";
 const ZOHO_FORM_SUCCESS_PATH = "/zoho-form-success.html";
+
+export function buildZohoLeadFields(lead: ZohoLeadInput, returnUrl: string): Record<string, string> {
+  return {
+      xnQsjsdp: "080e64ba51d87a085344c4ca61ff56e00927090e986dc7036e2a9d3c6a1d0fae",
+      zc_gad: "",
+      xmIwtLD: "eb7cbf9aa1a51eec0d07153265d70fa3de7796cb665e2fd0c5bcda5bb402dd446cc48a85114a18e4ca7adbef9668ba75",
+      actionType: "TGVhZHM=",
+      returnURL: returnUrl,
+      "First Name": lead.firstName,
+      "Last Name": lead.lastName,
+      Email: lead.email,
+      Company: lead.company.trim() || "Not provided",
+      Phone: lead.phone ?? "",
+      Description: lead.description,
+      "Lead Source": "Website",
+      aG9uZXlwb3Q: "",
+  };
+}
+
 
 /**
  * Submit through Zoho's official Web-to-Lead endpoint using a hidden iframe.
@@ -36,21 +55,7 @@ export function submitZohoLead(lead: ZohoLeadInput): Promise<void> {
     form.acceptCharset = "UTF-8";
     form.style.display = "none";
 
-    const fields: Record<string, string> = {
-      xnQsjsdp: "080e64ba51d87a085344c4ca61ff56e00927090e986dc7036e2a9d3c6a1d0fae",
-      zc_gad: "",
-      xmIwtLD: "eb7cbf9aa1a51eec0d07153265d70fa3de7796cb665e2fd0c5bcda5bb402dd446cc48a85114a18e4ca7adbef9668ba75",
-      actionType: "TGVhZHM=",
-      returnURL: `${window.location.origin}${ZOHO_FORM_SUCCESS_PATH}`,
-      "First Name": lead.firstName,
-      "Last Name": lead.lastName,
-      Email: lead.email,
-      Company: lead.company.trim() || "Not provided",
-      Phone: lead.phone ?? "",
-      Description: lead.description,
-      "Lead Source": "Website",
-      aG9uZXlwb3Q: "",
-    };
+    const fields = buildZohoLeadFields(lead, `${window.location.origin}${ZOHO_FORM_SUCCESS_PATH}`);
 
     Object.entries(fields).forEach(([name, value]) => {
       const input = document.createElement("input");
