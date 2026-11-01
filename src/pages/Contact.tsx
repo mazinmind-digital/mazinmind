@@ -4,7 +4,6 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
 import { Helmet } from "react-helmet-async";
-import { useSiteOverlay } from "@/components/layout/site-overlays";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -16,7 +15,6 @@ import {
   Send,
   Loader2,
   CheckCircle,
-  Calendar,
   Sparkles,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -215,7 +213,6 @@ const colorMap = {
 
 export default function Contact() {
   const location = useLocation();
-  const { openScheduleModal } = useSiteOverlay();
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -437,27 +434,10 @@ export default function Contact() {
                 })}
               </div>
 
-              {/* Schedule CTA */}
-              <div className="glass-vibrant rounded-2xl p-8 border border-accent/30">
-                <div className="flex items-center gap-4 mb-6">
-                  <GraffitiIcon icon={Calendar} size="md" tone="accent" />
-                  <h3 className="text-2xl font-display font-bold tracking-wider">
-                    SCHEDULE NOW
-                  </h3>
-                </div>
-                <p className="text-muted-foreground mb-6">
-                  Book a free 30-minute consultation to discuss your needs and
-                  explore how we can help transform your business.
-                </p>
-                <Button
-                  type="button"
-                  onClick={openScheduleModal}
-                  className="w-full bg-gradient-accent hover:opacity-90 text-accent-foreground font-bold h-14 tracking-wider glow-accent"
-                >
-                  BOOK A CONSULTATION
-                </Button>
+              <div className="rounded-2xl border border-accent/30 p-6 glass-vibrant">
+                <h3 className="mb-2 text-xl font-display font-bold">Prefer email?</h3>
+                <p className="text-muted-foreground">Send your project details through the form and we will follow up by email. Meeting scheduling is temporarily unavailable.</p>
               </div>
-            </div>
 
             {/* Contact Form */}
             <div className="glass-vibrant rounded-3xl p-10 lg:p-12 shadow-elevated border border-primary/30">
