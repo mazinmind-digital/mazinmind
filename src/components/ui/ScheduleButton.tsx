@@ -4,7 +4,7 @@ import { trackEvent, type AnalyticsEventName } from "@/lib/analytics";
 type Props = {
   className?: string;
   children?: React.ReactNode;
-  provider?: "link";
+  provider?: "hubspot" | "link";
   url?: string;
   analyticsEvent?: AnalyticsEventName;
   onClick?: () => void;
@@ -13,7 +13,6 @@ type Props = {
 export function ScheduleButton({
   className,
   children,
-  provider = "link",
   url,
   analyticsEvent,
   onClick,
