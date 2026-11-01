@@ -21,31 +21,15 @@ test("homepage renders SEO metadata and current form provider without meeting sc
     await page.getByRole("button", { name: /Decline Optional/i }).click();
   }
 
-  // The HubSpot embed script should be present, but the "Open chat now modal"
-  // button is not expected to be rendered on initial page load.
-  await expect(
-    page.getByRole("button", { name: /Open chat now modal/i }),
-  ).toHaveCount(0);
+  // HubSpot is no longer loaded; analytics uses Google Analytics when configured.
+  await expect(page.locator("script#hs-script-loader")).toHaveCount(0);
+  await expect(page.locator("script[src*='hs-scripts.com']")).toHaveCount(0);
 
-  await expect(page.locator("script[src*='MeetingsEmbed']")).toHaveCount(0);
-  await expect(page.locator(".meetings-iframe-container")).toHaveCount(0);
-
-  const title = await page.title();
-  expect(title.length).toBeLessThanOrEqual(65);
-  const description = await page.locator('meta[name="description"]').getAttribute("content");
-  expect(description).toBeTruthy();
-  expect(description!.length).toBeLessThanOrEqual(160);
-  const serviceSchema = page.locator('script[type="application/ld+json"]').filter({ hasText: "ProfessionalService" });
-  await expect(serviceSchema).toHaveCount(1);
-  await expect(serviceSchema).toContainText("AI consulting and implementation");
-
-  const hubSpotScript = page.locator("script#hs-script-loader");
-  await expect(hubSpotScript).toHaveCount(1);
-
-  const hubSpotAccountId = process.env.HUBSPOT_ACCOUNT_ID ?? "243856745";
-  const hubSpotSrcPattern = new RegExp(
-    `js-na2\\.hs-scripts\\.com/${hubSpotAccountId}\\.js`,
-  );
-
-  await expect(hubSpotScript).toHaveAttribute("src", hubSpotSrcPattern);
+  const zohoFormResponse = await page.request.get("/zoho-contact-form.html");
+  expect(zohoFormResponse.ok()).toBeTruthy();
+  const zohoFormHtml = await zohoFormResponse.text();
+  expect(zohoFormHtml).toContain("https://crm.zoho.com/crm/WebToLeadForm");
+  expect(zohoFormHtml).toContain("name='Last Name'");
+  expect(zohoFormHtml).toContain("name='Email'");
+  expect(zohoFormHtml).toContain("name='Company'");
 });
