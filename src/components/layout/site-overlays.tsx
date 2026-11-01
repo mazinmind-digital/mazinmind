@@ -234,6 +234,13 @@ function LegalDocumentModal({
   );
 }
 
+type CookiePreferences = {
+  necessary: true;
+  analytics: boolean;
+  marketing: boolean;
+  updatedAt: string;
+};
+
 function CookieConsentBanner({
   onOpenLegal,
 }: {
