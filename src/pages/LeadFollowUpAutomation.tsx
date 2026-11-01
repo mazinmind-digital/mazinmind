@@ -133,7 +133,7 @@ export default function LeadFollowUpAutomation() {
               analyticsEvent="scheduling_cta_click"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
             >
-              Schedule a Free Consultation <ArrowRight className="h-4 w-4" />
+              Request a Free AI Audit <ArrowRight className="h-4 w-4" />
             </ScheduleButton>
           </div>
         </section>
