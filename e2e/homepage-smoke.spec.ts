@@ -29,6 +29,8 @@ test("homepage renders SEO metadata and current form provider without meeting sc
   await expect(page.locator("#webform7682332000000705001")).toBeVisible();
   const zohoForm = page.locator("form#webform7682332000000705001");
   await expect(zohoForm).toHaveAttribute("action", "https://crm.zoho.com/crm/WebToLeadForm");
+  // The form is embedded on /contact, so successful submission must redirect the top-level page.
+  await expect(zohoForm).toHaveAttribute("target", "_top");
   await expect(zohoForm.locator("input[name='Last Name']")).toHaveCount(1);
   await expect(zohoForm.locator("input[name='Email']")).toHaveCount(1);
   await expect(zohoForm.locator("input[name='Company']")).toHaveCount(1);
