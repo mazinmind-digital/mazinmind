@@ -31,6 +31,16 @@ export default function LeadFollowUpAutomation() {
           content="lead follow-up automation, missed leads automation, AI follow-up system, CRM follow-up automation, sales follow-up automation"
         />
         <link rel="canonical" href="https://mazinmind.digital/lead-follow-up-automation" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Lead Follow-Up Automation | MazinMind Digital" />
+        <meta property="og:description" content="Design consent-aware lead follow-up systems that help businesses respond faster, organize CRM activity, and reduce manual chasing." />
+        <meta property="og:url" content="https://mazinmind.digital/lead-follow-up-automation" />
+        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Lead Follow-Up Automation | MazinMind Digital" />
+        <meta name="twitter:description" content="Design consent-aware lead follow-up systems that help businesses respond faster, organize CRM activity, and reduce manual chasing." />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
       </Helmet>
 
       <div className="mx-auto max-w-6xl px-4 py-20">
