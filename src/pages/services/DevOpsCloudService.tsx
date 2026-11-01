@@ -21,6 +21,16 @@ export default function DevOpsCloudService() {
           content="DevOps automation consulting and cloud architecture services for SMB and growth-stage teams that need reliable, production-grade systems."
         />
         <link rel="canonical" href="https://mazinmind.digital/services/devops-cloud" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="DevOps Automation Consulting & Cloud Architecture | MazinMind Digital" />
+        <meta property="og:description" content="DevOps automation consulting and cloud architecture services for SMB and growth-stage teams that need reliable, production-grade systems." />
+        <meta property="og:url" content="https://mazinmind.digital/services/devops-cloud" />
+        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="DevOps Automation Consulting & Cloud Architecture | MazinMind Digital" />
+        <meta name="twitter:description" content="DevOps automation consulting and cloud architecture services for SMB and growth-stage teams that need reliable, production-grade systems." />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
       </Helmet>
 
       <section className="relative overflow-hidden py-24">
