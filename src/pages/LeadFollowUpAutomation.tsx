@@ -47,7 +47,6 @@ export default function LeadFollowUpAutomation() {
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <ScheduleButton
-                provider="hubspot"
                 analyticsEvent="landing_page_cta_click"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
               >
@@ -129,7 +128,6 @@ export default function LeadFollowUpAutomation() {
           </p>
           <div className="mt-8 flex justify-center">
             <ScheduleButton
-              provider="hubspot"
               analyticsEvent="request_audit"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
             >
