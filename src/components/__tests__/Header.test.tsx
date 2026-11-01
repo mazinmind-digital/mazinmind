@@ -21,7 +21,7 @@ describe("Header", () => {
     );
     expect(screen.getByRole("button", { name: /menu/i })).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /get started/i }),
+      screen.getByRole("link", { name: /get started/i }),
     ).toBeInTheDocument();
   });
 

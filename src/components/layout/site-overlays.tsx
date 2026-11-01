@@ -4,7 +4,6 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from "react";
 import { Button } from "@/components/ui/button";
@@ -20,14 +19,12 @@ export type LegalDocumentType = "privacy" | "terms";
 
 type SiteOverlayContextValue = {
   openLegalModal: (document: LegalDocumentType) => void;
-  openScheduleModal: () => void;
 };
 
 const noop = () => {};
 
 const SiteOverlayContext = createContext<SiteOverlayContextValue>({
   openLegalModal: noop,
-  openScheduleModal: noop,
 });
 
 export function useSiteOverlay() {
@@ -41,37 +38,7 @@ type PolicySection = {
 
 const PRIVACY_UPDATED = "February 11, 2026";
 const TERMS_UPDATED = "February 11, 2026";
-const HUBSPOT_MEETINGS_URL = "https://meetings-na2.hubspot.com/randy-mazin";
-const HUBSPOT_MEETINGS_EMBED_URL = `${HUBSPOT_MEETINGS_URL}?embed=true`;
-const HUBSPOT_MEETINGS_EMBED_SCRIPT_URL =
-  "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
 const COOKIE_STORAGE_KEY = "mazinmind_cookie_preferences_v1";
-
-function HubSpotMeetingsEmbed() {
-  const scriptHostRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const scriptHost = scriptHostRef.current;
-    if (!scriptHost) {
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = HUBSPOT_MEETINGS_EMBED_SCRIPT_URL;
-    script.async = true;
-    scriptHost.appendChild(script);
-  }, []);
-
-  return (
-    <div ref={scriptHostRef}>
-      <div
-        className="meetings-iframe-container h-[60vh] w-full rounded-xl border border-border bg-secondary/30 overflow-hidden"
-        data-src={HUBSPOT_MEETINGS_EMBED_URL}
-      />
-    </div>
-  );
-}
 
 const privacySections: PolicySection[] = [
   {
@@ -79,14 +46,14 @@ const privacySections: PolicySection[] = [
     points: [
       "We may collect information you provide directly, such as your name, email, phone number, company name, and project details when you submit forms, request consultations, or contact us.",
       "We may collect technical information automatically, including browser type, device type, pages viewed, approximate location from IP address, and interaction data.",
-      "If you schedule meetings through HubSpot, information submitted through the scheduling experience is also processed by HubSpot under its applicable policies.",
+      "Website form submissions are processed by the service providers currently configured to receive those submissions.",
     ],
   },
   {
     heading: "2. How We Use Information",
     points: [
       "To provide, maintain, and improve our services and website experience.",
-      "To respond to inquiries, schedule consultations, and communicate about requested services.",
+      "To respond to inquiries and communicate about requested services.",
       "To monitor website performance, security, and reliability.",
       "To send service-related or marketing communications where permitted by law, and only where you have not opted out.",
     ],
@@ -103,7 +70,7 @@ const privacySections: PolicySection[] = [
     heading: "4. Sharing of Information",
     points: [
       "We do not sell your personal information.",
-      "We may share limited information with service providers that help us operate the website and business functions, such as hosting, analytics, scheduling, or communication tools.",
+      "We may share limited information with service providers that help us operate the website and business functions, such as hosting, analytics, CRM, or communication tools.",
       "We may disclose information when required by law, legal process, or to protect rights, safety, and security.",
     ],
   },
@@ -261,45 +228,6 @@ function LegalDocumentModal({
               .
             </p>
           </div>
-        </div>
-      </DialogContent>
-    </Dialog>
-  );
-}
-
-function ScheduleConsultationModal({
-  isOpen,
-  onOpenChange,
-}: {
-  isOpen: boolean;
-  onOpenChange: (open: boolean) => void;
-}) {
-  return (
-    <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[96vw] max-w-5xl border-primary/30 p-0 sm:rounded-2xl">
-        <DialogHeader className="border-b border-border px-6 py-5 text-left">
-          <DialogTitle className="text-2xl font-display tracking-wide">
-            Schedule a Free Consultation
-          </DialogTitle>
-          <DialogDescription className="text-sm text-muted-foreground">
-            Choose a time directly through our HubSpot scheduling form.
-          </DialogDescription>
-        </DialogHeader>
-
-        <div className="space-y-4 px-6 py-5">
-          <HubSpotMeetingsEmbed />
-          <p className="text-sm text-muted-foreground">
-            If the embedded scheduler does not load, use{" "}
-            <a
-              href={HUBSPOT_MEETINGS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              this direct HubSpot scheduling link
-            </a>
-            .
-          </p>
         </div>
       </DialogContent>
     </Dialog>
@@ -484,13 +412,11 @@ export function SiteOverlaysProvider({ children }: { children: ReactNode }) {
   const [openDocument, setOpenDocument] = useState<LegalDocumentType | null>(
     null,
   );
-  const [isScheduleOpen, setIsScheduleOpen] = useState(false);
 
   const contextValue = useMemo(
     () => ({
       openLegalModal: (document: LegalDocumentType) =>
         setOpenDocument(document),
-      openScheduleModal: () => setIsScheduleOpen(true),
     }),
     [],
   );
@@ -501,10 +427,6 @@ export function SiteOverlaysProvider({ children }: { children: ReactNode }) {
       <LegalDocumentModal
         openDocument={openDocument}
         onOpenDocumentChange={setOpenDocument}
-      />
-      <ScheduleConsultationModal
-        isOpen={isScheduleOpen}
-        onOpenChange={setIsScheduleOpen}
       />
       <CookieConsentBanner
         onOpenLegal={(document) => setOpenDocument(document)}

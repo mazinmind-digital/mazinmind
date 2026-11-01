@@ -11,7 +11,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import mazinmindLogo from "@/assets/mazinmind-logo.png";
-import { useSiteOverlay } from "./site-overlays";
 
 const navigation = [
   { name: "HOME", href: "/" },
@@ -28,7 +27,6 @@ const navigation = [
 
 export function Header() {
   const location = useLocation();
-  const { openScheduleModal } = useSiteOverlay();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -127,11 +125,10 @@ export function Header() {
             </DropdownMenu>
 
             <Button
-              type="button"
-              onClick={openScheduleModal}
+              asChild
               className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold tracking-wider glow-primary"
             >
-              GET STARTED
+              <Link to="/contact?interest=consultation">GET STARTED</Link>
             </Button>
           </div>
         </div>

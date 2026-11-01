@@ -121,10 +121,10 @@ export default function HomeServicesAutomation() {
           <div className="mt-8 flex justify-center">
             <ScheduleButton
               provider="hubspot"
-              analyticsEvent="book_consultation"
+              analyticsEvent="generate_lead"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
             >
-              Book a Consultation <ArrowRight className="h-4 w-4" />
+              Discuss My Project <ArrowRight className="h-4 w-4" />
             </ScheduleButton>
           </div>
         </section>

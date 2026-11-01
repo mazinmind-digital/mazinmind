@@ -111,10 +111,10 @@ export default function AiAutomationContractors() {
           <div className="mt-8 flex justify-center">
             <ScheduleButton
               provider="hubspot"
-              analyticsEvent="scheduling_cta_click"
+              analyticsEvent="request_audit"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
             >
-              Get a Free 15-Minute Consultation <ArrowRight className="h-4 w-4" />
+              Request a Free AI Audit <ArrowRight className="h-4 w-4" />
             </ScheduleButton>
           </div>
         </section>

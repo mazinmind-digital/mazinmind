@@ -457,7 +457,7 @@ export default function About() {
               className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-12 h-16 text-lg tracking-wider glow-primary"
             >
               <Link to="/contact" className="flex items-center gap-3">
-                SCHEDULE A CONSULTATION
+                SEND AN INQUIRY
                 <ArrowRight className="w-6 h-6" />
               </Link>
             </Button>

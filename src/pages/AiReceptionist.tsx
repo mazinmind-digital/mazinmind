@@ -45,7 +45,7 @@ export default function AiReceptionist() {
                 analyticsEvent="landing_page_cta_click"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
               >
-                Get a Free 15-Minute Automation Audit
+                Request a Free AI Audit
               </ScheduleButton>
               <Link
                 to="/contact"
@@ -104,10 +104,10 @@ export default function AiReceptionist() {
           <div className="mt-8 flex justify-center">
             <ScheduleButton
               provider="hubspot"
-              analyticsEvent="scheduling_cta_click"
+              analyticsEvent="request_audit"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
             >
-              Schedule a Free Consultation <ArrowRight className="h-4 w-4" />
+              Request a Free AI Audit <ArrowRight className="h-4 w-4" />
             </ScheduleButton>
           </div>
         </section>
