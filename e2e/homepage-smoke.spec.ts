@@ -25,9 +25,9 @@ test("homepage renders SEO metadata and current form provider without meeting sc
   await expect(page.locator("script#hs-script-loader")).toHaveCount(0);
   await expect(page.locator("script[src*='hs-scripts.com']")).toHaveCount(0);
 
-  const zohoFormResponse = await page.request.get("/zoho-contact-form.html");
-  expect(zohoFormResponse.ok()).toBeTruthy();
-  const zohoFormHtml = await zohoFormResponse.text();
+  await page.goto("/zoho-contact-form.html");
+  await expect(page.locator("#webform7682332000000705001")).toBeVisible();
+  const zohoFormHtml = await page.content();
   expect(zohoFormHtml).toContain("https://crm.zoho.com/crm/WebToLeadForm");
   expect(zohoFormHtml).toContain("name='Last Name'");
   expect(zohoFormHtml).toContain("name='Email'");
