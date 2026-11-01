@@ -1,11 +1,10 @@
 import React from "react";
-import { useSiteOverlay } from "@/components/layout/site-overlays";
 import { trackEvent, type AnalyticsEventName } from "@/lib/analytics";
 
 type Props = {
   className?: string;
   children?: React.ReactNode;
-  provider?: "hubspot" | "link";
+  provider?: "link";
   url?: string;
   analyticsEvent?: AnalyticsEventName;
   onClick?: () => void;
@@ -14,12 +13,11 @@ type Props = {
 export function ScheduleButton({
   className,
   children,
-  provider = "hubspot",
+  provider = "link",
   url,
   analyticsEvent,
   onClick,
 }: Props) {
-  const { openScheduleModal } = useSiteOverlay();
 
   const handleClick = () => {
     if (analyticsEvent) {
@@ -28,13 +26,10 @@ export function ScheduleButton({
 
     onClick?.();
 
-    if (provider === "hubspot") {
-      openScheduleModal();
-      return;
-    }
-
     if (url) {
       window.open(url, "_blank", "noopener,noreferrer");
+    } else {
+      window.location.assign("/contact?interest=consultation");
     }
   };
 
