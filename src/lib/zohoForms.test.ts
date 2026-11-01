@@ -1,37 +1,40 @@
-// @vitest-environment jsdom
-import { afterEach, describe, expect, it, vi } from "vitest";
-import { submitZohoLead } from "./zohoForms";
+import { describe, expect, it } from "vitest";
+import { buildZohoLeadFields } from "./zohoForms";
 
-describe("submitZohoLead", () => {
-  afterEach(() => {
-    vi.restoreAllMocks();
-    document.body.innerHTML = "";
-  });
-
-  it("posts required lead fields and resolves only after the same-origin success redirect", async () => {
-    let submittedFields: Record<string, string> = {};
-
-    vi.spyOn(HTMLFormElement.prototype, "submit").mockImplementation(function () {
-      submittedFields = Object.fromEntries(new FormData(this).entries()) as Record<string, string>;
-      const frame = document.querySelector<HTMLIFrameElement>(`iframe[name="${this.target}"]`);
-      if (!frame) throw new Error("Expected Zoho target iframe");
-      frame.src = `${window.location.origin}/zoho-form-success.html`;
-    });
-
-    await expect(submitZohoLead({
-      firstName: "MazinMind",
+describe("buildZohoLeadFields", () => {
+  it("maps audit details to required Zoho Web-to-Lead fields", () => {
+    const fields = buildZohoLeadFields({
+      firstName: "Randy",
       lastName: "Test Lead",
       email: "zoho-form-test@example.com",
       company: "MazinMind QA",
-      description: "Automated test submission",
-    })).resolves.toBeUndefined();
+      description: "Automated audit form test",
+      phone: "6175550100",
+    }, "https://mazinmind.digital/zoho-form-success.html");
 
-    expect(submittedFields["Last Name"]).toBe("Test Lead");
-    expect(submittedFields.Email).toBe("zoho-form-test@example.com");
-    expect(submittedFields.Company).toBe("MazinMind QA");
-    expect(submittedFields.Description).toContain("Automated test submission");
-    expect(submittedFields.actionType).toBe("TGVhZHM=");
-    expect(submittedFields.returnURL).toBe(`${window.location.origin}/zoho-form-success.html`);
-    expect(document.querySelector("iframe")).toBeNull();
+    expect(fields["First Name"]).toBe("Randy");
+    expect(fields["Last Name"]).toBe("Test Lead");
+    expect(fields.Email).toBe("zoho-form-test@example.com");
+    expect(fields.Company).toBe("MazinMind QA");
+    expect(fields.Description).toBe("Automated audit form test");
+    expect(fields.Phone).toBe("6175550100");
+    expect(fields["Lead Source"]).toBe("Website");
+    expect(fields.actionType).toBe("TGVhZHM=");
+    expect(fields.returnURL).toBe("https://mazinmind.digital/zoho-form-success.html");
+  });
+
+  it("supplies a company fallback because the Zoho webform requires it", () => {
+    const fields = buildZohoLeadFields({
+      firstName: "",
+      lastName: "Website Lead",
+      email: "lead@example.com",
+      company: "   ",
+      description: "Website inquiry",
+    }, "https://mazinmind.digital/zoho-form-success.html");
+
+    expect(fields.Company).toBe("Not provided");
+    expect(fields["Last Name"]).toBeTruthy();
+    expect(fields.Email).toBeTruthy();
+    expect(fields.Description).toBeTruthy();
   });
 });
