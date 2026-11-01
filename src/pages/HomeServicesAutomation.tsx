@@ -48,14 +48,12 @@ export default function HomeServicesAutomation() {
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <ScheduleButton
-                provider="hubspot"
                 analyticsEvent="generate_lead"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
               >
                 See How It Works
               </ScheduleButton>
               <ScheduleButton
-                provider="hubspot"
                 analyticsEvent="request_audit"
                 className="inline-flex h-14 items-center justify-center rounded-full border border-primary/40 px-8 text-base font-bold text-primary"
               >
@@ -120,7 +118,6 @@ export default function HomeServicesAutomation() {
           </div>
           <div className="mt-8 flex justify-center">
             <ScheduleButton
-              provider="hubspot"
               analyticsEvent="generate_lead"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
             >

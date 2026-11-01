@@ -77,7 +77,6 @@ export function RevenueLeakAuditSection() {
             {/* CTA */}
             <div className="text-center">
               <ScheduleButton
-                provider="hubspot"
                 analyticsEvent="request_audit"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-primary px-12 text-base font-bold tracking-wide text-primary-foreground glow-primary hover:opacity-90"
                 aria-label="Request Your Revenue Leak Audit"

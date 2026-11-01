@@ -8,13 +8,13 @@ const contentSecurityPolicy = [
   "base-uri 'self'",
   "object-src 'none'",
   "frame-ancestors 'none'",
-  "script-src 'self' 'unsafe-inline' 'sha256-92gQq1QEZkGyuW83c3+JEh+ZCbnYlC45vf3wZs92sZ0=' https://www.googletagmanager.com https://www.google-analytics.com https://js-na2.hs-scripts.com https://js.hs-scripts.com https://static.hsappstatic.net https://*.hubspot.com https://*.hubspot.net",
+  "script-src 'self' 'unsafe-inline' 'sha256-92gQq1QEZkGyuW83c3+JEh+ZCbnYlC45vf3wZs92sZ0=' https://www.googletagmanager.com https://www.google-analytics.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "img-src 'self' data: blob: https://www.google-analytics.com https://*.google-analytics.com https://*.hubspot.com https://*.hubspot.net https://*.hubspotusercontent.com https://*.hubspotusercontent-na1.net https://*.hubspotusercontent-na2.net",
+  "img-src 'self' data: blob: https://www.google-analytics.com https://*.google-analytics.com",
   "font-src 'self' data: https://fonts.gstatic.com",
-  "connect-src 'self' ws: wss: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.hubspot.com https://*.hubspot.net https://*.hubapi.com https://*.hsforms.com https://*.usemessages.com",
-  "frame-src 'self' https://*.hubspot.com https://*.hubspot.net",
-  "form-action 'self' mailto: https://*.hubspot.com https://*.hubspot.net",
+  "connect-src 'self' ws: wss: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com",
+  "frame-src 'self' https://crm.zoho.com",
+  "form-action 'self' mailto: https://crm.zoho.com",
 ].join("; ");
 
 // https://vitejs.dev/config/

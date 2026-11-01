@@ -269,6 +269,7 @@ function CookieConsentBanner({
 
   const persistPreferences = (next: CookiePreferences) => {
     localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(next));
+    window.dispatchEvent(new Event("mazinmind:cookie-preferences-changed"));
     setIsVisible(false);
     setIsManaging(false);
   };

@@ -4,7 +4,6 @@ import { trackEvent, type AnalyticsEventName } from "@/lib/analytics";
 type Props = {
   className?: string;
   children?: React.ReactNode;
-  provider?: "hubspot" | "link";
   url?: string;
   analyticsEvent?: AnalyticsEventName;
   onClick?: () => void;

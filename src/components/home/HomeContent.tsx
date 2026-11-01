@@ -249,7 +249,6 @@ export default function HomeContent() {
                 <li>• Implementation roadmap</li>
               </ul>
               <ScheduleButton
-                provider="hubspot"
                 analyticsEvent="blueprint_cta_click"
                 className="mt-6 inline-flex h-12 w-full items-center justify-center rounded-full bg-gradient-primary px-6 text-sm font-bold text-primary-foreground"
               >
