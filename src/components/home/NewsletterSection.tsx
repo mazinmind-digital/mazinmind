@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { submitZohoLead } from "@/lib/zohoForms";
+import { trackEvent } from "@/lib/analytics";
 
 const CONTACT_INBOX_EMAIL = "rmazin@mazinmind.digital";
 
@@ -84,6 +85,7 @@ export function NewsletterSection() {
 
     try {
       await submitAuditRequest(formData);
+      trackEvent("generate_lead", { form_name: "free_ai_automation_audit", form_provider: "zoho" });
       setIsSubmitted(true);
       setFormData({ name: "", email: "", company: "", bottleneck: "" });
       toast.success("Audit request submitted. We reply within 1 business day.");
