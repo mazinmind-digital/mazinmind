@@ -61,7 +61,7 @@ npm run lint         # Check TypeScript and React for lint violations
   - `home/` — Homepage sections (Hero, CTA, Services, FAQ, Newsletter, etc.)
   - `layout/` — Layout wrappers (header, footer, navigation)
   - `branding/` — Custom branding components (Logo, brand-specific icons)
-  - `analytics/` — Tracking and analytics components (HubSpot integration)
+  - `analytics/` — Tracking and analytics components (Google Analytics SPA tracking)
 - **`src/data/`** — Structured marketing data and page content (homeFaqs.ts, blogPosts.ts)
 - **`src/lib/`** — Utility functions (scrollToId.ts, utils.ts)
 - **`src/hooks/`** — Custom React hooks (use-mobile.tsx, use-toast.ts)
@@ -150,7 +150,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 - React Router v6 (`react-router-dom@6.30.5`)
 - Links use `<Link>` from react-router-dom, not `<a>` tags
-- SPA tracking via custom HubSpot integration component (src/components/analytics/HubSpotSpaTracking.tsx)
+- SPA tracking via `src/components/analytics/GoogleAnalyticsSpaTracking.tsx`
 
 ### State Management & Data Fetching
 
@@ -168,9 +168,10 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 ### Analytics & Tracking
 
 - **Google Analytics** via Google Tag Manager
-- **HubSpot** for lead forms, forms tracking, and SPA navigation tracking
-- HubSpot forms embedded via script tags in public/index.html
-- SPA route changes tracked by HubSpotSpaTracking component
+- **Zoho CRM Web-to-Lead** handles the contact page form in `public/zoho-contact-form.html`.
+- React-based audit forms submit through `src/lib/zohoForms.ts`.
+- Google Analytics / Google Tag Manager handle analytics when configured; route changes use `GoogleAnalyticsSpaTracking.tsx`.
+- Do not describe HubSpot as an active website integration unless a future verified change reintroduces it.
 
 ### Deployment
 
@@ -180,11 +181,11 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 ### CSP Headers
 
-Content Security Policy is strict and includes allowances for:
-- Google Analytics & Tag Manager
-- HubSpot (forms, tracking, API calls)
+Content Security Policy is defined in `index.html` and currently allows:
+- Google Analytics & Google Tag Manager
+- Zoho CRM Web-to-Lead form submissions (`form-action`)
 - Custom fonts from Google Fonts
-- Unsafe-inline for scripts and styles (needed for embedded HubSpot forms)
+- Inline scripts/styles currently used by the site. Review CSP allowances whenever integrations change; do not add broad third-party permissions without a documented need.
 
 ## Testing Notes
 
