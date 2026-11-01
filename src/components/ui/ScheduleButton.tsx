@@ -34,7 +34,7 @@ export function ScheduleButton({
 
   return (
     <button type="button" onClick={handleClick} className={className}>
-      {children ?? "Schedule a Call"}
+      {children ?? "Contact Us"}
     </button>
   );
 }
