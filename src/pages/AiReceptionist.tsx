@@ -25,6 +25,16 @@ export default function AiReceptionist() {
           content="AI receptionist, AI phone answering service, automated answering service, live AI receptionist, inbound call automation"
         />
         <link rel="canonical" href="https://mazinmind.digital/ai-receptionist" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="AI Receptionist | MazinMind Digital" />
+        <meta property="og:description" content="Plan an AI receptionist workflow for your business: qualify inquiries, route requests, and reduce missed opportunities with clear human handoffs." />
+        <meta property="og:url" content="https://mazinmind.digital/ai-receptionist" />
+        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Receptionist | MazinMind Digital" />
+        <meta name="twitter:description" content="Plan an AI receptionist workflow for your business: qualify inquiries, route requests, and reduce missed opportunities with clear human handoffs." />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
       </Helmet>
 
       <div className="mx-auto max-w-6xl px-4 py-20">
