@@ -61,3 +61,34 @@ test("homepage renders SEO metadata and current form provider without meeting sc
   expect(capturedZohoPayload).toContain("Automated+form+submission+test");
   expect(capturedZohoPayload).toContain("https%3A%2F%2Fmazinmind.digital%2Fzoho-form-success.html");
 });
+
+
+test("Zoho success page records a lead conversion only with analytics consent", async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("mazinmind_cookie_preferences_v1", JSON.stringify({ analytics: true }));
+  });
+  await page.route(/https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-[A-Z0-9]+/, async (route) => {
+    await route.fulfill({ status: 200, contentType: "application/javascript", body: "" });
+  });
+
+  await page.goto("/zoho-form-success.html");
+  await expect(page.getByRole("heading", { name: /Message received/i })).toBeVisible();
+  await expect(page.locator("#google-analytics-script")).toHaveAttribute("src", /gtag\/js\?id=G-[A-Z0-9]+/);
+
+  const conversionEvents = await page.evaluate(() => {
+    const dataLayer = (window as unknown as { dataLayer?: IArguments[] }).dataLayer ?? [];
+    return dataLayer.filter((entry) => Array.from(entry).includes("generate_lead")).length;
+  });
+  expect(conversionEvents).toBe(1);
+});
+
+test("Zoho success page does not load analytics without consent", async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("mazinmind_cookie_preferences_v1", JSON.stringify({ analytics: false }));
+  });
+  await page.goto("/zoho-form-success.html");
+  await expect(page.getByRole("heading", { name: /Message received/i })).toBeVisible();
+  await expect(page.locator("#google-analytics-script")).toHaveCount(0);
+  const dataLayerExists = await page.evaluate(() => typeof (window as unknown as { dataLayer?: unknown }).dataLayer !== "undefined");
+  expect(dataLayerExists).toBe(false);
+});
