@@ -216,6 +216,9 @@ export default function About() {
           content="Learn about Mazinmind.Digital, a leader in AI consulting, digital transformation, and innovative technology solutions."
         />
         <link rel="canonical" href="https://mazinmind.digital/about" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
       </Helmet>
 
       {/* Hybrid Approach Section */}
