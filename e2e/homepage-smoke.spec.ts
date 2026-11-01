@@ -74,6 +74,14 @@ test("Zoho success page records a lead conversion only with analytics consent", 
   });
   await page.reload();
   await expect(page.getByRole("heading", { name: /Message received/i })).toBeVisible();
+  const analyticsDebug = await page.evaluate(() => ({
+    origin: window.location.origin,
+    consent: localStorage.getItem("mazinmind_cookie_preferences_v1"),
+    measurementId: Array.from(document.scripts).map((script) => script.textContent).join("\\n").match(/var measurementId = "([^"]+)"/)?.[1],
+    analyticsScript: document.querySelector("#google-analytics-script")?.getAttribute("src") ?? null,
+    dataLayer: (window as unknown as { dataLayer?: IArguments[] }).dataLayer?.map((entry) => Array.from(entry)) ?? [],
+  }));
+  console.log("Zoho success analytics diagnostics:", JSON.stringify(analyticsDebug));
   await expect(page.locator("#google-analytics-script")).toHaveAttribute("src", /gtag\/js\?id=G-[A-Z0-9]+/);
 
   const conversionEvents = await page.evaluate(() => {
