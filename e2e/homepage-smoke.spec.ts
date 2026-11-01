@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test("homepage renders hero and loads HubSpot chat embed script", async ({
+test("homepage renders SEO metadata and current form provider without meeting scheduler", async ({
   page,
 }) => {
   await page.goto("/");
@@ -26,6 +26,18 @@ test("homepage renders hero and loads HubSpot chat embed script", async ({
   await expect(
     page.getByRole("button", { name: /Open chat now modal/i }),
   ).toHaveCount(0);
+
+  await expect(page.locator("script[src*='MeetingsEmbed']")).toHaveCount(0);
+  await expect(page.locator(".meetings-iframe-container")).toHaveCount(0);
+
+  const title = await page.title();
+  expect(title.length).toBeLessThanOrEqual(65);
+  const description = await page.locator('meta[name="description"]').getAttribute("content");
+  expect(description).toBeTruthy();
+  expect(description!.length).toBeLessThanOrEqual(160);
+  const serviceSchema = page.locator('script[type="application/ld+json"]');
+  await expect(serviceSchema).toHaveCount(1);
+  await expect(serviceSchema).toContainText("ProfessionalService");
 
   const hubSpotScript = page.locator("script#hs-script-loader");
   await expect(hubSpotScript).toHaveCount(1);
