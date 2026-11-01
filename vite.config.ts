@@ -13,7 +13,7 @@ const contentSecurityPolicy = [
   "img-src 'self' data: blob: https://www.google-analytics.com https://*.google-analytics.com https://*.hubspot.com https://*.hubspot.net https://*.hubspotusercontent.com https://*.hubspotusercontent-na1.net https://*.hubspotusercontent-na2.net",
   "font-src 'self' data: https://fonts.gstatic.com",
   "connect-src 'self' ws: wss: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.hubspot.com https://*.hubspot.net https://*.hubapi.com https://*.hsforms.com https://*.usemessages.com",
-  "frame-src 'self' https://meetings-na2.hubspot.com https://*.hubspot.com https://*.hubspot.net",
+  "frame-src 'self' https://*.hubspot.com https://*.hubspot.net",
   "form-action 'self' mailto: https://*.hubspot.com https://*.hubspot.net",
 ].join("; ");
 
