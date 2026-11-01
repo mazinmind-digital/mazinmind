@@ -168,6 +168,9 @@ export default function Services() {
           content="Explore Mazinmind.Digital's full suite of AI services: consulting, marketing, automation, content creation, and custom software."
         />
         <link rel="canonical" href="https://mazinmind.digital/services" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
       </Helmet>
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden">
