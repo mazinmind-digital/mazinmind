@@ -1,7 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { GraffitiIcon } from "@/components/ui/GraffitiIcon";
-import { useSiteOverlay } from "@/components/layout/site-overlays";
 import { Helmet } from "react-helmet-async";
 import {
   Brain,
@@ -143,7 +142,6 @@ const processSteps = [
 ];
 
 export default function Services() {
-  const { openScheduleModal } = useSiteOverlay();
 
   return (
     <Layout>
@@ -266,7 +264,7 @@ export default function Services() {
 
                     <Button
                       type="button"
-                      onClick={openScheduleModal}
+                      onClick={() => window.location.assign(`/contact?interest=${service.id}`)}
                       className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold tracking-wider glow-primary"
                     >
                       <span className="flex items-center gap-2">
@@ -357,17 +355,16 @@ export default function Services() {
               YOUR BUSINESS?
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Schedule a free 30-minute consultation to discuss your needs and
-              discover how Mazinmind.Digital can help you achieve your goals.
+              Tell us what you are trying to improve. We will review your inquiry and follow up by email.
             </p>
             <Button
               type="button"
-              onClick={openScheduleModal}
+              onClick={() => window.location.assign("/contact?interest=consultation")}
               size="lg"
               className="bg-gradient-primary hover:opacity-90 text-primary-foreground font-bold px-12 h-16 text-lg tracking-wider glow-primary"
             >
               <span className="flex items-center gap-3">
-                SCHEDULE NOW
+                SEND AN INQUIRY
                 <ArrowRight className="w-6 h-6" />
               </span>
             </Button>
