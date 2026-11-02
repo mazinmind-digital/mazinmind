@@ -26,7 +26,7 @@ The primary production target is:
 
 Reports about this repository's source code, build process, deployment configuration, or public assets are also welcome when they could affect the security of the production website or its visitors.
 
-Third-party services used by the site, including GitHub Pages, Google Analytics, Google Tag Manager, HubSpot, scheduling providers, and external content delivery services, are operated by their respective owners. Please report vulnerabilities in those services to the relevant provider as well, and include any relevant context in your report to us.
+Third-party services used by the site may include GitHub Pages, Google Analytics, Google Tag Manager (when configured and consented to), Zoho CRM Web-to-Lead, scheduling providers, and external content delivery services. These services are operated by their respective owners. Please report vulnerabilities in those services to the relevant provider as well, and include any relevant context in your report to us. Verify the current production integrations before treating this list as exhaustive.
 
 ## Rules for testing
 
