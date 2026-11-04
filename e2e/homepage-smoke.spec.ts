@@ -115,6 +115,9 @@ test("AI receptionist landing pages remain keyboard accessible on mobile", async
 
   await page.goto("/ai-receptionist");
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-  await expect(page.getByRole("button", { name: "Request a Free AI Audit" })).toBeVisible();
+  const freeAuditButton = page.getByRole("button", { name: "Request a Free AI Audit" }).first();
+  await expect(freeAuditButton).toBeVisible();
+  await freeAuditButton.focus();
+  await expect(freeAuditButton).toBeFocused();
   await expect(page.getByRole("link", { name: "Talk to MazinMind" })).toBeVisible();
 });
