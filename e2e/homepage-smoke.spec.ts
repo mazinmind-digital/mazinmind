@@ -21,7 +21,7 @@ test("homepage renders SEO metadata and current form provider without meeting sc
     await page.getByRole("button", { name: /Decline Optional/i }).click();
   }
 
-  // HubSpot is no longer loaded; analytics uses Google Analytics when configured.
+  // No legacy CRM tracking script is loaded; analytics uses Google Analytics when configured.
   await expect(page.locator("script#hs-script-loader")).toHaveCount(0);
   await expect(page.locator("script[src*='hs-scripts.com']")).toHaveCount(0);
 
