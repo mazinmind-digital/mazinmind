@@ -55,7 +55,7 @@ export default function AiReceptionistBoston() {
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <ScheduleButton
-                analyticsEvent="generate_lead"
+                analyticsEvent="demo_start"
                 url="https://mazinmind-digital.github.io/Mazinmind-ai-receptionist-demo/"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
               >
