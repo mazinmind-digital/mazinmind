@@ -22,7 +22,7 @@ export default function AiReceptionist() {
         />
         <meta
           name="keywords"
-          content="AI receptionist, AI phone answering service, automated answering service, live AI receptionist, inbound call automation"
+          content="AI receptionist workflow design, AI-assisted intake, missed-call recovery, lead qualification, human handoff, CRM automation"
         />
         <link rel="canonical" href="https://mazinmind.digital/ai-receptionist" />
         <meta property="og:type" content="website" />
