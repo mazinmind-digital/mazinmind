@@ -94,3 +94,27 @@ test("Zoho success page does not load analytics without consent", async ({ page 
   const dataLayerExists = await page.evaluate(() => typeof (window as unknown as { dataLayer?: unknown }).dataLayer !== "undefined");
   expect(dataLayerExists).toBe(false);
 });
+
+test("AI receptionist landing pages remain keyboard accessible on mobile", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/ai-receptionist-boston");
+
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  const demoButton = page.getByRole("button", { name: "Explore the Demo" });
+  const auditButton = page.getByRole("button", { name: "Request a Revenue Leak Audit" });
+  await expect(demoButton).toBeVisible();
+  await expect(auditButton).toBeVisible();
+
+  await demoButton.focus();
+  await expect(demoButton).toBeFocused();
+  await auditButton.focus();
+  await expect(auditButton).toBeFocused();
+
+  const mobileOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
+  expect(mobileOverflow).toBe(false);
+
+  await page.goto("/ai-receptionist");
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Request a Free AI Audit" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Talk to MazinMind" })).toBeVisible();
+});
