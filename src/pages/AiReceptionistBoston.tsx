@@ -4,9 +4,9 @@ import { ArrowRight, CheckCircle2, Clock3, Headphones, ShieldCheck } from "lucid
 import ScheduleButton from "@/components/ui/ScheduleButton";
 
 const highlights = [
-  "Answer missed calls 24/7 without sacrificing the experience",
-  "Capture service details, urgency, and callback preferences",
-  "Book new jobs and route urgent issues to the right team member",
+  "Design an after-hours intake and missed-call recovery workflow",
+  "Capture approved service details, urgency, and callback preferences",
+  "Route appointment requests and urgent issues to the right team member",
   "Escalate exceptions to a human instead of leaving customers stuck",
 ];
 
@@ -26,20 +26,20 @@ export default function AiReceptionistBoston() {
         <title>AI Receptionist Boston | Missed-Call Recovery for Service Businesses | MazinMind Digital</title>
         <meta
           name="description"
-          content="AI receptionist for Boston service businesses. Capture missed calls, answer after-hours questions, qualify leads, and hand off urgent requests to the right person."
+          content="AI-assisted receptionist workflow design for Boston service businesses. Plan missed-call recovery, after-hours inquiry capture, lead qualification, and human handoff."
         />
         <meta
           name="keywords"
-          content="AI receptionist Boston, missed call recovery, service business automation, after-hours call answering, appointment booking, contractor lead capture"
+          content="AI receptionist Boston, missed call workflow design, service business automation, after-hours inquiry intake, human handoff, contractor lead capture"
         />
         <link rel="canonical" href="https://mazinmind.digital/ai-receptionist-boston" />
         <meta property="og:title" content="AI Receptionist Boston | Missed-Call Recovery for Service Businesses" />
-        <meta property="og:description" content="Answer after-hours calls, qualify opportunities, and keep humans in control with a monitored AI receptionist built for Boston service businesses." />
+        <meta property="og:description" content="Design safer inquiry intake and missed-call recovery for Boston service businesses, with clear qualification and human escalation." />
         <meta property="og:url" content="https://mazinmind.digital/ai-receptionist-boston" />
         <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI Receptionist Boston | Missed-Call Recovery for Service Businesses" />
-        <meta name="twitter:description" content="Answer after-hours inquiries, qualify opportunities, and keep humans in control with a monitored AI receptionist for Boston service businesses." />
+        <meta name="twitter:description" content="Plan after-hours inquiry intake, qualification, and human escalation for Greater Boston service businesses." />
         <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
       </Helmet>
 
@@ -48,17 +48,18 @@ export default function AiReceptionistBoston() {
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">AI receptionist Boston</p>
             <h1 className="text-4xl font-display font-bold tracking-wider md:text-6xl">
-              Stop losing customers when the phone rings after hours.
+              Design a better first response when the phone rings after hours.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-              MazinMind builds AI receptionist systems for Greater Boston service businesses that need fast responses, simple qualification, and clean human escalation. We help you capture missed leads without letting routine inquiries overwhelm your team.
+              MazinMind designs AI-assisted receptionist workflows for Greater Boston service businesses. We map missed-call recovery, inquiry qualification, and human handoff before recommending integrations. The current browser demo is simulated; live phone, SMS, calendar, and CRM actions require separate configuration and testing.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <ScheduleButton
-                analyticsEvent="generate_lead"
+                analyticsEvent="demo_start"
+                url="https://mazinmind-digital.github.io/Mazinmind-ai-receptionist-demo/"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-gradient-primary px-8 text-base font-bold text-primary-foreground"
               >
-                See How It Works
+                Explore the Demo
               </ScheduleButton>
               <ScheduleButton
                 analyticsEvent="request_audit"
@@ -75,8 +76,8 @@ export default function AiReceptionistBoston() {
                 <Headphones className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Live workflow</p>
-                <h2 className="text-2xl font-display font-bold">Call → qualify → route → follow-up</h2>
+                <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Workflow concept</p>
+                <h2 className="text-2xl font-display font-bold">Capture → qualify → route → follow-up</h2>
               </div>
             </div>
             <ul className="space-y-4 text-muted-foreground">
@@ -95,21 +96,21 @@ export default function AiReceptionistBoston() {
             <Clock3 className="mb-4 h-8 w-8 text-primary" />
             <h2 className="text-xl font-display font-bold">After-hours coverage</h2>
             <p className="mt-3 text-muted-foreground">
-              A missed call becomes a structured response instead of a silent opportunity.
+              Design a callback workflow so a missed call becomes an owned task instead of a silent opportunity.
             </p>
           </article>
           <article className="rounded-2xl border border-border bg-card p-6">
             <CheckCircle2 className="mb-4 h-8 w-8 text-primary" />
             <h2 className="text-xl font-display font-bold">Smart qualification</h2>
             <p className="mt-3 text-muted-foreground">
-              Capture urgency, reason for service, and preferred contact time before a human is brought in.
+              An approved intake flow can capture service details, urgency, and preferred contact time before a human takes over.
             </p>
           </article>
           <article className="rounded-2xl border border-border bg-card p-6">
             <ShieldCheck className="mb-4 h-8 w-8 text-primary" />
             <h2 className="text-xl font-display font-bold">Human escalation on the edge cases</h2>
             <p className="mt-3 text-muted-foreground">
-              Complex or sensitive conversations still route to a real person when they need judgment.
+              Complex, urgent, or sensitive conversations are designed to route to a real person who can use judgment.
             </p>
           </article>
         </section>

@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import ScheduleButton from "@/components/ui/ScheduleButton";
 
 const features = [
-  "Handle common questions and inquiries automatically",
-  "Collect customer details and qualify the request",
-  "Book appointments and reschedule with no back-and-forth",
-  "Alert your team to urgent issues or new opportunities",
+  "Map common questions and approved answers for routine inquiries",
+  "Capture the details a team needs to qualify and route each request",
+  "Design appointment-request handoffs around the customer’s actual calendar",
+  "Route urgent or complex requests to a named human contact",
 ];
 
 export default function AiReceptionist() {
@@ -18,11 +18,11 @@ export default function AiReceptionist() {
         <title>AI Receptionist | MazinMind Digital</title>
         <meta
           name="description"
-          content="An AI receptionist helps your business answer calls, qualify leads, and handle common customer questions without missing opportunities."
+          content="Plan an AI-assisted intake workflow for calls and web inquiries, with clear qualification rules and human escalation."
         />
         <meta
           name="keywords"
-          content="AI receptionist, AI phone answering service, automated answering service, live AI receptionist, inbound call automation"
+          content="AI receptionist workflow design, AI-assisted intake, missed-call recovery, lead qualification, human handoff, CRM automation"
         />
         <link rel="canonical" href="https://mazinmind.digital/ai-receptionist" />
         <meta property="og:type" content="website" />
@@ -44,10 +44,10 @@ export default function AiReceptionist() {
               AI receptionist
             </p>
             <h1 className="text-4xl font-display font-bold tracking-wider md:text-6xl">
-              Never miss a call or inquiry again.
+              Build a better first response for every inquiry.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-              Handle routine inquiries, collect customer details, route requests, and help customers book appointments. Your team handles the conversations that need human judgment.
+              We design AI-assisted intake workflows that organize routine questions, capture useful details, and route exceptions to your team. Phone, SMS, calendar, and CRM actions are enabled only after the required integrations are configured and tested.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <ScheduleButton
@@ -62,6 +62,14 @@ export default function AiReceptionist() {
               >
                 Talk to MazinMind
               </Link>
+              <a
+                href="https://mazinmind-digital.github.io/Mazinmind-ai-receptionist-demo/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-14 items-center justify-center rounded-full border border-border px-8 text-base font-bold text-foreground"
+              >
+                Explore the Demo
+              </a>
             </div>
           </div>
 
@@ -89,26 +97,26 @@ export default function AiReceptionist() {
         <section className="grid gap-6 md:grid-cols-2">
           <article className="rounded-2xl border border-border bg-card p-6">
             <Headphones className="mb-4 h-8 w-8 text-primary" />
-            <h2 className="text-xl font-display font-bold">Never Miss a Call or Inquiry</h2>
+            <h2 className="text-xl font-display font-bold">Build a Better Intake Path</h2>
             <p className="mt-3 text-muted-foreground">
-              After-hours calls and web inquiries are answered immediately with a professional response, not a voicemail or silence.
+              Design a clear after-hours intake and callback process so inquiries have an owner instead of disappearing into an unattended inbox.
             </p>
           </article>
           <article className="rounded-2xl border border-border bg-card p-6">
             <CheckCircle2 className="mb-4 h-8 w-8 text-primary" />
-            <h2 className="text-xl font-display font-bold">Faster Appointments, Less Back-and-Forth</h2>
+            <h2 className="text-xl font-display font-bold">Appointment Requests With Human Control</h2>
             <p className="mt-3 text-muted-foreground">
-              Customers book appointments directly without waiting for someone to call them back. Your calendar and team stay informed.
+              Connect appointment requests to a real calendar only after the provider, availability rules, and confirmation flow are configured and tested. Until then, requests remain requests, not confirmed bookings.
             </p>
           </article>
         </section>
 
         <section className="mt-16 rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary/10 via-card to-accent/10 p-8 md:p-12 text-center">
           <h2 className="text-3xl font-display font-bold tracking-wider md:text-5xl">
-            Stop Missing Calls and Inquiries
+            Make Your Lead-Handling Process More Reliable
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            An AI receptionist works around the clock so you never miss an opportunity, appointment request, or customer question.
+            A properly configured intake system can help capture after-hours inquiries and route them to the right person. Actual coverage, response time, and booking capability depend on the integrations and support model selected for your business.
           </p>
           <div className="mt-8 flex justify-center">
             <ScheduleButton

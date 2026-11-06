@@ -203,7 +203,7 @@ const packages = [
 
 const tools = [
   "Google Workspace / Microsoft 365",
-  "HubSpot / Salesforce",
+  "Zoho CRM / other CRMs",
   "Calendly",
   "Zapier/Make",
   "Website forms",

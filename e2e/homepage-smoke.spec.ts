@@ -21,7 +21,7 @@ test("homepage renders SEO metadata and current form provider without meeting sc
     await page.getByRole("button", { name: /Decline Optional/i }).click();
   }
 
-  // HubSpot is no longer loaded; analytics uses Google Analytics when configured.
+  // No legacy CRM tracking script is loaded; analytics uses Google Analytics when configured.
   await expect(page.locator("script#hs-script-loader")).toHaveCount(0);
   await expect(page.locator("script[src*='hs-scripts.com']")).toHaveCount(0);
 
@@ -93,4 +93,31 @@ test("Zoho success page does not load analytics without consent", async ({ page 
   await expect(page.locator("#google-analytics-script")).toHaveCount(0);
   const dataLayerExists = await page.evaluate(() => typeof (window as unknown as { dataLayer?: unknown }).dataLayer !== "undefined");
   expect(dataLayerExists).toBe(false);
+});
+
+test("AI receptionist landing pages remain keyboard accessible on mobile", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/ai-receptionist-boston");
+
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  const demoButton = page.getByRole("button", { name: "Explore the Demo" });
+  const auditButton = page.getByRole("button", { name: "Request a Revenue Leak Audit" });
+  await expect(demoButton).toBeVisible();
+  await expect(auditButton).toBeVisible();
+
+  await demoButton.focus();
+  await expect(demoButton).toBeFocused();
+  await auditButton.focus();
+  await expect(auditButton).toBeFocused();
+
+  const mobileOverflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
+  expect(mobileOverflow).toBe(false);
+
+  await page.goto("/ai-receptionist");
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  const freeAuditButton = page.getByRole("button", { name: "Request a Free AI Audit" }).first();
+  await expect(freeAuditButton).toBeVisible();
+  await freeAuditButton.focus();
+  await expect(freeAuditButton).toBeFocused();
+  await expect(page.getByRole("link", { name: "Talk to MazinMind" })).toBeVisible();
 });
