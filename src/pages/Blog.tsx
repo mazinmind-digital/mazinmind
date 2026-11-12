@@ -109,7 +109,7 @@ export default function Blog() {
     name: "Mazinmind.Digital Blog",
     description:
       "Insights on AI consulting, automation, SEO, and digital transformation from the Mazinmind.Digital team.",
-    url: "https://mazinmind.digital/blog",
+    url: "https://mazinmind.digital/blog/",
     inLanguage: "en-US",
     publisher: {
       "@type": "Organization",
@@ -181,7 +181,7 @@ export default function Blog() {
           property="og:description"
           content="Discover the latest Mazinmind.Digital insights on AI automation, SEO, and growth strategy."
         />
-        <meta property="og:url" content="https://mazinmind.digital/blog" />
+        <meta property="og:url" content="https://mazinmind.digital/blog/" />
         <meta property="og:site_name" content="Mazinmind.Digital" />
         <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
         <meta name="twitter:title" content="Mazinmind.Digital Blog" />
@@ -191,7 +191,7 @@ export default function Blog() {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
-        <link rel="canonical" href="https://mazinmind.digital/blog" />
+        <link rel="canonical" href="https://mazinmind.digital/blog/" />
         <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>
         <script type="application/ld+json">
           {JSON.stringify(itemListSchema)}
