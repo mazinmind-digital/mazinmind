@@ -1,77 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mazinmind.digital/</loc>
-    <priority>1.00</priority>
-    <changefreq>weekly</changefreq>
   </url>
-
   <url>
-    <loc>https://mazinmind.digital/about</loc>
-    <priority>0.80</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://mazinmind.digital/ai-receptionist</loc>
   </url>
-
+  <url>
+    <loc>https://mazinmind.digital/ai-receptionist-boston</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/home-services-automation</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/ai-automation-contractors</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/lead-follow-up-automation</loc>
+  </url>
   <url>
     <loc>https://mazinmind.digital/services</loc>
-    <priority>0.90</priority>
-    <changefreq>monthly</changefreq>
   </url>
-
   <url>
     <loc>https://mazinmind.digital/services/ai-automation</loc>
-    <priority>0.85</priority>
-    <changefreq>monthly</changefreq>
   </url>
-
   <url>
     <loc>https://mazinmind.digital/services/ai-marketing</loc>
-    <priority>0.85</priority>
-    <changefreq>monthly</changefreq>
   </url>
-
   <url>
     <loc>https://mazinmind.digital/services/devops-cloud</loc>
-    <priority>0.80</priority>
-    <changefreq>monthly</changefreq>
   </url>
-
+  <url>
+    <loc>https://mazinmind.digital/about</loc>
+  </url>
   <url>
     <loc>https://mazinmind.digital/contact</loc>
-    <priority>0.70</priority>
-    <changefreq>monthly</changefreq>
   </url>
-
   <url>
     <loc>https://mazinmind.digital/faq</loc>
-    <priority>0.65</priority>
-    <changefreq>monthly</changefreq>
   </url>
-
-  <url>
-    <loc>https://mazinmind.digital/blog</loc>
-    <priority>0.90</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
   <url>
     <loc>https://mazinmind.digital/art-gallery</loc>
-    <priority>0.80</priority>
-    <changefreq>weekly</changefreq>
   </url>
-
   <url>
     <loc>https://mazinmind.digital/privacy</loc>
-    <priority>0.40</priority>
-    <changefreq>yearly</changefreq>
   </url>
-
   <url>
     <loc>https://mazinmind.digital/terms</loc>
-    <priority>0.40</priority>
-    <changefreq>yearly</changefreq>
   </url>
-
+  <url>
+    <loc>https://mazinmind.digital/blog</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/how-ai-is-used-during-severe-weather-events-and-blizzards</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/ai-automation-small-business-missed-leads</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/ai-voice-support-reduce-costs-improve-csat</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/ai-implementation-benefits-roi-overhead-consulting</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/how-ai-automation-cuts-ops-costs</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/seo-in-the-age-of-ai-search</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/from-idea-to-mvp-using-ai</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/predictive-analytics-for-marketing</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/building-trust-in-ai-adoption</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/devops-foundations-for-ai-products</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/content-systems-that-rank-and-convert</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/ai-readiness-checklist-for-smbs</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/ai-receptionist-boston-missed-calls</loc>
+  </url>
+  <url>
+    <loc>https://mazinmind.digital/blog/ai-earthquake-prediction-disaster-recovery</loc>
+  </url>
 </urlset>

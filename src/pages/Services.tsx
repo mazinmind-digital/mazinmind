@@ -156,6 +156,7 @@ export default function Services() {
           content="AI services, consulting, digital marketing, automation, content creation, custom software, Mazinmind.Digital"
         />
         <meta property="og:title" content="AI Services | Mazinmind.Digital" />
+        <meta property="og:type" content="website" />
         <meta
           property="og:description"
           content="Explore Mazinmind.Digital's full suite of AI services: consulting, marketing, automation, content creation, and custom software."

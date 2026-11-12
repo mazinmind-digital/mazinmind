@@ -75,11 +75,6 @@ const organizationSchema = {
       publisher: {
         "@id": "https://mazinmind.digital/#organization",
       },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://mazinmind.digital/blog?search={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
     },
   ],
 };

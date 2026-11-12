@@ -121,6 +121,7 @@ export default function FAQ() {
           content="FAQ, Mazinmind.Digital, AI consulting, digital transformation, technology services, support, AI implementation"
         />
         <meta property="og:title" content="FAQ | Mazinmind.Digital" />
+        <meta property="og:type" content="website" />
         <meta
           property="og:description"
           content="Find answers to common questions about Mazinmind.Digital's AI consulting, digital transformation, and technology services."

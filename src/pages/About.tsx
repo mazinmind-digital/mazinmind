@@ -201,6 +201,7 @@ export default function About() {
           property="og:title"
           content="About Mazinmind.Digital | AI Experts & Innovators"
         />
+        <meta property="og:type" content="website" />
         <meta
           property="og:description"
           content="Learn about Mazinmind.Digital, a leader in AI consulting, digital transformation, and innovative technology solutions."

@@ -542,6 +542,7 @@ export default function ArtGallery() {
           property="og:title"
           content="Art Gallery | AI-Assisted Artwork by MazinMind"
         />
+        <meta property="og:type" content="website" />
         <meta
           property="og:description"
           content="Browse AI-assisted artwork and visual studies from the MazinMind Art Gallery."
@@ -557,6 +558,9 @@ export default function ArtGallery() {
           content="AI-assisted artwork and collection highlights from MazinMind."
         />
         <link rel="canonical" href="https://mazinmind.digital/art-gallery" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
         <script type="application/ld+json">
           {JSON.stringify(gallerySchema)}
         </script>

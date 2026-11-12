@@ -54,11 +54,18 @@ export default function Privacy() {
           property="og:title"
           content="Privacy Policy | Mazinmind.Digital"
         />
+        <meta property="og:type" content="website" />
         <meta
           property="og:description"
           content="Read the Mazinmind.Digital Privacy Policy, including information collection, cookie usage, and your privacy rights."
         />
         <meta property="og:url" content="https://mazinmind.digital/privacy" />
+        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Privacy Policy | Mazinmind.Digital" />
+        <meta name="twitter:description" content="Read the Mazinmind.Digital Privacy Policy, including information collection, cookie usage, and your privacy rights." />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
         <link rel="canonical" href="https://mazinmind.digital/privacy" />
       </Helmet>
       <PrivacyContent />

@@ -54,11 +54,18 @@ export default function Terms() {
           property="og:title"
           content="Terms of Service | Mazinmind.Digital"
         />
+        <meta property="og:type" content="website" />
         <meta
           property="og:description"
           content="Review Mazinmind.Digital Terms of Service covering website use, intellectual property, purchases, and liability limits."
         />
         <meta property="og:url" content="https://mazinmind.digital/terms" />
+        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Terms of Service | Mazinmind.Digital" />
+        <meta name="twitter:description" content="Review Mazinmind.Digital Terms of Service covering website use, intellectual property, purchases, and liability limits." />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
         <link rel="canonical" href="https://mazinmind.digital/terms" />
       </Helmet>
       <TermsContent />

@@ -72,10 +72,16 @@ export default function Contact() {
       <Helmet>
         <title>Contact MazinMind Digital | AI Consulting & Support</title>
         <meta name="description" content="Contact MazinMind Digital for AI consulting, automation, CRM integration, and cloud engineering. Tell us about your project and receive a practical next-step recommendation." />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="Contact MazinMind Digital | AI Consulting & Support" />
         <meta property="og:description" content="Contact MazinMind Digital for AI consulting, automation, CRM integration, and cloud engineering." />
         <meta property="og:url" content="https://mazinmind.digital/contact" />
         <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact MazinMind Digital | AI Consulting & Support" />
+        <meta name="twitter:description" content="Contact MazinMind Digital for AI consulting, automation, CRM integration, and cloud engineering." />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
         <link rel="canonical" href="https://mazinmind.digital/contact" />
       </Helmet>
       <section className="py-24 relative overflow-hidden">

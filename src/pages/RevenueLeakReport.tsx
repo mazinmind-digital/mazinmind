@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight, BarChart3, Check, Clock3, CircleDollarSign, Gauge, ShieldCheck, Sparkles, TrendingUp, Workflow } from "lucide-react";
 
 const tiers = [
@@ -27,7 +28,23 @@ export default function RevenueLeakReport() {
   };
 
   return (
-    <main className="min-h-screen bg-[#071a22] text-slate-100">
+    <>
+      <Helmet>
+        <title>Revenue Leak Report Preview | MazinMind Digital</title>
+        <meta name="description" content="Preview MazinMind Digital's revenue leak assessment for missed opportunities, sales friction, and manual work." />
+        <meta name="robots" content="noindex, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Revenue Leak Report Preview | MazinMind Digital" />
+        <meta property="og:description" content="Preview a practical assessment of missed opportunities, sales friction, and manual work." />
+        <meta property="og:url" content="https://mazinmind.digital/revenue-leak-report" />
+        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Revenue Leak Report Preview | MazinMind Digital" />
+        <meta name="twitter:description" content="Preview a practical assessment of missed opportunities, sales friction, and manual work." />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
+      </Helmet>
+      <main className="min-h-screen bg-[#071a22] text-slate-100">
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute -top-40 left-1/3 h-96 w-96 rounded-full bg-teal-500/10 blur-3xl" />
         <div className="absolute right-0 top-1/3 h-80 w-80 rounded-full bg-emerald-400/10 blur-3xl" />
@@ -95,6 +112,7 @@ export default function RevenueLeakReport() {
         )}
         <footer className="border-t border-white/10 py-7 text-xs leading-5 text-slate-500">© {new Date().getFullYear()} MazinMind Digital. Revenue opportunities are estimates based on supplied information and assumptions, not guarantees of financial results.</footer>
       </div>
-    </main>
+      </main>
+    </>
   );
 }

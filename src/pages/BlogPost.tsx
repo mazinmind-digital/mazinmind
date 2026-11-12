@@ -135,12 +135,16 @@ export default function BlogPost() {
         <title>{`${post.title} | Mazinmind.Digital`}</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={post.tags.join(", ")} />
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={absoluteImageUrl} />
+        <meta property="og:site_name" content="MazinMind Digital" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={absoluteImageUrl} />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         {faqSchema ? (

@@ -33,6 +33,7 @@ export default function AiReceptionistBoston() {
           content="AI receptionist Boston, missed call workflow design, service business automation, after-hours inquiry intake, human handoff, contractor lead capture"
         />
         <link rel="canonical" href="https://mazinmind.digital/ai-receptionist-boston" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="AI Receptionist Boston | Missed-Call Recovery for Service Businesses" />
         <meta property="og:description" content="Design safer inquiry intake and missed-call recovery for Boston service businesses, with clear qualification and human escalation." />
         <meta property="og:url" content="https://mazinmind.digital/ai-receptionist-boston" />

@@ -176,17 +176,21 @@ export default function Blog() {
           property="og:title"
           content="AI, SEO, and Automation Blog | Mazinmind.Digital"
         />
+        <meta property="og:type" content="website" />
         <meta
           property="og:description"
           content="Discover the latest Mazinmind.Digital insights on AI automation, SEO, and growth strategy."
         />
         <meta property="og:url" content="https://mazinmind.digital/blog" />
         <meta property="og:site_name" content="Mazinmind.Digital" />
+        <meta property="og:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
         <meta name="twitter:title" content="Mazinmind.Digital Blog" />
         <meta
           name="twitter:description"
           content="Latest AI, SEO, and automation insights from Mazinmind.Digital."
         />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://mazinmind.digital/images/blog/lead-automation-graffiti.webp" />
         <link rel="canonical" href="https://mazinmind.digital/blog" />
         <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>
         <script type="application/ld+json">
